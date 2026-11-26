@@ -4,6 +4,10 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Added
+
+- `scripts/trust.sh` runs the workflow trust of mmp-lean at the release tag of `records/lean.json`, copies its replay record to `records/replay.json`, and writes `records/trust.json` with `mmp trust`. The node of the toric cone theorem names the pinned statement `MinimalModel.Toric.ToricConeTheorem` and its proof `MinimalModel.Toric.toricConeTheorem`.
+
 ### Fixed
 
 - S52 and S29 now speak of the global mlds of enc pairs with coefficients in a finite set, as Han-Liu Conjecture 1.9(2') and Theorem 1.1 do. They spoke of germs before. Spec 04, 13 and 14 follow.
