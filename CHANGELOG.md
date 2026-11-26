@@ -4,6 +4,12 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+## v0.0.3 - 2026-11-26
+
+### Changed
+
+- `records/lean.json` is the record of the build of mmp-lean v0.0.3 at commit 591c8a5.
+
 ### Added
 
 - The map has the first three nodes of route R3: toric-fan (MMH8EFW2JT), toric-wall-relation (MMFAWNT87R) and toric-cone-theorem (MM6EHAYFKV), the combinatorial form of the toric cone theorem. S39, the toric MMP, uses the cone theorem.
