@@ -6,4 +6,4 @@ statement: "Generalized abundance (Lazić-Peternell): let $(X,\\Delta)$ be a klt
 lean: { statement: MinimalModel.GeneralizedAbundance }
 tier: S
 route: [R5]
-notes: "Statement S45 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S45 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Abundance.lean, with the vocabulary of MinimalModel/Statements/BasicRelative.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement follows Lazić and Peternell 2020, Conjecture 1.1, for projective klt pairs and an R-Cartier nef L. The paper record of the source is not written yet (spec 07)."

@@ -4,9 +4,9 @@ kind: "theorem"
 title: "The Han-Liu reduction"
 statement: "Fix $n$. Assume ACC for the global mlds of enc pairs of dimension $n$ with coefficients in a finite set and termination of terminal flips in dimension $n$. Then T(n) holds (S20)."
 sources:
-  - { paper: HL25, loc: "Theorem 1.2" }
+  - { paper: HL25, loc: "Theorem 1.1" }
 uses: [MMTJ3YNHTG, MMXCD16PTN] # Termination, HanLiuEncACC
 lean: { statement: MinimalModel.HanLiuReduction }
 tier: S
 route: [R4]
-notes: "Statement S29 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is reduction. The vocabulary is ready. The statement is planned for milestone S2. A reduction is an implication between other statements of the map. The map gives it the kind theorem, because mmp-agent has no kind reduction."
+notes: "Statement S29 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Termination.lean. It uses EncMldACC of MinimalModel/Statements/Boundedness.lean, the ACC for the global mlds of enc pairs. The class in the spec is reduction. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement follows HL25 Theorem 1.1 for each dimension d: the two hypotheses in dimension d give the termination of lc flips in each dimension up to d. Theorem 1.2 is the case d = 4. The flips are those of projective pairs. A reduction is an implication between other statements of the map. The map gives it the kind theorem, because mmp-agent has no kind reduction."

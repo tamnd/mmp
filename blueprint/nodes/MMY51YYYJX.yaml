@@ -6,4 +6,4 @@ statement: "The Iitaka conjecture $C_{n,m}$: let $f:X\\to Y$ be an algebraic fib
 lean: { statement: MinimalModel.IitakaConj }
 tier: S
 route: [R5]
-notes: "Statement S46 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S46 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Abundance.lean, with the vocabulary of MinimalModel/Statements/BasicRelative.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement takes the general fibre as the fibre over each closed point of a nonempty open set of Y. The paper record of the source is not written yet (spec 07)."

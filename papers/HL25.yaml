@@ -13,7 +13,7 @@ why: "the reduction of termination to terminal flips and ACC for enc mld; the st
 expert_status: accepted
 uses: [T4-07, T8-02, T8-03]
 results:
-  - id: "Theorem 1.2"
+  - id: "Theorem 1.1"
     statement: HanLiuReduction
     node: MM0NXABJ9S
     kind: theorem

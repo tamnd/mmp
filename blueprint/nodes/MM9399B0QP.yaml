@@ -7,4 +7,4 @@ sources:
   - { paper: BCHM10, loc: "Theorem 1.2" }
 lean: { statement: MinimalModel.BCHM }
 tier: S
-notes: "Statement S31 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is partial (extension theorems). The statement is planned for milestone S2."
+notes: "Statement S31 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Models.lean, with the vocabulary of MinimalModel/Statements/BasicRelative.lean and MinimalModel/Statements/Curves.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement gives the three parts of BCHM Theorem 1.2 over a normal quasi-projective base U. Bigness over U uses R-linear equivalence on X, and nefness over U uses the intersection numbers with the curves that U contracts. The induction A_n to F_n is not stated as sub-statements yet."

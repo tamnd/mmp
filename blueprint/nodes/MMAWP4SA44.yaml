@@ -12,4 +12,4 @@ uses: [MM6EHAYFKV]
 lean: { statement: MinimalModel.ToricMMP }
 tier: S
 route: [R3]
-notes: "Statement S39 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is ready (fans, R3). The statement is planned for milestone S2."
+notes: "Statement S39 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/ToricMMP.lean, with the vocabulary of MinimalModel/Toric/Program.lean. The class in the spec is theorem. The vocabulary is ready (fans, R3). The statement is planned for milestone S2. The Lean statement gives the steps on fans: each sequence of toric D-steps is finite, and it ends with a nef divisor or a toric Mori fibre space. Relative ampleness is the strict convexity of the support function. The mld formula at the torus-fixed points is not stated yet."
