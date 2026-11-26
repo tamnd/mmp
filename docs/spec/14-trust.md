@@ -39,7 +39,7 @@ The trust report covers these theorems. More are added as the map grows. Each ha
 
 | Theorem | Meaning | Status expected | Credit line | Milestone |
 |---|---|---|---|---|
-| `MinimalModel.Toric.coneTheorem` | the toric cone theorem | `proved` | the project | S2 |
+| `MinimalModel.Toric.toricConeTheorem` | the toric cone theorem, in combinatorial form (the pinned statement `ToricConeTheorem`, from `Fan.coneTheorem`) | `proved` | the project | S2 |
 | `MinimalModel.Toric.flipExists`, `MinimalModel.Toric.terminationOfFlips` | toric flips exist and terminate | `proved` | the project | S4 |
 | `MinimalModel.Toric.mmp` (S39) | the toric MMP ends in a minimal model or a Mori fibre space | `proved` | the project | S4 |
 | `MinimalModel.Surface.castelnuovo`, `MinimalModel.Surface.minimalModel` | the surface program, on Mathlib alone | `proved` or `proved-mod` | the project | S5 |
