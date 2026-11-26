@@ -1,0 +1,14 @@
+tag: "MM6EHAYFKV"
+slug: "toric-cone-theorem"
+kind: "theorem"
+title: "The toric cone theorem, combinatorial form"
+statement: "Let $D$ be a torus-invariant $\\mathbb{R}$-Cartier divisor on a complete simplicial fan. Then the support function of $D$ is convex (D is nef) if and only if $D\\cdot V(\\tau)\\ge0$ for each wall $\\tau$, where $D\\cdot V(\\tau)$ is computed from the wall relation."
+sources:
+  - { paper: CLS11, loc: "Chapter 6, Theorem 6.3.12 and Proposition 6.4.4" }
+  - { paper: Rei83, loc: "Section 1" }
+  - { paper: FS04, loc: "the toric cone theorem" }
+uses: [MMH8EFW2JT, MMFAWNT87R]
+lean: { statement: MinimalModel.Toric.Fan.coneTheorem, proof: MinimalModel.Toric.Fan.coneTheorem }
+tier: T5
+route: [R3]
+notes: "This is the combinatorial form. The geometric form says that the cone of curves of the toric variety is spanned by the curves V(τ). It needs the toric variety as a scheme, with its curves and intersection numbers, which mmp-lean does not have yet. For a complete fan that is not simplicial, the Lean proof of convexity takes closed cones as a hypothesis (`MinimalModel.Toric.Fan.concaveOn_iff_forall_isConvexAcross`), because Mathlib has no lemma that a finitely generated cone is closed."

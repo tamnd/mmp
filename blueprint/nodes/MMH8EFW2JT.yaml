@@ -1,0 +1,11 @@
+tag: "MMH8EFW2JT"
+slug: "toric-fan"
+kind: "definition"
+title: "Fans"
+statement: "A fan in $N_\\mathbb{R}=\\mathbb{R}^n$ is a finite set of strongly convex rational polyhedral cones, closed under taking faces, such that two cones meet in a common face."
+sources:
+  - { paper: CLS11, loc: "Chapter 3" }
+lean: { statement: MinimalModel.Toric.Fan }
+tier: T5
+route: [R3]
+notes: "Corpus row T5-02. The cones are `PointedCone ℝ (Fin n → ℝ)` spanned by finitely many lattice points. Each cone is spanned by the primitive generators of its rays (`MinimalModel.Toric.Fan.eq_hull_generator`)."
