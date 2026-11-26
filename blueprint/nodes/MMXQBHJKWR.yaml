@@ -6,4 +6,4 @@ statement: "Fujita freeness: let $X$ be a smooth projective variety and $L$ an a
 lean: { statement: MinimalModel.FujitaFreeness }
 tier: S
 route: [R6]
-notes: "Statement S56 of spec 06.2.2, in the file MinimalModel/Statements/Effective.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S1. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S56 of spec 06.2.2, in the file MinimalModel/Statements/Effective.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S1. The paper record of the source is not written yet (spec 07). The Lean statement takes L as an ample Cartier divisor."
