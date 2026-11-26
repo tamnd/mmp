@@ -1,1 +1,50 @@
-{}
+{
+  "MinimalModel.ConeTheoremKlt": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": true,
+      "F3": true,
+      "F4": false,
+      "F5": false
+    },
+    "pass": false
+  },
+  "MinimalModel.ConeTheoremLc": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": true,
+      "F3": true,
+      "F4": false,
+      "F5": false
+    },
+    "pass": false
+  },
+  "MinimalModel.Termination": {
+    "class": "open",
+    "checks": {
+      "F1": true,
+      "F2": true,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false,
+      "F7": false
+    },
+    "pass": false
+  },
+  "MinimalModel.TerminationLc4Rational": {
+    "class": "claimed",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false,
+      "F7": false
+    },
+    "pass": false
+  }
+}

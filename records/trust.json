@@ -35,7 +35,7 @@
       "id": "Q5",
       "question": "Do the statements mean what the docstrings say?",
       "state": "open",
-      "note": "0 of the 60 Lean statements of the map pass the fidelity checks of their class (spec 06.3). 0 have an entry in records/fidelity.json."
+      "note": "0 of the 60 Lean statements of the map pass the fidelity checks of their class (spec 06.3). 4 have an entry in records/fidelity.json."
     },
     {
       "id": "Q6",
