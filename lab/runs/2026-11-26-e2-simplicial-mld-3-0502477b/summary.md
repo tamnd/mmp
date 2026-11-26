@@ -17,8 +17,7 @@ The divisors of log discrepancy at most 1 are the primitive points g of the box 
 - Terminal germs. A terminal simplicial toric 3-fold germ is cyclic of type 1/r(1, -1, a) with gcd(a, r) = 1 (White-Frumkin, Morrison-Stevens; the terminal lemma), and its mld is 1 + 1/r. Of the 218893 terminal germs, 0 are not cyclic, isolated, of this type and of this mld.
 - The terminal lemma on the cyclic isolated germs, both ways: 0 disagree.
 - An isolated germ of dimension 3 has a cyclic group: a group (Z/p)^2 in (Z/p)^3 meets each coordinate plane. 0 isolated germs are not cyclic. So no germ with a group that is not cyclic is terminal.
-- The family cyclic. The 1747 cyclic isolated germs with r <= 40 are compared with a run of the family cyclic, germ for germ: the weights, the mld, a minimizer, terminal, canonical and the terminal lemma. 0 differ.
-- The family cyclic counts at_most_one as the points of the box of age at most 1, and some of them are not primitive, so they are not divisors. 733 of the 1747 germs have a smaller count here; for example, 1/6[1 1 1] has 2 points of the box of age at most 1, and 1 primitive points. For 63 of them enc changes. This run counts the primitive points only; the family cyclic keeps its old count.
+- The family cyclic. The 1747 cyclic isolated germs with r <= 40 are compared with a run of the family cyclic, germ for germ: the weights, the mld, a minimizer, terminal, canonical, the terminal lemma and the count of the divisors of log discrepancy at most 1. 0 differ.
 
 The cases by hand, computed by the closure of the generators and found once in the enumeration:
 

@@ -11,21 +11,21 @@
     "MMAWP4SA44"
   ],
   "tool": "mmp",
-  "tool_version": "dev",
-  "commit": "1a1d8ac8ce8958d826a39b682c239bacf954a796",
+  "tool_version": "v0.0.4-5-g49b0cdd",
+  "commit": "49b0cddf02fa735d75fcdf11578a66b1eca7e61b",
   "go": "go1.27.3",
   "container": "none",
   "network": false,
   "seed": 0,
   "host": "darwin/arm64",
-  "started": "2026-11-26T15:58:55Z",
-  "wall_seconds": 432.704,
+  "started": "2026-11-26T16:41:03Z",
+  "wall_seconds": 505.473,
   "result": "agrees: in 110004193 simplicial toric 3-fold germs with r \u003c= 1200, each terminal germ is cyclic of type 1/r(1, -1, a) with the mld 1 + 1/r, and the cyclic isolated germs with r \u003c= 40 are those of the family cyclic",
   "mismatches": 0,
   "gaps": 0,
   "files": {
     "germs.json": "8d98fab392d16334fc2a9e3f5e1758b6e135d0505b29afb56061f72bd3d37237",
     "indices.json": "51861f48c57d9509bb270ffff3dd7869805745670481d097d1903167cb7ceda5",
-    "summary.md": "29ad87e2ac60ffa656a1c5e0e200c8344c8d678a38b7b0870e0bbcb3622ffaa8"
+    "summary.md": "542bd8fe93f51cb9ff1cf4d6d188b34343fce7f8b8cb40b7636f4a4c69bb6bd0"
   }
 }

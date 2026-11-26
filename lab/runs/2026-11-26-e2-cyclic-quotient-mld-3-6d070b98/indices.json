@@ -32,244 +32,244 @@
     "germs": 2,
     "terminal": 1,
     "canonical": 1,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 7,
     "germs": 10,
     "terminal": 3,
     "canonical": 5,
-    "enc": 3
+    "enc": 4
   },
   {
     "r": 8,
     "germs": 5,
     "terminal": 2,
     "canonical": 2,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 9,
     "germs": 10,
     "terminal": 3,
     "canonical": 5,
-    "enc": 1
+    "enc": 3
   },
   {
     "r": 10,
     "germs": 5,
     "terminal": 2,
     "canonical": 2,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 11,
     "germs": 22,
     "terminal": 5,
     "canonical": 7,
-    "enc": 4
+    "enc": 6
   },
   {
     "r": 12,
     "germs": 5,
     "terminal": 2,
     "canonical": 2,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 13,
     "germs": 31,
     "terminal": 6,
     "canonical": 9,
-    "enc": 4
+    "enc": 7
   },
   {
     "r": 14,
     "germs": 10,
     "terminal": 3,
     "canonical": 4,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 15,
     "germs": 15,
     "terminal": 4,
     "canonical": 5,
-    "enc": 0
+    "enc": 2
   },
   {
     "r": 16,
     "germs": 15,
     "terminal": 4,
     "canonical": 4,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 17,
     "germs": 51,
     "terminal": 8,
     "canonical": 11,
-    "enc": 4
+    "enc": 7
   },
   {
     "r": 18,
     "germs": 10,
     "terminal": 3,
     "canonical": 3,
-    "enc": 0
+    "enc": 2
   },
   {
     "r": 19,
     "germs": 64,
     "terminal": 9,
     "canonical": 13,
-    "enc": 4
+    "enc": 7
   },
   {
     "r": 20,
     "germs": 15,
     "terminal": 4,
     "canonical": 4,
-    "enc": 1
+    "enc": 2
   },
   {
     "r": 21,
     "germs": 31,
     "terminal": 6,
     "canonical": 8,
-    "enc": 0
+    "enc": 2
   },
   {
     "r": 22,
     "germs": 22,
     "terminal": 5,
     "canonical": 5,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 23,
     "germs": 92,
     "terminal": 11,
     "canonical": 15,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 24,
     "germs": 15,
     "terminal": 4,
     "canonical": 4,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 25,
     "germs": 77,
     "terminal": 10,
     "canonical": 13,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 26,
     "germs": 31,
     "terminal": 6,
     "canonical": 6,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 27,
     "germs": 64,
     "terminal": 9,
     "canonical": 11,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 28,
     "germs": 31,
     "terminal": 6,
     "canonical": 6,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 29,
     "germs": 145,
     "terminal": 14,
     "canonical": 19,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 30,
     "germs": 15,
     "terminal": 4,
     "canonical": 4,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 31,
     "germs": 166,
     "terminal": 15,
     "canonical": 21,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 32,
     "germs": 51,
     "terminal": 8,
     "canonical": 8,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 33,
     "germs": 77,
     "terminal": 10,
     "canonical": 12,
-    "enc": 0
+    "enc": 2
   },
   {
     "r": 34,
     "germs": 51,
     "terminal": 8,
     "canonical": 8,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 35,
     "germs": 109,
     "terminal": 12,
     "canonical": 15,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 36,
     "germs": 31,
     "terminal": 6,
     "canonical": 6,
-    "enc": 0
+    "enc": 2
   },
   {
     "r": 37,
     "germs": 235,
     "terminal": 18,
     "canonical": 25,
-    "enc": 0
+    "enc": 3
   },
   {
     "r": 38,
     "germs": 64,
     "terminal": 9,
     "canonical": 9,
-    "enc": 0
+    "enc": 1
   },
   {
     "r": 39,
     "germs": 109,
     "terminal": 12,
     "canonical": 15,
-    "enc": 0
+    "enc": 2
   },
   {
     "r": 40,
     "germs": 51,
     "terminal": 8,
     "canonical": 8,
-    "enc": 0
+    "enc": 1
   }
 ]
