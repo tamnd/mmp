@@ -7,4 +7,4 @@ sources:
   - { paper: KM98, loc: "Chapter 1" }
 lean: { statement: MinimalModel.LengthOfExtremalRays }
 tier: S
-notes: "Statement S09 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial (rational curves). The statement is planned for milestone S2."
+notes: "Statement S09 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Foundations.lean, with the vocabulary of MinimalModel/Statements/Curves.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement cites KM98 Theorem 3.7(1)."
