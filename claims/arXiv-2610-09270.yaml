@@ -1,0 +1,13 @@
+key: arXiv-2610-09270
+title: null
+authors: [Ajit]
+source: { arxiv: "2610.09270", url: null, version: "v2" }
+date: 2026-11-26
+posted: null
+status: fresh
+route: R1
+claims: "Counterexamples to the Ambro-Kawamata effective non-vanishing conjecture in dimension at least 4."
+node: MMRG60YPYS
+parts: []
+letters: []
+notes: "Claim C14 of spec 01.3. The status there on 2026-11-26: explicit and checkable; read by Totaro [R]. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. Spec 01.3 gives v2 of 2026-10-14. The node S57 states the negation of the conjecture and keeps the kind claim until a referee accepts the paper (spec 06.2.1). Experiment E3 checks the examples. The paper record is papers/Ajit26.yaml."

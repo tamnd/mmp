@@ -1,0 +1,11 @@
+tag: "MMZ1VFD6K4"
+slug: "fano-type-mds"
+kind: "theorem"
+title: "Fano type varieties are Mori dream spaces"
+statement: "A $\\mathbb{Q}$-factorial projective variety of Fano type is a Mori dream space (BCHM 1.3.1)."
+sources:
+  - { paper: BCHM10, loc: "Corollary 1.3.1" }
+uses: [MM9399B0QP] # BCHM
+lean: { statement: MinimalModel.FanoTypeMDS }
+tier: S
+notes: "Statement S37 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is partial (Cox rings). The statement is planned for milestone S3."

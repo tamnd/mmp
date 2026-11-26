@@ -1,0 +1,14 @@
+tag: "MMAWP4SA44"
+slug: "toric-mmp"
+kind: "theorem"
+title: "The toric MMP"
+statement: "Let $\\Sigma$ be a simplicial projective fan and $D$ a torus-invariant $\\mathbb{Q}$-divisor. Each toric $D$-MMP of $X_\\Sigma$ ends with a minimal model or a Mori fibre space, and the mld at each torus-fixed point is the minimum of a linear function on the lattice points of the cone."
+sources:
+  - { paper: Rei83, loc: "the toric cone theorem, contractions and flips" }
+  - { paper: FS04, loc: "the toric cone theorem" }
+  - { paper: Mat02, loc: "Chapter 14" }
+  - { paper: CLS11, loc: "Chapter 15" }
+lean: { statement: MinimalModel.ToricMMP }
+tier: S
+route: [R3]
+notes: "Statement S39 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is ready (fans, R3). The statement is planned for milestone S2."

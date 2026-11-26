@@ -1,0 +1,10 @@
+tag: "MMH0CM56AA"
+slug: "threefold-termination"
+kind: "theorem"
+title: "Termination of 3-fold lc flips"
+statement: "T(3): let $(X,\\Delta)$ be an lc pair of dimension 3. There is no infinite sequence of $(K_X+\\Delta)$-flips."
+sources:
+  - { paper: Kaw92, loc: "the main theorem" }
+lean: { statement: MinimalModel.ThreefoldTermination }
+tier: S
+notes: "Statement S16 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

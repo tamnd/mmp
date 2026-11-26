@@ -1,0 +1,13 @@
+key: arXiv-2508-19215
+title: null
+authors: [BFMT]
+source: { arxiv: "2508.19215", url: null, version: "v2" }
+date: 2026-11-26
+posted: null
+status: fresh
+route: R1
+claims: "The b-semiampleness conjecture of Prokhorov and Shokurov."
+node: MMRXDSNJQ7
+parts: []
+letters: []
+notes: "Claim C13 of spec 01.3. The status there on 2026-11-26: strong human paper; the referee status is not checked. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. Spec 01.3 gives v2 of 2025-12-18 and names the authors BFMT only. The reader role must copy the full author names from arXiv. The second preprint of C13 is claims/arXiv-2611-12744.yaml."

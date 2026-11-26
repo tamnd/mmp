@@ -1,0 +1,9 @@
+tag: "MMSH2N59E3"
+slug: "generalized-abundance"
+kind: "conjecture"
+title: "Generalized abundance"
+statement: "Generalized abundance (Lazić-Peternell): let $(X,\\Delta)$ be a klt pair with $K_X+\\Delta$ pseudo-effective, and $L$ a nef divisor with $K_X+\\Delta+L$ nef. Then $K_X+\\Delta+L$ is numerically equivalent to a semiample divisor."
+lean: { statement: MinimalModel.GeneralizedAbundance }
+tier: S
+route: [R5]
+notes: "Statement S45 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."

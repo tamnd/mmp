@@ -1,0 +1,11 @@
+tag: "MMSMTZS83C"
+slug: "rationality-theorem"
+kind: "theorem"
+title: "The rationality theorem"
+statement: "Let $(X,\\Delta)$ be a projective klt pair with $K_X+\\Delta$ not nef, and $H$ an ample Cartier divisor. Then the nef threshold $r=\\max\\{t: H+t(K_X+\\Delta)\\text{ nef}\\}$ is a rational number, with a denominator at most $a(\\dim X+1)$, where $a$ is the Cartier index of $K_X+\\Delta$."
+sources:
+  - { paper: KM98, loc: "Chapter 3" }
+uses: [MM7MQT1KEA] # KawamataViehweg
+lean: { statement: MinimalModel.RationalityTheorem }
+tier: S
+notes: "Statement S07 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

@@ -1,0 +1,10 @@
+tag: "MM7MQT1KEA"
+slug: "kawamata-viehweg"
+kind: "theorem"
+title: "Kawamata-Viehweg vanishing"
+statement: "Let $(X,\\Delta)$ be a klt pair and $\\pi:X\\to U$ a projective morphism. Let $N$ be a $\\mathbb{Q}$-Cartier Weil divisor with $N\\equiv_U K_X+\\Delta+M$, where $M$ is $\\pi$-nef and $\\pi$-big. Then $R^i\\pi_*\\mathcal{O}_X(N)=0$ for $i>0$."
+sources:
+  - { paper: KM98, loc: "Theorem 2.70" }
+lean: { statement: MinimalModel.KawamataViehweg }
+tier: S
+notes: "Statement S02 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial (coherent cohomology). The statement is planned for milestone S1."

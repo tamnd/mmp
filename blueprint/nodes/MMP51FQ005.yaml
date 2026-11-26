@@ -1,0 +1,11 @@
+tag: "MMP51FQ005"
+slug: "klt-flips"
+kind: "theorem"
+title: "The existence of klt flips"
+statement: "Let $(X,\\Delta)$ be a klt pair and $f:X\\to Z$ a $(K_X+\\Delta)$-flipping contraction. Then the flip of $f$ exists, in each dimension (BCHM 1.4.1)."
+sources:
+  - { paper: BCHM10, loc: "Corollary 1.4.1" }
+uses: [MM9399B0QP] # BCHM
+lean: { statement: MinimalModel.KltFlips }
+tier: S
+notes: "Statement S30 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S0."

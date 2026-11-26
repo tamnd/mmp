@@ -1,0 +1,25 @@
+id: T2-11
+key: Fuj11
+title: "Fundamental theorems for the log minimal model program"
+authors: [Osamu Fujino]
+where: "Publ. Res. Inst. Math. Sci. 47 (2011)"
+year: 2011
+doi: null
+arxiv: "0909.4445"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T2
+why: "the cone, contraction and vanishing theorems for lc pairs; the source of S05"
+expert_status: accepted
+uses: []
+results:
+  - id: "the cone theorem for lc pairs"
+    statement: ConeTheoremLc
+    node: MMV52CGQMS
+    kind: theorem
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 4, chapter: null }
+notes: "The journal data come from the year 2011 that spec 03 gives. The volume is not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

@@ -1,0 +1,31 @@
+id: T0-01
+key: KM98
+title: "Birational Geometry of Algebraic Varieties"
+authors: [János Kollár, Shigefumi Mori]
+where: "Cambridge Tracts in Mathematics 134, Cambridge University Press (1998)"
+year: 1998
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: S }
+tier: T0
+why: "the reference definitions of spec 06.1, the numbering of Theorems 3.5 to 3.7 of spec 03, and the spine of Volumes 1, 4, 7 and 8 of the handbook"
+expert_status: accepted
+uses: []
+results:
+  - id: "Theorem 2.70"
+    statement: KawamataViehweg
+    node: MM7MQT1KEA
+    kind: theorem
+    status: unstated
+  - id: "Chapter 3, the cone theorem"
+    statement: ConeTheoremKlt
+    node: MMDZBZY2BV
+    kind: theorem
+    status: unstated
+lean_elsewhere:
+  - { repo: AxiomMath/MMP, commit: 1f9ade3670, licence: Apache-2.0, what: "the definitions and the theorems of the book that the 4-fold proof uses, in part", use: read }
+lean_status: none
+code_licence: null
+handbook: { volume: 1, chapter: null }
+notes: "Spec 16, Q-11, asks for a check of all the KM98 numbers in the spec. The theorem numbers in the map are those of spec 03 and are not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

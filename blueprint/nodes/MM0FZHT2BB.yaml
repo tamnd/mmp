@@ -1,0 +1,11 @@
+tag: "MM0FZHT2BB"
+slug: "mld-bound"
+kind: "conjecture"
+title: "The mld bound"
+statement: "The mld bound (Shokurov): $\\mathrm{mld}(x;X,\\Delta)\\le\\dim X$, with equality only at smooth points where $\\Delta=0$ near $x$."
+sources:
+  - { paper: Sho04, loc: "the mld bound" }
+lean: { statement: MinimalModel.MldBound }
+tier: S
+route: [R4]
+notes: "Statement S51 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S1."

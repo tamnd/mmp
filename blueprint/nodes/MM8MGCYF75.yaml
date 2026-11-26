@@ -1,0 +1,10 @@
+tag: "MM8MGCYF75"
+slug: "surface-cone-theorem"
+kind: "theorem"
+title: "The cone theorem for smooth surfaces"
+statement: "Let $X$ be a smooth projective surface. Then $\\overline{NE}(X)=\\overline{NE}(X)_{K_X\\ge0}+\\sum_j\\mathbb{R}_{\\ge0}[C_j]$ for countably many rational curves $C_j$ with $0<-K_X\\cdot C_j\\le3$."
+sources:
+  - { paper: KM98, loc: "Chapter 1" }
+lean: { statement: MinimalModel.SurfaceConeTheorem }
+tier: S
+notes: "Statement S11 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S0."

@@ -1,0 +1,25 @@
+id: T5-05
+key: Rei83
+title: "Decomposition of toric morphisms"
+authors: [Miles Reid]
+where: "Arithmetic and Geometry, Vol. II, Progr. Math. 36, Birkhäuser (1983)"
+year: 1983
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: U }
+tier: T5
+why: "toric contractions and toric flips; steps 4 and 5 of route R3, and Francia's flip for the fidelity check F2"
+expert_status: accepted
+uses: []
+results:
+  - id: "the toric contractions and flips"
+    statement: ToricMMP
+    node: MMAWP4SA44
+    kind: theorem
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 3, chapter: null }
+notes: "Spec 03.13 marks the toric statements of this paper [U, to check in S0]. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

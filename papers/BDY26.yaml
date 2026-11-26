@@ -1,0 +1,20 @@
+id: T10-08
+key: BDY26
+title: "The volume bound 1/420 for 3-folds of general type"
+authors: [Bie, Du, Yu]
+where: null
+year: 2026
+doi: null
+arxiv: "2611.12786"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T10
+why: "the claim vol ≥ 1/420 for smooth projective 3-folds of general type and the moduli at volume 1/420; the target of experiment E1"
+expert_status: claimed
+uses: []
+results: []
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "Claim C12 of spec 01.3. Row T10-08 of spec 07 also has arXiv:2611.14402 and arXiv:2611.18357, and spec 01.3 adds arXiv:2610.10537. The title of this record is a description: the reader role must copy the exact title and the full author names from arXiv. The claim record is claims/arXiv-2611-12786.yaml. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

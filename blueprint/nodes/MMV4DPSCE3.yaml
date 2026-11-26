@@ -1,0 +1,10 @@
+tag: "MMV4DPSCE3"
+slug: "kleiman-criterion"
+kind: "theorem"
+title: "Kleiman's criterion"
+statement: "Let $X$ be a projective variety and $D$ an $\\mathbb{R}$-Cartier divisor on $X$. Then $D$ is ample if and only if $D\\cdot z>0$ for each nonzero class $z$ in $\\overline{NE}(X)$."
+sources:
+  - { paper: KM98, loc: "Chapter 1" }
+lean: { statement: MinimalModel.KleimanCriterion }
+tier: S
+notes: "Statement S01 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial. The statement is planned for milestone S1."

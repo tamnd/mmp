@@ -1,0 +1,11 @@
+tag: "MMXCD16PTN"
+slug: "han-liu-enc-acc"
+kind: "conjecture"
+title: "ACC for the mlds of enc 4-fold germs"
+statement: "Han-Liu Conjecture 1.9(2') in dimension 4: ACC for the mlds of enc 4-fold germs. The toric case is Target T of spec 04.12."
+sources:
+  - { paper: HL25, loc: "Conjecture 1.9(2')" }
+lean: { statement: MinimalModel.HanLiuEncACC }
+tier: S
+route: [R3, R4]
+notes: "Statement S52 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S1. The definition of enc must be checked against Han-Liu before a proof uses it [U]. The lab experiment E2 counts the enc cyclic quotient germs."

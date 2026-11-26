@@ -1,0 +1,10 @@
+tag: "MMHTX4Z2B7"
+slug: "length-of-extremal-rays"
+kind: "theorem"
+title: "The length of extremal rays"
+statement: "Let $(X,\\Delta)$ be a projective klt pair. Each $(K_X+\\Delta)$-negative extremal ray is spanned by the class of a rational curve $C$ with $0<-(K_X+\\Delta)\\cdot C\\le2\\dim X$."
+sources:
+  - { paper: KM98, loc: "Chapter 1" }
+lean: { statement: MinimalModel.LengthOfExtremalRays }
+tier: S
+notes: "Statement S09 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial (rational curves). The statement is planned for milestone S2."

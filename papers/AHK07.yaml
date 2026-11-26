@@ -1,0 +1,20 @@
+id: T8-05
+key: AHK07
+title: "Termination of (many) 4-dimensional log flips"
+authors: [Valery Alexeev, Christopher D. Hacon, Yujiro Kawamata]
+where: "Invent. Math. 168 (2007)"
+year: 2007
+doi: null
+arxiv: "math/0605137"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T8
+why: "termination of many 4-fold log flips; a known case of T(4) for the context of S20 and S22"
+expert_status: accepted
+uses: []
+results: []
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "No statement of spec 06.2 has this paper as its source. The title and the journal are not in the spec and are not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

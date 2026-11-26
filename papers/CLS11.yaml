@@ -1,0 +1,26 @@
+id: T0-12
+key: CLS11
+title: "Toric Varieties"
+authors: [David A. Cox, John B. Little, Henry K. Schenck]
+where: "Graduate Studies in Mathematics 124, American Mathematical Society (2011)"
+year: 2011
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: S }
+tier: T0
+why: "fans, the toric cone theorem, and Chapter 15 on the secondary fan and the toric MMP"
+expert_status: accepted
+uses: []
+results:
+  - id: "Chapter 15"
+    statement: ToricMMP
+    node: MMAWP4SA44
+    kind: theorem
+    status: unstated
+lean_elsewhere:
+  - { repo: YaelDillies/toric, commit: null, licence: null, what: "fans and toric varieties, in part", use: port }
+lean_status: none
+code_licence: null
+handbook: { volume: 3, chapter: null }
+notes: "Row T0-12 of spec 07 also has Fulton, Introduction to Toric Varieties (1993). This record covers the row. The commit and the licence of YaelDillies/toric are not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

@@ -1,0 +1,9 @@
+tag: "MMQHRKKEZY"
+slug: "strong-sarkisov"
+kind: "conjecture"
+title: "The strong Sarkisov program"
+statement: "The strong Sarkisov program in dimension $n$: the chain of links of S36 can be chosen with a decreasing Sarkisov degree. It is a theorem for $n\\le4$ (He) and a claim for all $n$ (Hashizume)."
+uses: [MM3YGGD1TZ] # Sarkisov
+lean: { statement: MinimalModel.StrongSarkisov }
+tier: S
+notes: "Statement S38 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is open. The vocabulary is missing. The statement is planned for milestone S4. The Lean statement takes the dimension as an argument: StrongSarkisov (n : ℕ). The paper record of the source is not written yet (spec 07)."

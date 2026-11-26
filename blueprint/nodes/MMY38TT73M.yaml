@@ -1,0 +1,11 @@
+tag: "MMY38TT73M"
+slug: "termination-big-le5"
+kind: "claim"
+title: "Termination for big boundary in dimension at most 5"
+statement: "Let $(X,\\Delta)$ be a klt pair of dimension $n\\le5$ with $\\Delta$ big or $K_X+\\Delta$ big. Then each $(K_X+\\Delta)$-MMP terminates (Han-Liu-Zhuang)."
+sources:
+  - { paper: HLZ25, loc: "the main theorem" }
+lean: { statement: MinimalModel.TerminationBigLe5 }
+tier: S
+route: [R1]
+notes: "Statement S24 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is claimed. The vocabulary is ready. The statement is planned for milestone S1. This is a fresh claim (spec 06.6). It has the status claimed, and it is never a hypothesis of another node."

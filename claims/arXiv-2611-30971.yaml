@@ -1,0 +1,13 @@
+key: arXiv-2611-30971
+title: null
+authors: [Landi]
+source: { arxiv: "2611.30971", url: null, version: null }
+date: 2026-11-26
+posted: null
+status: withdrawn
+route: R1
+claims: "Full LSC for minimal log discrepancies, and $\\mathrm{mld}\\le\\dim$."
+node: null
+parts: []
+letters: []
+notes: "Claim C16 of spec 01.3. The status there on 2026-11-26: withdrawn 2026-11-24: Lemma 3.2 is false. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. The authors withdrew the preprint on 2026-11-24. The reason given is that Lemma 3.2 is false. The conjectures stay open: S50 (LSC) and S51 (the mld bound)."

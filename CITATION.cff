@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "To cite this project, use this file."
+title: "mmp: the minimal model program in Lean 4, in public"
+type: software
+authors:
+  - family-names: Nguyen Duc
+    given-names: Tam
+repository-code: "https://github.com/tamnd/mmp"
+url: "https://mmp.tamnd.com"
+license: CC-BY-SA-4.0
+keywords:
+  - minimal model program
+  - birational geometry
+  - toric varieties
+  - flips
+  - Lean 4
+  - formalization

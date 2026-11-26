@@ -1,0 +1,11 @@
+tag: "MMQ2K4RSHT"
+slug: "contraction-theorem"
+kind: "theorem"
+title: "The contraction theorem"
+statement: "Let $(X,\\Delta)$ be a projective klt pair and $F$ a $(K_X+\\Delta)$-negative extremal face. There is a unique morphism $\\mathrm{cont}_F:X\\to Z$ onto a normal projective $Z$ with $\\mathcal{O}_Z=(\\mathrm{cont}_F)_*\\mathcal{O}_X$ that contracts exactly the curves with class in $F$. A line bundle $L$ with $L\\cdot F=0$ is a pullback from $Z$."
+sources:
+  - { paper: KM98, loc: "Chapter 3" }
+uses: [MMSMTZS83C, MM0VJ1HARY] # RationalityTheorem, BasepointFree
+lean: { statement: MinimalModel.ContractionTheorem }
+tier: S
+notes: "Statement S06 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial. The statement is planned for milestone S1."

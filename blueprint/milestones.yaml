@@ -1,0 +1,25 @@
+# The weights of the library nodes in the work queue of mmp (spec 10.4). A node with no route has the weight of the first milestone of spec 15 that needs it: the first milestone with a top theorem of spec 14.2 that uses the node, directly or through other nodes. A node that no milestone needs has the weight "other". The route nodes have the weights of blueprint/routes.yaml. Spec 10.4 gives no number for a milestone, so these defaults are a guess of the project [U]: the earlier milestones weigh more, because the later ones need them. People set the weights.
+#
+# The targets and the releases of spec 15. They are comments, because mmp reads only the weights from this file.
+# S0  2026-12-20  v0.1.0  the four repositories, the first statements, the site, the audit started
+# S1  2027-02-28  v0.2.0  the vocabulary, the audit index, the first claim check
+# S2  2027-04-30  v0.3.0  the toric cone theorem, most statements written
+# S3  2027-06-30  v0.4.0  the audit closes; the S22 decision
+# S4  2027-09-30  v0.5.0  the toric MMP
+# S5  2027-12-31  v1.0.0  the surface program on Mathlib, the Han-Liu reduction
+# S6  2028-04-30  v1.1.0  the scheme dictionary and the last statements
+# S7  2028-08-31  v1.2.0  the first research result
+# S8  2028-12-31  v1.3.0  the library and the claims
+# S9  open        v2.0.0  an open case
+milestones:
+    S0: 1
+    S1: 1
+    S2: 1
+    S3: 0.8
+    S4: 0.6
+    S5: 0.5
+    S6: 0.4
+    S7: 0.3
+    S8: 0.2
+    S9: 0.1
+other: 0.1

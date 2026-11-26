@@ -1,0 +1,30 @@
+name: New node
+description: Propose a statement or a definition for the map.
+labels: ["area/map"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The name of the statement, for example "the cone theorem for projective klt pairs".
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Statement
+      description: The statement in words and in math. Use $...$ for math.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: The paper and the place in it, for example "Kollár-Mori 1998, Theorem 3.7".
+    validations:
+      required: true
+  - type: textarea
+    id: uses
+    attributes:
+      label: Uses
+      description: The nodes that the statement needs.

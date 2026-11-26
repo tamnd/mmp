@@ -1,0 +1,11 @@
+tag: "MM07D8FAVG"
+slug: "termination-scaling-big"
+kind: "theorem"
+title: "Termination with scaling for big boundary"
+statement: "Let $(X,\\Delta)$ be a $\\mathbb{Q}$-factorial klt pair, projective over $U$, with $\\Delta$ big over $U$. Then the $(K_X+\\Delta)$-MMP with scaling of an ample divisor terminates (BCHM 1.4.2)."
+sources:
+  - { paper: BCHM10, loc: "Corollary 1.4.2" }
+uses: [MM9399B0QP] # BCHM
+lean: { statement: MinimalModel.TerminationScalingBig }
+tier: S
+notes: "Statement S23 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

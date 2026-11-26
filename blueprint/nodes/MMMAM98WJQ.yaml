@@ -1,0 +1,11 @@
+tag: "MMMAM98WJQ"
+slug: "threefold-lc-mmp"
+kind: "theorem"
+title: "The lc 3-fold MMP"
+statement: "Let $(X,\\Delta)$ be a projective lc pair of dimension 3. Each $(K_X+\\Delta)$-MMP exists at each step and ends with a minimal model or a Mori fibre space."
+sources:
+  - { paper: AxiomMMP, loc: "MMP.projectiveLowerLogMMP_three" }
+uses: [MM3A98X8YR, MMH0CM56AA] # ThreefoldFlips, ThreefoldTermination
+lean: { statement: MinimalModel.ThreefoldLcMMP }
+tier: S
+notes: "Statement S18 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

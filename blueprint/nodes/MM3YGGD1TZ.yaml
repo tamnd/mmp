@@ -1,0 +1,8 @@
+tag: "MM3YGGD1TZ"
+slug: "sarkisov"
+kind: "theorem"
+title: "The Sarkisov program"
+statement: "Two Mori fibre space outputs of MMPs from one klt pair are joined by a finite chain of Sarkisov links of types I to IV (Hacon-McKernan)."
+lean: { statement: MinimalModel.Sarkisov }
+tier: S
+notes: "Statement S36 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is missing (links). The statement is planned for milestone S3. The paper record of the source is not written yet (spec 07)."

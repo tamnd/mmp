@@ -1,0 +1,9 @@
+tag: "MMPTP8SV13"
+slug: "abundance-statement"
+kind: "conjecture"
+title: "Abundance, in dimension n"
+statement: "Abundance in dimension $n$: let $(X,\\Delta)$ be a projective lc pair of dimension $n$ with $K_X+\\Delta$ nef. Then $K_X+\\Delta$ is semiample."
+lean: { statement: MinimalModel.Abundance }
+tier: S
+route: [R5]
+notes: "Statement S40 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S0. The Lean statement takes the dimension as an argument: Abundance (n : ℕ)."

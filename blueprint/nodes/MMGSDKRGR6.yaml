@@ -1,0 +1,8 @@
+tag: "MMGSDKRGR6"
+slug: "acc-lct"
+kind: "theorem"
+title: "ACC for log canonical thresholds"
+statement: "ACC for lct (HMX): fix $n$ and DCC sets $I,J$. The set of $\\mathrm{lct}(X,\\Delta;M)$ with $\\dim X=n$, the coefficients of $\\Delta$ in $I$ and the coefficients of $M$ in $J$ satisfies ACC."
+lean: { statement: MinimalModel.ACCLct }
+tier: S
+notes: "Statement S48 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1. The paper record of the source is not written yet (spec 07)."

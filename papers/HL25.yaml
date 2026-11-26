@@ -1,0 +1,31 @@
+id: T8-07
+key: HL25
+title: "On termination of flips and exceptionally non-canonical singularities"
+authors: [Jingjun Han, Jihao Liu]
+where: "Geom. Topol. 29 (2025)"
+year: 2025
+doi: null
+arxiv: "2209.13122"
+also: [T8-01]
+read: { version: null, by: null, date: null, tag: P }
+tier: T8
+why: "the reduction of termination to terminal flips and ACC for enc mld; the statement of Target T"
+expert_status: accepted
+uses: [T4-07, T8-02, T8-03]
+results:
+  - id: "Theorem 1.2"
+    statement: HanLiuReduction
+    node: MM0NXABJ9S
+    kind: theorem
+    status: unstated
+  - id: "Conjecture 1.9(2')"
+    statement: HanLiuEncACC
+    node: MMXCD16PTN
+    kind: conjecture
+    status: unstated
+lean_elsewhere:
+  - { repo: AxiomMath/MMP, commit: 1f9ade3670, licence: Apache-2.0, what: "none for this paper", use: read }
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "The toric case of Conjecture 1.9(2') is Target T (spec 04.12). The title and the theorem numbers are not checked against the journal yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

@@ -1,0 +1,9 @@
+tag: "MMZ5XGBW5M"
+slug: "nonvanishing-statement"
+kind: "conjecture"
+title: "Non-vanishing, in dimension n"
+statement: "Non-vanishing in dimension $n$: let $(X,\\Delta)$ be a projective lc pair of dimension $n$ with $K_X+\\Delta$ pseudo-effective. Then $\\kappa(X,K_X+\\Delta)\\ge0$."
+lean: { statement: MinimalModel.NonVanishing }
+tier: S
+route: [R5]
+notes: "Statement S41 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S0. The Lean statement takes the dimension as an argument: NonVanishing (n : ℕ)."

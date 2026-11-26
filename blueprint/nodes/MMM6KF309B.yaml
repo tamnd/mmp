@@ -1,0 +1,10 @@
+tag: "MMM6KF309B"
+slug: "red-liu-xu"
+kind: "theorem"
+title: "The Liu-Xu reduction"
+statement: "Fix $d$. Assume non-vanishing in dimension $d$ (S41). Then abundance holds for the projective lc pairs of dimension $d$ with $\\nu(K_X+\\Delta)\\le1$ (Liu-Xu)."
+uses: [MMPTP8SV13, MMZ5XGBW5M] # Abundance, NonVanishing
+lean: { statement: MinimalModel.LiuXuReduction }
+tier: S
+route: [R5]
+notes: "Statement S44 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is reduction. The vocabulary is ready. The statement is planned for milestone S1. A reduction is an implication between other statements of the map. The map gives it the kind theorem, because mmp-agent has no kind reduction."

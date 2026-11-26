@@ -1,0 +1,64 @@
+# The research routes of mmp, from the table of spec 04.1. The weights are the first weights of spec 04.1. They set the share of the research budget of the agent (spec 10.6) and the weight of a route node in the work queue (spec 10.4). People set the weights, and they change at each milestone report (spec 15). The computation lab has the weight 0.05. It is a method, not a route, so it is not in this file.
+- id: R1
+  title: Formal checks of fresh claims
+  weight: 0.20
+  idea: Check a self-contained part of each fresh claim of 01.3 in Lean, such as a finite computation, a combinatorial lemma, a numerical inequality or an implication between named hypotheses.
+  known: The claims of 01.3 exist as preprints and AI manuscripts. One has a Lean proof.
+  obstruction: The claims rest on foundations that are not in Lean, so a check must find a self-contained part.
+  first: "The first nodes of spec 04.2: claim-ajit-env, which is [S57](node:MMRG60YPYS) in the map; ajit-fermat-quotient; ajit-h0-formula; the claim records claim-bdy-420, claim-hashizume-term, claim-openai-034 and claim-jliu-nv-ab; and red-jliu. Only claim-ajit-env is a node now. The claim records are in claims/."
+- id: R2
+  title: The audit and the bridge of AxiomMath/MMP
+  weight: 0.15
+  idea: Read the definitions of AxiomMath/MMP in eight audit steps, then prove in a bridge that the statements of MinimalModel follow from the theorems of AxiomMath/MMP.
+  known: A kernel-checked proof of the lc MMP in dimension at most 4, at commit 1f9ade3670. No person has read its definitions against the textbooks.
+  obstruction: The library has about 2 million lines. The question is the meaning of a few hundred definitions.
+  first: "The first nodes of spec 04.3: axiom-t4-statement, the statement of AxiomMath/MMP copied as text with its source; t4-lc-rational, which is [S22](node:MMBTDMD2XP) in the map; and bridge-t4, the bridge theorem. The audit steps A1 to A8 are in records/audit.json."
+- id: R3
+  title: The toric MMP and toric invariants
+  weight: 0.15
+  idea: Prove the cone theorem, the flips, termination and the MMP for toric varieties on Mathlib alone, as convex geometry of fans.
+  known: The toric MMP on paper (Reid 1983, Matsuki 2002, Fujino-Sato 2004) and toric ACC for minimal log discrepancies (Ambro).
+  obstruction: Fans are not in Lean, and the dictionary between fans and schemes is large.
+  first: "The first nodes of spec 04.4: toric-fan, toric-wall-relation, toric-cone-theorem, toric-flip, toric-termination and toric-mld. They lead to the toric MMP, [S39](node:MMAWP4SA44). MinimalModel/Toric/Fan.lean is started in mmp-lean."
+- id: R4
+  title: Termination through ACC and LSC
+  weight: 0.10
+  idea: Prove the reductions of Shokurov and of Han-Liu in Lean, then work on their inputs where they are within reach.
+  known: Termination in dimension 3, ACC for minimal log discrepancies of smooth and of fixed 3-folds, and the reduction of Shokurov on paper.
+  obstruction: ACC for minimal log discrepancies is open for 3-folds.
+  first: "The first nodes of spec 04.5: shokurov-abstract; red-shokurov, which is [S28](node:MMFPRYMSNJ); red-han-liu, which is [S29](node:MM0NXABJ9S); acc-mld-statement, which is [S49](node:MMWK2DDDPC); and lsc-mld-statement, which is [S50](node:MMFKZ7VB29)."
+- id: R5
+  title: Abundance and non-vanishing
+  weight: 0.10
+  idea: State the conditional abundance results as reductions, and prove the known cases that the handbook needs.
+  known: Dimension at most 3, the big case, numerical dimension 0, 4-folds with positive Kodaira dimension, and conditional results.
+  obstruction: Non-vanishing has no strategy in dimension 4.
+  first: "The first nodes of spec 04.6: nonvanishing-statement, which is [S41](node:MMZ5XGBW5M); abundance-statement, which is [S40](node:MMPTP8SV13); red-liu-xu, which is [S44](node:MMM6KF309B); red-birkar-nv-mm; and red-lazic-meng."
+- id: R6
+  title: Boundedness, Calabi-Yau, the cone conjecture and effective results
+  weight: 0.10
+  idea: Reduce a target to a finite search, a lattice computation or a numerical inequality, and check it.
+  known: BAB, ACC for log canonical thresholds, the Fujita conjecture for dimension at most 5, and the counterexamples of Ajit.
+  obstruction: Calabi-Yau 3-folds and very ampleness.
+  first: "The first nodes of spec 04.7: env-statement, the effective non-vanishing conjecture; fujita-free-statement, which is [S56](node:MMXQBHJKWR); index-conj-statement, which is [S54](node:MM3A7BTV1N); cone-conj-statement, which is [S55](node:MM1B2V5Q7P); and bab-statement, which is [S53](node:MMB93N0PQZ)."
+- id: R7
+  title: Characteristic p and mixed characteristic
+  weight: 0.05
+  idea: State the program in characteristic p with the shared hypothesis HasLogResolution, and check the small cases.
+  known: The 3-fold MMP for p at least 5, lc 3-fold abundance for p greater than 42, and arithmetic 3-folds.
+  obstruction: Resolution in dimension at least 4, and small primes.
+  first: "The first nodes of spec 04.8: has-log-resolution, which is shared with spec 2161; charp-3fold-mmp-statement, which is [S58](node:MMD90YG1TD); and red-waldron."
+- id: R8
+  title: Foliations
+  weight: 0.05
+  idea: State the foliated program and answer the small questions of the survey of Cascini-Spicer, first on surfaces.
+  known: Surfaces, 3-folds, and algebraically integrable foliations in all dimensions.
+  obstruction: General foliations in dimension at least 4.
+  first: "The first nodes of spec 04.9: foliation-def, foliation-canonical-class and cs-q23-statement. The statement of the family is [S60](node:MMRWTZFN7D)."
+- id: R9
+  title: Kähler and analytic
+  weight: 0.05
+  idea: Check the dependencies of the new Kähler claims, and state the Kähler program as a separate family.
+  known: Kähler 3-folds, and big gklt Kähler pairs in all dimensions (claimed).
+  obstruction: Currents and Kähler classes are not in Lean.
+  first: "The first nodes of spec 04.10: kahler-pair-def and kahler-mmp-statement, which is [S59](node:MMK4VRWSWA)."

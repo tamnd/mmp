@@ -1,0 +1,11 @@
+tag: "MMFKZ7VB29"
+slug: "lsc-mld-statement"
+kind: "conjecture"
+title: "Lower semicontinuity of minimal log discrepancies"
+statement: "LSC of mld in dimension $n$ (Ambro): for an lc pair $(X,\\Delta)$ of dimension $n$, the function $x\\mapsto\\mathrm{mld}(x;X,\\Delta)$ is lower semicontinuous on the scheme points of $X$."
+sources:
+  - { paper: Amb99, loc: "the LSC conjecture" }
+lean: { statement: MinimalModel.LSCMld }
+tier: S
+route: [R4]
+notes: "Statement S50 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S0. The Lean statement takes the dimension as an argument: LSCMld (n : ℕ)."

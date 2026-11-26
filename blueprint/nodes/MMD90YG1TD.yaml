@@ -1,0 +1,9 @@
+tag: "MMD90YG1TD"
+slug: "charp-3fold-mmp-statement"
+kind: "theorem"
+title: "The lc 3-fold MMP in characteristic p"
+statement: "The MMP for projective lc 3-fold pairs over a perfect field of characteristic $p\\ge5$."
+lean: { statement: MinimalModel.CharP3foldLcMMP }
+tier: S
+route: [R7]
+notes: "Statement S58 of spec 06.2.2, in the file MinimalModel/Statements/OtherSettings.lean. The class in the spec is theorem. The vocabulary is partial (Frobenius). The statement is planned for milestone S4. The paper record of the source is not written yet (spec 07)."

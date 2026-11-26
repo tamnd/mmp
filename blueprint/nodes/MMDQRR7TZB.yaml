@@ -1,0 +1,11 @@
+tag: "MMDQRR7TZB"
+slug: "lc-flips"
+kind: "theorem"
+title: "The existence of lc flips"
+statement: "Let $(X,\\Delta)$ be an lc pair and $f:X\\to Z$ a $(K_X+\\Delta)$-flipping contraction. Then the flip of $f$ exists (Birkar; Hacon-Xu)."
+sources:
+  - { paper: Bir12, loc: "the main theorem" }
+  - { paper: HX13, loc: "the main theorem" }
+lean: { statement: MinimalModel.LcFlips }
+tier: S
+notes: "Statement S26 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

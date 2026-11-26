@@ -1,0 +1,8 @@
+tag: "MMMSGVFVJH"
+slug: "surface-abundance"
+kind: "theorem"
+title: "Abundance for lc surface pairs"
+statement: "Let $(X,\\Delta)$ be a projective lc surface pair with $K_X+\\Delta$ nef. Then $K_X+\\Delta$ is semiample."
+lean: { statement: MinimalModel.SurfaceAbundance }
+tier: S
+notes: "Statement S14 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is partial. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."

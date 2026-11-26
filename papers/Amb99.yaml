@@ -1,0 +1,25 @@
+id: T5-08
+key: Amb99
+title: "On minimal log discrepancies"
+authors: [Florin Ambro]
+where: "Math. Res. Lett. 6 (1999)"
+year: 1999
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: U }
+tier: T5
+why: "the LSC conjecture for mld, and LSC of mld for toric varieties; step 8 of route R3 and the experiment E2"
+expert_status: accepted
+uses: []
+results:
+  - id: "the LSC conjecture"
+    statement: LSCMld
+    node: MMFKZ7VB29
+    kind: conjecture
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 5, chapter: null }
+notes: "Spec 07 tags the row [U]. The title and the journal are not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

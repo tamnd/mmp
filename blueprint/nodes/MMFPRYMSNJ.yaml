@@ -1,0 +1,12 @@
+tag: "MMFPRYMSNJ"
+slug: "red-shokurov"
+kind: "theorem"
+title: "The Shokurov reduction"
+statement: "Fix $n$. Assume ACC for mld in dimension $n$ (S49) and the lower semicontinuity of mld in dimension $n$ (S50). Then T(n) holds (S20)."
+sources:
+  - { paper: Sho04, loc: "the reduction of termination to ACC and LSC" }
+uses: [MMTJ3YNHTG, MMWK2DDDPC, MMFKZ7VB29] # Termination, ACCMld, LSCMld
+lean: { statement: MinimalModel.ShokurovReduction }
+tier: S
+route: [R4]
+notes: "Statement S28 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is reduction. The vocabulary is ready. The statement is planned for milestone S0. A reduction is an implication between other statements of the map. The map gives it the kind theorem, because mmp-agent has no kind reduction."

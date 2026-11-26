@@ -1,0 +1,25 @@
+id: T10-15
+key: Ajit26
+title: "Counterexamples to the Ambro-Kawamata effective non-vanishing conjecture"
+authors: [Ajit]
+where: null
+year: 2026
+doi: null
+arxiv: "2610.09270"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T10
+why: "counterexamples to the Ambro-Kawamata effective non-vanishing conjecture in dimension at least 4; the source of S57 and of experiment E3"
+expert_status: claimed
+uses: []
+results:
+  - id: "the counterexamples in dimension 4"
+    statement: NotEffectiveNonVanishing4
+    node: MMRG60YPYS
+    kind: claim
+    status: claimed
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "Claim C14 of spec 01.3: v2 of 2026-10-14, explicit and checkable, read by Totaro [R]. The title of this record is a description: the reader role must copy the exact title and the full author name from arXiv. The claim record is claims/arXiv-2610-09270.yaml. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

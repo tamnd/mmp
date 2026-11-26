@@ -1,0 +1,25 @@
+id: T0-21
+key: Har77
+title: "Algebraic Geometry"
+authors: [Robin Hartshorne]
+where: "Graduate Texts in Mathematics 52, Springer (1977)"
+year: 1977
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: S }
+tier: T0
+why: "the theory of surfaces in Chapter V: intersection numbers on a surface, blow-ups, and the contraction of a (-1)-curve"
+expert_status: accepted
+uses: []
+results:
+  - id: "Chapter V, Section 5"
+    statement: Castelnuovo
+    node: MMRP5RX4JJ
+    kind: theorem
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 0, chapter: null }
+notes: "Spec 07 has no row for this book: report G lists it as a prerequisite text of the handbook. The node S10 (Castelnuovo) asked for the record, so the record takes the new id T0-21. Spec 07 must add the row. The theorem number of Castelnuovo's theorem is not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

@@ -1,0 +1,26 @@
+id: T6-03
+key: Kaw92
+title: "Termination of log flips for algebraic 3-folds"
+authors: [Yujiro Kawamata]
+where: null
+year: 1992
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: S }
+tier: T6
+why: "termination of 3-fold log flips; the source of S16"
+expert_status: accepted
+uses: []
+results:
+  - id: "the main theorem"
+    statement: ThreefoldTermination
+    node: MMH0CM56AA
+    kind: theorem
+    status: unstated
+lean_elsewhere:
+  - { repo: AxiomMath/MMP, commit: 1f9ade3670, licence: Apache-2.0, what: "the 3-fold program", use: bridge }
+lean_status: none
+code_licence: null
+handbook: { volume: 8, chapter: null }
+notes: "Row T6-03 of spec 07 also has Shokurov 1996. Termination of terminal and canonical 4-fold flips is row T8-04 (Kawamata, Matsuda and Matsuki 1987; Fujino, math/0301154). That row has no record yet. The journal of this paper is not in the spec, so the field where is empty. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

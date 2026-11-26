@@ -1,0 +1,10 @@
+tag: "MMRP5RX4JJ"
+slug: "castelnuovo"
+kind: "theorem"
+title: "Castelnuovo's contraction theorem"
+statement: "Let $X$ be a smooth projective surface and $E\\subset X$ a curve with $E\\cong\\mathbb{P}^1$ and $E^2=-1$. There is a morphism $X\\to Y$ onto a smooth projective surface $Y$ that contracts $E$ to a point and is an isomorphism outside $E$."
+sources:
+  - { paper: Har77, loc: "Chapter V, Section 5" }
+lean: { statement: MinimalModel.Castelnuovo }
+tier: S
+notes: "Statement S10 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is partial (blow-ups). The statement is planned for milestone S0."

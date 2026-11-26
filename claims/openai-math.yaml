@@ -1,0 +1,13 @@
+key: openai-math
+title: null
+authors: [OpenAI]
+source: { arxiv: null, url: "https://github.com/openai/math", version: null }
+date: 2026-11-26
+posted: null
+status: fresh
+route: R1
+claims: "Family 034: log abundance in characteristic 0 for rational boundary in all dimensions, canonical non-vanishing, 4-fold non-vanishing, the effective Iitaka fibration and the index conjecture for slc log CY pairs. Family 036: generalized abundance (Lazić-Peternell). Family 033: the Iitaka conjecture $C_{n,m}$ in characteristic 0. Family 038: Fujita freeness for $m\\ge n+1$. Family 035: 3-fold abundance with $\\nu=1$ for $p>3$."
+node: null
+parts: []
+letters: []
+notes: "Claim C3, C6, C7, C8, C9 of spec 01.3. The status there on 2026-11-26: 034 is contested on one tracker (log Iitaka subadditivity) [S]; the others are unrefereed; none of these families has Lean. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. One record covers the MMP families of the release, because the source is one repository. Spec 01.3 says: 722 manuscripts in 372 families were released on 2026-10-06; on 2026-10-07, 3 papers were retracted and 14 revised; the README says that some of the unformalized results could have issues. Family 056 is the paper of claim C1 (claims/AxiomMath-MMP.yaml). The reader role must split this record into one record per family if the plans need it."

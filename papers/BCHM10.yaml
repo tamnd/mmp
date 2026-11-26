@@ -1,0 +1,50 @@
+id: T7-02
+key: BCHM10
+title: "Existence of minimal models for varieties of log general type"
+authors: [Caucher Birkar, Paolo Cascini, Christopher D. Hacon, James McKernan]
+where: "J. Amer. Math. Soc. 23 (2010)"
+year: 2010
+doi: null
+arxiv: "math/0610203"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T7
+why: "the existence of klt flips, termination with scaling for big boundary, finite generation, and the induction A_n to F_n; the source of S30, S31, S32, S34, S35 and S37"
+expert_status: accepted
+uses: []
+results:
+  - id: "Theorem 1.2"
+    statement: BCHM
+    node: MM9399B0QP
+    kind: theorem
+    status: unstated
+  - id: "Corollary 1.4.1"
+    statement: KltFlips
+    node: MMP51FQ005
+    kind: theorem
+    status: unstated
+  - id: "Corollary 1.4.2"
+    statement: TerminationScalingBig
+    node: MM07D8FAVG
+    kind: theorem
+    status: unstated
+  - id: "Corollary 1.1.2"
+    statement: FiniteGenerationCanonical
+    node: MM193HWD2S
+    kind: theorem
+    status: unstated
+  - id: "Corollary 1.3.2"
+    statement: MoriFibreSpaceOutput
+    node: MMNAN1JQAR
+    kind: theorem
+    status: unstated
+  - id: "Corollary 1.3.1"
+    statement: FanoTypeMDS
+    node: MMZ1VFD6K4
+    kind: theorem
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 9, chapter: null }
+notes: "The theorem numbers are those of spec 03.6. BCHM say that they do not prove the termination of every sequence of flips. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

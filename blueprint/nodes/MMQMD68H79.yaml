@@ -1,0 +1,9 @@
+tag: "MMQMD68H79"
+slug: "generalized-lc-flips"
+kind: "claim"
+title: "Flips for lc generalized pairs"
+statement: "Flips exist for all lc generalized pairs, with no NQC hypothesis and no $\\mathbb{Q}$-factorial hypothesis (Hu-Liu)."
+lean: { statement: MinimalModel.GeneralizedLcFlips }
+tier: S
+route: [R1]
+notes: "Statement S27 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is claimed. The vocabulary is missing (generalized pairs). The statement is planned for milestone S3. This is a fresh claim (spec 06.6). It has the status claimed, and it is never a hypothesis of another node. The claim record is claims/arXiv-2603-03817.yaml. The paper record of the source is not written yet (spec 07)."

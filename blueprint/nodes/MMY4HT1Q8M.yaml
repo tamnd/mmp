@@ -1,0 +1,9 @@
+tag: "MMY4HT1Q8M"
+slug: "minimal-model-conj"
+kind: "conjecture"
+title: "The minimal model conjecture"
+statement: "Let $(X,\\Delta)$ be a projective lc pair with $K_X+\\Delta$ pseudo-effective. Then $(X,\\Delta)$ has a minimal model."
+lean: { statement: MinimalModel.MinimalModelConj }
+tier: S
+route: [R5]
+notes: "Statement S33 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S0."

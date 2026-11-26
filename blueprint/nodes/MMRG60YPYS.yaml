@@ -1,0 +1,11 @@
+tag: "MMRG60YPYS"
+slug: "claim-ajit-env"
+kind: "claim"
+title: "Effective non-vanishing fails in dimension 4"
+statement: "The negation of the Ambro-Kawamata effective non-vanishing conjecture in dimension 4, with Ajit's example as the witness."
+sources:
+  - { paper: Ajit26, loc: "the counterexamples in dimension 4" }
+lean: { statement: MinimalModel.NotEffectiveNonVanishing4 }
+tier: S
+route: [R1, R6]
+notes: "Statement S57 of spec 06.2.2, in the file MinimalModel/Statements/Effective.lean. The class in the spec is refuted. The vocabulary is partial (abelian varieties). The statement is planned for milestone S1. The class refuted means that the literature disproves the conjecture. The node states the negation. Spec 06.2.1 keeps the class claimed until the counterexample is refereed, so the node has the kind claim. The claim record is claims/arXiv-2610-09270.yaml (claim C14 of spec 01.3)."

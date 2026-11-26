@@ -1,0 +1,35 @@
+id: T8-01
+key: Sho04
+title: "Letters of a bi-rationalist V"
+authors: [V. V. Shokurov]
+where: null
+year: 2004
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: U }
+tier: T8
+why: "the reduction S28: ACC and LSC for mld give T(n); the ACC conjecture S49 and the mld bound S51"
+expert_status: accepted
+uses: []
+results:
+  - id: "the reduction of termination"
+    statement: ShokurovReduction
+    node: MMFPRYMSNJ
+    kind: theorem
+    status: unstated
+  - id: "the ACC conjecture for mld"
+    statement: ACCMld
+    node: MMWK2DDDPC
+    kind: conjecture
+    status: unstated
+  - id: "the mld bound"
+    statement: MldBound
+    node: MM0FZHT2BB
+    kind: conjecture
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "Spec 07 tags the row [U]. The journal is not in the spec, so the field where is empty. Target 27 of report D asks for the reduction as a Lean lemma over an axiomatic flip sequence (spec 04.5, O-R4-1). Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

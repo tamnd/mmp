@@ -1,0 +1,11 @@
+tag: "MMDZBZY2BV"
+slug: "cone-theorem-klt"
+kind: "theorem"
+title: "The cone theorem for klt pairs"
+statement: "Let $(X,\\Delta)$ be a projective klt pair. There are countably many rational curves $C_j$ with $0<-(K_X+\\Delta)\\cdot C_j\\le2\\dim X$ such that $\\overline{NE}(X)=\\overline{NE}(X)_{K_X+\\Delta\\ge0}+\\sum_j\\mathbb{R}_{\\ge0}[C_j]$. For each ample $H$ and each $\\epsilon>0$, only finitely many $C_j$ are necessary outside $\\overline{NE}(X)_{K_X+\\Delta+\\epsilon H\\ge0}$."
+sources:
+  - { paper: KM98, loc: "Chapter 3" }
+uses: [MMSMTZS83C, MM0VJ1HARY] # RationalityTheorem, BasepointFree
+lean: { statement: MinimalModel.ConeTheoremKlt }
+tier: S
+notes: "Statement S04 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S0."

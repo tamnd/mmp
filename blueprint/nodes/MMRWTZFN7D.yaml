@@ -1,0 +1,9 @@
+tag: "MMRWTZFN7D"
+slug: "alg-int-foliation-mmp"
+kind: "theorem"
+title: "The MMP for algebraically integrable foliations"
+statement: "The MMP for algebraically integrable foliations."
+lean: { statement: MinimalModel.AlgIntFoliationMMP }
+tier: S
+route: [R8]
+notes: "Statement S60 of spec 06.2.2, in the file MinimalModel/Statements/OtherSettings.lean. The class in the spec is theorem. The vocabulary is missing (foliations). The statement is planned for milestone S6. The paper record of the source is not written yet (spec 07)."

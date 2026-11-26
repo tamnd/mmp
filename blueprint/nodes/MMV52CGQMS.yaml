@@ -1,0 +1,10 @@
+tag: "MMV52CGQMS"
+slug: "cone-theorem-lc"
+kind: "theorem"
+title: "The cone theorem for lc pairs"
+statement: "The cone theorem of S04 for projective lc pairs (Fujino)."
+sources:
+  - { paper: Fuj11, loc: "the cone theorem for lc pairs" }
+lean: { statement: MinimalModel.ConeTheoremLc }
+tier: S
+notes: "Statement S05 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

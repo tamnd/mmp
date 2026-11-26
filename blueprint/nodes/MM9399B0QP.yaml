@@ -1,0 +1,10 @@
+tag: "MM9399B0QP"
+slug: "bchm"
+kind: "theorem"
+title: "BCHM"
+statement: "Let $\\pi:X\\to U$ be projective and $(X,\\Delta)$ klt. Assume that $\\Delta$ is $\\pi$-big and $K_X+\\Delta$ is $\\pi$-pseudo-effective, or that $K_X+\\Delta$ is $\\pi$-big. Then $(X,\\Delta)$ has a log terminal model over $U$. If $K_X+\\Delta$ is $\\pi$-big, it has an lc model over $U$. If $K_X+\\Delta$ is $\\mathbb{Q}$-Cartier, the ring $R(\\pi,K_X+\\Delta)$ is finitely generated. The Lean statement has the induction $A_n$ to $F_n$ as six sub-statements."
+sources:
+  - { paper: BCHM10, loc: "Theorem 1.2" }
+lean: { statement: MinimalModel.BCHM }
+tier: S
+notes: "Statement S31 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is partial (extension theorems). The statement is planned for milestone S2."

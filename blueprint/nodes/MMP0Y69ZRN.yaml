@@ -1,0 +1,8 @@
+tag: "MMP0Y69ZRN"
+slug: "kollar-torsion-free"
+kind: "theorem"
+title: "Kollár's injectivity and torsion-freeness"
+statement: "Kollár's injectivity theorem and torsion-freeness theorem for the higher direct images of the dualizing sheaf, in the form that the lc program uses."
+lean: { statement: MinimalModel.KollarTorsionFree }
+tier: S
+notes: "Statement S03 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial. The statement is planned for milestone S3. The paper record of the source is not written yet (spec 07)."

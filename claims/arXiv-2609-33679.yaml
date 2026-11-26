@@ -1,0 +1,13 @@
+key: arXiv-2609-33679
+title: null
+authors: [Hashizume]
+source: { arxiv: "2609.33679", url: null, version: "v2" }
+date: 2026-11-26
+posted: null
+status: fresh
+route: R1
+claims: "Full termination of flips for klt pairs with $\\Delta$ or $K+\\Delta$ big, in all dimensions; finiteness of marked Mori fibre spaces; the strong Sarkisov program."
+node: MM2NY6352R
+parts: []
+letters: []
+notes: "Claim C2 of spec 01.3. The status there on 2026-11-26: drafts by ChatGPT and Codex, revised by the author [R]. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. Spec 01.3 gives v2 of 2026-10-13. The date of v1 is not in the spec."

@@ -1,0 +1,8 @@
+tag: "MMRKRVGY9M"
+slug: "abundance-big"
+kind: "theorem"
+title: "Abundance for big K plus Delta"
+statement: "Let $(X,\\Delta)$ be a projective klt pair with $K_X+\\Delta$ nef and big. Then $K_X+\\Delta$ is semiample."
+lean: { statement: MinimalModel.AbundanceBig }
+tier: S
+notes: "Statement S42 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1. The paper record of the source is not written yet (spec 07)."

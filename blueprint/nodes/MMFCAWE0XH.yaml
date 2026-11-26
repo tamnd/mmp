@@ -1,0 +1,10 @@
+tag: "MMFCAWE0XH"
+slug: "special-termination"
+kind: "theorem"
+title: "Special termination from T(n-1)"
+statement: "Assume T(n-1). Let $(X,\\Delta)$ be a dlt pair of dimension $n$. Then each MMP for $(X,\\Delta)$ is an isomorphism near $\\lfloor\\Delta\\rfloor$ after finitely many steps."
+uses: [MMTJ3YNHTG] # Termination
+lean: { statement: MinimalModel.SpecialTermination }
+tier: S
+route: [R4]
+notes: "Statement S19 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is reduction. The vocabulary is ready. The statement is planned for milestone S1. A reduction is an implication between other statements of the map. The map gives it the kind theorem, because mmp-agent has no kind reduction. The paper record of the source is not written yet (spec 07)."

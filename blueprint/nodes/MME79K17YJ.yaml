@@ -1,0 +1,10 @@
+tag: "MME79K17YJ"
+slug: "termination-pseff-lc4"
+kind: "theorem"
+title: "Termination for pseudo-effective lc 4-folds"
+statement: "Let $(X,\\Delta)$ be an lc pair of dimension 4 with $K_X+\\Delta$ pseudo-effective. There is no infinite sequence of $(K_X+\\Delta)$-flips (Moraga; Chen-Tsakanikas)."
+sources:
+  - { paper: Mor25, loc: "the main theorem" }
+lean: { statement: MinimalModel.TerminationPseffLc4 }
+tier: S
+notes: "Statement S21 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

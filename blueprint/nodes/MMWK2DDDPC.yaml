@@ -1,0 +1,11 @@
+tag: "MMWK2DDDPC"
+slug: "acc-mld-statement"
+kind: "conjecture"
+title: "ACC for minimal log discrepancies"
+statement: "ACC for mld in dimension $n$ (Shokurov): fix a DCC set $I$. The set of $\\mathrm{mld}(x;X,\\Delta)$ with $\\dim X=n$ and the coefficients of $\\Delta$ in $I$ satisfies ACC."
+sources:
+  - { paper: Sho04, loc: "the ACC conjecture" }
+lean: { statement: MinimalModel.ACCMld }
+tier: S
+route: [R4]
+notes: "Statement S49 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S0. The Lean statement takes the dimension as an argument: ACCMld (n : ℕ)."

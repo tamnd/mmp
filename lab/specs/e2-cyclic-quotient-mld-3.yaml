@@ -1,0 +1,11 @@
+name: e2-cyclic-quotient-mld-3
+experiment: E2
+question: For each isolated cyclic quotient 3-fold germ 1/r(a, b, c) with r <= 40, is the germ terminal exactly when two weights add to 0 mod r (the terminal lemma), and is the mld of each terminal germ 1 + 1/r?
+tool: mmp
+node: MMXCD16PTN # HanLiuEncACC, Target T
+nodes: [MMWK2DDDPC, MMAWP4SA44] # ACCMld, ToricMMP
+inputs:
+  dimension: 3
+  max_index: 40
+outputs: [germs.json, indices.json, summary.md]
+notes: A small version of E2 in Go, with no container and no network. It covers the isolated cyclic quotient germs, which are the simplicial toric germs with one box generator. It runs to index 40 for milestone S0. Milestone S2 runs E2 in dimension 3 to the full index of spec 13. It has no Lean certificate yet (13.4).

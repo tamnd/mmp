@@ -1,0 +1,13 @@
+key: AxiomMath-MMP
+title: null
+authors: [Axiom]
+source: { arxiv: null, url: "https://github.com/AxiomMath/MMP", version: "1f9ade3670" }
+date: 2026-11-26
+posted: 2026-11-16
+status: fresh
+route: R1
+claims: "Every MMP for a projective lc 4-fold with rational boundary terminates. Axiom formalized the proof in about 2.05 million lines of Lean."
+node: MMBTDMD2XP
+parts: []
+letters: []
+notes: "Claim C1 of spec 01.3. The status there on 2026-11-26: AI-written paper and code; no human review of the code [R]. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. The paper is OpenAI 056 in openai/math (2026-09-24); the record claims/openai-math.yaml has the other OpenAI families. Route R2 audits the Lean code in the steps A1 to A8 of spec 04.3. The audit state is in records/audit.json. The paper record is papers/AxiomMMP.yaml."

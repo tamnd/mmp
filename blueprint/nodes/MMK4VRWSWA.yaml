@@ -1,0 +1,9 @@
+tag: "MMK4VRWSWA"
+slug: "kahler-mmp-statement"
+kind: "theorem"
+title: "The MMP for Kähler 3-folds"
+statement: "The MMP for compact Kähler 3-folds."
+lean: { statement: MinimalModel.KahlerThreefoldMMP }
+tier: S
+route: [R9]
+notes: "Statement S59 of spec 06.2.2, in the file MinimalModel/Statements/OtherSettings.lean. The class in the spec is theorem. The vocabulary is missing (Kähler). The statement is planned for milestone S6. The paper record of the source is not written yet (spec 07)."

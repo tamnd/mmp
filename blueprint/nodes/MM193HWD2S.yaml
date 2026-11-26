@@ -1,0 +1,11 @@
+tag: "MM193HWD2S"
+slug: "finite-generation-canonical"
+kind: "theorem"
+title: "Finite generation of the canonical ring"
+statement: "Let $X$ be a smooth projective variety. Then the canonical ring $R(X,K_X)=\\bigoplus_{m\\ge0}H^0(X,mK_X)$ is finitely generated."
+sources:
+  - { paper: BCHM10, loc: "Corollary 1.1.2" }
+uses: [MM9399B0QP] # BCHM
+lean: { statement: MinimalModel.FiniteGenerationCanonical }
+tier: S
+notes: "Statement S32 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S0."

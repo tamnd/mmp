@@ -1,0 +1,11 @@
+tag: "MM3A98X8YR"
+slug: "threefold-flips"
+kind: "theorem"
+title: "The existence of 3-fold klt flips"
+statement: "Let $(X,\\Delta)$ be a $\\mathbb{Q}$-factorial klt pair of dimension 3 and $f:X\\to Z$ a flipping contraction. Then the flip of $f$ exists (Mori, Shokurov)."
+sources:
+  - { paper: Mor88, loc: "the flip theorem" }
+  - { paper: KM98, loc: "Chapter 6" }
+lean: { statement: MinimalModel.ThreefoldFlips }
+tier: S
+notes: "Statement S15 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

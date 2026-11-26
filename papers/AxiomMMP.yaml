@@ -1,0 +1,31 @@
+id: T8-13
+key: AxiomMMP
+title: "AxiomMath/MMP: the minimal model program in Lean"
+authors: [Axiom]
+where: "https://github.com/AxiomMath/MMP, commit 1f9ade3670 (2026-11-16)"
+year: 2026
+doi: null
+arxiv: null
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T8
+why: "a kernel-checked Lean proof that each MMP of a projective lc 4-fold with rational boundary terminates, after the OpenAI paper of family 056; the object of the audit of route R2 and the claim C1 of spec 01.3"
+expert_status: claimed
+uses: []
+results:
+  - id: "MMP.Fourfold.Program.n_ne_top_of_isAlgClosed"
+    statement: TerminationLc4Rational
+    node: MMBTDMD2XP
+    kind: claim
+    status: claimed
+  - id: "MMP.Fourfold.projectiveLowerLogMMP_three"
+    statement: ThreefoldLcMMP
+    node: MMMAM98WJQ
+    kind: theorem
+    status: unstated
+lean_elsewhere:
+  - { repo: AxiomMath/MMP, commit: 1f9ade3670, licence: Apache-2.0, what: "the whole library: 2,269 Lean files, about 2.05 million lines, no sorry", use: bridge }
+lean_status: none
+code_licence: Apache-2.0
+handbook: { volume: 10, chapter: null }
+notes: "Spec 07 has no row for the repository itself: row T6-05 is the 3-fold program as AxiomMath/MMP states it. The node S22 asked for this record, so it takes the new id T8-13. Spec 07 must add the row. The README of the repository says that no human has reviewed the code. The audit state is in records/audit.json, and the inventory of step A1 is in audit/axiom-mmp/A1-inventory.md."

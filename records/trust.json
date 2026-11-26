@@ -1,0 +1,619 @@
+{
+  "updated": "2026-11-26",
+  "checks": [
+    {
+      "id": "Q0",
+      "question": "Is the source the one that the site describes?",
+      "state": "not run",
+      "note": "There is no records/lean.json."
+    },
+    {
+      "id": "Q1",
+      "question": "Does it build?",
+      "state": "not run",
+      "note": "There is no record of a build in records/lean.json."
+    },
+    {
+      "id": "Q2",
+      "question": "Which axioms do the top theorems use?",
+      "state": "not run",
+      "note": "There is no records/lean.json."
+    },
+    {
+      "id": "Q3",
+      "question": "Do two more kernels accept it?",
+      "state": "not run",
+      "note": "The kernel replay was not run: there is no replay record records/replay.json."
+    },
+    {
+      "id": "Q4",
+      "question": "Do the proved theorems have the pinned statements?",
+      "state": "not run",
+      "note": "lake comparator was not run."
+    },
+    {
+      "id": "Q5",
+      "question": "Do the statements mean what the docstrings say?",
+      "state": "open",
+      "note": "0 of the 60 Lean statements of the map pass the fidelity checks of their class (spec 06.3). 0 have an entry in records/fidelity.json."
+    },
+    {
+      "id": "Q6",
+      "question": "Which published theorems are still hypotheses?",
+      "state": "yes",
+      "note": "No node is proved-mod, so no proof takes a published theorem as a hypothesis."
+    },
+    {
+      "id": "Q7",
+      "question": "Has a person read the proof?",
+      "state": "not run",
+      "note": "A person answers this row from the reviews of the handbook. mmp trust does not read the handbook yet."
+    },
+    {
+      "id": "Q8",
+      "question": "Has someone outside the project reproduced Q1 to Q4?",
+      "state": "not run",
+      "note": "A person answers this row with a link to an independent run. mmp trust does not check it."
+    },
+    {
+      "id": "Q9",
+      "question": "For a proved-ext theorem: has the external library passed the audit at the pinned commit?",
+      "state": "open",
+      "note": "The audit of AxiomMath/MMP at commit 1f9ade3670 has no step done."
+    },
+    {
+      "id": "Q10",
+      "question": "For a check of a fresh claim: have the authors seen the result, and what did they answer?",
+      "state": "not run",
+      "note": "A person answers this row from the letter and the answer in each claim record. mmp trust does not read the letters."
+    }
+  ],
+  "replay": "none",
+  "theorems": [
+    {
+      "theorem": "MinimalModel.Toric.coneTheorem",
+      "statement": "MinimalModel.ToricConeTheorem",
+      "milestone": "S2",
+      "status": "not in the map",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Toric.coneTheorem."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.shokurovLemma",
+      "statement": "MinimalModel.ShokurovLemma",
+      "milestone": "S3",
+      "status": "not in the map",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.shokurovLemma."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Toric.flipExists",
+      "statement": "MinimalModel.ToricFlipExists",
+      "milestone": "S4",
+      "status": "not in the map",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Toric.flipExists."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Toric.terminationOfFlips",
+      "statement": "MinimalModel.ToricTermination",
+      "milestone": "S4",
+      "status": "not in the map",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Toric.terminationOfFlips."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Toric.mmp",
+      "statement": "MinimalModel.ToricMMP",
+      "milestone": "S4",
+      "node": "MMAWP4SA44",
+      "status": "unstated",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Toric.mmp."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Surface.castelnuovo",
+      "statement": "MinimalModel.Castelnuovo",
+      "milestone": "S5",
+      "node": "MMRP5RX4JJ",
+      "status": "unstated",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Surface.castelnuovo."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Surface.minimalModel",
+      "statement": "MinimalModel.SurfaceMinimalModel",
+      "milestone": "S5",
+      "status": "not in the map",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Surface.minimalModel."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Reductions.hanLiu",
+      "statement": "MinimalModel.HanLiuReduction",
+      "milestone": "S5",
+      "node": "MM0NXABJ9S",
+      "status": "unstated",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Reductions.hanLiu."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    },
+    {
+      "theorem": "MinimalModel.Toric.hanLiuEncACC",
+      "statement": "MinimalModel.HanLiuEncACCToric",
+      "milestone": "S7",
+      "status": "not in the map",
+      "checks": [
+        {
+          "id": "Q2",
+          "question": "Which axioms does the theorem use?",
+          "state": "not run",
+          "note": "The record of the build has no proof MinimalModel.Toric.hanLiuEncACC."
+        },
+        {
+          "id": "Q5",
+          "question": "Does the statement mean what the docstring says?",
+          "state": "not run",
+          "note": "records/fidelity.json has no entry for the statement."
+        }
+      ]
+    }
+  ],
+  "declarations": [
+    {
+      "name": "MinimalModel.ACCLct",
+      "node": "MMGSDKRGR6",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ACCMld",
+      "node": "MMWK2DDDPC",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.Abundance",
+      "node": "MMPTP8SV13",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.AbundanceBig",
+      "node": "MMRKRVGY9M",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.AbundanceNuZero",
+      "node": "MM5QPM66FR",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.AlgIntFoliationMMP",
+      "node": "MMRWTZFN7D",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.BAB",
+      "node": "MMB93N0PQZ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.BCHM",
+      "node": "MM9399B0QP",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.BSemiampleness",
+      "node": "MMRXDSNJQ7",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.BasepointFree",
+      "node": "MM0VJ1HARY",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.Castelnuovo",
+      "node": "MMRP5RX4JJ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.CharP3foldLcMMP",
+      "node": "MMD90YG1TD",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ConeConj",
+      "node": "MM1B2V5Q7P",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ConeTheoremKlt",
+      "node": "MMDZBZY2BV",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ConeTheoremLc",
+      "node": "MMV52CGQMS",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ContractionTheorem",
+      "node": "MMQ2K4RSHT",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.FanoTypeMDS",
+      "node": "MMZ1VFD6K4",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.FiniteGenerationCanonical",
+      "node": "MM193HWD2S",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.FinitenessOfModels",
+      "node": "MM8GY5VB02",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.FujitaFreeness",
+      "node": "MMXQBHJKWR",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.GeneralizedAbundance",
+      "node": "MMSH2N59E3",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.GeneralizedLcFlips",
+      "node": "MMQMD68H79",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.HanLiuEncACC",
+      "node": "MMXCD16PTN",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.HanLiuReduction",
+      "node": "MM0NXABJ9S",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.IitakaConj",
+      "node": "MMY51YYYJX",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.IndexConj",
+      "node": "MM3A7BTV1N",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.KahlerThreefoldMMP",
+      "node": "MMK4VRWSWA",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.KawamataViehweg",
+      "node": "MM7MQT1KEA",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.KleimanCriterion",
+      "node": "MMV4DPSCE3",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.KltFlips",
+      "node": "MMP51FQ005",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.KollarTorsionFree",
+      "node": "MMP0Y69ZRN",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.LSCMld",
+      "node": "MMFKZ7VB29",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.LcFlips",
+      "node": "MMDQRR7TZB",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.LcSurfaceMMP",
+      "node": "MMXV8DZWP4",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.LengthOfExtremalRays",
+      "node": "MMHTX4Z2B7",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.LiuXuReduction",
+      "node": "MMM6KF309B",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.MinimalModelConj",
+      "node": "MMY4HT1Q8M",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.MldBound",
+      "node": "MM0FZHT2BB",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.MoriFibreSpaceOutput",
+      "node": "MMNAN1JQAR",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.NonVanishing",
+      "node": "MMZ5XGBW5M",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.NotEffectiveNonVanishing4",
+      "node": "MMRG60YPYS",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.RationalityTheorem",
+      "node": "MMSMTZS83C",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.Sarkisov",
+      "node": "MM3YGGD1TZ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ShokurovReduction",
+      "node": "MMFPRYMSNJ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.SpecialTermination",
+      "node": "MMFCAWE0XH",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.StrongSarkisov",
+      "node": "MMQHRKKEZY",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.SurfaceAbundance",
+      "node": "MMMSGVFVJH",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.SurfaceConeTheorem",
+      "node": "MM8MGCYF75",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.SurfaceMMP",
+      "node": "MM861R2D6G",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.Termination",
+      "node": "MMTJ3YNHTG",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.TerminationBig",
+      "node": "MM2NY6352R",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.TerminationBigLe5",
+      "node": "MMY38TT73M",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.TerminationLc4Rational",
+      "node": "MMBTDMD2XP",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.TerminationPseffLc4",
+      "node": "MME79K17YJ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.TerminationScalingBig",
+      "node": "MM07D8FAVG",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ThreefoldAbundance",
+      "node": "MM5ECX1RGZ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ThreefoldFlips",
+      "node": "MM3A98X8YR",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ThreefoldLcMMP",
+      "node": "MMMAM98WJQ",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ThreefoldTermination",
+      "node": "MMH0CM56AA",
+      "role": "statement",
+      "found": false
+    },
+    {
+      "name": "MinimalModel.ToricMMP",
+      "node": "MMAWP4SA44",
+      "role": "statement",
+      "found": false
+    }
+  ]
+}

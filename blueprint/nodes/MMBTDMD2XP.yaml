@@ -1,0 +1,11 @@
+tag: "MMBTDMD2XP"
+slug: "t4-lc-rational"
+kind: "claim"
+title: "Termination for lc 4-folds with rational boundary"
+statement: "Let $(X,\\Delta)$ be a projective lc pair of dimension 4 over an algebraically closed field of characteristic 0, with $\\Delta$ a $\\mathbb{Q}$-divisor. Then each $(K_X+\\Delta)$-MMP terminates."
+sources:
+  - { paper: AxiomMMP, loc: "MMP.Fourfold.Program.n_ne_top_of_isAlgClosed" }
+lean: { statement: MinimalModel.TerminationLc4Rational }
+tier: S
+route: [R2]
+notes: "Statement S22 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is claimed. The vocabulary is ready. The statement is planned for milestone S0. This is a fresh claim (spec 06.6). It has the status claimed, and it is never a hypothesis of another node. The claim record is claims/AxiomMath-MMP.yaml. AxiomMath/MMP at commit 1f9ade3670 has a kernel-checked proof of this statement in its own vocabulary. The status stays claimed until the audit A1 to A8 of spec 04.3 passes and the bridge in MinimalModelBridge builds. Then the status becomes proved-ext. The audit state is in records/audit.json."

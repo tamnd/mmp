@@ -1,0 +1,9 @@
+tag: "MM2NY6352R"
+slug: "termination-big"
+kind: "claim"
+title: "Termination for big boundary in all dimensions"
+statement: "Let $(X,\\Delta)$ be a klt pair of any dimension with $\\Delta$ big or $K_X+\\Delta$ big. Then each $(K_X+\\Delta)$-MMP terminates (Hashizume)."
+lean: { statement: MinimalModel.TerminationBig }
+tier: S
+route: [R1]
+notes: "Statement S25 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is claimed. The vocabulary is ready. The statement is planned for milestone S1. The Lean statement takes the dimension as an argument: TerminationBig (n : ℕ). This is a fresh claim (spec 06.6). It has the status claimed, and it is never a hypothesis of another node. The claim record is claims/arXiv-2609-33679.yaml. The paper record of the source is not written yet (spec 07)."

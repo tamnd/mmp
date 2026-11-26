@@ -1,0 +1,25 @@
+id: T8-06
+key: Mor25
+title: "Termination of pseudo-effective 4-fold flips"
+authors: [Joaquín Moraga]
+where: "Math. Z. 310 (2025)"
+year: 2025
+doi: null
+arxiv: "1802.10202"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T8
+why: "T(4) for lc pairs with K+Δ pseudo-effective; the source of S21"
+expert_status: accepted
+uses: []
+results:
+  - id: "the main theorem"
+    statement: TerminationPseffLc4
+    node: MME79K17YJ
+    kind: theorem
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "Row T8-06 of spec 07 also has Chen and Tsakanikas, arXiv:2011.02236. The title is not in the spec and is not checked yet. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

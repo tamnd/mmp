@@ -1,0 +1,12 @@
+tag: "MM0NXABJ9S"
+slug: "red-han-liu"
+kind: "theorem"
+title: "The Han-Liu reduction"
+statement: "Fix $n$. Assume ACC for the mlds of enc germs in dimension $n$ and termination of terminal flips in dimension $n$. Then T(n) holds (S20)."
+sources:
+  - { paper: HL25, loc: "Theorem 1.2" }
+uses: [MMTJ3YNHTG, MMXCD16PTN] # Termination, HanLiuEncACC
+lean: { statement: MinimalModel.HanLiuReduction }
+tier: S
+route: [R4]
+notes: "Statement S29 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is reduction. The vocabulary is ready. The statement is planned for milestone S2. A reduction is an implication between other statements of the map. The map gives it the kind theorem, because mmp-agent has no kind reduction."

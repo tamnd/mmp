@@ -1,0 +1,11 @@
+tag: "MM0VJ1HARY"
+slug: "basepoint-free"
+kind: "theorem"
+title: "The base point free theorem"
+statement: "Let $(X,\\Delta)$ be a projective klt pair and $D$ a nef Cartier divisor such that $aD-(K_X+\\Delta)$ is nef and big for some $a>0$. Then $|bD|$ is base point free for all $b\\gg0$, so $D$ is semiample."
+sources:
+  - { paper: KM98, loc: "Chapter 3" }
+uses: [MM7MQT1KEA] # KawamataViehweg
+lean: { statement: MinimalModel.BasepointFree }
+tier: S
+notes: "Statement S08 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."

@@ -1,0 +1,25 @@
+id: T8-09
+key: HLZ25
+title: "Termination of flips for big boundary in dimension at most 5"
+authors: [Jingjun Han, Jihao Liu, Ziquan Zhuang]
+where: null
+year: 2025
+doi: null
+arxiv: "2509.01501"
+also: []
+read: { version: null, by: null, date: null, tag: P }
+tier: T8
+why: "each MMP terminates for klt pairs with big boundary or big K+Δ in dimension at most 5, with explicit bounds in dimension at most 4; the source of S24 and of experiment E8"
+expert_status: claimed
+uses: []
+results:
+  - id: "the main theorem"
+    statement: TerminationBigLe5
+    node: MMY38TT73M
+    kind: claim
+    status: claimed
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 10, chapter: null }
+notes: "The preprint is not refereed, so the expert status is claimed and S24 has the kind claim. The title of this record is a description: the reader role must copy the exact title from arXiv:2509.01501. The author names come from the row 'Han, Liu and Zhuang' of spec 07. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

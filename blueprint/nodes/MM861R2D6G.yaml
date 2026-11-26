@@ -1,0 +1,12 @@
+tag: "MM861R2D6G"
+slug: "surface-mmp"
+kind: "theorem"
+title: "The MMP for smooth projective surfaces"
+statement: "Let $X$ be a smooth projective surface. A finite sequence of contractions of $(-1)$-curves gives a smooth projective surface $Y$ such that $K_Y$ is nef, or $Y\\cong\\mathbb{P}^2$, or $Y$ is a $\\mathbb{P}^1$-bundle over a smooth curve."
+sources:
+  - { paper: KM98, loc: "Chapter 1" }
+  - { paper: Har77, loc: "Chapter V" }
+uses: [MMRP5RX4JJ, MM8MGCYF75] # Castelnuovo, SurfaceConeTheorem
+lean: { statement: MinimalModel.SurfaceMMP }
+tier: S
+notes: "Statement S12 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S0."

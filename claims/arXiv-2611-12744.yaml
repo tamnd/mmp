@@ -1,0 +1,13 @@
+key: arXiv-2611-12744
+title: null
+authors: [Hu, K. Liu, Shen]
+source: { arxiv: "2611.12744", url: null, version: null }
+date: 2026-11-26
+posted: null
+status: fresh
+route: R1
+claims: "The b-semiampleness conjecture of Prokhorov and Shokurov."
+node: null
+parts: []
+letters: []
+notes: "Claim C13 of spec 01.3. The status there on 2026-11-26: strong human paper; the referee status is not checked. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. The first preprint of C13 is claims/arXiv-2508-19215.yaml. Its node is S47."

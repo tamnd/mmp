@@ -1,0 +1,9 @@
+tag: "MM3A7BTV1N"
+slug: "index-conj-statement"
+kind: "conjecture"
+title: "The index conjecture"
+statement: "The index conjecture: for a klt log Calabi-Yau pair $(X,\\Delta)$ of dimension $n$ with the coefficients of $\\Delta$ in a fixed finite set, the index of $K_X+\\Delta$ is bounded by a number that depends only on $n$ and the set."
+lean: { statement: MinimalModel.IndexConj }
+tier: S
+route: [R6]
+notes: "Statement S54 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."

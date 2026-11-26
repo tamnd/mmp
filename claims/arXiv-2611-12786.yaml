@@ -1,0 +1,13 @@
+key: arXiv-2611-12786
+title: null
+authors: [Bie, Du, Yu]
+source: { arxiv: "2611.12786", url: null, version: null }
+date: 2026-11-26
+posted: null
+status: fresh
+route: R1
+claims: "$\\mathrm{vol}\\ge1/420$ for smooth 3-folds of general type; the moduli of canonical 3-folds of volume $1/420$ has one component of dimension 33 and two rigid points, Vega and Altair; a sharp polynomial volume bound for $\\epsilon$-lc Fano varieties."
+node: null
+parts: []
+letters: []
+notes: "Claim C12 of spec 01.3. The status there on 2026-11-26: unrefereed; the moduli paper has code. Nobody has read the claim for the project yet, and the title field stays empty until the reader role copies it from the source. Spec 01.3 gives three preprints for C12: arXiv:2611.12786, arXiv:2611.18357 and arXiv:2610.10537. Row T10-08 of spec 07 also has arXiv:2611.14402. This record covers all of them. The paper record is papers/BDY26.yaml. Experiment E1 tests the numbers."

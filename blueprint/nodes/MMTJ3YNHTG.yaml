@@ -1,0 +1,11 @@
+tag: "MMTJ3YNHTG"
+slug: "termination"
+kind: "conjecture"
+title: "Termination of flips, T(n)"
+statement: "T(n): let $(X,\\Delta)$ be an lc pair of dimension $n$. There is no infinite sequence of $(K_X+\\Delta)$-flips."
+sources:
+  - { paper: KM98, loc: "Chapter 3" }
+lean: { statement: MinimalModel.Termination }
+tier: S
+route: [R4]
+notes: "Statement S20 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S0. The Lean statement takes the dimension as an argument: Termination (n : ℕ)."

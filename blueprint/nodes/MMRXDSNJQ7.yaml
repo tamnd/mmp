@@ -1,0 +1,9 @@
+tag: "MMRXDSNJQ7"
+slug: "b-semiampleness"
+kind: "claim"
+title: "b-semiampleness of the moduli part"
+statement: "The moduli part of an lc trivial fibration is b-semiample (the conjecture of Prokhorov-Shokurov, claimed by BFMT and by Hu-K. Liu-Shen)."
+lean: { statement: MinimalModel.BSemiampleness }
+tier: S
+route: [R1]
+notes: "Statement S47 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is claimed. The vocabulary is missing (b-divisors). The statement is planned for milestone S4. This is a fresh claim (spec 06.6). It has the status claimed, and it is never a hypothesis of another node. The claim record is claims/arXiv-2508-19215.yaml. The paper record of the source is not written yet (spec 07)."

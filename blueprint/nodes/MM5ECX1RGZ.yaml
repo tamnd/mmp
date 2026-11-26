@@ -1,0 +1,8 @@
+tag: "MM5ECX1RGZ"
+slug: "threefold-abundance"
+kind: "theorem"
+title: "Abundance for lc 3-folds"
+statement: "Let $(X,\\Delta)$ be a projective lc pair of dimension 3 with $K_X+\\Delta$ nef. Then $K_X+\\Delta$ is semiample (Miyaoka, Kawamata, Keel-Matsuki-McKernan)."
+lean: { statement: MinimalModel.ThreefoldAbundance }
+tier: S
+notes: "Statement S17 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is partial. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."
