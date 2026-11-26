@@ -11,6 +11,7 @@ Each release has a section. The newest release is first.
 
 ### Changed
 
+- Spec 11.2, 11.4, 00 and Q-20: Volumes 1, 5 and 6 are measured again from the outlines of P7 and P8 in mmp-handbook (#43 there). The new estimates are 220, 210 and 200 pages, down from 320, 340 and 300. Volumes 0 to 17 now total about 5,890 pages, and the whole handbook about 9,940.
 - `records/replay.json` and `records/trust.json` are of the trust run of mmp-lean v0.0.4 at commit 600aa92.
 
 ### Fixed

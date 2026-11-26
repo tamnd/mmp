@@ -177,12 +177,12 @@ The plan keeps nine. The split of P8 is the first change to make if P8 grows pas
 | | Volume | Level | Pages (estimate) | Spine | Tiers (07) |
 |---|---|---|---|---|---|
 | 0 | How to read this handbook | guide | 60 | Moraga 2024; Lazić 2024; Birkar 2012 Ch. 1 | all |
-| 1 | Divisors, curves and cones | background | 320 | KM98 Ch. 1; Lazarsfeld I; Debarre Ch. 1 | T1 |
+| 1 | Divisors, curves and cones | background | 220 | KM98 Ch. 1; Lazarsfeld I; Debarre Ch. 1 | T1 |
 | 2 | The MMP for surfaces | core | 380 | Reid 1997; Beauville; Matsuki Ch. 1 | T3 |
 | 3 | The toric MMP | core | 300 | Cox-Little-Schenck Ch. 15; Fujino-Sato 2004; Reid 1983 | T5 |
 | 4 | Singularities of pairs | core | 420 | Reid 1987; KM98 Ch. 2 and 5; Kollár 2013 | T4 |
-| 5 | Vanishing theorems and multiplier ideals | core | 340 | KM98 Ch. 2; Lazarsfeld; Esnault-Viehweg | T2 |
-| 6 | Rational curves and bend-and-break | core | 300 | Debarre 2001; Kollár 1996; KM98 Ch. 1 | T2 |
+| 5 | Vanishing theorems and multiplier ideals | core | 210 | KM98 Ch. 2; Lazarsfeld; Esnault-Viehweg | T2 |
+| 6 | Rational curves and bend-and-break | core | 200 | Debarre 2001; Kollár 1996; KM98 Ch. 1 | T2 |
 | 7 | Cone and contraction theorems | core | 360 | KM98 Ch. 3; Matsuki Ch. 6 to 8; Fujino 2017 | T2 |
 | 8 | Flips, flops and the 3-fold MMP | core | 460 | KM98 Ch. 4 to 7; Astérisque 211; Corti 2007 Ch. 2 | T6 |
 | 9 | BCHM: existence of minimal models | advanced | 440 | BCHM; Corti 2007; Corti-Kaloghiros-Lazić; Hacon-Kovács | T7 |
@@ -194,9 +194,9 @@ The plan keeps nine. The split of P8 is the first change to make if P8 grows pas
 | 15 | The MMP for foliations | research | 360 | Cascini-Spicer 2026; Brunella; Spicer 2025 lectures | T11 |
 | 16 | The 2026 frontier: generalized pairs, Kähler spaces, 4-folds | research | 320 | Birkar-Zhang; Moraga 2025; the 2026 preprints | T8, T9, T11; routes R1, R2 |
 | 17 | Open problems | research | 120 | Birkar ICM 2018; Xu-Zhuang 2026 | routes R1 to R9 |
-| | Total | | about 6,220 | | |
+| | Total | | about 5,890 | | |
 
-The two parts together are about 10,270 pages, the size of a long series. No one reads all of it. The reading paths of 11.5 are the real product for a learner.
+The two parts together are about 9,940 pages, the size of a long series. No one reads all of it. The reading paths of 11.5 are the real product for a learner.
 
 Dependencies between the MMP volumes (F 7.4):
 
@@ -365,7 +365,7 @@ Report G 6.2 gave the needs of the MMP volumes with provisional labels M0 to M9.
 - the P volume gives the absolute case and the smooth case, with full proofs;
 - the MMP volume gives the relative case, the singular case and the case of pairs, and cites the P volume for the rest.
 
-So Volume 1 cites Kleiman's criterion from P7 Ch. 3 and proves the relative version. Volume 6 cites bend-and-break from P8 Ch. 2 and proves the cone theorem by Mori's method. The page estimates of Volumes 1, 5 and 6 in 11.2 come from F, which did not know the P volumes. They are upper bounds. The writer measures them again at S2, when P7 and P8 have outlines (Q-20).
+So Volume 1 cites Kleiman's criterion from P7 Ch. 3 and proves the relative version. Volume 6 cites bend-and-break from P8 Ch. 2 and proves the cone theorem by Mori's method. Report F gave Volumes 1, 5 and 6 the estimates 320, 340 and 300 pages, without the P volumes. At S2 the writer measured them again from the outlines of P7 and P8 (Q-20). The outlines are `outlines/p7.md` and `outlines/p8.md` in mmp-handbook, and the measurement is `outlines/q20.md`. The new estimates are 220, 210 and 200 pages, and the table of 11.2 has them. No result is cut. The three volumes cite the absolute and smooth proofs of P7 Ch. 1 to 11 and P8 Ch. 1 to 3.
 
 ## 11.5 Reading paths
 
