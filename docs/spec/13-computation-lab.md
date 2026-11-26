@@ -64,7 +64,7 @@ inputs:
   cone_class: simplicial
   normal_form: hermite        # one cone per GL(4, Z) orbit
 outputs: [list of cones in normal form, mld, minimizers, the violating germs if any, a certificate per cone]
-node: MM4T0RCENC           # the toric case of S52, Target T
+node: MMXCD16PTN           # the toric case of S52, Target T
 ```
 
 `mmp lab run` runs it in a container with pinned images and no network (10.7). It writes `lab/runs/<id>/` with:

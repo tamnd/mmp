@@ -4,6 +4,10 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Fixed
+
+- Spec 01.1 and 01.4 give the lc abundance of BWX for $p>42$ as a claim, as its claim record C9 does. Spec 01.1 gives the LSC of mlds in dimension at most 3 as proved (Ambro). Spec 13.3 uses the node MMXCD16PTN of S52 in its example, in place of a name that is not in the map.
+
 ### Added
 
 - `records/fidelity.json` has its first four entries, written with `mmp fidelity set`. Each check marked true is a theorem of mmp-lean at commit 039551d. F1 comes from `records/lean.json`.
