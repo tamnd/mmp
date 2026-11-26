@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+# The steps of the workflow audit-build: steps A1, A2 and A4 of spec 04.3 on AxiomMath/MMP.
+#
+#   audit-build.sh room            free disk space on the runner and add swap
+#   audit-build.sh build MINUTES   run lake build in src/ for at most MINUTES minutes
+#   audit-build.sh record          after a full build: the hashes, the manifest, A2 and A4
+#
+# The build of AxiomMath/MMP is longer than one job of 6 hours on a standard runner. So each run builds for at most MINUTES minutes, the workflow saves the partial build in the cache, and the next run goes on from it. Lake rebuilds a module only when its trace changes, so a module that one run built is not built again.
+#
+# The step build writes done=true, done=false or failed=true to $GITHUB_OUTPUT, and the time and memory of the segment to out/segment.txt.
+set -euo pipefail
+
+OUT=${OUT:-out}
+mkdir -p "$OUT"
+
+case "${1:-}" in
+room)
+  df -h / | tail -1
+  sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost /usr/share/swift
+  sudo docker image prune --all --force >/dev/null 2>&1 || true
+  sudo swapoff -a || true
+  sudo fallocate -l 16G /swapfile2
+  sudo chmod 600 /swapfile2
+  sudo mkswap /swapfile2 >/dev/null
+  sudo swapon /swapfile2
+  df -h / | tail -1
+  free -g
+  ;;
+build)
+  minutes=${2:?minutes}
+  command -v /usr/bin/time >/dev/null || sudo apt-get install -y time >/dev/null
+  cd src
+  start=$(date +%s)
+  set +e
+  timeout -k 2m "${minutes}m" /usr/bin/time -v -o "../$OUT/time.txt" lake build > "../$OUT/build.log" 2>&1
+  status=$?
+  set -e
+  end=$(date +%s)
+  cd ..
+  built=$(grep -c "^✔ \[" "$OUT/build.log" || true)
+  rss=$(grep "Maximum resident set size" "$OUT/time.txt" 2>/dev/null | awk '{print $NF}' || true)
+  {
+    echo "segment=${SEGMENT:-1}"
+    echo "status=$status"
+    echo "seconds=$((end - start))"
+    echo "max_rss_kb=${rss:-unknown}"
+    echo "lines_built=$built"
+  } > "$OUT/segment.txt"
+  cat "$OUT/segment.txt"
+  tail -n 30 "$OUT/build.log"
+  if [ "$status" -eq 0 ]; then
+    echo "done=true" >> "$GITHUB_OUTPUT"
+  elif [ "$status" -eq 124 ] || [ "$status" -eq 137 ]; then
+    echo "done=false" >> "$GITHUB_OUTPUT"
+  else
+    grep -n "error" "$OUT/build.log" | head -n 40 || true
+    echo "failed=true" >> "$GITHUB_OUTPUT"
+  fi
+  ;;
+record)
+  cd src
+  git rev-parse HEAD > "../$OUT/commit.txt"
+  cp lake-manifest.json "../$OUT/lake-manifest.json"
+  cat lean-toolchain > "../$OUT/lean-toolchain"
+  find .lake -name '*.olean' -type f | LC_ALL=C sort | xargs -d '\n' sha256sum > "../$OUT/olean.sha256"
+  wc -l < "../$OUT/olean.sha256"
+  du -sh .lake/build .lake/packages/*/.lake/build 2>/dev/null | tee "../$OUT/sizes.txt"
+  cp ../audit/axiom-mmp/A2.lean ../audit/axiom-mmp/A4.lean .
+  set +e
+  lake env lean A2.lean > "../$OUT/A2-axioms.log" 2>&1
+  echo "A2 exit $?" | tee -a "../$OUT/A2-axioms.log"
+  lake env lean A4.lean > "../$OUT/A4.log" 2>&1
+  echo "A4 exit $?" | tee -a "../$OUT/A4.log"
+  set -e
+  [ -f A4.json ] && cp A4.json "../$OUT/A4.json"
+  cat "../$OUT/A2-axioms.log" "../$OUT/A4.log"
+  ;;
+*)
+  sed -n '2,10p' "$0"
+  exit 2
+  ;;
+esac

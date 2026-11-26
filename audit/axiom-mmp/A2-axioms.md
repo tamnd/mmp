@@ -7,8 +7,8 @@ The step is not started. It needs the build of step A1, and that build is not do
 ## The plan
 
 1. Use the build of step A1 at the commit `1f9ade367087ec711a2ce1382bad279a5a0284c3`, with the toolchain `leanprover/lean4:v4.35.0`.
-2. Write one file `Audit/A2.lean` outside the source tree. It imports `MMP` and has one `#print axioms` line for each declaration of the table.
-3. Run it with `lake env lean Audit/A2.lean` and keep the full output as `A2-axioms.log` in this directory.
+2. The file `A2.lean` of this directory imports `MMP` and has one `#print axioms` line for each declaration of the table.
+3. The workflow `audit-build` runs it with `lake env lean A2.lean` in the build of A1. The full output goes into the artifact `audit-records`, and then into `A2-axioms.log` in this directory.
 4. Compare each list with the expected set.
 5. Write `A2.json` with one row for each declaration: the name, the axioms, and the answer `yes` or `no`.
 

@@ -19,6 +19,10 @@ No step ran Lean. The numbers come from the source text only.
 
 Step A1 is done when the build log and the hashes are in this directory.
 
+## The build in CI
+
+The workflow `audit-build` of this repository does the build on the standard runners of GitHub, which have 4 cores and 16 GB of memory, with 16 GB of swap added. The large runner of spec 09.4 is not set up. One job of a standard runner stops after 6 hours, so the workflow builds for at most 290 minutes, saves the partial build in the cache, and starts the next run. Lake does not build a module again when its trace is the same, so the runs add up to one clean build. Each run uploads its time, its peak memory and its log as the artifact `audit-segment-N`. The run that finishes the build uploads the artifact `audit-records`: `lake-manifest.json`, the hash of every `.olean` under `.lake`, the sizes of the builds, and the output of A2 and A4. The time of the build is the sum of the times of the runs, and the memory is the largest peak of one run.
+
 ## Source hashes
 
 | Item | Value |
