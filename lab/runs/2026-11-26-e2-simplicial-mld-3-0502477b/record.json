@@ -1,0 +1,31 @@
+{
+  "id": "2026-11-26-e2-simplicial-mld-3-0502477b",
+  "name": "e2-simplicial-mld-3",
+  "experiment": "E2",
+  "question": "For each simplicial toric 3-fold germ C^3/G, with G = N/Z^3 abelian of order r \u003c= 1200 and the rays primitive, what are the mld, the terminal and canonical germs and the enc germs, is every terminal germ cyclic of type 1/r(1, -1, a), and do the isolated cyclic germs agree with the run e2-cyclic-quotient-mld-3 to index 40?",
+  "spec": "lab/specs/e2-simplicial-mld-3.yaml",
+  "spec_sha256": "0502477b5abe74c42286a9c8cedbfee735f54f387fa2d72b16db646a1c1fa463",
+  "node": "MMXCD16PTN",
+  "nodes": [
+    "MMWK2DDDPC",
+    "MMAWP4SA44"
+  ],
+  "tool": "mmp",
+  "tool_version": "dev",
+  "commit": "1a1d8ac8ce8958d826a39b682c239bacf954a796",
+  "go": "go1.27.3",
+  "container": "none",
+  "network": false,
+  "seed": 0,
+  "host": "darwin/arm64",
+  "started": "2026-11-26T15:58:55Z",
+  "wall_seconds": 432.704,
+  "result": "agrees: in 110004193 simplicial toric 3-fold germs with r \u003c= 1200, each terminal germ is cyclic of type 1/r(1, -1, a) with the mld 1 + 1/r, and the cyclic isolated germs with r \u003c= 40 are those of the family cyclic",
+  "mismatches": 0,
+  "gaps": 0,
+  "files": {
+    "germs.json": "8d98fab392d16334fc2a9e3f5e1758b6e135d0505b29afb56061f72bd3d37237",
+    "indices.json": "51861f48c57d9509bb270ffff3dd7869805745670481d097d1903167cb7ceda5",
+    "summary.md": "29ad87e2ac60ffa656a1c5e0e200c8344c8d678a38b7b0870e0bbcb3622ffaa8"
+  }
+}

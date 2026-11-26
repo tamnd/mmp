@@ -6,6 +6,7 @@ Each release has a section. The newest release is first.
 
 ### Added
 
+- The lab spec `e2-simplicial-mld-3` runs E2 in dimension 3 over all simplicial toric germs to index 1200, cyclic or not, isolated or not, and its run is in `lab/runs`. The run of `e2-cyclic-quotient-mld-3` stays.
 - The node finiteness-of-models (MM8GY5VB02) records the Lean statement S34 `FinitenessOfModels` of mmp-lean, BCHM Theorem E with a general ample divisor written out through linear systems and very general members over an uncountable field. Its statement and the S34 row of spec 06 and of the site now speak of weak log canonical models over $\mathcal{L}_A(V)$, as Theorem E does, and the vocabulary of the row is partial (linear systems).
 
 ### Changed
