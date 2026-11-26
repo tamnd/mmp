@@ -8,4 +8,4 @@ sources:
 uses: [MMSMTZS83C, MM0VJ1HARY] # RationalityTheorem, BasepointFree
 lean: { statement: MinimalModel.ContractionTheorem }
 tier: S
-notes: "Statement S06 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial. The statement is planned for milestone S1."
+notes: "Statement S06 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Foundations.lean, with the vocabulary of MinimalModel/Statements/Curves.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement follows KM98 Theorem 3.7 parts 3 and 4. It says that a line bundle with L·F=0 is a pullback as: L is trivial over an open neighbourhood of each point of Z."

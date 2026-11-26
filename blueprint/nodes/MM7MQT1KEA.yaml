@@ -7,4 +7,4 @@ sources:
   - { paper: KM98, loc: "Theorem 2.70" }
 lean: { statement: MinimalModel.KawamataViehweg }
 tier: S
-notes: "Statement S02 of spec 06.2.2, in the file MinimalModel/Statements/Foundations.lean. The class in the spec is theorem. The vocabulary is partial (coherent cohomology). The statement is planned for milestone S1."
+notes: "Statement S02 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Foundations.lean, with the vocabulary of MinimalModel/Statements/Curves.lean and MinimalModel/Statements/Cohomology.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement takes a Q-boundary and Q-divisors, as KM98 does. The higher direct images are the sheaf cohomology of Mathlib on the inverse images of the affine open sets of U."

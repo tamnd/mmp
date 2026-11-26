@@ -8,4 +8,4 @@ sources:
 lean: { statement: MinimalModel.HanLiuEncACC }
 tier: S
 route: [R3, R4]
-notes: "Statement S52 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S1. The definition of enc must be checked against Han-Liu before a proof uses it [U]. The lab experiment E2 counts the enc cyclic quotient germs. The statement is not in mmp-lean at S1. The definition of an enc germ and the exact form of Conjecture 1.9(2') need a reading of the source first."
+notes: "Statement S52 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Boundedness.lean, with the vocabulary of MinimalModel/Statements/Enc.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S1. The definition of enc is Han-Liu Definition 3.8(1), read from the source. Conjecture 1.9(2') is about enc pairs and their global mlds, not germs, and the Lean statement follows the source. The lab experiment E2 counts the enc cyclic quotient germs."
