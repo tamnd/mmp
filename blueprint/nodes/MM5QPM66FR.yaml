@@ -5,4 +5,4 @@ title: "Abundance for numerical dimension 0"
 statement: "Let $(X,\\Delta)$ be a projective lc pair with $K_X+\\Delta$ nef and $\\nu(K_X+\\Delta)=0$. Then $K_X+\\Delta$ is semiample (Nakayama, Gongyo)."
 lean: { statement: MinimalModel.AbundanceNuZero }
 tier: S
-notes: "Statement S43 of spec 06.2.2, in the file MinimalModel/Statements/Abundance.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S43 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Abundance.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement cites Nakayama, Chapter V, Corollary 4.9, and Gongyo 2011, Theorem 1.2. The paper record of the source is not written yet (spec 07)."

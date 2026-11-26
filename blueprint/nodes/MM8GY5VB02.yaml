@@ -8,4 +8,4 @@ sources:
 uses: [MM9399B0QP] # BCHM
 lean: { statement: MinimalModel.FinitenessOfModels }
 tier: S
-notes: "Statement S34 of spec 06.2.2, in the file MinimalModel/Statements/Models.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2."
+notes: "Statement S34 of spec 06.2.2. The Lean statement is not written yet. BCHM Theorem E asks for a general ample Q-divisor A over U, a very general member of a linear system. The vocabulary has no linear systems as parameter spaces and no very general members. A form for each ample A is not the statement of the source. The class in the spec is theorem. The vocabulary is partial (general members of linear systems). The statement is planned for milestone S2."

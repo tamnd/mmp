@@ -6,4 +6,4 @@ statement: "The index conjecture: for a klt log Calabi-Yau pair $(X,\\Delta)$ of
 lean: { statement: MinimalModel.IndexConj }
 tier: S
 route: [R6]
-notes: "Statement S54 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S54 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement takes a finite set of rational coefficients and K + Delta R-linearly equivalent to 0. Then N(K + Delta) is principal for one N that depends only on n and the set. The paper record of the source is not written yet (spec 07)."
