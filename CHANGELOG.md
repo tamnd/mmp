@@ -17,3 +17,7 @@ Each release has a section. The newest release is first.
 - The lab spec of experiment E2 in dimension 3, and its first run to index 40, in `lab/`.
 - The pages of the site: home, program, statements, map, audit, trust, routes, papers, learn, handbook, code and about.
 - The deploy workflow for mmp.tamnd.com, and the files README, CITATION, CONTRIBUTING and SECURITY.
+
+### Fixed
+
+- The record of the first E2 run has the commit of mmp-agent that made it, and the host `darwin/arm64` in place of the name of the machine. The outputs and their hashes are the same.
