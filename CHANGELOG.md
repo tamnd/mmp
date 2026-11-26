@@ -6,6 +6,7 @@ Each release has a section. The newest release is first.
 
 ### Added
 
+- `records/fidelity.json` has an entry for `MinimalModel.Toric.ToricConeTheorem`, the statement of the S2 top theorem. F1 comes from `records/lean.json`. F2 and F3 are theorems of `MinimalModel/Fidelity/ToricCone.lean` (mmp-lean #23): on ℙ², the nef divisor `-K` has a nonnegative wall degree, `K` is not nef, and the variants with the degree at most 0 or more than 0 are false. The statement does not pass yet. F4 and F5 need the agents `refuter` and `explainer`, and F6 needs two reviewers.
 - The lab spec `e2-simplicial-mld-3` runs E2 in dimension 3 over all simplicial toric germs to index 1200, cyclic or not, isolated or not, and its run is in `lab/runs`. The run of `e2-cyclic-quotient-mld-3` stays.
 - The node finiteness-of-models (MM8GY5VB02) records the Lean statement S34 `FinitenessOfModels` of mmp-lean, BCHM Theorem E with a general ample divisor written out through linear systems and very general members over an uncountable field. Its statement and the S34 row of spec 06 and of the site now speak of weak log canonical models over $\mathcal{L}_A(V)$, as Theorem E does, and the vocabulary of the row is partial (linear systems).
 
