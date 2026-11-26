@@ -7,6 +7,7 @@ Each release has a section. The newest release is first.
 ### Fixed
 
 - S52 and S29 now speak of the global mlds of enc pairs with coefficients in a finite set, as Han-Liu Conjecture 1.9(2') and Theorem 1.1 do. They spoke of germs before. Spec 04, 13 and 14 follow.
+- The sources of S14, S29, S31, S43 and S45 are checked against the arXiv copies. S43 cites Gongyo, arXiv:1101.1394, Theorem 6.1 and Lemma 6.2, not Theorem 1.2. S45 cites the Generalised Abundance Conjecture of Lazić and Peternell, which the arXiv copy does not number, and asks for a rational boundary, a nef Cartier L and a semiample Q-divisor. The source of S34 is BCHM Theorem E, and its note says why no form without a general ample divisor is a result of BCHM.
 
 ## v0.0.3 - 2026-11-26
 
