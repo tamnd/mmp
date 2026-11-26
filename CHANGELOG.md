@@ -21,3 +21,4 @@ Each release has a section. The newest release is first.
 ### Fixed
 
 - The record of the first E2 run has the commit of mmp-agent that made it, and the host `darwin/arm64` in place of the name of the machine. The outputs and their hashes are the same.
+- The page `/audit/` has no hand-written state of the steps. The tables of the page show the state from `records/audit.json`.

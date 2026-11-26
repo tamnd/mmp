@@ -35,15 +35,9 @@ The main theorems are `MMP.Fourfold.Program.IsMaximal.isNefOnCurves_or_isMoriFib
 | A7 | the Stacks layer: each AxiomMath/Stacks result that the main theorems use and whose statement differs from the Stacks Project text | a Stacks report |
 | A8 | the bridge: the statements S20 to S24 of the project proved from the theorems of AxiomMath/MMP in `MinimalModelBridge`; a letter to Axiom, 30 days, then a public report | the bridge build and the report |
 
-## The state on 2026-11-26
+## Where the state is kept
 
-The state of each step is in `records/audit.json`, and the exit records are in `audit/axiom-mmp/` of [tamnd/mmp](https://github.com/tamnd/mmp). The trust row Q9 reads `records/audit.json`.
-
-- **A1 is in progress.** The inventory of the source is done: the pins, the hashes of the source tree, the counts of files and lines, and a text scan for words that can hide an unchecked proof. The scan found no `sorry`, no `axiom` declaration and no `native_decide`. The clean build, its time and memory, and the hashes of the `.olean` files are not done. The inventory is `audit/axiom-mmp/A1-inventory.md`.
-- **A2 is not started.** It needs the build of A1. The plan, with the seven declarations and what to look for, is `audit/axiom-mmp/A2-axioms.md`.
-- **A3 to A8 are not started.**
-
-No finding is open. No finding exists yet, because no reading step has started.
+The tables at the top of this page show the state of each step and the open findings. The site makes them from `records/audit.json` at each build, so they do not go out of date. The exit records are in `audit/axiom-mmp/` of [tamnd/mmp](https://github.com/tamnd/mmp), and the table links each one. The command `mmp audit step` changes the state of a step, and it refuses the state `done` for a step with no exit record. The trust row Q9 reads the same file.
 
 ## Findings and their severity
 
