@@ -4,6 +4,10 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Added
+
+- The map has the first three nodes of route R3: toric-fan (MMH8EFW2JT), toric-wall-relation (MMFAWNT87R) and toric-cone-theorem (MM6EHAYFKV), the combinatorial form of the toric cone theorem. S39, the toric MMP, uses the cone theorem.
+
 ## v0.0.2 - 2026-11-26
 
 ### Changed

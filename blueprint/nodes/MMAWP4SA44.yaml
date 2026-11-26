@@ -8,6 +8,7 @@ sources:
   - { paper: FS04, loc: "the toric cone theorem" }
   - { paper: Mat02, loc: "Chapter 14" }
   - { paper: CLS11, loc: "Chapter 15" }
+uses: [MM6EHAYFKV]
 lean: { statement: MinimalModel.ToricMMP }
 tier: S
 route: [R3]

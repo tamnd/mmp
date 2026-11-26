@@ -1,0 +1,13 @@
+tag: "MMFAWNT87R"
+slug: "toric-wall-relation"
+kind: "theorem"
+title: "The wall relation"
+statement: "Let $\\sigma$ and $\\sigma'$ be cones of a fan, each spanned by a basis of the lattice, whose bases share every vector but one: $v$ in $\\sigma$ and $v'$ in $\\sigma'$. Then there are unique integers $b_i$ with $v+v'=\\sum_i b_i u_i$, where the $u_i$ are the shared vectors."
+sources:
+  - { paper: CLS11, loc: "Chapter 6, the wall relation" }
+  - { paper: Rei83, loc: "Section 1" }
+uses: [MMH8EFW2JT]
+lean: { statement: MinimalModel.Toric.Fan.exists_unique_wall_relation, proof: MinimalModel.Toric.Fan.exists_unique_wall_relation }
+tier: T5
+route: [R3]
+notes: "The Lean theorem does not take the wall itself as a hypothesis, because the proof does not need it. The fan of the projective plane checks it (`MinimalModel.Toric.P2.wall_c12_c20`)."
