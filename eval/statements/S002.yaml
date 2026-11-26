@@ -1,0 +1,19 @@
+id: S002
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 26
+end: 27
+name: MinimalModel.NonVanishing
+from: S2
+license: Apache-2.0
+informal: |
+  S41, the non-vanishing conjecture in dimension `n` (spec 03). For each projective lc pair of dimension `n`, if `K + Δ` is pseudo-effective, then it is `ℝ`-linearly equivalent to an effective divisor. This is open for `n ≥ 4`.
+faithful: |
+  def NonVanishing (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → IsPseudoEffective A.P.KΔ → IsREffective A.P.KΔ
+planted: |
+  def NonVanishing (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → IsPseudoEffective A.P.KΔ → IsBig A.P.KΔ
+defect: "the conclusion R-effective is replaced by big"

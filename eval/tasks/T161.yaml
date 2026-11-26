@@ -1,0 +1,17 @@
+id: T161
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Extrema.lean
+line: 79
+end: 82
+name: IsMinOn.of_isLocalMin_of_convex_univ
+from: S0
+license: Apache-2.0
+statement: |
+  theorem IsMinOn.of_isLocalMin_of_convex_univ {f : E → β} {a : E} (h_local_min : IsLocalMin f a)
+      (h_conv : ConvexOn ℝ univ f) : ∀ x, f a ≤ f x
+answer: |
+  fun x =>
+    (IsMinOn.of_isLocalMinOn_of_convexOn (mem_univ a) (h_local_min.isLocalMinOn univ) h_conv)
+      (mem_univ x)

@@ -1,0 +1,20 @@
+id: T107
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Gluing.lean
+line: 456
+end: 462
+name: AlgebraicGeometry.Scheme.Cover.hom_ext
+from: S0
+license: Apache-2.0
+statement: |
+  theorem hom_ext (𝒰 : OpenCover.{v} X) {Y : Scheme} (f₁ f₂ : X ⟶ Y)
+      (h : ∀ x, 𝒰.f x ≫ f₁ = 𝒰.f x ≫ f₂) : f₁ = f₂
+answer: |
+  by
+    rw [← cancel_epi 𝒰.ulift.fromGlued]
+    apply Multicoequalizer.hom_ext
+    intro x
+    rw [fromGlued, Multicoequalizer.π_desc_assoc, Multicoequalizer.π_desc_assoc]
+    exact h _

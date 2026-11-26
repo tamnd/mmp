@@ -1,0 +1,15 @@
+id: T187
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/Divisor.lean
+line: 46
+end: 48
+name: MinimalModel.Toric.IsRay.isPrimitive_rayGenerator
+from: S2
+license: Apache-2.0
+statement: |
+  theorem IsRay.isPrimitive_rayGenerator {ρ : PointedCone ℝ (NR n)} (h : IsRay ρ) :
+      IsPrimitive (rayGenerator ρ)
+answer: |
+  h.rayGenerator_spec.1

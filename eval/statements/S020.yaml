@@ -1,0 +1,23 @@
+id: S020
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 38
+end: 41
+name: MinimalModel.LSCMld
+from: S2
+license: Apache-2.0
+informal: |
+  S50, the lower semicontinuity conjecture for minimal log discrepancies in dimension `n` (Ambro). For each lc pair of dimension `n` and each real `t`, the closed points `x` with `mld(x) > t` are the closed points of an open set.
+faithful: |
+  def LSCMld (n : ℕ) : Prop :=
+    ∀ (X : NormalVariety k) (P : Pair X), X.dim = n → IsLc P → ∀ t : ℝ,
+      ∃ U : Set X.toScheme, IsOpen U ∧ ∀ x : X.toScheme, IsClosed ({x} : Set X.toScheme) →
+        (x ∈ U ↔ (t : WithBot ℝ) < mld P x)
+planted: |
+  def LSCMld (n : ℕ) : Prop :=
+    ∀ (X : NormalVariety k) (P : Pair X), X.dim = n → IsLc P → ∀ t : ℝ,
+      ∃ U : Set X.toScheme, IsOpen U ∧ ∀ x : X.toScheme, IsClosed ({x} : Set X.toScheme) →
+        (x ∈ U ↔ mld P x < (t : WithBot ℝ))
+defect: "the points with mld less than t in place of more than t"

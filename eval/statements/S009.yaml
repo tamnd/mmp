@@ -1,0 +1,23 @@
+id: S009
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Foundations.lean
+line: 51
+end: 54
+name: MinimalModel.BasepointFree
+from: S2
+license: Apache-2.0
+informal: |
+  S08, the base point free theorem (KM98 Theorem 3.3). Let `(X, Δ)` be a projective klt pair, and let `D` be a nef Cartier divisor such that `a D - (K + Δ)` is nef and big for some real `a > 0`. Then the linear system `|b D|` is free for each large `b`. So `D` is semiample. KM98 takes a boundary with rational coefficients. The case of real coefficients follows from it by a small change of `Δ`.
+faithful: |
+  def BasepointFree : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ D : Divisor ℤ A.X, IsCartier D → IsNef A.I D.toReal →
+      ∀ a : ℝ, 0 < a → IsNef A.I (a • D.toReal - A.P.KΔ) → IsBig (a • D.toReal - A.P.KΔ) →
+        ∃ b₀ : ℕ, ∀ b : ℕ, b₀ ≤ b → IsFree ((b : ℤ) • D)
+planted: |
+  def BasepointFree : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ D : Divisor ℤ A.X, IsCartier D → IsNef A.I D.toReal →
+      ∀ a : ℝ, 0 < a → IsNef A.I (a • D.toReal - A.P.KΔ) → IsBig (a • D.toReal - A.P.KΔ) →
+        ∃ b₀ : ℕ, IsFree ((b₀ : ℤ) • D)
+defect: "some multiple is free, and the multiple may be zero"

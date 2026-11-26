@@ -1,0 +1,19 @@
+id: S038
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/LowDim.lean
+line: 48
+end: 49
+name: MinimalModel.LcSurfaceMMP
+from: S2
+license: Apache-2.0
+informal: |
+  S13, the minimal model program for lc surface pairs (Fujino 2012, minimal model theory for log surfaces). Let `(X, Δ)` be a projective lc pair of dimension 2. Then each program from `(X, Δ)` runs and ends: each sequence of steps is finite, and each finite program extends to a program that ends with a minimal model or a Mori fibre space. A surface has no small contraction, so each step is a divisorial contraction.
+faithful: |
+  def LcSurfaceMMP : Prop :=
+    ∀ A : PairModel k, A.X.dim = 2 → IsLc A.P → EveryProgramEnds A
+planted: |
+  def LcSurfaceMMP : Prop :=
+    ∀ A : PairModel k, A.X.dim = 2 → EveryProgramEnds A
+defect: "the pair need not be lc"

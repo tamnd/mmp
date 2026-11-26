@@ -1,0 +1,19 @@
+id: S028
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 56
+end: 57
+name: MinimalModel.TerminationPseffLc4
+from: S2
+license: Apache-2.0
+informal: |
+  S21, the termination of flips for pseudo-effective lc 4-folds (Moraga; Chen and Tsakanikas). For each projective lc pair of dimension 4 such that `K + Δ` is pseudo-effective, each sequence of `(K + Δ)`-flips is finite.
+faithful: |
+  def TerminationPseffLc4 : Prop :=
+    ∀ A : PairModel k, A.X.dim = 4 → IsLc A.P → IsPseudoEffective A.P.KΔ → ¬ HasInfiniteFlips A
+planted: |
+  def TerminationPseffLc4 : Prop :=
+    ∀ A : PairModel k, A.X.dim = 4 → IsLc A.P → ¬ IsPseudoEffective A.P.KΔ → ¬ HasInfiniteFlips A
+defect: "K + Δ not pseudo-effective, in place of pseudo-effective"

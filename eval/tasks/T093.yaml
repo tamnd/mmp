@@ -1,0 +1,14 @@
+id: T093
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Pullbacks.lean
+line: 449
+end: 450
+name: AlgebraicGeometry.Scheme.Pullback.hasPullback_of_cover
+from: S0
+license: Apache-2.0
+statement: |
+  theorem hasPullback_of_cover : HasPullback f g
+answer: |
+  ⟨⟨⟨_, gluedIsLimit 𝒰 f g⟩⟩⟩

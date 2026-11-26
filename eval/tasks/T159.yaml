@@ -1,0 +1,18 @@
+id: T159
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/StrictConvexBetween.lean
+line: 130
+end: 134
+name: eq_midpoint_of_dist_eq_half
+from: S0
+license: Apache-2.0
+statement: |
+  lemma eq_midpoint_of_dist_eq_half (hx : dist x y = dist x z / 2) (hy : dist y z = dist x z / 2) :
+      y = midpoint ℝ x z
+answer: |
+  by
+    apply eq_lineMap_of_dist_eq_mul_of_dist_eq_mul
+    · rwa [invOf_eq_inv, ← div_eq_inv_mul]
+    · rwa [invOf_eq_inv, ← one_div, sub_half, one_div, ← div_eq_inv_mul]

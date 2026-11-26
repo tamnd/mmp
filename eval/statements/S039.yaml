@@ -1,0 +1,19 @@
+id: S039
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/LowDim.lean
+line: 52
+end: 53
+name: MinimalModel.SurfaceAbundance
+from: S2
+license: Apache-2.0
+informal: |
+  S14, abundance for lc surface pairs (Fujino, Minimal model theory for log surfaces, Publ. RIMS 48 (2012), Theorem 8.1). Let `(X, Δ)` be a projective lc pair of dimension 2 with a boundary `Δ` with real coefficients. If `K + Δ` is nef, then it is semiample. This is `Abundance 2` of family E, written out so that this file does not depend on family E.
+faithful: |
+  def SurfaceAbundance : Prop :=
+    ∀ A : PairModel k, A.X.dim = 2 → IsLc A.P → IsNef A.I A.P.KΔ → IsSemiample A.P.KΔ
+planted: |
+  def SurfaceAbundance : Prop :=
+    ∀ A : PairModel k, A.X.dim = 2 → IsLc A.P → IsSemiample A.P.KΔ
+defect: "the hypothesis that K + Δ is nef is dropped"

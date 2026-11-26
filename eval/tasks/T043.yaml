@@ -1,0 +1,17 @@
+id: T043
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/OpenImmersion.lean
+line: 179
+end: 182
+name: AlgebraicGeometry.Scheme.Hom.image_iSup
+from: S0
+license: Apache-2.0
+statement: |
+  lemma image_iSup {ι : Sort*} (s : ι → X.Opens) :
+      (f ''ᵁ ⨆ (i : ι), s i) = ⨆ (i : ι), f ''ᵁ s i
+answer: |
+  by
+    ext : 1
+    simp [Set.image_iUnion]

@@ -1,0 +1,25 @@
+id: S033
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Boundedness.lean
+line: 34
+end: 38
+name: MinimalModel.EncMldACC
+from: S2
+license: Apache-2.0
+informal: |
+  The ACC for the minimal log discrepancies of enc pairs of dimension `d` with coefficients in a finite set (Han-Liu, Conjecture 1.9(2')). Fix a finite set `Γ ⊆ [0, 1]`. The set `eMLD_d(Γ)` of the values `mld(X, Δ)`, where `(X, Δ)` is an enc pair of dimension `d` with the coefficients of `Δ` in `Γ`, satisfies the ACC: no sequence in it is strictly increasing. The mld is the global one, `globalMld`, as in Han-Liu Definition 3.8. The coefficient of a prime divisor outside the support is `0`, so the condition on the coefficients is with `0` added to `Γ`.
+faithful: |
+  def EncMldACC (d : ℕ) : Prop :=
+    ∀ Γ : Set ℝ, Γ ⊆ Set.Icc 0 1 → Γ.Finite → ∀ a : ℕ → ℝ,
+      (∀ i, ∃ (X : NormalVariety k) (P : Pair X), X.dim = d ∧ IsEnc P ∧
+        P.Δ.CoeffsIn (insert 0 Γ) ∧ globalMld P = (a i : WithBot ℝ)) →
+      ¬ StrictMono a
+planted: |
+  def EncMldACC (d : ℕ) : Prop :=
+    ∀ Γ : Set ℝ, Γ ⊆ Set.Icc 0 1 → ∀ a : ℕ → ℝ,
+      (∀ i, ∃ (X : NormalVariety k) (P : Pair X), X.dim = d ∧ IsEnc P ∧
+        P.Δ.CoeffsIn (insert 0 Γ) ∧ globalMld P = (a i : WithBot ℝ)) →
+      ¬ StrictMono a
+defect: "the set Γ need not be finite"

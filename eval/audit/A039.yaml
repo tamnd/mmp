@@ -1,0 +1,17 @@
+id: A039
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/BasicRelative.lean
+line: 32
+end: 33
+name: MinimalModel.NumEquiv
+from: S2
+license: Apache-2.0
+reference: |
+  Two `ℝ`-Cartier divisors are numerically equivalent: they have the same intersection number with each curve.
+lean: |
+  def NumEquiv (I : IntersectionData X) (D D' : Divisor ℝ X) : Prop :=
+    IsRCartier D ∧ IsRCartier D' ∧ ∀ C, I.dot D C ≤ I.dot D' C
+planted: true
+defect: "an inequality of degrees in place of an equality"

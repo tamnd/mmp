@@ -1,0 +1,15 @@
+id: T149
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Function.lean
+line: 535
+end: 537
+name: StrictConcaveOn.add_concaveOn
+from: S0
+license: Apache-2.0
+statement: |
+  theorem StrictConcaveOn.add_concaveOn (hf : StrictConcaveOn 𝕜 s f) (hg : ConcaveOn 𝕜 s g) :
+      StrictConcaveOn 𝕜 s (f + g)
+answer: |
+  hf.dual.add_convexOn hg.dual

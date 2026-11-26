@@ -1,0 +1,15 @@
+id: T192
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/ConeTheorem.lean
+line: 208
+end: 210
+name: MinimalModel.Toric.Fan.IsWallPair.span_eq_top
+from: S2
+license: Apache-2.0
+statement: |
+  theorem IsWallPair.span_eq_top (hw : F.IsWallPair σ σ') :
+      Submodule.span ℝ (σ : Set (NR n)) = ⊤
+answer: |
+  span_eq_top_of_coneDim_eq hw.coneDim_eq

@@ -1,0 +1,16 @@
+id: A008
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 462
+end: 463
+name: MinimalModel.IsContraction
+from: S2
+license: Apache-2.0
+reference: |
+  A contraction: a projective morphism `f` with `f_* 𝒪_X = 𝒪_Z`.
+lean: |
+  def IsContraction {Z : NormalVariety k} (f : X.toScheme ⟶ Z.toScheme) : Prop :=
+    IsProjectiveHom f ∧ ∀ U : Z.toScheme.Opens, IsIso (f.app U)
+planted: false

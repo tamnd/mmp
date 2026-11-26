@@ -1,0 +1,15 @@
+id: T178
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/Relative.lean
+line: 32
+end: 34
+name: MinimalModel.NumEquiv.symm
+from: S2
+license: Apache-2.0
+statement: |
+  theorem NumEquiv.symm {I : IntersectionData X} {D D' : Divisor ℝ X} (h : NumEquiv I D D') :
+      NumEquiv I D' D
+answer: |
+  ⟨h.2.1, h.1, fun C => (h.2.2 C).symm⟩

@@ -1,0 +1,19 @@
+id: S043
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Models.lean
+line: 36
+end: 37
+name: MinimalModel.FiniteGenerationCanonical
+from: S2
+license: Apache-2.0
+informal: |
+  S32, the finite generation of the canonical ring (BCHM Corollary 1.1.2). For each smooth projective variety `X`, the canonical ring is a finitely generated `k`-algebra.
+faithful: |
+  def FiniteGenerationCanonical : Prop :=
+    ∀ X : NormalVariety k, X.IsSmooth → IsProjective X → ∀ K : CanonicalDivisor X, (canonicalRing K).FG
+planted: |
+  def FiniteGenerationCanonical : Prop :=
+    ∀ X : NormalVariety k, IsProjective X → ∀ K : CanonicalDivisor X, (canonicalRing K).FG
+defect: "the variety need not be smooth"

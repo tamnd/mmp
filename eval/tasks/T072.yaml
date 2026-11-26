@@ -1,0 +1,14 @@
+id: T072
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Jacobian/Basic.lean
+line: 126
+end: 127
+name: WeierstrassCurve.Jacobian.fin3_def_ext
+from: S0
+license: Apache-2.0
+statement: |
+  lemma fin3_def_ext (a b c : R) : ![a, b, c] x = a ∧ ![a, b, c] y = b ∧ ![a, b, c] z = c
+answer: |
+  ⟨rfl, rfl, rfl⟩

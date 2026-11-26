@@ -1,0 +1,14 @@
+id: T131
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Strict.lean
+line: 239
+end: 240
+name: StrictConvex.vadd
+from: S0
+license: Apache-2.0
+statement: |
+  theorem StrictConvex.vadd (hs : StrictConvex 𝕜 s) (x : E) : StrictConvex 𝕜 (x +ᵥ s)
+answer: |
+  hs.add_left x

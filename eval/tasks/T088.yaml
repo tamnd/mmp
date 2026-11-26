@@ -1,0 +1,17 @@
+id: T088
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Cover/Directed.lean
+line: 223
+end: 226
+name: AlgebraicGeometry.Scheme.OpenCover.map_glueMorphismsOfLocallyDirected
+from: S0
+license: Apache-2.0
+statement: |
+  lemma map_glueMorphismsOfLocallyDirected {Y : Scheme.{u}} (g : ∀ i, 𝒰.X i ⟶ Y)
+      (h : ∀ {i j : 𝒰.I₀} (hij : i ⟶ j), 𝒰.trans hij ≫ g j = g i) (i : 𝒰.I₀) :
+      𝒰.f i ≫ 𝒰.glueMorphismsOfLocallyDirected g h = g i
+answer: |
+  by
+    simp [glueMorphismsOfLocallyDirected]

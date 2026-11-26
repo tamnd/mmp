@@ -1,0 +1,24 @@
+id: T087
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/Descent.lean
+line: 112
+end: 122
+name: AlgebraicGeometry.IsStableUnderBaseChange.of_pullback_fst_of_isAffine
+from: S0
+license: Apache-2.0
+statement: |
+  lemma IsStableUnderBaseChange.of_pullback_fst_of_isAffine [P'.RespectsIso]
+      [P'.IsStableUnderComposition] [P.IsStableUnderBaseChange]
+      (H : ∀ {R : CommRingCat.{u}} {S X : Scheme.{u}} (f : Spec R ⟶ S) (g : X ⟶ S),
+        P' f → P (pullback.fst f g) → P g) {X Y Z T : Scheme.{u}} [IsAffine T] (p : T ⟶ X)
+      (hp : P' p) (f : X ⟶ Z) (g : Y ⟶ Z) (h : P' f) (hf : P (pullback.fst f g)) : P g
+answer: |
+  by
+    apply H ((T.isoSpec.inv ≫ p) ≫ f)
+    · rw [Category.assoc, P'.cancel_left_of_respectsIso]
+      exact P'.comp_mem _ _ hp h
+    · rw [← pullbackRightPullbackFstIso_inv_fst f g (T.isoSpec.inv ≫ p),
+          P.cancel_left_of_respectsIso]
+      exact P.pullback_fst _ _ hf

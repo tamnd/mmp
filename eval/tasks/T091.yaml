@@ -1,0 +1,17 @@
+id: T091
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/IdealSheaf/Basic.lean
+line: 554
+end: 557
+name: AlgebraicGeometry.Scheme.IdealSheafData.radical_mul
+from: S0
+license: Apache-2.0
+statement: |
+  lemma radical_mul {I J : IdealSheafData X} :
+      radical (I * J) = radical I ⊓ radical J
+answer: |
+  by
+    ext U : 2
+    simp only [radical_ideal, ideal_mul, Pi.mul_apply, Ideal.radical_mul, ideal_inf, Pi.inf_apply]

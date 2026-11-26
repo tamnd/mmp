@@ -1,0 +1,17 @@
+id: A042
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 326
+end: 327
+name: MinimalModel.IsBig
+from: S2
+license: Apache-2.0
+reference: |
+  A big `ℝ`-divisor: `ℝ`-linearly equivalent to an ample divisor plus an effective divisor.
+lean: |
+  def IsBig (D : Divisor ℝ X) : Prop :=
+    ∃ A E : Divisor ℝ X, IsAmple A ∧ RLinEquiv D (A + E)
+planted: true
+defect: "the divisor E need not be effective, so every divisor is big"

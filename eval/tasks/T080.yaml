@@ -1,0 +1,17 @@
+id: T080
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Reduction.lean
+line: 135
+end: 138
+name: WeierstrassCurve.integralModel_b₈_eq
+from: S0
+license: Apache-2.0
+statement: |
+  lemma integralModel_b₈_eq (W : WeierstrassCurve K) [hW : IsIntegral R W] :
+      algebraMap R K (integralModel R W).b₈ = W.b₈
+answer: |
+  by
+    conv_rhs => rw [← baseChange_integralModel_eq R W]
+    simp [baseChange]

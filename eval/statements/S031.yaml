@@ -1,0 +1,33 @@
+id: S031
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 53
+end: 61
+name: MinimalModel.IitakaConj
+from: S2
+license: Apache-2.0
+informal: |
+  S46, the Iitaka conjecture `C_{n,m}` (Iitaka, Genera and classification of algebraic varieties, 1972; the form of spec 03.8). Let `f : X → Y` be an algebraic fibre space of smooth projective varieties, with `dim X = n` and `dim Y = m`: a projective morphism over `k` with `f_* 𝒪_X = 𝒪_Y`. Let `F` be a general fibre. Then `κ(X) ≥ κ(F) + κ(Y)`.  "General fibre" is written with an open set: there is a nonempty open set `V` of `Y` such that the inequality holds for the fibre over each closed point of `V`. The fibre `f⁻¹(y)` is the scheme `f.fiber y` of Mathlib. Over a general closed point it is a smooth projective variety, and the statement takes each `F : NormalVariety k` with an isomorphism to the fibre over `k`. The Kodaira dimensions are those of canonical divisors, and `⊥` is `-∞`, so the inequality holds when `κ(F) = -∞`. It is known for `n ≤ 6` (Birkar 2009) and in other cases, and open in general.
+faithful: |
+  def IitakaConj (n m : ℕ) : Prop :=
+    ∀ (X Y : NormalVariety k) (f : X.toScheme ⟶ Y.toScheme), X.IsSmooth → Y.IsSmooth →
+      IsProjective X → IsProjective Y → X.dim = n → Y.dim = m → f ≫ Y.str = X.str →
+      IsContraction f →
+      ∃ V : Y.toScheme.Opens, (V : Set Y.toScheme).Nonempty ∧
+        ∀ y ∈ V, IsClosed ({y} : Set Y.toScheme) →
+          ∀ (F : NormalVariety k) (e : F.toScheme ≅ f.fiber y), e.hom ≫ f.fiberι y ≫ X.str = F.str →
+            ∀ (KX : CanonicalDivisor X) (KY : CanonicalDivisor Y) (KF : CanonicalDivisor F),
+              kodairaDim KF + kodairaDim KY ≤ kodairaDim KX
+planted: |
+  def IitakaConj (n m : ℕ) : Prop :=
+    ∀ (X Y : NormalVariety k) (f : X.toScheme ⟶ Y.toScheme), X.IsSmooth → Y.IsSmooth →
+      IsProjective X → IsProjective Y → X.dim = n → Y.dim = m → f ≫ Y.str = X.str →
+      IsContraction f →
+      ∃ V : Y.toScheme.Opens, (V : Set Y.toScheme).Nonempty ∧
+        ∀ y ∈ V, IsClosed ({y} : Set Y.toScheme) →
+          ∀ (F : NormalVariety k) (e : F.toScheme ≅ f.fiber y), e.hom ≫ f.fiberι y ≫ X.str = F.str →
+            ∀ (KX : CanonicalDivisor X) (KY : CanonicalDivisor Y) (KF : CanonicalDivisor F),
+              kodairaDim KX ≤ kodairaDim KF + kodairaDim KY
+defect: "the inequality is reversed: this is the easy addition, not subadditivity"

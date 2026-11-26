@@ -1,0 +1,16 @@
+id: A016
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/BasicRelative.lean
+line: 48
+end: 49
+name: MinimalModel.IsQCartierReal
+from: S2
+license: Apache-2.0
+reference: |
+  A `ℚ`-Cartier `ℝ`-divisor: a positive multiple is a Cartier divisor. Then its coefficients are rational.
+lean: |
+  def IsQCartierReal (D : Divisor ℝ X) : Prop :=
+    ∃ m : ℕ, 0 < m ∧ ∃ E : Divisor ℤ X, IsCartier E ∧ (m : ℝ) • D = E.toReal
+planted: false

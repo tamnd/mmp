@@ -1,0 +1,16 @@
+id: T086
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Birational/RationalMap.lean
+line: 228
+end: 231
+name: AlgebraicGeometry.Scheme.PartialMap.mem_domain_ofFromSpecStalk
+from: S0
+license: Apache-2.0
+statement: |
+  lemma mem_domain_ofFromSpecStalk [IrreducibleSpace X] [LocallyOfFiniteType sY]
+      {x : X} [X.IsGermInjectiveAt x] (φ : Spec (X.presheaf.stalk x) ⟶ Y)
+      (h : φ ≫ sY = X.fromSpecStalk x ≫ sX) : x ∈ (ofFromSpecStalk sX sY φ h).domain
+answer: |
+  (spread_out_of_isGermInjective' sX sY φ h).choose_spec.choose

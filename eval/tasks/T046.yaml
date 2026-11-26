@@ -1,0 +1,16 @@
+id: T046
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Basic.lean
+line: 111
+end: 113
+name: WeierstrassCurve.Affine.degree_polynomial
+from: S0
+license: Apache-2.0
+statement: |
+  lemma degree_polynomial [Nontrivial R] : W.polynomial.degree = 2
+answer: |
+  by
+    rw [polynomial_eq]
+    exact Cubic.degree_of_b_ne_zero' one_ne_zero

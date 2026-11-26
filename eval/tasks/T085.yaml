@@ -1,0 +1,17 @@
+id: T085
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/ZariskisMainTheorem.lean
+line: 387
+end: 390
+name: AlgebraicGeometry.IsFinite.eq_proper_inf_locallyQuasiFinite
+from: S0
+license: Apache-2.0
+statement: |
+  lemma IsFinite.eq_proper_inf_locallyQuasiFinite :
+      @IsFinite = (@IsProper ⊓ @LocallyQuasiFinite : MorphismProperty Scheme)
+answer: |
+  by
+    ext
+    exact IsFinite.iff_isProper_and_locallyQuasiFinite ..

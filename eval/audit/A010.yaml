@@ -1,0 +1,18 @@
+id: A010
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 301
+end: 304
+name: MinimalModel.IsAmpleOn
+from: S2
+license: Apache-2.0
+reference: |
+  A Cartier divisor `D` is ample on the open set `W`: the sections of the multiples of `D` on `W` whose nonvanishing loci are affine cover `W` (EGA II 4.5.2). A section of `m D` is a rational function `φ` with `m D + div φ ≥ 0` on `W`.
+lean: |
+  def IsAmpleOn (D : Divisor ℤ X) (W : X.toScheme.Opens) : Prop :=
+    IsCartier D ∧ ∀ x ∈ W, ∃ m : ℕ, 0 < m ∧ ∃ φ : FF X, ∃ E : Divisor ℤ X,
+      IsDivOn (E - (m : ℤ) • D) φ W ∧ (∀ P : PrimeDivisor X, P.1 ∈ W → 0 ≤ E P) ∧
+      x ∈ nonvanishing E W ∧ ∃ U : X.toScheme.Opens, IsAffineOpen U ∧ (U : Set X.toScheme) = nonvanishing E W
+planted: false

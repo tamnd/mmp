@@ -1,0 +1,14 @@
+id: T176
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/PointPairs.lean
+line: 137
+end: 137
+name: MinimalModel.pointPair_isCanonical
+from: S2
+license: Apache-2.0
+statement: |
+  theorem pointPair_isCanonical : IsCanonical (pointPair k)
+answer: |
+  (pointPair_isTerminal k).isCanonical

@@ -1,0 +1,15 @@
+id: T008
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Jacobian/Formula.lean
+line: 206
+end: 207
+name: WeierstrassCurve.Jacobian.dblZ_of_Z_eq_zero
+from: S0
+license: Apache-2.0
+statement: |
+  lemma dblZ_of_Z_eq_zero {P : Fin 3 → R} (hPz : P z = 0) : W'.dblZ P = 0
+answer: |
+  by
+    rw [dblZ, hPz, zero_mul]

@@ -1,0 +1,23 @@
+id: T100
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/Constructors.lean
+line: 339
+end: 348
+name: AlgebraicGeometry.topologically_isZariskiLocalAtSource'
+from: S0
+license: Apache-2.0
+statement: |
+  lemma topologically_isZariskiLocalAtSource' [(topologically P).RespectsIso]
+      (hP : ∀ {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) {ι : Type u}
+        (U : ι → Opens X) (_ : IsOpenCover U) (_ : Continuous f),
+        P f ↔ (∀ i, P (f ∘ ((↑) : U i → X)))) :
+      IsZariskiLocalAtSource (topologically P)
+answer: |
+  by
+    refine topologically_isZariskiLocalAtSource P ?_ (fun f hf _ U hU hf' ↦ (hP f U hU hf).mpr hf')
+    introv hf hs
+    refine (hP f (![⊤, U] ∘ Equiv.ulift) ?_ hf).mp hs ⟨1⟩
+    rw [IsOpenCover, ← top_le_iff]
+    exact le_iSup (![⊤, U] ∘ Equiv.ulift) ⟨0⟩

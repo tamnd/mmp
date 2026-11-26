@@ -1,0 +1,15 @@
+id: T089
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/ProjectiveSpectrum/Basic.lean
+line: 196
+end: 198
+name: AlgebraicGeometry.Proj.opensRange_awayι
+from: S0
+license: Apache-2.0
+statement: |
+  lemma opensRange_awayι :
+      (Proj.awayι 𝒜 f f_deg hm).opensRange = Proj.basicOpen 𝒜 f
+answer: |
+  (Scheme.Hom.opensRange_comp_of_isIso _ _).trans (basicOpen 𝒜 f).opensRange_ι

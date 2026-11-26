@@ -1,0 +1,22 @@
+id: S034
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Effective.lean
+line: 25
+end: 28
+name: MinimalModel.EffectiveNonVanishing
+from: S2
+license: Apache-2.0
+informal: |
+  The Ambro-Kawamata effective non-vanishing conjecture in dimension `n` (Kawamata, "On effective non-vanishing and base-point-freeness", Asian J. Math. 4 (2000), Conjecture 2.1; the `reader` role checks the number). Let `(X, Δ)` be a klt pair of dimension `n` and `D` a nef Cartier divisor such that `D - (K + Δ)` is nef and big. Then `H⁰(X, 𝒪_X(D)) ≠ 0`. The source takes `X` complete. This form takes `X` projective, so its negation is stronger than the negation of the source.
+faithful: |
+  def EffectiveNonVanishing (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsKlt A.P → ∀ D : Divisor ℤ A.X, IsCartier D →
+      IsNef A.I D.toReal → IsNef A.I (D.toReal - A.P.KΔ) → IsBig (D.toReal - A.P.KΔ) →
+        sections D ≠ ⊥
+planted: |
+  def EffectiveNonVanishing (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsKlt A.P → ∀ D : Divisor ℤ A.X, IsCartier D →
+      IsNef A.I D.toReal → IsNef A.I (D.toReal - A.P.KΔ) → sections D ≠ ⊥
+defect: "the hypothesis that D - (K + Δ) is big is dropped"

@@ -1,0 +1,14 @@
+id: T144
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Gauge.lean
+line: 199
+end: 200
+name: gauge_le_one_of_mem
+from: S0
+license: Apache-2.0
+statement: |
+  theorem gauge_le_one_of_mem {x : E} (hx : x ∈ s) : gauge s x ≤ 1
+answer: |
+  gauge_le_of_mem zero_le_one <| by rwa [one_smul]

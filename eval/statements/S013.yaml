@@ -1,0 +1,25 @@
+id: S013
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/LowDim.lean
+line: 41
+end: 45
+name: MinimalModel.SurfaceMMP
+from: S2
+license: Apache-2.0
+informal: |
+  S12, the minimal model program for smooth projective surfaces. Each smooth projective surface `X` has a birational morphism to a smooth projective surface `Y` such that `K_Y` is nef, or `Y` has a Mori fibre space structure (a ruled surface over a curve, or `ℙ²`).
+faithful: |
+  def SurfaceMMP : Prop :=
+    ∀ A : PairModel k, A.IsSmoothSurface →
+      ∃ B : PairModel k, B.IsSmoothSurface ∧
+        ∃ f : A.X.toScheme ⟶ B.X.toScheme, f ≫ B.X.str = A.X.str ∧ IsProper f ∧
+          IsBirationalHom f ∧ (IsMinimal B ∨ IsMoriFibreSpace B)
+planted: |
+  def SurfaceMMP : Prop :=
+    ∀ A : PairModel k, A.IsSmoothSurface →
+      ∃ B : PairModel k, B.IsSmoothSurface ∧
+        ∃ f : A.X.toScheme ⟶ B.X.toScheme, f ≫ B.X.str = A.X.str ∧ IsProper f ∧
+          IsBirationalHom f ∧ IsMinimal B
+defect: "the output is always minimal: the Mori fibre space case is dropped"

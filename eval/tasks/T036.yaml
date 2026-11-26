@@ -1,0 +1,22 @@
+id: T036
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Modules/Tilde.lean
+line: 488
+end: 496
+name: AlgebraicGeometry.isLocalizing_of_iso
+from: S0
+license: Apache-2.0
+statement: |
+  theorem isLocalizing_of_iso {M N : TopCat.Sheaf (ModuleCat R) (Spec R)} (φ : M ≅ N)
+      (hM : IsLocalizing M) :
+      IsLocalizing N
+answer: |
+  by
+    intro f
+    rw [← IsLocalizedModule.comp_iff_of_bijective_left _ _ <|
+      ConcreteCategory.bijective_of_isIso (φ.inv.hom.app (op (basicOpen f))), ← ModuleCat.hom_comp,
+      φ.inv.hom.naturality (basicOpen f).leTop.op, ModuleCat.hom_comp,
+      IsLocalizedModule.comp_iff_of_bijective_right _ _ <| ConcreteCategory.bijective_of_isIso _]
+    exact hM f

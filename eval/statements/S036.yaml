@@ -1,0 +1,33 @@
+id: S036
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Foundations.lean
+line: 66
+end: 74
+name: MinimalModel.ContractionTheorem
+from: S2
+license: Apache-2.0
+informal: |
+  S06, the contraction theorem (KM98 Theorem 3.7, parts 3 and 4). Let `(X, Δ)` be a projective klt pair and `F` a `(K + Δ)`-negative extremal face of `NE(X)`. Then there is a morphism `cont_F : X → Z` over `k` onto a projective normal variety `Z` with `(cont_F)_* 𝒪_X = 𝒪_Z` that contracts a curve exactly when its class is in `F`. It is unique up to a unique isomorphism of `Z`. Each Cartier divisor `L` with `L · C = 0` for the curves `C` with class in `F` is trivial on the inverse image of an open neighbourhood of each point of `Z`. Because `(cont_F)_* 𝒪_X = 𝒪_Z`, this is the same as `𝒪_X(L) ≅ cont_F^* L_Z` for a line bundle `L_Z` on `Z`.
+faithful: |
+  def ContractionTheorem : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ F : ExtremalFace A.I, F.IsNegative A.P.KΔR →
+      ∃ (Z : NormalVariety k) (f : A.X.toScheme ⟶ Z.toScheme), IsContractionOfFace A F Z f ∧
+        (∀ (Z' : NormalVariety k) (f' : A.X.toScheme ⟶ Z'.toScheme), IsContractionOfFace A F Z' f' →
+          ∃ e : Z.toScheme ≅ Z'.toScheme, f ≫ e.hom = f') ∧
+        ∀ L : Divisor ℤ A.X, IsCartier L →
+          (∀ C : Curve A.X, A.I.curveClass C ∈ F.carrier → A.I.dot L.toReal C = 0) →
+          ∀ z : Z.toScheme, ∃ V : Z.toScheme.Opens, z ∈ V ∧
+            ∃ φ : FF A.X, IsDivOn L φ (f ⁻¹ᵁ V : Set A.X.toScheme)
+planted: |
+  def ContractionTheorem : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ F : ExtremalFace A.I,
+      ∃ (Z : NormalVariety k) (f : A.X.toScheme ⟶ Z.toScheme), IsContractionOfFace A F Z f ∧
+        (∀ (Z' : NormalVariety k) (f' : A.X.toScheme ⟶ Z'.toScheme), IsContractionOfFace A F Z' f' →
+          ∃ e : Z.toScheme ≅ Z'.toScheme, f ≫ e.hom = f') ∧
+        ∀ L : Divisor ℤ A.X, IsCartier L →
+          (∀ C : Curve A.X, A.I.curveClass C ∈ F.carrier → A.I.dot L.toReal C = 0) →
+          ∀ z : Z.toScheme, ∃ V : Z.toScheme.Opens, z ∈ V ∧
+            ∃ φ : FF A.X, IsDivOn L φ (f ⁻¹ᵁ V : Set A.X.toScheme)
+defect: "the face need not be (K + Δ)-negative"

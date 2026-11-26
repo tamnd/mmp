@@ -1,0 +1,21 @@
+id: S047
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 73
+end: 75
+name: MinimalModel.TerminationBig
+from: S2
+license: Apache-2.0
+informal: |
+  S25, a fresh claim (Hashizume, arXiv:2609.33679; claim C2 of spec 01.3). The statement of S24 in dimension `n`, with no bound on `n`: for each projective klt pair of dimension `n` such that `Δ` is big or `K + Δ` is big, each sequence of steps of the minimal model program is finite. The class is `claimed`: this statement is never a hypothesis of another proof (spec 06.6).
+faithful: |
+  def TerminationBig (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsKlt A.P → (IsBig A.P.Δ ∨ IsBig A.P.KΔ) →
+      ¬ HasInfiniteProgram A
+planted: |
+  def TerminationBig (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → (IsBig A.P.Δ ∨ IsBig A.P.KΔ) →
+      ¬ HasInfiniteProgram A
+defect: "lc pairs in place of klt pairs"

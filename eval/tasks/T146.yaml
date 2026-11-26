@@ -1,0 +1,16 @@
+id: T146
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Continuous.lean
+line: 111
+end: 113
+name: ConcaveOn.isBoundedUnder_abs
+from: S0
+license: Apache-2.0
+statement: |
+  lemma ConcaveOn.isBoundedUnder_abs (hf : ConcaveOn ℝ C f) {x₀ : E} (hC : C ∈ 𝓝 x₀) :
+      (𝓝 x₀).IsBoundedUnder (· ≤ ·) |f| ↔ (𝓝 x₀).IsBoundedUnder (· ≥ ·) f
+answer: |
+  by
+    simpa [Pi.neg_def, Pi.abs_def] using hf.neg.isBoundedUnder_abs hC

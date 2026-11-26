@@ -1,0 +1,19 @@
+id: A014
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 269
+end: 272
+name: MinimalModel.IsDlt
+from: S2
+license: Apache-2.0
+reference: |
+  Divisorial log terminal (Szabó): `(X, Δ)` is lc, and there is a closed set `Z` such that the pair is snc outside `Z` and each valuation with centre in `Z` has a positive log discrepancy.
+lean: |
+  def IsDlt (P : Pair X) : Prop :=
+    IsLc P ∧ ∃ Z : Set X.toScheme, IsClosed Z ∧
+      (∀ x ∉ Z, IsSncAt {Q | P.Δ Q ≠ 0} x) ∧
+      ∀ v, IsDivisorial v → ∀ x, IsCentre v x → x ∉ Z → ∀ A, LogDiscrepancyIs P v A → 0 < A
+planted: true
+defect: "the positivity is asked outside Z in place of inside Z"

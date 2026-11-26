@@ -1,0 +1,15 @@
+id: T197
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/AffineLine.lean
+line: 148
+end: 150
+name: MinimalModel.algebraMap_mem_stalkSubring
+from: S2
+license: Apache-2.0
+statement: |
+  theorem algebraMap_mem_stalkSubring (Q : (affineLine k).toScheme) (r : k[X]) :
+      algebraMap k[X] (FF (affineLine k)) r ∈ stalkSubring Q
+answer: |
+  ⟨algebraMap k[X] _ r, (IsScalarTower.algebraMap_apply _ _ _ r).symm⟩

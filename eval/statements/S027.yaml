@@ -1,0 +1,21 @@
+id: S027
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Effective.lean
+line: 20
+end: 22
+name: MinimalModel.FujitaFreeness
+from: S2
+license: Apache-2.0
+informal: |
+  S56, Fujita's freeness conjecture. Let `X` be a smooth projective variety, `K` a canonical divisor of `X` and `L` an ample Cartier divisor. Then `K + m L` is free for each `m ≥ dim X + 1`. It is known in dimension at most 5. OpenAI 038 claims the full conjecture (claim C8 of spec 01.3). The class stays `open` until experts accept a proof.
+faithful: |
+  def FujitaFreeness : Prop :=
+    ∀ X : NormalVariety k, X.IsSmooth → IsProjective X → ∀ (K : CanonicalDivisor X) (L : Divisor ℤ X),
+      IsRelAmple L X.str → ∀ m : ℕ, X.dim + 1 ≤ m → IsFree (K.K + (m : ℤ) • L)
+planted: |
+  def FujitaFreeness : Prop :=
+    ∀ X : NormalVariety k, X.IsSmooth → IsProjective X → ∀ (K : CanonicalDivisor X) (L : Divisor ℤ X),
+      IsRelAmple L X.str → ∀ m : ℕ, X.dim ≤ m → IsFree (K.K + (m : ℤ) • L)
+defect: "the multiple m ≥ dim X in place of m ≥ dim X + 1"

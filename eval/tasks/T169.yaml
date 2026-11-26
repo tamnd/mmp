@@ -1,0 +1,16 @@
+id: T169
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Join.lean
+line: 190
+end: 192
+name: convexJoin_singleton_segment
+from: S0
+license: Apache-2.0
+statement: |
+  theorem convexJoin_singleton_segment (a b c : E) :
+      convexJoin 𝕜 {a} (segment 𝕜 b c) = convexHull 𝕜 {a, b, c}
+answer: |
+  by
+    rw [← segment_same 𝕜, convexJoin_segments, insert_idem]

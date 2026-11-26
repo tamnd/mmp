@@ -1,0 +1,17 @@
+id: T020
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/FinitePresentation.lean
+line: 162
+end: 166
+name: AlgebraicGeometry.Scheme.Hom.isConstructible_image
+from: S0
+license: Apache-2.0
+statement: |
+  lemma Scheme.Hom.isConstructible_image (f : X ⟶ Y)
+      [LocallyOfFinitePresentation f] [QuasiCompact f] [CompactSpace Y] [QuasiSeparatedSpace Y]
+      {s : Set X} (hs : IsConstructible s) :
+      IsConstructible (f '' s)
+answer: |
+  (f.isLocallyConstructible_image hs.isLocallyConstructible).isConstructible

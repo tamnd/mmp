@@ -1,0 +1,14 @@
+id: T109
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/WeaklyEtale.lean
+line: 119
+end: 120
+name: AlgebraicGeometry.WeaklyEtale.of_comp
+from: S0
+license: Apache-2.0
+statement: |
+  lemma of_comp (f : X ⟶ Y) (g : Y ⟶ Z) [WeaklyEtale (f ≫ g)] [WeaklyEtale g] : WeaklyEtale f
+answer: |
+  MorphismProperty.of_postcomp _ _ g ‹_› ‹_›

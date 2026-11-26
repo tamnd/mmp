@@ -1,0 +1,15 @@
+id: T078
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/Basic.lean
+line: 270
+end: 272
+name: AlgebraicGeometry.IsZariskiLocalAtSource.iff_of_iSup_eq_top
+from: S0
+license: Apache-2.0
+statement: |
+  theorem iff_of_iSup_eq_top {ι} (U : ι → X.Opens) (hU : iSup U = ⊤) :
+      P f ↔ ∀ i, P ((U i).ι ≫ f)
+answer: |
+  ⟨fun H _ ↦ comp H _, of_iSup_eq_top U hU⟩

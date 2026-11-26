@@ -1,0 +1,17 @@
+id: A036
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 291
+end: 292
+name: MinimalModel.IsSmallHom
+from: S2
+license: Apache-2.0
+reference: |
+  A small birational morphism: it is birational, and an isomorphism near the generic point of each prime divisor of the source.
+lean: |
+  def IsSmallHom {Y Z : NormalVariety k} (f : Y.toScheme ⟶ Z.toScheme) : Prop :=
+    IsBirationalHom f ∧ ∃ P : PrimeDivisor Y, ∃ V : Z.toScheme.Opens, f.base P.1 ∈ V ∧ IsIso (f ∣_ V)
+planted: true
+defect: "an isomorphism near some prime divisor, in place of near each"

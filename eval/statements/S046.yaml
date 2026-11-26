@@ -1,0 +1,27 @@
+id: S046
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 60
+end: 65
+name: MinimalModel.TerminationScalingBig
+from: S2
+license: Apache-2.0
+informal: |
+  S23, the termination of the program with scaling for a big boundary (BCHM Corollary 1.4.2, the absolute case). Let `(X, Δ)` be a projective `ℚ`-factorial klt pair with `Δ` big. Let `C ≥ 0` be a divisor such that `(X, Δ + C)` is klt and `K + Δ + C` is nef. Then each `(K + Δ)`-program with scaling of `C` is finite: no infinite sequence of steps with scaling starts at `(X, Δ)` and `C`. The divisor `C i` on the model `i` is the strict transform of `C`. This is about the programs with scaling only. BCHM say that they do not prove the termination of each program; that is S24 and S25 for a big boundary.
+faithful: |
+  def TerminationScalingBig : Prop :=
+    ∀ (model : ℕ → PairModel k) (C : ∀ i, Divisor ℝ (model i).X),
+      IsQFactorial (model 0).X → IsKlt (model 0).P → IsBig (model 0).P.Δ → 0 ≤ C 0 →
+      (∃ P' : Pair (model 0).X, P'.K = (model 0).P.K ∧ P'.Δ = (model 0).P.Δ + C 0 ∧ IsKlt P') →
+      IsNef (model 0).I ((model 0).P.KΔ + C 0) →
+      ¬ ∀ i, IsScalingStep (model i) (model (i + 1)) (C i) (C (i + 1))
+planted: |
+  def TerminationScalingBig : Prop :=
+    ∀ (model : ℕ → PairModel k) (C : ∀ i, Divisor ℝ (model i).X),
+      IsQFactorial (model 0).X → IsKlt (model 0).P → 0 ≤ C 0 →
+      (∃ P' : Pair (model 0).X, P'.K = (model 0).P.K ∧ P'.Δ = (model 0).P.Δ + C 0 ∧ IsKlt P') →
+      IsNef (model 0).I ((model 0).P.KΔ + C 0) →
+      ¬ ∀ i, IsScalingStep (model i) (model (i + 1)) (C i) (C (i + 1))
+defect: "the boundary need not be big"

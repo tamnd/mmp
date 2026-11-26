@@ -1,0 +1,19 @@
+id: S016
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Models.lean
+line: 40
+end: 41
+name: MinimalModel.MinimalModelConj
+from: S2
+license: Apache-2.0
+informal: |
+  S33, the existence of minimal models (spec 03). Each projective lc pair of dimension `n` with `K + Δ` pseudo-effective has a minimal model in the sense of KM98 Definition 3.50. This is known for `n ≤ 4` and open for `n ≥ 5` (spec 01.1).
+faithful: |
+  def MinimalModelConj (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → IsPseudoEffective A.P.KΔ → ∃ B, IsMinimalModel A B
+planted: |
+  def MinimalModelConj (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → ∃ B, IsMinimalModel A B
+defect: "the hypothesis that K + Δ is pseudo-effective is dropped"

@@ -1,0 +1,19 @@
+id: T013
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/ProjectiveSpectrum/Basic.lean
+line: 240
+end: 245
+name: AlgebraicGeometry.Proj.basicOpenToSpec_SpecMap_awayMap
+from: S0
+license: Apache-2.0
+statement: |
+  lemma basicOpenToSpec_SpecMap_awayMap :
+      basicOpenToSpec 𝒜 x ≫ Spec.map (CommRingCat.ofHom (awayMap 𝒜 g_deg hx)) =
+        (Proj 𝒜).homOfLE (basicOpen_mono _ _ _ ⟨_, hx⟩) ≫ basicOpenToSpec 𝒜 f
+answer: |
+  by
+    rw [basicOpenToSpec, Category.assoc, ← Spec.map_comp, awayMap_awayToSection,
+      Spec.map_comp, Scheme.Opens.toSpecΓ_SpecMap_presheaf_map_assoc]
+    rfl

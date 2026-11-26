@@ -1,0 +1,18 @@
+id: A022
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 337
+end: 339
+name: MinimalModel.IsFree
+from: S2
+license: Apache-2.0
+reference: |
+  A Cartier divisor is free (base point free): at each point, some section of it does not vanish.
+lean: |
+  def IsFree (D : Divisor ℤ X) : Prop :=
+    IsCartier D ∧ ∃ x : X.toScheme, ∃ φ : FF X, ∃ E : Divisor ℤ X,
+      IsDivOn (E - D) φ Set.univ ∧ 0 ≤ E ∧ x ∈ nonvanishing E Set.univ
+planted: true
+defect: "some section is nonzero at some point, in place of at each point"

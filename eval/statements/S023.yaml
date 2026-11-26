@@ -1,0 +1,21 @@
+id: S023
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 68
+end: 70
+name: MinimalModel.TerminationBigLe5
+from: S2
+license: Apache-2.0
+informal: |
+  S24, a fresh claim (Han, Liu and Zhuang, arXiv:2509.01501; spec 01.3). For each projective klt pair of dimension at most 5 such that `Δ` is big or `K + Δ` is big, each sequence of steps of the minimal model program is finite. The class is `claimed`: this statement is never a hypothesis of another proof (spec 06.6).
+faithful: |
+  def TerminationBigLe5 : Prop :=
+    ∀ A : PairModel k, A.X.dim ≤ 5 → IsKlt A.P → (IsBig A.P.Δ ∨ IsBig A.P.KΔ) →
+      ¬ HasInfiniteProgram A
+planted: |
+  def TerminationBigLe5 : Prop :=
+    ∀ A : PairModel k, A.X.dim ≤ 5 → IsKlt A.P → (IsBig A.P.Δ ∧ IsBig A.P.KΔ) →
+      ¬ HasInfiniteProgram A
+defect: "Δ and K + Δ both big, in place of or"

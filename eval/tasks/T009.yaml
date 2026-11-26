@@ -1,0 +1,17 @@
+id: T009
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean
+line: 154
+end: 157
+name: WeierstrassCurve.b₈_of_char_two
+from: S0
+license: Apache-2.0
+statement: |
+  lemma b₈_of_char_two :
+      W.b₈ = W.a₁ ^ 2 * W.a₆ + W.a₁ * W.a₃ * W.a₄ + W.a₂ * W.a₃ ^ 2 + W.a₄ ^ 2
+answer: |
+  by
+    rw [b₈]
+    linear_combination (2 * W.a₂ * W.a₆ - W.a₁ * W.a₃ * W.a₄ - W.a₄ ^ 2) * CharP.cast_eq_zero R 2

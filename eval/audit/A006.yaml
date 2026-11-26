@@ -1,0 +1,19 @@
+id: A006
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 215
+end: 219
+name: MinimalModel.IsDivisorial
+from: S2
+license: Apache-2.0
+reference: |
+  A divisorial valuation of `k(X)` over `k`, normalized: the value group is all of `ℤ`, the valuation is trivial on `k`, and the residue field has `dim X - 1` algebraically independent elements over `k`.
+lean: |
+  def IsDivisorial (v : Valuation (FF X) VZ) : Prop :=
+    (∀ c : k, c ≠ 0 → v (algebraMap k (FF X) c) = 1) ∧
+    (∃ π, v π = WithZero.exp (-1 : ℤ)) ∧
+    ∃ a : Fin (X.dim - 1) → FF X, (∀ i, v (a i) ≤ 1) ∧
+      ∀ p : MvPolynomial (Fin (X.dim - 1)) k, p ≠ 0 → v (MvPolynomial.aeval a p) = 1
+planted: false

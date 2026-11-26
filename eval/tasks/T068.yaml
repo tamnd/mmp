@@ -1,0 +1,16 @@
+id: T068
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/AffineTransitionLimit.lean
+line: 528
+end: 530
+name: AlgebraicGeometry.ExistsHomHomCompEqCompAux.range_g_subset
+from: S0
+license: Apache-2.0
+statement: |
+  lemma range_g_subset :
+      Set.range A.g ⊆ Scheme.Pullback.diagonalCoverDiagonalRange f A.𝒰S A.𝒰X
+answer: |
+  by
+    simpa [ExistsHomHomCompEqCompAux.hii', g] using! A.exists_index.choose_spec.choose_spec

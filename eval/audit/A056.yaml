@@ -1,0 +1,17 @@
+id: A056
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 330
+end: 331
+name: MinimalModel.IsPseudoEffective
+from: S2
+license: Apache-2.0
+reference: |
+  A pseudo-effective `ℝ`-divisor: its sum with each small positive multiple of an ample divisor is big.
+lean: |
+  def IsPseudoEffective (D : Divisor ℝ X) : Prop :=
+    ∃ A : Divisor ℝ X, IsAmple A ∧ ∀ ε : ℝ, 0 < ε → IsBig (D - ε • A)
+planted: true
+defect: "D minus a small ample divisor is big, which is bigness"

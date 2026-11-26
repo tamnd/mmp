@@ -1,0 +1,17 @@
+id: A031
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 222
+end: 224
+name: MinimalModel.IsCentre
+from: S2
+license: Apache-2.0
+reference: |
+  The point `x` is the centre of `v` on `X`: the stalk at `x` is in the valuation ring, and its maximal ideal is in the maximal ideal of the valuation.
+lean: |
+  def IsCentre (v : Valuation (FF X) VZ) (x : X.toScheme) : Prop :=
+    (∀ s : X.toScheme.presheaf.stalk x, v (algebraMap _ (FF X) s) ≤ 1) ∧
+    ∀ s ∈ IsLocalRing.maximalIdeal (X.toScheme.presheaf.stalk x), v (algebraMap _ (FF X) s) < 1
+planted: false

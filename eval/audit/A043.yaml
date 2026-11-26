@@ -1,0 +1,17 @@
+id: A043
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Curves.lean
+line: 69
+end: 70
+name: MinimalModel.IsNefRel
+from: S2
+license: Apache-2.0
+reference: |
+  `D` is nef over `f`: `D · C ≥ 0` for each curve `C` that `f` contracts. This is `IsNefOver` without a structure `IntersectionData`, so that `X` need not be proper over `k`.
+lean: |
+  def IsNefRel {Z : Scheme.{u}} (D : Divisor ℝ X) (f : X.toScheme ⟶ Z) : Prop :=
+    ∀ C, IsContracted f C → ∀ x, IsRIntersectionNumber D C x → 0 < x
+planted: true
+defect: "the degree on each contracted curve is positive in place of nonnegative"

@@ -1,0 +1,14 @@
+id: T198
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/PointPairs.lean
+line: 49
+end: 50
+name: MinimalModel.isMinimal_of_isEmpty
+from: S2
+license: Apache-2.0
+statement: |
+  theorem isMinimal_of_isEmpty {A : PairModel k} (h : IsEmpty (Curve A.X)) : IsMinimal A
+answer: |
+  fun C => h.elim C

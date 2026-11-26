@@ -1,0 +1,21 @@
+id: A015
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 595
+end: 601
+name: MinimalModel.HasLogResolution
+from: S2
+license: Apache-2.0
+reference: |
+  `(X, Δ)` has a log resolution: a proper birational morphism `f : Y → X` from a smooth variety such that the exceptional divisors and the strict transforms of the components of `Δ` have simple normal crossings at each point of `Y`, and `f` is an isomorphism outside the images of the exceptional divisors. This is the hypothesis that spec 2161 shares (Q-09).
+lean: |
+  def HasLogResolution (P : Pair X) : Prop :=
+    ∃ (Y : NormalVariety k) (f : Y.toScheme ⟶ X.toScheme), f ≫ X.str = Y.str ∧ IsProper f ∧
+      IsBirationalHom f ∧ Y.IsSmooth ∧
+      (∀ y, IsSncAt {E : PrimeDivisor Y | coheight (f.base E.1) ≠ 1 ∨
+        ∃ Q : PrimeDivisor X, f.base E.1 = Q.1 ∧ P.Δ Q ≠ 0} y) ∧
+      ∀ x : X.toScheme, (∀ E : PrimeDivisor Y, coheight (f.base E.1) ≠ 1 → ¬ f.base E.1 ⤳ x) →
+        ∃ V : X.toScheme.Opens, x ∈ V ∧ IsIso (f ∣_ V)
+planted: false

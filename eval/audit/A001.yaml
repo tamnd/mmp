@@ -1,0 +1,16 @@
+id: A001
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 439
+end: 440
+name: MinimalModel.IsContracted
+from: S2
+license: Apache-2.0
+reference: |
+  The morphism `f` contracts the curve `C`: the image of `C` is a closed point.
+lean: |
+  def IsContracted {Z : Scheme.{u}} (f : X.toScheme ⟶ Z) (C : Curve X) : Prop :=
+    IsClosed ({f.base C.1} : Set Z)
+planted: false

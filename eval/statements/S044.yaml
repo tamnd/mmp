@@ -1,0 +1,19 @@
+id: S044
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 23
+end: 24
+name: MinimalModel.Termination
+from: S2
+license: Apache-2.0
+informal: |
+  S20, the termination conjecture `T(n)`. For each projective lc pair of dimension `n`, each sequence of `(K + Δ)`-flips is finite. This is open for `n ≥ 4`.
+faithful: |
+  def Termination (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → ¬ HasInfiniteFlips A
+planted: |
+  def Termination (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsKlt A.P → ¬ HasInfiniteFlips A
+defect: "klt pairs in place of lc pairs"

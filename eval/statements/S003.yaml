@@ -1,0 +1,19 @@
+id: S003
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 30
+end: 31
+name: MinimalModel.AbundanceBig
+from: S2
+license: Apache-2.0
+informal: |
+  S42, abundance for a big log canonical divisor (the base point free theorem with `D = K + Δ`, KM98 Theorem 3.3; for a boundary with real coefficients, BCHM). For each projective klt pair such that `K + Δ` is nef and big, `K + Δ` is semiample.
+faithful: |
+  def AbundanceBig : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → IsNef A.I A.P.KΔ → IsBig A.P.KΔ → IsSemiample A.P.KΔ
+planted: |
+  def AbundanceBig : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → IsNef A.I A.P.KΔ → IsSemiample A.P.KΔ
+defect: "the hypothesis that K + Δ is big is dropped"

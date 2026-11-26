@@ -1,0 +1,19 @@
+id: S005
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 39
+end: 40
+name: MinimalModel.AbundanceNuZero
+from: S2
+license: Apache-2.0
+informal: |
+  S43, abundance for numerical dimension zero. Nakayama proves it for klt pairs with rational coefficients (Zariski-decomposition and abundance, MSJ Memoirs 14 (2004), Corollary V.4.9). Gongyo proves it for lc pairs with real coefficients (On the minimal model theory for dlt pairs of numerical log Kodaira dimension zero, Math. Res. Lett. 18 (2011), arXiv:1101.1394, Theorem 6.1 and Lemma 6.2). For each projective lc pair, if `K + Δ` is nef and its numerical dimension is `0`, then `K + Δ` is semiample. For a nef divisor, numerical dimension `0` says that the divisor is numerically trivial (Gongyo, Lemma 2.6(3)). Then Gongyo, Lemma 6.2, gives `K + Δ ∼_ℝ 0`, which is semiample. For rational coefficients this lemma is Gongyo, arXiv:1005.2796, Theorem 1.2. The numerical dimension is Nakayama's `κ_σ` (spec 06.5, risk 4), as in Gongyo, Remark 2.8.
+faithful: |
+  def AbundanceNuZero : Prop :=
+    ∀ A : PairModel k, IsLc A.P → IsNef A.I A.P.KΔ → numericalDim A.P.KΔ = 0 → IsSemiample A.P.KΔ
+planted: |
+  def AbundanceNuZero : Prop :=
+    ∀ A : PairModel k, IsLc A.P → IsNef A.I A.P.KΔ → numericalDim A.P.KΔ = 1 → IsSemiample A.P.KΔ
+defect: "numerical dimension one in place of zero"

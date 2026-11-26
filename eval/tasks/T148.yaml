@@ -1,0 +1,14 @@
+id: T148
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Quasiconvex.lean
+line: 262
+end: 263
+name: AntitoneOn.quasiconvexOn
+from: S0
+license: Apache-2.0
+statement: |
+  theorem AntitoneOn.quasiconvexOn (hf : AntitoneOn f s) (hs : Convex 𝕜 s) : QuasiconvexOn 𝕜 s f
+answer: |
+  hf.convex_le hs

@@ -26,6 +26,8 @@ jobs:
           persist-credentials: false
       - name: style
         run: python3 scripts/style.py
+      - name: the format of the eval sets
+        run: python3 scripts/eval.py check
 
   workflows:
     name: workflow lint

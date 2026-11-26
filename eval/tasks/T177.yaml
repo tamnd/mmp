@@ -1,0 +1,14 @@
+id: T177
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/AffineLinePairs.lean
+line: 51
+end: 52
+name: MinimalModel.affineLinePair_isTerminal
+from: S2
+license: Apache-2.0
+statement: |
+  theorem affineLinePair_isTerminal {c : ℝ} (hc : 0 ≤ c) : IsTerminal (affineLinePair k c hc)
+answer: |
+  isTerminal_of_dim_eq_one (affineLine_dim k) _

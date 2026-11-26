@@ -1,0 +1,17 @@
+id: A004
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 126
+end: 127
+name: MinimalModel.IsDivOn
+from: S2
+license: Apache-2.0
+reference: |
+  `D` is the divisor of the rational function `φ` on the set `U`: the two have the same coefficient at each prime divisor whose generic point is in `U`.
+lean: |
+  def IsDivOn (D : Divisor ℤ X) (φ : FF X) (U : Set X.toScheme) : Prop :=
+    φ ≠ 0 ∧ ∀ P : PrimeDivisor X, P.1 ∈ U → D P = -ordAt φ P
+planted: true
+defect: "the coefficient is minus the order of φ"

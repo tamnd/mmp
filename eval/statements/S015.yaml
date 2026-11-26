@@ -1,0 +1,27 @@
+id: S015
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Models.lean
+line: 23
+end: 28
+name: MinimalModel.KltFlips
+from: S2
+license: Apache-2.0
+informal: |
+  S30, the existence of klt flips (BCHM Corollary 1.4.1). Let `(X, Δ)` be a projective klt pair, and let `f : X → Z` be a flipping contraction: a small contraction of relative Picard number one with `-(K + Δ)` ample over `Z`. Then the flip `g : X⁺ → Z` exists.
+faithful: |
+  def KltFlips : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ (Z : NormalVariety k) (f : A.X.toScheme ⟶ Z.toScheme),
+      f ≫ Z.str = A.X.str → IsContraction f → IsSmallHom f → IsExtremalContraction A.I f →
+      IsRAmpleOver (-A.P.KΔ) f →
+      ∃ (B : PairModel k) (g : B.X.toScheme ⟶ Z.toScheme), g ≫ Z.str = B.X.str ∧
+        IsContraction g ∧ IsSmallHom g ∧ IsRAmpleOver B.P.KΔ g ∧ IsStrictTransform A B f g
+planted: |
+  def KltFlips : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ (Z : NormalVariety k) (f : A.X.toScheme ⟶ Z.toScheme),
+      f ≫ Z.str = A.X.str → IsContraction f → IsSmallHom f → IsExtremalContraction A.I f →
+      IsRAmpleOver (-A.P.KΔ) f →
+      ∃ (B : PairModel k) (g : B.X.toScheme ⟶ Z.toScheme), g ≫ Z.str = B.X.str ∧
+        IsContraction g ∧ IsSmallHom g ∧ IsRAmpleOver (-B.P.KΔ) g ∧ IsStrictTransform A B f g
+defect: "-(K + Δ) is ample on the flip, in place of K + Δ"

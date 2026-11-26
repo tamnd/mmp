@@ -1,0 +1,17 @@
+id: T038
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Basic.lean
+line: 195
+end: 198
+name: WeierstrassCurve.Affine.evalEval_polynomialY
+from: S0
+license: Apache-2.0
+statement: |
+  lemma evalEval_polynomialY (x y : R) : W.polynomialY.evalEval x y = 2 * y + W.a₁ * x + W.a₃
+answer: |
+  by
+    simp only [polynomialY]
+    eval_simp
+    rw [← add_assoc]

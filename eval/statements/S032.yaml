@@ -1,0 +1,25 @@
+id: S032
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Boundedness.lean
+line: 21
+end: 25
+name: MinimalModel.ACCLct
+from: S2
+license: Apache-2.0
+informal: |
+  S48, the ACC for log canonical thresholds (Hacon, McKernan and Xu; Theorem 3.15 of spec 03). Fix `n`, a set `I ⊆ [0, 1]` and a set `J ⊆ [0, ∞)` that satisfy the DCC. Take the thresholds `lct(X, Δ; M)`, where `(X, Δ)` is an lc pair of dimension `n` with coefficients in `I`, and `M` is an effective `ℝ`-Cartier divisor with coefficients in `J`. The set of these thresholds satisfies the ACC. The coefficient of a prime divisor outside the support is `0`, so here `I` and `J` contain `0`. A set that satisfies the DCC still does when `0` is added, so this is no loss.
+faithful: |
+  def ACCLct : Prop :=
+    ∀ n : ℕ, ∀ I J : Set ℝ, I ⊆ Set.Icc 0 1 → J ⊆ Set.Ici 0 → I.IsWF → J.IsWF →
+      ∀ a : ℕ → ℝ, (∀ i, ∃ (X : NormalVariety k) (P : Pair X) (M : Divisor ℝ X), X.dim = n ∧
+        IsLc P ∧ P.Δ.CoeffsIn I ∧ 0 ≤ M ∧ IsRCartier M ∧ M.CoeffsIn J ∧ lct P M = a i) →
+      ¬ StrictMono a
+planted: |
+  def ACCLct : Prop :=
+    ∀ n : ℕ, ∀ I J : Set ℝ, I ⊆ Set.Icc 0 1 → J ⊆ Set.Ici 0 → I.IsWF →
+      ∀ a : ℕ → ℝ, (∀ i, ∃ (X : NormalVariety k) (P : Pair X) (M : Divisor ℝ X), X.dim = n ∧
+        IsLc P ∧ P.Δ.CoeffsIn I ∧ 0 ≤ M ∧ IsRCartier M ∧ M.CoeffsIn J ∧ lct P M = a i) →
+      ¬ StrictMono a
+defect: "the set J need not satisfy the DCC"

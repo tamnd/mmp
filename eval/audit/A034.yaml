@@ -1,0 +1,16 @@
+id: A034
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 130
+end: 130
+name: MinimalModel.IsPrincipal
+from: S2
+license: Apache-2.0
+reference: |
+  A principal divisor: the divisor of a nonzero rational function.
+lean: |
+  def IsPrincipal (D : Divisor ℤ X) : Prop := ∃ φ, IsDivOn D φ ∅
+planted: true
+defect: "the condition is asked on the empty set, so each divisor is principal"
