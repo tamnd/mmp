@@ -4,6 +4,12 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+## v0.0.4 - 2026-11-26
+
+### Changed
+
+- `records/lean.json` is the record of the build of mmp-lean v0.0.4 at commit 600aa92.
+
 ### Added
 
 - `scripts/trust.sh` runs the workflow trust of mmp-lean at the release tag of `records/lean.json`, copies its replay record to `records/replay.json`, and writes `records/trust.json` with `mmp trust`. The node of the toric cone theorem names the pinned statement `MinimalModel.Toric.ToricConeTheorem` and its proof `MinimalModel.Toric.toricConeTheorem`.
