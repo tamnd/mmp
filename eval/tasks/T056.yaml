@@ -1,0 +1,22 @@
+id: T056
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/LocalClosure.lean
+line: 50
+end: 58
+name: AlgebraicGeometry.sourceLocalClosure.iff_forall_exists
+from: S0
+license: Apache-2.0
+statement: |
+  lemma iff_forall_exists [P.RespectsIso] {f : X ⟶ Y} :
+      sourceLocalClosure IsOpenImmersion P f ↔ ∀ (x : X), ∃ (U : X.Opens), x ∈ U ∧ P (U.ι ≫ f)
+answer: |
+  by
+    refine ⟨fun ⟨𝒰, hf⟩ x ↦ ?_, fun H ↦ ?_⟩
+    · refine ⟨(𝒰.f (𝒰.idx x)).opensRange, 𝒰.covers x, ?_⟩
+      rw [← Scheme.Hom.isoOpensRange_inv_comp, Category.assoc, P.cancel_left_of_respectsIso]
+      apply hf
+    · choose U hx hf using H
+      exact ⟨.mkOfCovers X (fun x ↦ U x) (fun _ ↦ (U _).ι) (fun x ↦ ⟨x, ⟨x, hx x⟩, rfl⟩)
+        fun _ ↦ inferInstance, hf⟩

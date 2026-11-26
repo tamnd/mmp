@@ -1,0 +1,17 @@
+id: T048
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Projective/Formula.lean
+line: 533
+end: 536
+name: WeierstrassCurve.Projective.addZ_of_X_eq
+from: S0
+license: Apache-2.0
+statement: |
+  lemma addZ_of_X_eq [NoZeroDivisors R] {P Q : Fin 3 → R} (hP : W'.Equation P) (hQ : W'.Equation Q)
+      (hPz : P z ≠ 0) (hQz : Q z ≠ 0) (hx : P x * Q z = Q x * P z) : W'.addZ P Q = 0
+answer: |
+  by
+    apply eq_zero_of_ne_zero_of_mul_right_eq_zero <| mul_ne_zero hPz hQz
+    rw [addZ_eq' hP hQ, hx, sub_self, zero_pow three_ne_zero]

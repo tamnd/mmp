@@ -1,0 +1,21 @@
+id: A040
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 260
+end: 266
+name: MinimalModel.IsSncAt
+from: S2
+license: Apache-2.0
+reference: |
+  The prime divisors in the set `S` have simple normal crossings at `x`, and `X` is smooth at `x`: the divisors of `S` through `x` have local equations that are part of a regular system of parameters of the stalk.
+lean: |
+  def IsSncAt (S : Set (PrimeDivisor X)) (x : X.toScheme) : Prop :=
+    X.IsSmoothAt x ∧
+    ∃ t : {P : PrimeDivisor X // P ∈ S ∧ P.1 ⤳ x} →
+        IsLocalRing.maximalIdeal (X.toScheme.presheaf.stalk x),
+      (∀ P Q, Q.1 ⤳ x → ordAt (algebraMap _ (FF X) (t P).1) Q = if Q = P.1 then 1 else 0) ∧
+      LinearIndependent (IsLocalRing.ResidueField (X.toScheme.presheaf.stalk x))
+        (fun P => (IsLocalRing.maximalIdeal _).toCotangent (t P))
+planted: false

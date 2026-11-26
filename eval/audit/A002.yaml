@@ -1,0 +1,16 @@
+id: A002
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Curves.lean
+line: 40
+end: 41
+name: MinimalModel.ExtremalFace.IsNegative
+from: S2
+license: Apache-2.0
+reference: |
+  The face `F` is `D`-negative: `D · z < 0` for each nonzero class `z` of `F`. For `D = K + Δ` this is the condition `F ∩ NE(X)_{K+Δ ≥ 0} = 0` of KM98 Theorem 3.7.
+lean: |
+  def ExtremalFace.IsNegative {I : IntersectionData X} (F : ExtremalFace I) (D : RCartier X) : Prop :=
+    ∀ z ∈ F.carrier, z ≠ 0 → z D < 0
+planted: false

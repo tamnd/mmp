@@ -1,0 +1,17 @@
+id: A018
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 342
+end: 344
+name: MinimalModel.IsSemiample
+from: S2
+license: Apache-2.0
+reference: |
+  A semiample `ℝ`-divisor: `ℝ`-linearly equivalent to a nonnegative combination of Cartier divisors that have a free multiple.
+lean: |
+  def IsSemiample (D : Divisor ℝ X) : Prop :=
+    ∃ (N : ℕ) (r : Fin N → ℝ) (A : Fin N → Divisor ℤ X), (∀ i, ∃ m : ℕ, 0 < m ∧ IsFree ((m : ℤ) • A i)) ∧ RLinEquiv D (∑ i, r i • (A i).toReal)
+planted: true
+defect: "the coefficients of the combination may be negative"

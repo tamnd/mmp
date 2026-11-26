@@ -1,0 +1,19 @@
+id: S024
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 90
+end: 91
+name: MinimalModel.HanLiuReduction
+from: S2
+license: Apache-2.0
+informal: |
+  S29, the reduction of Han and Liu (arXiv:2209.13122, Theorem 1.1). Let `d` be a positive integer. Assume the ACC for the global mlds of enc pairs of dimension `d` with coefficients in a finite set (`EncMldACC` of `Boundedness.lean`, which is Conjecture 1.9(2') of the source), and the termination of `ℚ`-factorial terminal flips in dimension `d`. Then each sequence of lc flips in each dimension `m ≤ d` terminates. Theorem 1.2 of the source is the case `d = 4`, where the second hypothesis is known. The flips of the source are not asked to be projective; this statement is about the projective pairs of `Termination`. The class is reduction.
+faithful: |
+  def HanLiuReduction (d : ℕ) : Prop :=
+    EncMldACC k d → QFactorialTerminalTermination k d → ∀ m ≤ d, Termination k m
+planted: |
+  def HanLiuReduction (d : ℕ) : Prop :=
+    EncMldACC k d → QFactorialTerminalTermination k d → ∀ m ≤ d + 1, Termination k m
+defect: "termination up to dimension d + 1 in place of d"

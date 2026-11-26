@@ -1,0 +1,15 @@
+id: T027
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/IdealSheaf/Functorial.lean
+line: 139
+end: 140
+name: AlgebraicGeometry.Scheme.IdealSheafData.map_bot
+from: S0
+license: Apache-2.0
+statement: |
+  lemma map_bot (f : X ⟶ Y) : map ⊥ f = f.ker
+answer: |
+  by
+    simp [map, Scheme.Hom.ker_comp_of_isIso]

@@ -1,0 +1,15 @@
+id: T090
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/Preimmersion.lean
+line: 76
+end: 78
+name: AlgebraicGeometry.IsPreimmersion.comp_iff
+from: S0
+license: Apache-2.0
+statement: |
+  theorem comp_iff {X Y Z : Scheme} (f : X ⟶ Y) (g : Y ⟶ Z) [IsPreimmersion g] :
+      IsPreimmersion (f ≫ g) ↔ IsPreimmersion f
+answer: |
+  ⟨fun _ ↦ of_comp f g, fun _ ↦ inferInstance⟩

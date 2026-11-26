@@ -1,0 +1,15 @@
+id: T023
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/SchemeTheoreticallyDominant.lean
+line: 88
+end: 90
+name: AlgebraicGeometry.IsSchemeTheoreticallyDominant.isReduced
+from: S0
+license: Apache-2.0
+statement: |
+  lemma IsSchemeTheoreticallyDominant.isReduced (f : X ⟶ Y) [IsSchemeTheoreticallyDominant f]
+      [QuasiCompact f] [IsReduced X] : IsReduced Y
+answer: |
+  ⟨fun _ ↦ isReduced_of_injective _ (f.app_injective _)⟩

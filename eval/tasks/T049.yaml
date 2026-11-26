@@ -1,0 +1,16 @@
+id: T049
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Geometrically/Connected.lean
+line: 111
+end: 113
+name: AlgebraicGeometry.GeometricallyConnected.iff_geometricallyConnected_fiber
+from: S0
+license: Apache-2.0
+statement: |
+  lemma GeometricallyConnected.iff_geometricallyConnected_fiber :
+      GeometricallyConnected f ↔ ∀ s, GeometricallyConnected (f.fiberToSpecResidueField s)
+answer: |
+  by
+    simp only [eq_geometrically, ← geometrically_iff_forall_fiberToSpecResidueField]

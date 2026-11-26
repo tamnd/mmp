@@ -1,0 +1,16 @@
+id: T189
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/Divisor.lean
+line: 79
+end: 82
+name: MinimalModel.Toric.rayGenerator_latticeCone
+from: S2
+license: Apache-2.0
+statement: |
+  theorem rayGenerator_latticeCone {u : Fin n → ℤ} (hu : IsPrimitive u) :
+      rayGenerator (latticeCone {u}) = u
+answer: |
+  (IsRay.eq_rayGenerator ⟨u, hu.ne_zero, rfl⟩ hu
+      (toNR_mem_latticeCone (Finset.mem_singleton_self u))).symm

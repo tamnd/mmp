@@ -1,0 +1,16 @@
+id: T054
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Sites/Representability.lean
+line: 125
+end: 128
+name: AlgebraicGeometry.Scheme.LocalRepresentability.yonedaGluedToSheaf_app_comp
+from: S0
+license: Apache-2.0
+statement: |
+  lemma yonedaGluedToSheaf_app_comp {V U : Scheme.{u}} (γ : V ⟶ U) (α : U ⟶ (glueData hf).glued) :
+      dsimp% (yonedaGluedToSheaf hf).hom.app (op V) (γ ≫ α) =
+        F.obj.map γ.op ((yonedaGluedToSheaf hf).hom.app (op U) α)
+answer: |
+  congr($((yonedaGluedToSheaf hf).hom.naturality γ.op) α)

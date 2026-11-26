@@ -1,0 +1,19 @@
+id: T126
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Slope.lean
+line: 153
+end: 159
+name: strictConvexOn_iff_slope_strict_mono_adjacent
+from: S0
+license: Apache-2.0
+statement: |
+  theorem strictConvexOn_iff_slope_strict_mono_adjacent :
+      StrictConvexOn 𝕜 s f ↔
+        Convex 𝕜 s ∧
+          ∀ ⦃x y z : 𝕜⦄,
+            x ∈ s → z ∈ s → x < y → y < z → (f y - f x) / (y - x) < (f z - f y) / (z - y)
+answer: |
+  ⟨fun h => ⟨h.1, fun _ _ _ => h.slope_strict_mono_adjacent⟩, fun h =>
+      strictConvexOn_of_slope_strict_mono_adjacent h.1 (@fun _ _ _ hx hy => h.2 hx hy)⟩

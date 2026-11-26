@@ -1,0 +1,17 @@
+id: A048
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 243
+end: 244
+name: MinimalModel.IsKlt
+from: S2
+license: Apache-2.0
+reference: |
+  Kawamata log terminal: the coefficients of `Δ` are less than one, and each log discrepancy is positive.
+lean: |
+  def IsKlt (P : Pair X) : Prop :=
+    (∀ Q, P.Δ Q ≤ 1) ∧ ∀ v, IsDivisorial v → ∀ A, LogDiscrepancyIs P v A → 0 < A
+planted: true
+defect: "the coefficients of Δ may equal one"

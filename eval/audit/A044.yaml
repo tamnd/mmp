@@ -1,0 +1,17 @@
+id: A044
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 149
+end: 150
+name: MinimalModel.IsRCartier
+from: S2
+license: Apache-2.0
+reference: |
+  An `ℝ`-Cartier divisor: an `ℝ`-linear combination of Cartier divisors.
+lean: |
+  def IsRCartier (D : Divisor ℝ X) : Prop :=
+    D ∈ Submodule.span ℝ (Divisor.toReal '' {E : Divisor ℤ X | IsPrincipal E})
+planted: true
+defect: "a combination of principal divisors in place of Cartier divisors"

@@ -1,0 +1,16 @@
+id: T132
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Combination.lean
+line: 271
+end: 274
+name: Finset.centerMass_id_mem_convexHull_of_nonpos
+from: S0
+license: Apache-2.0
+statement: |
+  lemma Finset.centerMass_id_mem_convexHull_of_nonpos (t : Finset E) {w : E → R}
+      (hw₀ : ∀ i ∈ t, w i ≤ 0) (hws : ∑ i ∈ t, w i < 0) :
+      t.centerMass w id ∈ convexHull R (t : Set E)
+answer: |
+  t.centerMass_mem_convexHull_of_nonpos hw₀ hws fun _ ↦ mem_coe.2

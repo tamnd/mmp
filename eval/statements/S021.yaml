@@ -1,0 +1,19 @@
+id: S021
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 44
+end: 45
+name: MinimalModel.ShokurovReduction
+from: S2
+license: Apache-2.0
+informal: |
+  S28, Shokurov's reduction (Shokurov 2004). The ACC and the lower semicontinuity of the minimal log discrepancies in dimension `n` give the termination of flips in dimension `n`. The `reader` role checks the class of pairs of the source (klt or lc) before F5.
+faithful: |
+  def ShokurovReduction (n : ℕ) : Prop :=
+    ACCMld k n → LSCMld k n → Termination k n
+planted: |
+  def ShokurovReduction (n : ℕ) : Prop :=
+    ACCMld k n → Termination k n
+defect: "the hypothesis of lower semicontinuity is dropped"

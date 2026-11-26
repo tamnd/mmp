@@ -1,0 +1,14 @@
+id: T181
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/ToricCone.lean
+line: 163
+end: 164
+name: MinimalModel.Toric.P2.not_isNef_canonical
+from: S2
+license: Apache-2.0
+statement: |
+  theorem not_isNef_canonical : ¬ fan.IsNef fan.canonicalReal
+answer: |
+  not_isNef_canonical_of_toricConeTheorem toricConeTheorem

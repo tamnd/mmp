@@ -1,0 +1,20 @@
+id: A058
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 235
+end: 240
+name: MinimalModel.LogDiscrepancyIs
+from: S2
+license: Apache-2.0
+reference: |
+  `A` is the log discrepancy `A_{X,Δ}(v)` of the valuation `v`. Near the centre `x` of `v`, write `K + Δ = Σ rᵢ div(hᵢ)`. Then `A = 1 + ord_v(ω) - Σ rᵢ ord_v(hᵢ)`, where `ω` is the form of the canonical divisor. On a model `Y` where `v` is a prime divisor `E`, this is `1 + coeff_E (K_Y - f^*(K + Δ))`. For the prime divisor `P` of `X` it is `1 - Δ P`.
+lean: |
+  def LogDiscrepancyIs (P : Pair X) (v : Valuation (FF X) VZ) (A : ℝ) : Prop :=
+    ∃ x, IsCentre v x ∧ ∃ U : X.toScheme.Opens, x ∈ U ∧
+    ∃ (N : ℕ) (r : Fin N → ℝ) (h : Fin N → FF X) (e : Fin N → ℤ) (m : ℤ),
+      (∀ i, v (h i) = WithZero.exp (-(e i))) ∧ FormOrd v P.K.ω m ∧
+      (∀ Q : PrimeDivisor X, Q.1 ∈ U → P.KΔ Q = ∑ i, r i * (ordAt (h i) Q : ℝ)) ∧
+      A = 1 + m - ∑ i, r i * (e i : ℝ)
+planted: false

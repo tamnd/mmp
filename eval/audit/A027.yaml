@@ -1,0 +1,16 @@
+id: A027
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 307
+end: 308
+name: MinimalModel.IsRelAmple
+from: S2
+license: Apache-2.0
+reference: |
+  A Cartier divisor is ample relative to a morphism `f : X → Z` when it is ample on the inverse image of each affine open set of `Z`.
+lean: |
+  def IsRelAmple {Z : Scheme.{u}} (D : Divisor ℤ X) (f : X.toScheme ⟶ Z) : Prop :=
+    IsCartier D ∧ ∀ V : Z.Opens, IsAffineOpen V → IsAmpleOn D (f ⁻¹ᵁ V)
+planted: false

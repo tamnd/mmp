@@ -1,0 +1,15 @@
+id: T162
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Integral.lean
+line: 87
+end: 89
+name: Convex.average_mem
+from: S0
+license: Apache-2.0
+statement: |
+  theorem Convex.average_mem [IsFiniteMeasure μ] [NeZero μ] (hs : Convex ℝ s) (hsc : IsClosed s)
+      (hfs : ∀ᵐ x ∂μ, f x ∈ s) (hfi : Integrable f μ) : (⨍ x, f x ∂μ) ∈ s
+answer: |
+  hs.integral_mem hsc (ae_mono' smul_absolutelyContinuous hfs) hfi.to_average

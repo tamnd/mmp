@@ -1,0 +1,21 @@
+id: T185
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/Fan.lean
+line: 138
+end: 145
+name: MinimalModel.Toric.mem_face_of_sum_smul_mem
+from: S2
+license: Apache-2.0
+statement: |
+  theorem mem_face_of_sum_smul_mem {F C : PointedCone ℝ E} (hF : F.IsFaceOf C) {t : Finset E}
+      {c : E → ℝ} (ht : ∀ x ∈ t, x ∈ C) (hc : ∀ x ∈ t, 0 ≤ c x) (hs : ∑ x ∈ t, c x • x ∈ F)
+      {y : E} (hy : y ∈ t) (hcy : 0 < c y) : y ∈ F
+answer: |
+  by
+    classical
+    rw [← Finset.add_sum_erase t _ hy] at hs
+    refine hF.mem_of_smul_add_mem (ht y hy) ?_ hcy hs
+    exact Submodule.sum_mem C fun x hx =>
+      C.smul_mem (hc x (Finset.mem_of_mem_erase hx)) (ht x (Finset.mem_of_mem_erase hx))

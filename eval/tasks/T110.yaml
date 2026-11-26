@@ -1,0 +1,21 @@
+id: T110
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.lean
+line: 395
+end: 402
+name: WeierstrassCurve.Affine.CoordinateRing.mk_XYIdeal'_mul_mk_XYIdeal'
+from: S0
+license: Apache-2.0
+statement: |
+  lemma mk_XYIdeal'_mul_mk_XYIdeal' [DecidableEq F] {x₁ x₂ y₁ y₂ : F} (h₁ : W.Nonsingular x₁ y₁)
+      (h₂ : W.Nonsingular x₂ y₂) (hxy : ¬(x₁ = x₂ ∧ y₁ = W.negY x₂ y₂)) :
+      ClassGroup.mk W.FunctionField (XYIdeal' h₁) *
+          ClassGroup.mk W.FunctionField (XYIdeal' h₂) =
+        ClassGroup.mk W.FunctionField (XYIdeal' <| nonsingular_add h₁ h₂ hxy)
+answer: |
+  by
+    rw [← map_mul]
+    exact (ClassGroup.mk_eq_mk_of_coe_ideal (coeIdeal_mul ..).symm <| XYIdeal'_eq _).mpr
+      ⟨_, _, XClass_ne_zero _, YClass_ne_zero _, XYIdeal_mul_XYIdeal h₁.left h₂.left hxy⟩

@@ -1,0 +1,17 @@
+id: T179
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/Point.lean
+line: 133
+end: 136
+name: MinimalModel.pointVariety_isProjective
+from: S2
+license: Apache-2.0
+statement: |
+  theorem pointVariety_isProjective : IsProjective (pointVariety k)
+answer: |
+  by
+    refine ⟨?_, 0, isCartier_of_isEmpty 0, fun V hV => isAmpleOn_zero_of_isEmpty _ hV⟩
+    change IsProper (𝟙 (Spec (CommRingCat.of k)))
+    infer_instance

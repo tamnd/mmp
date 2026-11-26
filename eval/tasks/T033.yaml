@@ -1,0 +1,18 @@
+id: T033
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Formula.lean
+line: 292
+end: 296
+name: WeierstrassCurve.Affine.C_addPolynomial_slope
+from: S0
+license: Apache-2.0
+statement: |
+  lemma C_addPolynomial_slope {x₁ x₂ y₁ y₂ : F} (h₁ : W.Equation x₁ y₁) (h₂ : W.Equation x₂ y₂)
+      (hxy : ¬(x₁ = x₂ ∧ y₁ = W.negY x₂ y₂)) : C (W.addPolynomial x₁ y₁ <| W.slope x₁ x₂ y₁ y₂) =
+        -(C (X - C x₁) * C (X - C x₂) * C (X - C (W.addX x₁ x₂ <| W.slope x₁ x₂ y₁ y₂)))
+answer: |
+  by
+    rw [addPolynomial_slope h₁ h₂ hxy]
+    simp

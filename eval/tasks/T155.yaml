@@ -1,0 +1,18 @@
+id: T155
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/GaugeRescale.lean
+line: 77
+end: 81
+name: gauge_gaugeRescale
+from: S0
+license: Apache-2.0
+statement: |
+  theorem gauge_gaugeRescale (s : Set E) {t : Set E} (hta : Absorbent ℝ t) (htb : IsVonNBounded ℝ t)
+      (x : E) : gauge t (gaugeRescale s t x) = gauge s x
+answer: |
+  by
+    rcases eq_or_ne x 0 with rfl | hx
+    · simp
+    · exact gauge_gaugeRescale' s ((gauge_pos hta htb).2 hx).ne'

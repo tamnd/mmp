@@ -1,0 +1,21 @@
+id: T138
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Jensen.lean
+line: 178
+end: 185
+name: StrictConvexOn.map_sum_eq_iff_of_pos
+from: S0
+license: Apache-2.0
+statement: |
+  theorem StrictConvexOn.map_sum_eq_iff_of_pos (hf : StrictConvexOn 𝕜 s f) (h₀ : ∀ i ∈ t, 0 < w i)
+      (h₁ : ∑ i ∈ t, w i = 1) (hmem : ∀ i ∈ t, p i ∈ s) :
+      f (∑ i ∈ t, w i • p i) = ∑ i ∈ t, w i • f (p i) ↔ ∀ ⦃j⦄, j ∈ t → ∀ ⦃k⦄, k ∈ t → p j = p k
+answer: |
+  by
+    refine ⟨fun h j hj k hk ↦ hf.eq_of_le_map_sum h₀ h₁ hmem h.ge hj hk, fun h ↦ ?_⟩
+    rcases t.eq_empty_or_nonempty with (rfl | ⟨i, hi⟩)
+    · simp at h₁
+    · suffices f (∑ k ∈ t, w k • p i) = ∑ k ∈ t, w k • f (p i) by convert this using 3 <;> grind
+      simp [← sum_smul, h₁]

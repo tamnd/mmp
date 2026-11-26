@@ -1,0 +1,20 @@
+id: A045
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 384
+end: 389
+name: MinimalModel.IsIntersectionNumber
+from: S2
+license: Apache-2.0
+reference: |
+  `d` is the intersection number `D · C` of a Cartier divisor and a curve: the degree of `𝒪(D)` on the normalization of `C`. Move `D` by the divisor of `g` so that `C` is not in its support. At each place `w` of `C`, take a local equation `s` of `D + div g` near the centre of `w`; it is a unit at `C`, and `w` gives the order of its restriction. The sum of these orders is `d`. Each place has degree one, because `k` is algebraically closed.
+lean: |
+  def IsIntersectionNumber (D : Divisor ℤ X) (C : Curve X) (d : ℤ) : Prop :=
+    ∃ g : FF X, g ≠ 0 ∧ ∃ e : Place C → ℤ, (Function.support e).Finite ∧ d = ∑ᶠ w, e w ∧
+      ∀ w : Place C, ∃ p : X.toScheme, ∃ h : C.1 ⤳ p, IsPlaceCentre w p h ∧
+        ∃ U : X.toScheme.Opens, p ∈ U ∧ ∃ s : X.toScheme.presheaf.stalk C.1, IsUnit s ∧
+          (∀ Q : PrimeDivisor X, Q.1 ∈ U → D Q + ordAt g Q = ordAt (algebraMap _ (FF X) s) Q) ∧
+          w.1 (X.toScheme.residue C.1 |>.hom s) = WithZero.exp (-(e w))
+planted: false

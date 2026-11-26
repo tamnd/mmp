@@ -1,0 +1,16 @@
+id: A047
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 508
+end: 508
+name: MinimalModel.IsFlip
+from: S2
+license: Apache-2.0
+reference: |
+  `B` is a `(K + Δ)`-flip of `A`: a step whose contraction is small.
+lean: |
+  def IsFlip (A B : PairModel k) : Prop := ∃ s : MMPStepData A B, IsBirationalHom s.f
+planted: true
+defect: "a flip without small: a divisorial contraction is birational too"

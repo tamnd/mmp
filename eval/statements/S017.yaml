@@ -1,0 +1,21 @@
+id: S017
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Models.lean
+line: 44
+end: 46
+name: MinimalModel.MoriFibreSpaceOutput
+from: S2
+license: Apache-2.0
+informal: |
+  S35, the Mori fibre space output (BCHM Corollary 1.3.2, the absolute case). Let `(X, Δ)` be a projective `ℚ`-factorial klt pair such that `K + Δ` is not pseudo-effective. Then some program from `(X, Δ)` is finite and ends with a Mori fibre space. BCHM run the program with scaling of an ample divisor. The statement is about some program, as the source is. The row of spec 06.2.2 also asks that `Δ` is big; the source does not, and this statement does not.
+faithful: |
+  def MoriFibreSpaceOutput : Prop :=
+    ∀ A : PairModel k, IsQFactorial A.X → IsKlt A.P → ¬ IsPseudoEffective A.P.KΔ →
+      ∃ p : Program A, ∃ n : ℕ, p.len = n ∧ IsMoriFibreSpace (p.model n)
+planted: |
+  def MoriFibreSpaceOutput : Prop :=
+    ∀ A : PairModel k, IsQFactorial A.X → IsKlt A.P → ¬ IsPseudoEffective A.P.KΔ →
+      ∀ p : Program A, ∃ n : ℕ, p.len = n ∧ IsMoriFibreSpace (p.model n)
+defect: "every program in place of some program"

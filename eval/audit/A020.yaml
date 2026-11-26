@@ -1,0 +1,20 @@
+id: A020
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 585
+end: 590
+name: MinimalModel.IsMinimalModel
+from: S2
+license: Apache-2.0
+reference: |
+  A minimal model of `(X, Δ)` in the sense of KM98 Definition 3.50: a projective lc pair `(Y, Δ_Y)` and a birational contraction `X ⇢ Y`, given by `σ : k(Y) ≅ k(X)`, such that each prime divisor of `Y` comes from a prime divisor of `X` with the same coefficient, `K_Y + Δ_Y` is nef, and each prime divisor of `X` that `Y` contracts has a smaller log discrepancy on `X` than on `Y`.
+lean: |
+  def IsMinimalModel (A B : PairModel k) : Prop :=
+    IsLc B.P ∧ IsMinimal B ∧ ∃ σ : FF B.X ≃ₐ[k] FF A.X,
+      (∀ Q : PrimeDivisor B.X, ∃ P : PrimeDivisor A.X, SameDivisor σ P Q ∧ B.P.Δ Q = A.P.Δ P) ∧
+      ∀ P : PrimeDivisor A.X, (∀ Q, ¬ SameDivisor σ P Q) →
+        ∀ v : Valuation (FF A.X) VZ, IsDivisorial v → IsCentre v P.1 →
+          ∀ a b, LogDiscrepancyIs A.P v a → LogDiscrepancyIs B.P (v.comap σ.toRingHom) b → a < b
+planted: false

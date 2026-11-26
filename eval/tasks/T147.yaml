@@ -1,0 +1,15 @@
+id: T147
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/PathConnected.lean
+line: 79
+end: 81
+name: StarConvex.isPathConnected
+from: S0
+license: Apache-2.0
+statement: |
+  protected theorem StarConvex.isPathConnected {s : Set E} {a : E} (h : StarConvex ℝ a s)
+      (ha : a ∈ s) : IsPathConnected s
+answer: |
+  ⟨a, ha, fun _y hy ↦ .of_segment_subset <| h.segment_subset hy⟩

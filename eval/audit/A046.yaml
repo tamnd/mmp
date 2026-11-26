@@ -1,0 +1,16 @@
+id: A046
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 563
+end: 564
+name: MinimalModel.MMPStepData.IsIsoNear
+from: S2
+license: Apache-2.0
+reference: |
+  The step data `s` is an isomorphism near the set `S` of the first model: the contraction and the small map are isomorphisms over an open set of the base that contains the image of `S`.
+lean: |
+  def MMPStepData.IsIsoNear {A B : PairModel k} (s : MMPStepData A B) (S : Set A.X.toScheme) : Prop :=
+    ∃ V : s.Z.toScheme.Opens, s.f.base '' S ⊆ (V : Set s.Z.toScheme) ∧ IsIso (s.f ∣_ V) ∧ IsIso (s.g ∣_ V)
+planted: false

@@ -1,0 +1,27 @@
+id: S008
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Foundations.lean
+line: 43
+end: 48
+name: MinimalModel.RationalityTheorem
+from: S2
+license: Apache-2.0
+informal: |
+  S07, the rationality theorem (KM98 Theorem 3.5). Let `(X, Δ)` be a projective klt pair such that `K + Δ` is not nef. Let `a > 0` be an integer such that `a (K + Δ)` is Cartier, and let `H` be an ample Cartier divisor. Let `r` be the nef threshold, the largest `t` such that `H + t (K + Δ)` is nef. Then `r / a = u / v` for natural numbers `u` and `v` with `0 < v ≤ a (dim X + 1)`. This statement takes `H` ample, as the node of the map does. The `reader` role compares the hypothesis on `H` with KM98 before F5.
+faithful: |
+  def RationalityTheorem : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ¬ IsNef A.I A.P.KΔ → ∀ a : ℕ, 0 < a →
+      (∃ E : Divisor ℤ A.X, IsCartier E ∧ (a : ℝ) • A.P.KΔ = E.toReal) →
+      ∀ H : Divisor ℤ A.X, IsRelAmple H A.X.str →
+        ∃ u v : ℕ, 0 < v ∧ v ≤ a * (A.X.dim + 1) ∧
+          nefThreshold A.I H.toReal A.P.KΔ / a = (u : ℝ) / v
+planted: |
+  def RationalityTheorem : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ¬ IsNef A.I A.P.KΔ → ∀ a : ℕ, 0 < a →
+      (∃ E : Divisor ℤ A.X, IsCartier E ∧ (a : ℝ) • A.P.KΔ = E.toReal) →
+      ∀ H : Divisor ℤ A.X, IsRelAmple H A.X.str →
+        ∃ u v : ℕ, 0 < v ∧ v ≤ a * A.X.dim ∧
+          nefThreshold A.I H.toReal A.P.KΔ / a = (u : ℝ) / v
+defect: "the bound on the denominator is a dim X in place of a (dim X + 1)"

@@ -1,0 +1,19 @@
+id: T052
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/AffineSpace.lean
+line: 230
+end: 235
+name: AlgebraicGeometry.AffineSpace.SpecIso_hom_appTop
+from: S0
+license: Apache-2.0
+statement: |
+  lemma SpecIso_hom_appTop (R : CommRingCat.{u}) :
+      (SpecIso n R).hom.appTop = (Scheme.ΓSpecIso _).hom ≫
+        CommRingCat.ofHom (eval₂Hom ((Scheme.ΓSpecIso _).inv ≫
+          (𝔸(n; Spec R) ↘ Spec R).appTop).hom (coord (Spec R)))
+answer: |
+  by
+    ext i
+    simp [SpecIso]

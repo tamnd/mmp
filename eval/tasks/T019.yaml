@@ -1,0 +1,14 @@
+id: T019
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Cover/MorphismProperty.lean
+line: 90
+end: 91
+name: AlgebraicGeometry.Scheme.Cover.map_prop
+from: S0
+license: Apache-2.0
+statement: |
+  lemma Cover.map_prop (𝒰 : X.Cover (precoverage P)) (i : 𝒰.I₀) : P (𝒰.f i)
+answer: |
+  𝒰.mem₀.2 ⟨i⟩

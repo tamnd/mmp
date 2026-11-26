@@ -1,0 +1,17 @@
+id: T034
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/ProjectiveSpectrum/StructureSheaf.lean
+line: 269
+end: 273
+name: AlgebraicGeometry.germ_comp_stalkToFiberRingHom
+from: S0
+license: Apache-2.0
+statement: |
+  theorem germ_comp_stalkToFiberRingHom
+      (U : Opens (ProjectiveSpectrum.top 𝒜)) (x : ProjectiveSpectrum.top 𝒜) (hx : x ∈ U) :
+      (Proj.structureSheaf 𝒜).presheaf.germ U x hx ≫ stalkToFiberRingHom 𝒜 x =
+        openToLocalization 𝒜 U x hx
+answer: |
+  Limits.colimit.ι_desc _ _

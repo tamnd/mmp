@@ -1,0 +1,22 @@
+id: A003
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 524
+end: 531
+name: MinimalModel.ConeDecomposition
+from: S2
+license: Apache-2.0
+reference: |
+  The conclusion of the cone theorem for a model `A` (KM98 Theorem 3.7). There are countably many curves `Cᵢ` with `(K + Δ) · Cᵢ < 0`, such that: 1. `NE(X) = NE(X)_{K+Δ ≥ 0} + Σ ℝ≥0 [Cᵢ]`; 2. each ray `ℝ≥0 [Cᵢ]` is extremal; 3. for each ample `H` and each `ε > 0`, only finitely many of these rays have `(K + Δ + ε H) · Cᵢ < 0`.  The theorem also says that the `Cᵢ` are rational curves with `-(K + Δ) · Cᵢ ≤ 2 dim X`. That part is statement S09, because it needs the vocabulary of rational curves.
+lean: |
+  def ConeDecomposition (A : PairModel k) : Prop :=
+    ∃ (ι : Type u) (_ : Countable ι) (C : ι → Curve A.X),
+      (∀ i, A.I.dot A.P.KΔ (C i) < 0) ∧
+      (∀ z, z ∈ A.I.coneOfCurves ↔ ∃ y ∈ A.I.coneOfCurves, 0 ≤ y A.P.KΔR ∧
+        ∃ (s : Finset ι) (t : ι → ℝ), (∀ i, 0 ≤ t i) ∧ z = y + ∑ i ∈ s, t i • A.I.curveClass (C i)) ∧
+      (∀ i, ∃ R : ExtremalRay A.I, ray R.generator = ray (A.I.curveClass (C i))) ∧
+      ∀ H : Divisor ℝ A.X, IsAmple H → ∀ ε : ℝ, 0 < ε →
+        ((fun i => ray (A.I.curveClass (C i))) '' {i | A.I.dot (A.P.KΔ + ε • H) (C i) < 0}).Finite
+planted: false

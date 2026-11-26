@@ -1,0 +1,15 @@
+id: T134
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Intrinsic.lean
+line: 415
+end: 417
+name: closure_sdiff_intrinsicInterior
+from: S0
+license: Apache-2.0
+statement: |
+  theorem closure_sdiff_intrinsicInterior (s : Set P) :
+      closure s \ intrinsicInterior 𝕜 s = intrinsicFrontier 𝕜 s
+answer: |
+  intrinsicClosure_eq_closure 𝕜 s ▸ intrinsicClosure_sdiff_intrinsicInterior s

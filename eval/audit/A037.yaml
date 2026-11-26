@@ -1,0 +1,18 @@
+id: A037
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 466
+end: 468
+name: MinimalModel.IsExtremalContraction
+from: S2
+license: Apache-2.0
+reference: |
+  The contraction `f` has relative Picard number one: it contracts a curve, and the classes of the curves that it contracts are positive multiples of each other.
+lean: |
+  def IsExtremalContraction (I : IntersectionData X) {Z : Scheme.{u}} (f : X.toScheme ⟶ Z) : Prop :=
+    ∃ C₀, IsContracted f C₀ ∧ ∀ C, IsContracted f C →
+      ∃ t : ℝ, I.curveClass C = t • I.curveClass C₀
+planted: true
+defect: "the multiple may be zero or negative"

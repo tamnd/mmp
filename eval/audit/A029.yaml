@@ -1,0 +1,19 @@
+id: A029
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Enc.lean
+line: 39
+end: 42
+name: MinimalModel.IsEnc
+from: S2
+license: Apache-2.0
+reference: |
+  The pair `(X, Δ)` is enc, exceptionally non-canonical (Han-Liu, Definition 3.8(1)): `mld(X, Δ) < 1`, and exactly one divisorial valuation `E` exceptional over `X` has `a(E, X, Δ) ≤ 1`.
+lean: |
+  def IsEnc (P : Pair X) : Prop :=
+    globalMld P < ((1 : ℝ) : WithBot ℝ) ∧
+      ∃ v : Valuation (FF X) VZ, IsDivisorial v ∧ IsExceptional v ∧
+        ∃ A, LogDiscrepancyIs P v A ∧ A ≤ 1
+planted: true
+defect: "at least one valuation in place of exactly one"

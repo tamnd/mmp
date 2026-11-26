@@ -1,0 +1,17 @@
+id: A030
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 145
+end: 146
+name: MinimalModel.IsQCartier
+from: S2
+license: Apache-2.0
+reference: |
+  A `ℚ`-Cartier divisor: a positive multiple is Cartier.
+lean: |
+  def IsQCartier (D : Divisor ℚ X) : Prop :=
+    ∃ m : ℕ, ∃ E : Divisor ℤ X, IsCartier E ∧ (m : ℚ) • D = E.toRat
+planted: true
+defect: "the multiple may be zero, so the condition holds for every divisor"

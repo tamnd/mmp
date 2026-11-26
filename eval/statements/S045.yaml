@@ -1,0 +1,19 @@
+id: S045
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 27
+end: 28
+name: MinimalModel.TerminationLc4Rational
+from: S2
+license: Apache-2.0
+informal: |
+  S22, a fresh claim (OpenAI 056, AxiomMath/MMP; spec 01.3). For each projective lc pair of dimension 4 with a rational boundary, each sequence of steps of the minimal model program is finite. The class is `claimed`: this statement is never a hypothesis of another proof (spec 06.6).
+faithful: |
+  def TerminationLc4Rational : Prop :=
+    ∀ A : PairModel k, A.X.dim = 4 → IsLc A.P → A.P.IsRationalBoundary → ¬ HasInfiniteProgram A
+planted: |
+  def TerminationLc4Rational : Prop :=
+    ∀ A : PairModel k, A.X.dim = 4 → IsLc A.P → A.P.IsRationalBoundary → ¬ HasInfiniteFlips A
+defect: "flips only, in place of each step of the program"

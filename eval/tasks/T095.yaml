@@ -1,0 +1,17 @@
+id: T095
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/QuasiAffine.lean
+line: 147
+end: 150
+name: AlgebraicGeometry.Scheme.preimage_opensRange_toSpecΓ
+from: S0
+license: Apache-2.0
+statement: |
+  lemma preimage_opensRange_toSpecΓ (f : X ⟶ Y) [IsAffineHom f] [X.IsQuasiAffine] [Y.IsQuasiAffine] :
+      Spec.map f.appTop ⁻¹ᵁ Y.toSpecΓ.opensRange = X.toSpecΓ.opensRange
+answer: |
+  by
+    simpa using (IsOpenImmersion.image_preimage_eq_preimage_image_of_isPullback
+      (isPullback_toSpecΓ_toSpecΓ f) ⊤).symm

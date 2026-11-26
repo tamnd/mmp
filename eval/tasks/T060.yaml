@@ -1,0 +1,17 @@
+id: T060
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/ModelsWithJ.lean
+line: 123
+end: 126
+name: WeierstrassCurve.ofJNe0Or1728_j
+from: S0
+license: Apache-2.0
+statement: |
+  lemma ofJNe0Or1728_j (j : R) [Fact (IsUnit j)] [Fact (IsUnit (j - 1728))] :
+      (ofJNe0Or1728 j).j = j
+answer: |
+  by
+    rw [WeierstrassCurve.j, Units.inv_mul_eq_iff_eq_mul, ofJNe0Or1728_c₄, coe_Δ', ofJNe0Or1728_Δ]
+    ring1

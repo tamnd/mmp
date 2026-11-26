@@ -1,0 +1,22 @@
+id: T200
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/Wall.lean
+line: 80
+end: 88
+name: MinimalModel.Toric.mem_familyCone
+from: S2
+license: Apache-2.0
+statement: |
+  theorem mem_familyCone [Fintype ι] {u : ι → Fin n → ℤ} {x : NR n} :
+      x ∈ familyCone u ↔ ∃ c : ι → ℝ, (∀ i, 0 ≤ c i) ∧ ∑ i, c i • toNR (u i) = x
+answer: |
+  by
+    unfold familyCone
+    rw [Submodule.mem_span_range_iff_exists_fun]
+    constructor
+    · rintro ⟨c, rfl⟩
+      exact ⟨fun i => c i, fun i => (c i).2, rfl⟩
+    · rintro ⟨c, hc, rfl⟩
+      exact ⟨fun i => ⟨c i, hc i⟩, rfl⟩

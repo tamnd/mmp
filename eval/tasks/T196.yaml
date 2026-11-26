@@ -1,0 +1,15 @@
+id: T196
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/ConeTheorem.lean
+line: 176
+end: 178
+name: MinimalModel.Toric.Fan.IsMaximalCone.le_of_le
+from: S2
+license: Apache-2.0
+statement: |
+  theorem IsMaximalCone.le_of_le (h : F.IsMaximalCone σ) {τ : PointedCone ℝ (NR n)}
+      (hτ : τ ∈ F.cones) (hle : σ ≤ τ) : τ ≤ σ
+answer: |
+  Maximal.le_of_ge h hτ hle

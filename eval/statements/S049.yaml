@@ -1,0 +1,19 @@
+id: S049
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 86
+end: 87
+name: MinimalModel.QFactorialTerminalTermination
+from: S2
+license: Apache-2.0
+informal: |
+  The hypothesis (2) of Han and Liu, Theorem 1.1: each sequence of `ℚ`-factorial terminal flips in dimension `d` terminates. For each projective `ℚ`-factorial terminal pair of dimension `d`, each sequence of `(K + Δ)`-flips is finite. A flip keeps the source `ℚ`-factorial and terminal, so the hypothesis is asked of the first model.
+faithful: |
+  def QFactorialTerminalTermination (d : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = d → IsQFactorial A.X → IsTerminal A.P → ¬ HasInfiniteFlips A
+planted: |
+  def QFactorialTerminalTermination (d : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = d → IsQFactorial A.X → IsCanonical A.P → ¬ HasInfiniteFlips A
+defect: "canonical pairs in place of terminal pairs"

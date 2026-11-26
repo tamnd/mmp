@@ -1,0 +1,17 @@
+id: T102
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Normalization.lean
+line: 551
+end: 554
+name: AlgebraicGeometry.Scheme.Hom.inl_normalizationCoprodIso_hom_fromNormalization
+from: S0
+license: Apache-2.0
+statement: |
+  lemma inl_normalizationCoprodIso_hom_fromNormalization :
+      coprod.inl ≫ (f.normalizationCoprodIso e).hom ≫ f.fromNormalization =
+        (iU ≫ f).fromNormalization
+answer: |
+  by
+    simp [Scheme.Hom.normalizationCoprodIso]

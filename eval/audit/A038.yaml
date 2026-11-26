@@ -1,0 +1,17 @@
+id: A038
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 287
+end: 288
+name: MinimalModel.IsBirationalHom
+from: S2
+license: Apache-2.0
+reference: |
+  A morphism of schemes is birational when it is an isomorphism over a nonempty open set of the target. The target is integral, so the open set is dense.
+lean: |
+  def IsBirationalHom {Y Z : Scheme.{u}} (f : Y ⟶ Z) : Prop :=
+    ∃ U : Z.Opens, IsIso (f ∣_ U)
+planted: true
+defect: "the open set may be empty"

@@ -1,0 +1,15 @@
+id: A024
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 334
+end: 334
+name: MinimalModel.IsREffective
+from: S2
+license: Apache-2.0
+reference: |
+  `D` is `ℝ`-linearly equivalent to an effective divisor.
+lean: |
+  def IsREffective (D : Divisor ℝ X) : Prop := ∃ E : Divisor ℝ X, 0 ≤ E ∧ RLinEquiv D E
+planted: false

@@ -1,0 +1,19 @@
+id: S001
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 22
+end: 23
+name: MinimalModel.Abundance
+from: S2
+license: Apache-2.0
+informal: |
+  S40, the abundance conjecture in dimension `n` (KM98 3.12 in spec 03). For each projective lc pair of dimension `n`, if `K + Δ` is nef, then it is semiample. This is open for `n ≥ 4`.
+faithful: |
+  def Abundance (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → IsNef A.I A.P.KΔ → IsSemiample A.P.KΔ
+planted: |
+  def Abundance (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsLc A.P → IsPseudoEffective A.P.KΔ → IsSemiample A.P.KΔ
+defect: "the hypothesis nef is replaced by pseudo-effective"

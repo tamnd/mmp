@@ -1,0 +1,19 @@
+id: T001
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/DivisionPolynomial/Degree.lean
+line: 242
+end: 247
+name: WeierstrassCurve.coeff_preΨ'_ne_zero
+from: S0
+license: Apache-2.0
+statement: |
+  lemma coeff_preΨ'_ne_zero {n : ℕ} (h : (n : R) ≠ 0) :
+      (W.preΨ' n).coeff ((n ^ 2 - if Even n then 4 else 1) / 2) ≠ 0
+answer: |
+  by
+    rcases n.even_or_odd' with ⟨n, rfl | rfl⟩
+    · rw [coeff_preΨ', ite_eq_left <| even_two_mul n, n.mul_div_cancel_left two_pos]
+      exact right_ne_zero_of_mul <| by rwa [← Nat.cast_mul]
+    · rwa [coeff_preΨ', ite_eq_right n.not_even_two_mul_add_one]

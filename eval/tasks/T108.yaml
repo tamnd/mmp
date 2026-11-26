@@ -1,0 +1,14 @@
+id: T108
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/QuasiCompact.lean
+line: 47
+end: 48
+name: AlgebraicGeometry.quasiCompact_iff_isSpectralMap
+from: S0
+license: Apache-2.0
+statement: |
+  theorem quasiCompact_iff_isSpectralMap : QuasiCompact f ↔ IsSpectralMap f
+answer: |
+  ⟨fun ⟨h⟩ => ⟨by fun_prop, h⟩, fun h => ⟨h.2⟩⟩

@@ -1,0 +1,17 @@
+id: A026
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 251
+end: 252
+name: MinimalModel.IsTerminal
+from: S2
+license: Apache-2.0
+reference: |
+  Terminal: each exceptional log discrepancy is more than one.
+lean: |
+  def IsTerminal (P : Pair X) : Prop :=
+    ∀ v, IsDivisorial v → IsExceptional v → ∀ A, LogDiscrepancyIs P v A → 1 ≤ A
+planted: true
+defect: "the exceptional log discrepancies may equal one, which is canonical and not terminal"

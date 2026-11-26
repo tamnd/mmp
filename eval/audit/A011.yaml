@@ -1,0 +1,16 @@
+id: A011
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 554
+end: 555
+name: MinimalModel.HasInfiniteFlips
+from: S2
+license: Apache-2.0
+reference: |
+  An infinite sequence of flips from `A`.
+lean: |
+  def HasInfiniteFlips (A : PairModel k) : Prop :=
+    ∃ model : ℕ → PairModel k, model 0 = A ∧ ∀ i, IsFlip (model i) (model (i + 1))
+planted: false

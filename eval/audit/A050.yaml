@@ -1,0 +1,17 @@
+id: A050
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 227
+end: 228
+name: MinimalModel.IsExceptional
+from: S2
+license: Apache-2.0
+reference: |
+  A valuation is exceptional over `X` when its centre is not a prime divisor of `X`.
+lean: |
+  def IsExceptional (v : Valuation (FF X) VZ) : Prop :=
+    ∀ x, IsCentre v x → coheight x = 1
+planted: true
+defect: "the centre is a prime divisor, which is the opposite"

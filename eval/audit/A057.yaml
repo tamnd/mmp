@@ -1,0 +1,17 @@
+id: A057
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 311
+end: 313
+name: MinimalModel.IsRAmpleOver
+from: S2
+license: Apache-2.0
+reference: |
+  An `ℝ`-divisor is ample relative to `f`: it is `ℝ`-linearly equivalent to a positive combination of `f`-ample Cartier divisors.
+lean: |
+  def IsRAmpleOver {Z : Scheme.{u}} (D : Divisor ℝ X) (f : X.toScheme ⟶ Z) : Prop :=
+    ∃ (N : ℕ) (r : Fin N → ℝ) (A : Fin N → Divisor ℤ X), 0 < N ∧ (∀ i, 0 < r i) ∧
+      (∀ i, IsRelAmple (A i) f) ∧ RLinEquiv D (∑ i, r i • (A i).toReal)
+planted: false

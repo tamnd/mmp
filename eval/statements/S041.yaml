@@ -1,0 +1,21 @@
+id: S041
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/LowDim.lean
+line: 69
+end: 71
+name: MinimalModel.ThreefoldAbundance
+from: S2
+license: Apache-2.0
+informal: |
+  S17, abundance for lc 3-folds (Miyaoka 1988 and Kawamata 1992 for terminal 3-folds; Keel, Matsuki and McKernan, Log abundance theorem for threefolds, Duke Math. J. 75 (1994), Theorem 1.1, for lc pairs). Let `(X, Δ)` be a projective lc pair of dimension 3 with a boundary `Δ` with rational coefficients. If `K + Δ` is nef, then it is semiample. The source states the theorem for `ℚ`-divisors, so the statement asks that the coefficients are rational. The case of real coefficients follows by the usual reduction to rational boundaries (Shokurov polytopes), which is not part of the source.
+faithful: |
+  def ThreefoldAbundance : Prop :=
+    ∀ A : PairModel k, A.X.dim = 3 → IsLc A.P → A.P.IsRationalBoundary → IsNef A.I A.P.KΔ →
+      IsSemiample A.P.KΔ
+planted: |
+  def ThreefoldAbundance : Prop :=
+    ∀ A : PairModel k, A.X.dim = 3 → IsLc A.P → IsNef A.I A.P.KΔ →
+      IsSemiample A.P.KΔ
+defect: "the boundary need not have rational coefficients"

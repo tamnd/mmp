@@ -1,0 +1,15 @@
+id: T142
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/AmpleSet.lean
+line: 95
+end: 97
+name: AmpleSet.image_iff
+from: S0
+license: Apache-2.0
+statement: |
+  theorem image_iff {s : Set E} (L : E ≃ᴬ[ℝ] F) :
+      AmpleSet (L '' s) ↔ AmpleSet s
+answer: |
+  ⟨fun h ↦ (L.symm_image_image s) ▸ h.image L.symm, fun h ↦ h.image L⟩

@@ -1,0 +1,28 @@
+id: S011
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Foundations.lean
+line: 57
+end: 63
+name: MinimalModel.KawamataViehweg
+from: S2
+license: Apache-2.0
+informal: |
+  S02, Kawamata-Viehweg vanishing (KM98 Theorem 2.70). Let `(X, Δ)` be a klt pair with `Δ` a `ℚ`-divisor, and `π : X → U` a projective morphism to a scheme `U` of finite type over `k`. Let `N` be a `ℚ`-Cartier Weil divisor and `M` a `ℚ`-Cartier `ℚ`-divisor that is `π`-nef and `π`-big, with `N ≡_π K + Δ + M`. Then `R^i π_* 𝒪_X(N) = 0` for each `i > 0`. The relative notions are the ones of `Curves.lean`: they use the curves that `π` contracts, which are complete. The higher direct images are the ones of `Cohomology.lean`. A `π`-big divisor here is an `f`-ample divisor plus an effective one, which needs `π` projective.
+faithful: |
+  def KawamataViehweg : Prop :=
+    ∀ (X : NormalVariety k) (P : Pair X), IsKlt P → P.IsRationalBoundary →
+      ∀ (U : Scheme.{u}) (g : U ⟶ Spec (CommRingCat.of k)) (π : X.toScheme ⟶ U),
+        LocallyOfFiniteType g → π ≫ g = X.str → IsProjectiveHom (X := X) π →
+        ∀ N : Divisor ℤ X, IsQCartier N.toRat → ∀ M : Divisor ℚ X, IsQCartier M →
+          IsNefRel M.ratToReal π → IsBigRel M.ratToReal π →
+          IsNumTrivialRel (N.toReal - P.KΔ - M.ratToReal) π → HigherDirectImagesVanish N π
+planted: |
+  def KawamataViehweg : Prop :=
+    ∀ (X : NormalVariety k) (P : Pair X), IsKlt P → P.IsRationalBoundary →
+      ∀ (U : Scheme.{u}) (g : U ⟶ Spec (CommRingCat.of k)) (π : X.toScheme ⟶ U),
+        LocallyOfFiniteType g → π ≫ g = X.str → IsProjectiveHom (X := X) π →
+        ∀ N : Divisor ℤ X, IsQCartier N.toRat → ∀ M : Divisor ℚ X, IsQCartier M →
+          IsNefRel M.ratToReal π → IsNumTrivialRel (N.toReal - P.KΔ - M.ratToReal) π → HigherDirectImagesVanish N π
+defect: "the hypothesis that M is big over U is dropped"

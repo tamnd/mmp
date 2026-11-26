@@ -1,0 +1,16 @@
+id: T174
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/Fan.lean
+line: 410
+end: 412
+name: MinimalModel.Toric.Fan.support_trivial
+from: S2
+license: Apache-2.0
+statement: |
+  theorem support_trivial : (trivial n).support = {0}
+answer: |
+  by
+    ext x
+    simp [mem_support, trivial]

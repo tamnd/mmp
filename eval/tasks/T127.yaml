@@ -1,0 +1,15 @@
+id: T127
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Topology.lean
+line: 193
+end: 195
+name: Convex.add_smul_sub_mem_interior
+from: S0
+license: Apache-2.0
+statement: |
+  theorem Convex.add_smul_sub_mem_interior {s : Set E} (hs : Convex 𝕜 s) {x y : E} (hx : x ∈ s)
+      (hy : y ∈ interior s) {t : 𝕜} (ht : t ∈ Ioc (0 : 𝕜) 1) : x + t • (y - x) ∈ interior s
+answer: |
+  hs.add_smul_sub_mem_interior' (subset_closure hx) hy ht

@@ -1,0 +1,23 @@
+id: T065
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Morphisms/Constructors.lean
+line: 313
+end: 322
+name: AlgebraicGeometry.topologically_isZariskiLocalAtTarget'
+from: S0
+license: Apache-2.0
+statement: |
+  lemma topologically_isZariskiLocalAtTarget' [(topologically P).RespectsIso]
+      (hP : ∀ {α β : Type u} [TopologicalSpace α] [TopologicalSpace β] (f : α → β) {ι : Type u}
+        (U : ι → Opens β) (_ : IsOpenCover U) (_ : Continuous f),
+        P f ↔ (∀ i, P ((U i).carrier.restrictPreimage f))) :
+      IsZariskiLocalAtTarget (topologically P)
+answer: |
+  by
+    refine topologically_isZariskiLocalAtTarget P ?_ (fun f _ U hU hU' ↦ (hP f U hU hU').mpr)
+    introv hf hs H
+    refine (hP f (![⊤, Opens.mk s hs] ∘ Equiv.ulift) ?_ hf).mp H ⟨1⟩
+    rw [IsOpenCover, ← top_le_iff]
+    exact le_iSup (![⊤, Opens.mk s hs] ∘ Equiv.ulift) ⟨0⟩

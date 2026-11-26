@@ -1,0 +1,16 @@
+id: T070
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/StructureSheaf.lean
+line: 323
+end: 326
+name: AlgebraicGeometry.StructureSheaf.const_add
+from: S0
+license: Apache-2.0
+statement: |
+  theorem const_add (f₁ f₂ : M) (g₁ g₂ : R) (U hu₁ hu₂) :
+      const f₁ g₁ U hu₁ + const f₂ g₂ U hu₂ =
+        const (g₂ • f₁ + g₁ • f₂) (g₁ * g₂) U (by simp [*, PrimeSpectrum.basicOpen_mul])
+answer: |
+  Subtype.ext <| funext fun _ ↦ LocalizedModule.mk_add_mk

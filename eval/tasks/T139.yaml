@@ -1,0 +1,16 @@
+id: T139
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Deriv.lean
+line: 1020
+end: 1023
+name: StrictConcaveOn.derivWithin_lt_slope
+from: S0
+license: Apache-2.0
+statement: |
+  lemma derivWithin_lt_slope (hfc : StrictConcaveOn ℝ S f) (hx : x ∈ S) (hy : y ∈ S) (hxy : x < y)
+      (hfd : DifferentiableWithinAt ℝ f S y) :
+      derivWithin f S y < slope f x y
+answer: |
+  hfc.lt_slope_of_hasDerivWithinAt hx hy hxy hfd.hasDerivWithinAt

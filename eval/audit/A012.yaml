@@ -1,0 +1,18 @@
+id: A012
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Classes.lean
+line: 28
+end: 30
+name: MinimalModel.IsPlt
+from: S2
+license: Apache-2.0
+reference: |
+  Purely log terminal (KM98 Definition 2.34): the coefficients of `Δ` are at most one, and the log discrepancy of each exceptional divisorial valuation over `X` is positive. In the discrepancy of KM98 this is `a(E, X, Δ) > -1` for each exceptional divisor `E`, because the log discrepancy is `1 + a(E, X, Δ)`. KM98 states no condition on the coefficients. In dimension at least two it follows from the condition on the exceptional divisors (KM98 Corollary 2.31). In dimension one there is no exceptional divisor, so the definition states it, as `IsLc` does.
+lean: |
+  def IsPlt (P : Pair X) : Prop :=
+    (∀ Q, P.Δ Q ≤ 1) ∧
+      ∀ v : Valuation (FF X) VZ, IsDivisorial v → ∀ A, LogDiscrepancyIs P v A → 0 < A
+planted: true
+defect: "the bound is asked of every divisorial valuation, so the boundary must have coefficients below one"

@@ -1,0 +1,16 @@
+id: T170
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/EGauge.lean
+line: 114
+end: 116
+name: egauge_le_of_smul_mem_of_ne
+from: S0
+license: Apache-2.0
+statement: |
+  lemma egauge_le_of_smul_mem_of_ne (h : c • x ∈ s) (hc : c ≠ 0) : egauge 𝕜 s x ≤ (‖c‖₊⁻¹ : ℝ≥0)
+answer: |
+  by
+    rw [← nnnorm_inv]
+    exact egauge_le_of_mem_smul <| (mem_inv_smul_set_iff₀ hc _ _).2 h

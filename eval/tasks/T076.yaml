@@ -1,0 +1,20 @@
+id: T076
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/IdealSheaf/Functorial.lean
+line: 197
+end: 203
+name: AlgebraicGeometry.Scheme.IdealSheafData.ideal_comap_of_isOpenImmersion
+from: S0
+license: Apache-2.0
+statement: |
+  lemma ideal_comap_of_isOpenImmersion
+      (I : Y.IdealSheafData) (f : X ⟶ Y) [IsOpenImmersion f] (U : X.affineOpens) :
+      (I.comap f).ideal U = (I.ideal ⟨f ''ᵁ U, U.2.image_of_isOpenImmersion f⟩).comap
+        (f.appIso U).inv.hom
+answer: |
+  by
+    refine (ker_ideal_of_isPullback_of_isOpenImmersion _ _ _ _
+      (IsPullback.of_hasPullback f I.subschemeι) U).trans ?_
+    simp

@@ -1,0 +1,14 @@
+id: T173
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Fidelity/AffineLinePairs.lean
+line: 71
+end: 72
+name: MinimalModel.affineLinePair_zero_isDlt
+from: S2
+license: Apache-2.0
+statement: |
+  theorem affineLinePair_zero_isDlt : IsDlt (affineLinePair k 0 le_rfl)
+answer: |
+  affineLinePair_isDlt k le_rfl zero_lt_one

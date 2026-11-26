@@ -1,0 +1,16 @@
+id: A032
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Curves.lean
+line: 73
+end: 74
+name: MinimalModel.IsBigRel
+from: S2
+license: Apache-2.0
+reference: |
+  `D` is big over `f`: `D` is `ℝ`-linearly equivalent to the sum of an `f`-ample divisor and an effective divisor. For a projective `f` this is the relative Kodaira lemma, up to the pullback of a divisor of the base. Such a pullback is numerically trivial over `f`. The statement S02 uses this notion only up to numerical equivalence over `f`, so the pullback makes no difference there.
+lean: |
+  def IsBigRel {Z : Scheme.{u}} (D : Divisor ℝ X) (f : X.toScheme ⟶ Z) : Prop :=
+    ∃ A E : Divisor ℝ X, IsRAmpleOver A f ∧ 0 ≤ E ∧ RLinEquiv D (A + E)
+planted: false

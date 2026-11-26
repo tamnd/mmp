@@ -1,0 +1,17 @@
+id: A005
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 179
+end: 181
+name: MinimalModel.IsDivOfForm
+from: S2
+license: Apache-2.0
+reference: |
+  `D` is the divisor of the nonzero top form `ω`: for each prime divisor `P` and each nonzero `g`, the form `g • ω` is regular at `P` if and only if `ord_P g ≥ -D P`.
+lean: |
+  def IsDivOfForm (D : Divisor ℤ X) (ω : TopForm X) : Prop :=
+    ω ≠ 0 ∧ ∀ P : PrimeDivisor X, ∀ g : FF X, g ≠ 0 →
+      (g • ω ∈ formLattice (stalkSubring P.1) ↔ -D P ≤ ordAt g P)
+planted: false

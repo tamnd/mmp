@@ -1,0 +1,18 @@
+id: A060
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/BasicRelative.lean
+line: 83
+end: 86
+name: MinimalModel.HasLcModelOver
+from: S2
+license: Apache-2.0
+reference: |
+  `(X, Δ)` has a log canonical model over `U`: a birational contraction `φ : X ⇢ Y` over `U`, with `Y` projective over `U`, that is `(K + Δ)`-non-positive and such that `K_Y + φ_* Δ` is ample over `U`. This is a weak log canonical model (BCHM 3.6.6) with `K_Y + φ_* Δ` ample over `U`. By BCHM Lemma 3.6.5 it is then the ample model of `K + Δ` over `U`, that is the log canonical model of 3.6.6.
+lean: |
+  def HasLcModelOver (P : Pair X) {U : NormalVariety k} (π : X.toScheme ⟶ U.toScheme) : Prop :=
+    ∃ (Y : NormalVariety k) (Q : Pair Y) (g : Y.toScheme ⟶ U.toScheme), g ≫ U.str = Y.str ∧
+      IsProjectiveHom g ∧ IsRAmpleOver Q.KΔ g ∧
+      ∃ σ : FF Y ≃ₐ[k] FF X, IsBirContractionOver P Q π g σ ∧ DiscrepancyCompare P Q σ (· ≤ ·)
+planted: false

@@ -1,0 +1,16 @@
+id: T005
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/SpreadingOut.lean
+line: 76
+end: 79
+name: AlgebraicGeometry.Scheme.exists_germ_injective
+from: S0
+license: Apache-2.0
+statement: |
+  lemma Scheme.exists_germ_injective (X : Scheme.{u}) (x : X) [X.IsGermInjectiveAt x] :
+      ∃ (U : X.Opens) (hx : x ∈ U),
+        IsAffineOpen U ∧ Function.Injective (X.presheaf.germ U x hx)
+answer: |
+  Scheme.IsGermInjectiveAt.cond

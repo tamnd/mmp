@@ -1,0 +1,16 @@
+id: T041
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/GammaSpecAdjunction.lean
+line: 483
+end: 485
+name: AlgebraicGeometry.toSpecΓ_SpecMap_ΓSpecIso_inv
+from: S0
+license: Apache-2.0
+statement: |
+  theorem toSpecΓ_SpecMap_ΓSpecIso_inv (R : CommRingCat.{u}) :
+      (Spec R).toSpecΓ ≫ Spec.map (Scheme.ΓSpecIso R).inv = 𝟙 _
+answer: |
+  by
+    rw [← SpecMap_ΓSpecIso_hom, ← Spec.map_comp, Iso.inv_hom_id, Spec.map_id]

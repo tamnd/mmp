@@ -1,0 +1,16 @@
+id: T191
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Toric/Wall.lean
+line: 67
+end: 69
+name: MinimalModel.Toric.IsLatticeBasis.repr_self
+from: S2
+license: Apache-2.0
+statement: |
+  theorem IsLatticeBasis.repr_self [DecidableEq ι] {u : ι → Fin n → ℤ} (h : IsLatticeBasis u)
+      (i j : ι) : h.basis.repr (u i) j = if i = j then 1 else 0
+answer: |
+  by
+    rw [(congrFun h.coe_basis i).symm, Module.Basis.repr_self, Finsupp.single_apply]

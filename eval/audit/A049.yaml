@@ -1,0 +1,16 @@
+id: A049
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 231
+end: 232
+name: MinimalModel.FormOrd
+from: S2
+license: Apache-2.0
+reference: |
+  The order of a top form along a valuation is `m`: for each nonzero `g`, the form `g • ω` is regular on the valuation ring if and only if `v g ≤ exp m`, that is `ord_v g ≥ -m`.
+lean: |
+  def FormOrd (v : Valuation (FF X) VZ) (ω : TopForm X) (m : ℤ) : Prop :=
+    ∀ g : FF X, g ≠ 0 → (g • ω ∈ formLattice v.integer ↔ v g ≤ WithZero.exp m)
+planted: false

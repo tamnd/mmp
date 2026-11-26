@@ -1,0 +1,21 @@
+id: S004
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 34
+end: 36
+name: MinimalModel.LiuXuReduction
+from: S2
+license: Apache-2.0
+informal: |
+  S44, the reduction of Liu and Xu (arXiv:2505.05250). Fix `d`. Non-vanishing in dimension `d` (S41) gives abundance for the projective lc pairs of dimension `d` whose numerical dimension is at most one: if `K + Δ` is nef and `ν(K + Δ) ≤ 1`, then `K + Δ` is semiample. The numerical dimension is Nakayama's `κ_σ` (spec 06.5, risk 4). For a nef divisor it is the usual numerical dimension. The class is reduction.
+faithful: |
+  def LiuXuReduction (d : ℕ) : Prop :=
+    NonVanishing k d → ∀ A : PairModel k, A.X.dim = d → IsLc A.P → IsNef A.I A.P.KΔ →
+      numericalDim A.P.KΔ ≤ 1 → IsSemiample A.P.KΔ
+planted: |
+  def LiuXuReduction (d : ℕ) : Prop :=
+    NonVanishing k d → ∀ A : PairModel k, A.X.dim = d → IsLc A.P → IsNef A.I A.P.KΔ →
+      numericalDim A.P.KΔ ≤ 2 → IsSemiample A.P.KΔ
+defect: "the bound on the numerical dimension is 2 in place of 1"

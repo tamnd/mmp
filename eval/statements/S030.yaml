@@ -1,0 +1,26 @@
+id: S030
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Abundance.lean
+line: 43
+end: 48
+name: MinimalModel.GeneralizedAbundance
+from: S2
+license: Apache-2.0
+informal: |
+  S45, the generalised abundance conjecture in dimension `n` (Lazić and Peternell, On generalised abundance, I, Publ. RIMS 56 (2020), arXiv:1808.00438, the Generalised Abundance Conjecture of Section 1). Let `(X, Δ)` be a projective klt pair of dimension `n` with `Δ` a `ℚ`-divisor and `K + Δ` pseudo-effective. Let `L` be a nef Cartier divisor such that `K + Δ + L` is nef. Then `K + Δ + L` is numerically equivalent to a semiample `ℚ`-divisor `M`: some positive multiple `m M` is a free Cartier divisor. The source takes `Δ` with rational coefficients (the start of its Section 2), `L` Cartier and `M` a `ℚ`-divisor, and so does this statement. With `L = 0` this is the abundance conjecture for klt pairs, up to numerical equivalence. It is open for `n ≥ 3`.
+faithful: |
+  def GeneralizedAbundance (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsKlt A.P → A.P.IsRationalBoundary →
+      IsPseudoEffective A.P.KΔ → ∀ L : Divisor ℤ A.X, IsCartier L → IsNef A.I L.toReal →
+        IsNef A.I (A.P.KΔ + L.toReal) →
+          ∃ (M : Divisor ℚ A.X) (m : ℕ) (E : Divisor ℤ A.X), 0 < m ∧ IsFree E ∧
+            (m : ℝ) • M.ratToReal = E.toReal ∧ NumEquiv A.I (A.P.KΔ + L.toReal) M.ratToReal
+planted: |
+  def GeneralizedAbundance (n : ℕ) : Prop :=
+    ∀ A : PairModel k, A.X.dim = n → IsKlt A.P → A.P.IsRationalBoundary →
+      IsPseudoEffective A.P.KΔ → ∀ L : Divisor ℤ A.X, IsCartier L → IsNef A.I L.toReal →
+        ∃ (M : Divisor ℚ A.X) (m : ℕ) (E : Divisor ℤ A.X), 0 < m ∧ IsFree E ∧
+            (m : ℝ) • M.ratToReal = E.toReal ∧ NumEquiv A.I (A.P.KΔ + L.toReal) M.ratToReal
+defect: "the hypothesis that K + Δ + L is nef is dropped"

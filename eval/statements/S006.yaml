@@ -1,0 +1,21 @@
+id: S006
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Foundations.lean
+line: 26
+end: 28
+name: MinimalModel.KleimanCriterion
+from: S2
+license: Apache-2.0
+informal: |
+  S01, Kleiman's criterion (KM98, Chapter 1, Theorem 1.18). Let `X` be a projective variety and `D` an `ℝ`-Cartier divisor on `X`. Then `D` is ample if and only if `D · z > 0` for each nonzero class `z` of the closed cone of curves `NE(X)`. The criterion holds in each characteristic, so the statement does not assume `CharZero k`. The intersection numbers are a structure `IntersectionData X`, which has at most one value on each `ℝ`-Cartier divisor. So the statement quantifies over it.
+faithful: |
+  def KleimanCriterion : Prop :=
+    ∀ X : NormalVariety k, IsProjective X → ∀ (I : IntersectionData X) (D : Divisor ℝ X)
+      (hD : IsRCartier D), IsAmple D ↔ ∀ z ∈ I.coneOfCurves, z ≠ 0 → 0 < z ⟨D, hD⟩
+planted: |
+  def KleimanCriterion : Prop :=
+    ∀ X : NormalVariety k, IsProjective X → ∀ (I : IntersectionData X) (D : Divisor ℝ X)
+      (hD : IsRCartier D), IsAmple D ↔ ∀ z ∈ I.coneOfCurves, 0 ≤ z ⟨D, hD⟩
+defect: "nonnegative on the cone, which is nef and not ample"

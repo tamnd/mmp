@@ -1,0 +1,23 @@
+id: S010
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Foundations.lean
+line: 77
+end: 80
+name: MinimalModel.LengthOfExtremalRays
+from: S2
+license: Apache-2.0
+informal: |
+  S09, the length of extremal rays (KM98 Theorem 3.7(1), after Kawamata 1991). Let `(X, Δ)` be a projective klt pair. Each `(K + Δ)`-negative extremal ray `R` of `NE(X)` is spanned by the class of a rational curve `C` with `0 < -(K + Δ) · C ≤ 2 dim X`.
+faithful: |
+  def LengthOfExtremalRays : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ R : ExtremalRay A.I, R.generator A.P.KΔR < 0 →
+      ∃ C : Curve A.X, C.IsRational ∧ ray R.generator = ray (A.I.curveClass C) ∧
+        0 < -A.I.dot A.P.KΔ C ∧ -A.I.dot A.P.KΔ C ≤ 2 * (A.X.dim : ℝ)
+planted: |
+  def LengthOfExtremalRays : Prop :=
+    ∀ A : PairModel k, IsKlt A.P → ∀ R : ExtremalRay A.I, R.generator A.P.KΔR < 0 →
+      ∃ C : Curve A.X, C.IsRational ∧ ray R.generator = ray (A.I.curveClass C) ∧
+        0 < -A.I.dot A.P.KΔ C ∧ -A.I.dot A.P.KΔ C ≤ (A.X.dim : ℝ) + 1
+defect: "the bound of Mori for smooth varieties, dim X + 1, in place of 2 dim X"

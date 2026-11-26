@@ -1,0 +1,15 @@
+id: T130
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/Analysis/Convex/Between.lean
+line: 525
+end: 526
+name: Wbtw.swap_right_iff
+from: S0
+license: Apache-2.0
+statement: |
+  theorem Wbtw.swap_right_iff (h : Wbtw R x y z) : Wbtw R x z y ↔ y = z
+answer: |
+  by
+    rw [← wbtw_swap_right_iff R x, and_iff_right h]

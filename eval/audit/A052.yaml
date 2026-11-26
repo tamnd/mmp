@@ -1,0 +1,18 @@
+id: A052
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 573
+end: 575
+name: MinimalModel.EveryProgramEnds
+from: S2
+license: Apache-2.0
+reference: |
+  Each program from `A` runs and ends. No sequence of steps from `A` is infinite. At the last model of each finite program, `K + Δ` is nef, or the model is a Mori fibre space, or one more step exists. So each program extends to a complete program.
+lean: |
+  def EveryProgramEnds (A : PairModel k) : Prop :=
+    ∀ (p : Program A) (n : ℕ), p.len = n →
+      IsMinimal (p.model n) ∨ IsMoriFibreSpace (p.model n) ∨ ∃ B, IsMMPStep (p.model n) B
+planted: true
+defect: "the program may be infinite"

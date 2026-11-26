@@ -1,0 +1,23 @@
+id: S026
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Boundedness.lean
+line: 28
+end: 31
+name: MinimalModel.MldBound
+from: S2
+license: Apache-2.0
+informal: |
+  S51, the mld bound (Shokurov; Conjecture 3.18 of spec 03). Let `(X, Δ)` be a pair and `x` a closed point of `X`. Then `mld(x; X, Δ) ≤ dim X`. Equality holds only if `X` is smooth at `x` and `x` is not in the support of `Δ`. This is open in general.
+faithful: |
+  def MldBound : Prop :=
+    ∀ (X : NormalVariety k) (P : Pair X) (x : X.toScheme), IsClosed ({x} : Set X.toScheme) →
+      mld P x ≤ ((X.dim : ℝ) : WithBot ℝ) ∧
+        (mld P x = ((X.dim : ℝ) : WithBot ℝ) → X.IsSmoothAt x ∧ x ∉ P.Δ.supp)
+planted: |
+  def MldBound : Prop :=
+    ∀ (X : NormalVariety k) (P : Pair X) (x : X.toScheme), IsClosed ({x} : Set X.toScheme) →
+      mld P x ≤ ((X.dim : ℝ) : WithBot ℝ) ∧
+        (mld P x = ((X.dim : ℝ) : WithBot ℝ) → X.IsSmoothAt x)
+defect: "the condition that x is not in the support of Δ is dropped"

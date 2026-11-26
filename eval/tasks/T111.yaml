@@ -1,0 +1,22 @@
+id: T111
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/GammaSpecAdjunction.lean
+line: 202
+end: 210
+name: AlgebraicGeometry.LocallyRingedSpace.toStalk_stalkMap_toΓSpec
+from: S0
+license: Apache-2.0
+statement: |
+  theorem toStalk_stalkMap_toΓSpec (x : X) :
+      toStalk _ _ ≫ X.toΓSpecSheafedSpace.hom.stalkMap x = X.presheaf.Γgerm x
+answer: |
+  by
+    rw [PresheafedSpace.Hom.stalkMap,
+      ← algebraMap_germ (basicOpen (1 : Γ.obj (op X))) _ (by rw [basicOpen_one]; trivial),
+      ← Category.assoc, Category.assoc (CommRingCat.ofHom _), stalkFunctor_map_germ, ← Category.assoc,
+      X.toΓSpecSheafedSpace_app_eq, X.toΓSpecCApp_spec, Γgerm,
+      ← dsimp% stalkPushforward_germ _ _ X.presheaf ⊤]
+    congr 1
+    exact (X.toΓSpecBase _* X.presheaf).germ_res le_top.hom _ _

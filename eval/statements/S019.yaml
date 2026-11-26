@@ -1,0 +1,25 @@
+id: S019
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 31
+end: 35
+name: MinimalModel.ACCMld
+from: S2
+license: Apache-2.0
+informal: |
+  S49, the ACC conjecture for minimal log discrepancies in dimension `n` (Shokurov; KM98 3.16 in spec 03). For each set `I ⊆ [0, 1]` that satisfies the DCC, the set of the mlds at the closed points of the lc pairs of dimension `n` with coefficients in `I` satisfies the ACC.
+faithful: |
+  def ACCMld (n : ℕ) : Prop :=
+    ∀ I : Set ℝ, I ⊆ Set.Icc 0 1 → I.IsWF →
+      ∀ a : ℕ → ℝ, (∀ i, ∃ (X : NormalVariety k) (P : Pair X) (x : X.toScheme), X.dim = n ∧
+        IsLc P ∧ P.Δ.CoeffsIn I ∧ IsClosed ({x} : Set X.toScheme) ∧ mld P x = (a i : WithBot ℝ)) →
+      ¬ StrictMono a
+planted: |
+  def ACCMld (n : ℕ) : Prop :=
+    ∀ I : Set ℝ, I ⊆ Set.Icc 0 1 → I.IsWF →
+      ∀ a : ℕ → ℝ, (∀ i, ∃ (X : NormalVariety k) (P : Pair X) (x : X.toScheme), X.dim = n ∧
+        IsLc P ∧ P.Δ.CoeffsIn I ∧ IsClosed ({x} : Set X.toScheme) ∧ mld P x = (a i : WithBot ℝ)) →
+      ¬ StrictAnti a
+defect: "the DCC in place of the ACC"

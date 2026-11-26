@@ -1,0 +1,15 @@
+id: T059
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/EllipticCurve/Jacobian/Point.lean
+line: 114
+end: 115
+name: WeierstrassCurve.Jacobian.neg_of_Z_eq_zero'
+from: S0
+license: Apache-2.0
+statement: |
+  lemma neg_of_Z_eq_zero' {P : Fin 3 → R} (hPz : P z = 0) : W'.neg P = ![P x, -P y, 0]
+answer: |
+  by
+    rw [neg, negY_of_Z_eq_zero hPz, hPz]

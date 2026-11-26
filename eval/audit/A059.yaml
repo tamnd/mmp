@@ -1,0 +1,16 @@
+id: A059
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/BasicRelative.lean
+line: 44
+end: 45
+name: MinimalModel.IsPseudoEffectiveOver
+from: S2
+license: Apache-2.0
+reference: |
+  An `ℝ`-divisor that is pseudo-effective over `Z`: for one divisor `A` that is ample over `Z`, each sum `D + ε A` with `ε > 0` is big over `Z`. BCHM 3.1.1(10) ask that the restriction of `D` to the generic fibre is pseudo-effective. Bigness over `Z` is bigness on the generic fibre (3.1.1(7)), so the two agree. Over `Spec k` this is `IsPseudoEffective`.
+lean: |
+  def IsPseudoEffectiveOver {Z : Scheme.{u}} (D : Divisor ℝ X) (π : X.toScheme ⟶ Z) : Prop :=
+    ∃ A : Divisor ℝ X, IsRAmpleOver A π ∧ ∀ ε : ℝ, 0 < ε → IsBigRel (D + ε • A) π
+planted: false

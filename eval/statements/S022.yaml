@@ -1,0 +1,27 @@
+id: S022
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Termination.lean
+line: 48
+end: 53
+name: MinimalModel.SpecialTermination
+from: S2
+license: Apache-2.0
+informal: |
+  S19, special termination (Fujino for dlt pairs; Lazić, Moraga and Tsakanikas for lc pairs). Assume `T(m)` for each `m < n`. Let `(X, Δ)` be a projective `ℚ`-factorial dlt pair of dimension `n`. Then each infinite sequence of steps from `(X, Δ)` is an isomorphism near `⌊Δ⌋` after finitely many steps: from some step on, the contraction and the small map of each step are isomorphisms over an open set of the base that contains the image of `⌊Δ⌋`. The class is reduction. The spec writes the hypothesis as `T(n - 1)`; this statement asks for termination in each dimension below `n`, as the proof uses it on the strata of `⌊Δ⌋`. The `reader` role checks this form against the source before F5.
+faithful: |
+  def SpecialTermination (n : ℕ) : Prop :=
+    (∀ m < n, Termination k m) →
+      ∀ model : ℕ → PairModel k, (model 0).X.dim = n → IsQFactorial (model 0).X →
+        IsDlt (model 0).P → (∀ i, IsMMPStep (model i) (model (i + 1))) →
+        ∃ N : ℕ, ∀ i, N ≤ i →
+          ∃ s : MMPStepData (model i) (model (i + 1)), s.IsIsoNear (model i).P.reducedSupp
+planted: |
+  def SpecialTermination (n : ℕ) : Prop :=
+    (∀ m ≤ n, Termination k m) →
+      ∀ model : ℕ → PairModel k, (model 0).X.dim = n → IsQFactorial (model 0).X →
+        IsDlt (model 0).P → (∀ i, IsMMPStep (model i) (model (i + 1))) →
+        ∃ N : ℕ, ∀ i, N ≤ i →
+          ∃ s : MMPStepData (model i) (model (i + 1)), s.IsIsoNear (model i).P.reducedSupp
+defect: "the hypothesis is termination up to n, in place of below n"

@@ -1,0 +1,21 @@
+id: T032
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/Limits.lean
+line: 373
+end: 380
+name: AlgebraicGeometry.coprodMk_inr
+from: S0
+license: Apache-2.0
+statement: |
+  lemma coprodMk_inr (x : Y) :
+      coprodMk X Y (.inr x) = (coprod.inr : Y ⟶ X ⨿ Y) x
+answer: |
+  by
+    change ((TopCat.binaryCofan X Y).inr ≫
+      (colimit.isoColimitCocone ⟨_, TopCat.binaryCofanIsColimit _ _⟩).inv ≫ _) x =
+        Scheme.forgetToTop.map coprod.inr x
+    congr 2
+    refine (colimit.isoColimitCocone_ι_inv_assoc ⟨_, TopCat.binaryCofanIsColimit _ _⟩ _ _).trans ?_
+    exact inr_coprodComparison Scheme.forgetToTop _ _

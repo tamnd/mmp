@@ -1,0 +1,18 @@
+id: A028
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 511
+end: 513
+name: MinimalModel.IsMoriFibreSpace
+from: S2
+license: Apache-2.0
+reference: |
+  A Mori fibre space structure on `A`: a contraction of a `(K + Δ)`-negative extremal ray to a variety of smaller dimension.
+lean: |
+  def IsMoriFibreSpace (A : PairModel k) : Prop :=
+    ∃ (Z : NormalVariety k) (f : A.X.toScheme ⟶ Z.toScheme), f ≫ Z.str = A.X.str ∧
+      IsContraction f ∧ Z.dim ≤ A.X.dim ∧ IsExtremalContraction A.I f ∧ IsRAmpleOver (-A.P.KΔ) f
+planted: true
+defect: "the base may have the dimension of X, so a birational contraction counts"

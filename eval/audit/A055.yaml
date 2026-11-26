@@ -1,0 +1,17 @@
+id: A055
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 153
+end: 154
+name: MinimalModel.IsQFactorial
+from: S2
+license: Apache-2.0
+reference: |
+  `X` is `ℚ`-factorial: each Weil divisor is `ℚ`-Cartier.
+lean: |
+  def IsQFactorial (X : NormalVariety k) : Prop :=
+    ∀ D : Divisor ℤ X, ∃ m : ℕ, IsCartier ((m : ℤ) • D)
+planted: true
+defect: "the multiple may be zero, so the condition holds for every variety"

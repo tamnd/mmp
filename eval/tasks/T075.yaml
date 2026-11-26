@@ -1,0 +1,17 @@
+id: T075
+source: mathlib4
+repo: leanprover-community/mathlib4
+commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+file: Mathlib/AlgebraicGeometry/ProjectiveSpectrum/Scheme.lean
+line: 687
+end: 690
+name: AlgebraicGeometry.ProjectiveSpectrum.Proj.toSpec_base_isIso
+from: S0
+license: Apache-2.0
+statement: |
+  lemma toSpec_base_isIso {f} {m} (f_deg : f ∈ 𝒜 m) (hm : 0 < m) :
+      IsIso (toSpec 𝒜 f).base
+answer: |
+  by
+    convert (projIsoSpecTopComponent f_deg hm).isIso_hom
+    exact ConcreteCategory.hom_ext _ _ <| toSpec_base_apply_eq 𝒜

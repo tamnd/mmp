@@ -1,0 +1,17 @@
+id: A021
+source: mmp-lean
+repo: tamnd/mmp-lean
+commit: 1f87642ad8299bdc8836864fd617b7a25f114fe7
+file: MinimalModel/Statements/Basic.lean
+line: 141
+end: 142
+name: MinimalModel.IsCartier
+from: S2
+license: Apache-2.0
+reference: |
+  A Cartier divisor: locally principal.
+lean: |
+  def IsCartier (D : Divisor ℤ X) : Prop :=
+    ∃ x : X.toScheme, ∃ U : X.toScheme.Opens, x ∈ U ∧ ∃ φ, IsDivOn D φ U
+planted: true
+defect: "principal near some point in place of near each point"
