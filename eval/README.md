@@ -16,7 +16,7 @@ The tasks come from these pinned commits:
 | Mathlib, `Mathlib/Analysis/Convex` | v4.35.0, `56a0058` | 50 | S0 |
 | mmp-lean, the history of the project | `1f87642` | 30 | S2 |
 
-A task is a theorem or lemma that is not private, has a statement of 30 to 600 characters and a proof of at most 8 lines, and has no `sorry`. The selection takes the declarations in the order of the SHA-256 of their names, with at most 2 tasks from one file of Mathlib and 3 from one file of mmp-lean. Spec 10.9 also names singularity-lean, TauCeti and AxiomMath/MMP as sources at S0. Their tasks come with a later revision of the set, at commits that build with Lean 4.35.0.
+A task is a theorem or lemma that is not private, has a statement of 30 to 600 characters and a proof of at most 8 lines, and has no `sorry`. Its proof is one term or one `by` block after the `:=` of the statement, so a declaration by pattern matching, with `|` cases, is not a task. A file whose lines before a task do not elaborate on their own is not a source: `Mathlib/AlgebraicGeometry/EllipticCurve/DivisionPolynomial/Basic.lean` fails at its line 321 when it is cut there. The run of the workflow `eval` of mmp-lean found three such tasks, and T004, T040 and T167 are the next declarations of the order that pass the rules. The selection takes the declarations in the order of the SHA-256 of their names, with at most 2 tasks from one file of Mathlib and 3 from one file of mmp-lean. Spec 10.9 also names singularity-lean, TauCeti and AxiomMath/MMP as sources at S0. Their tasks come with a later revision of the set, at commits that build with Lean 4.35.0.
 
 The fields are:
 - `id`, `source`, `repo`, `commit`, `file`, `line`, `end`, `name`, `license`;
@@ -59,3 +59,13 @@ A runner writes one line of JSON per question, with an optional cost in US dolla
 ```
 
 `scripts/eval.py score answers.jsonl` prints the pass rate of each set and the total cost.
+
+## Runs
+
+`mmp agent eval` of mmp-agent asks a runner each question of `eval/statements` and `eval/audit`, and writes the result to `records/eval/DATE-LABEL.json` with the answers in a `.jsonl` next to it. The record gives the runner, the model of each role, the prompt version, the pass rate of each set and the cost from the ledger. With `-baseline RECORD`, the run fails if a set drops by more than 5 points, the gate of spec 10.9.
+
+| Record | Runner | Statements | Audit | Cost |
+|---|---|---|---|---|
+| `2026-11-26-baseline-faithful` | `constant:faithful`, no model | 50/100 | 30/60 | $0 |
+
+The constant baseline is the floor: a runner that always answers `faithful` gets half of each set. A model run comes when an agent runner is in place.

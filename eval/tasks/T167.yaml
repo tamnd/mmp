@@ -2,24 +2,13 @@ id: T167
 source: mathlib4
 repo: leanprover-community/mathlib4
 commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
-file: Mathlib/Analysis/Convex/Mul.lean
-line: 175
-end: 186
-name: convexOn_zpow
+file: Mathlib/Analysis/Convex/Basic.lean
+line: 218
+end: 219
+name: convex_multiset_sum
 from: S0
 license: Apache-2.0
 statement: |
-  lemma convexOn_zpow : ∀ n : ℤ, ConvexOn 𝕜 (Ioi 0) fun x : 𝕜 ↦ x ^ n
-    | (n : ℕ) => by
-      simp_rw [zpow_natCast]
-      exact (convexOn_pow n).subset Ioi_subset_Ici_self (convex_Ioi _)
-    | -[n+1] => by
-      simp_rw [zpow_negSucc, ← inv_pow]
-      refine (convexOn_iff_forall_pos.2 ⟨convex_Ioi _, ?_⟩).pow (fun x (hx : 0 < x) ↦ by positivity) _
-      rintro x (hx : 0 < x) y (hy : 0 < y) a b ha hb hab
-      simp only [smul_eq_mul]
-      field_simp
-      have H : 0 ≤ a * b * (x - y) ^ 2
+  theorem convex_multiset_sum {s : Multiset (Set E)} (h : ∀ i ∈ s, Convex 𝕜 i) : Convex 𝕜 s.sum
 answer: |
-  by positivity
-      linear_combination H - x * y * (a + b + 1) * hab
+  (convexAddSubmonoid 𝕜 E).multiset_sum_mem _ h
