@@ -205,7 +205,7 @@ The 60 statements are in eight families, one file each. Each statement has an id
 | S31 | `BCHM` | Theorem 3.10, with the induction $A_n$ to $F_n$ as six sub-statements | theorem | partial (extension theorems) | S2 |
 | S32 | `FiniteGenerationCanonical` | the canonical ring of a smooth projective variety is finitely generated | theorem | ready | S0 |
 | S33 | `MinimalModelConj` | every projective lc pair with $K+\Delta$ pseudo-effective has a minimal model | open | ready | S0 |
-| S34 | `FinitenessOfModels` | $E_n$: finitely many log terminal models over a rational polytope | theorem | ready | S2 |
+| S34 | `FinitenessOfModels` | $E_n$: finitely many weak log canonical models over $\mathcal{L}_A(V)$, for a general ample $A$ | theorem | partial (linear systems) | S2 |
 | S35 | `MoriFibreSpaceOutput` | not pseudo-effective and big boundary gives a Mori fibre space (BCHM 1.3.2) | theorem | ready | S1 |
 | S36 | `Sarkisov` | two Mori fibre space outputs are joined by Sarkisov links (Hacon-McKernan) | theorem | missing (links) | S3 |
 | S37 | `FanoTypeMDS` | $\mathbb{Q}$-factorial Fano type varieties are Mori dream spaces (BCHM 1.3.1) | theorem | partial (Cox rings) | S3 |
