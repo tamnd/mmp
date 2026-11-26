@@ -16,6 +16,7 @@ Each release has a section. The newest release is first.
 - `records/audit.json` with the state of the steps A1 to A8. The other records are reset to the S0 state.
 - The lab spec of experiment E2 in dimension 3, and its first run to index 40, in `lab/`.
 - The pages of the site: home, program, statements, map, audit, trust, routes, papers, learn, handbook, code and about.
+- `scripts/release.sh`, which releases one version of mmp, mmp-agent, mmp-lean and mmp-handbook in sync. The handbook release pins the release commits of mmp and mmp-lean, and its tag builds the PDF and EPUB books.
 - The deploy workflow for mmp.tamnd.com, and the files README, CITATION, CONTRIBUTING and SECURITY.
 
 ### Fixed
