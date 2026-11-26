@@ -46,5 +46,17 @@
       "F7": false
     },
     "pass": false
+  },
+  "MinimalModel.Toric.ToricConeTheorem": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": true,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false
+    },
+    "pass": false
   }
 }
