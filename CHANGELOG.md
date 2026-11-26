@@ -4,6 +4,10 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Added
+
+- The node finiteness-of-models (MM8GY5VB02) records the Lean statement S34 `FinitenessOfModels` of mmp-lean, BCHM Theorem E with a general ample divisor written out through linear systems and very general members over an uncountable field. Its statement and the S34 row of spec 06 and of the site now speak of weak log canonical models over $\mathcal{L}_A(V)$, as Theorem E does, and the vocabulary of the row is partial (linear systems).
+
 ## v0.0.4 - 2026-11-26
 
 ### Changed
