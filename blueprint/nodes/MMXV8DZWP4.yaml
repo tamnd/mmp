@@ -5,4 +5,4 @@ title: "The MMP for lc surface pairs"
 statement: "The MMP for projective lc surface pairs: each program runs and ends with a minimal model or a Mori fibre space (Fujino)."
 lean: { statement: MinimalModel.LcSurfaceMMP }
 tier: S
-notes: "Statement S13 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S13 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1. The paper record of the source is not written yet (spec 07). The Lean statement says that each program runs and ends (EveryProgramEnds in Basic.lean)."

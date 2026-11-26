@@ -8,4 +8,4 @@ sources:
 uses: [MM3A98X8YR, MMH0CM56AA] # ThreefoldFlips, ThreefoldTermination
 lean: { statement: MinimalModel.ThreefoldLcMMP }
 tier: S
-notes: "Statement S18 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."
+notes: "Statement S18 of spec 06.2.2, in the file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1. The Lean statement says that each program runs and ends (EveryProgramEnds in Basic.lean)."

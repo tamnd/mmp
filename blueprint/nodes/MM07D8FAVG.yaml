@@ -8,4 +8,4 @@ sources:
 uses: [MM9399B0QP] # BCHM
 lean: { statement: MinimalModel.TerminationScalingBig }
 tier: S
-notes: "Statement S23 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1."
+notes: "Statement S23 of spec 06.2.2, in the file MinimalModel/Statements/Termination.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S1. The Lean statement follows BCHM 1.4.2: the scaling divisor is a divisor C >= 0 such that the pair with boundary Delta + C is klt and K + Delta + C is nef. An ample scaling divisor is a case of it. The statement is about each program with scaling, with any choice of the rays."
