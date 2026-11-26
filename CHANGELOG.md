@@ -4,6 +4,12 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+## v0.0.2 - 2026-11-26
+
+### Changed
+
+- `records/lean.json` is the record of the build of mmp-lean v0.0.2 at commit 4d7b358.
+
 ### Fixed
 
 - Spec 01.1 and 01.4 give the lc abundance of BWX for $p>42$ as a claim, as its claim record C9 does. Spec 01.1 gives the LSC of mlds in dimension at most 3 as proved (Ambro). Spec 13.3 uses the node MMXCD16PTN of S52 in its example, in place of a name that is not in the map.

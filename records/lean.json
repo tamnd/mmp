@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/tamnd/mmp-lean",
-  "commit": "6e779d01a502df0f0208752d2d3fae8f90f6deb4",
+  "commit": "4d7b358262ac48d26222690d6f5b2fd09e2218dc",
   "toolchain": "4.35.0",
   "mathlib": "v4.35.0",
   "built": "2026-11-26",
@@ -102,6 +102,16 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (self : MinimalModel.CanonicalDivisor X),\n  MinimalModel.IsDivOfForm self.K self.ω"
+    },
+    "MinimalModel.CanonicalDivisor.mk.congr_simp": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (K K_1 : MinimalModel.Divisor ℤ X) (e_K : K = K_1)\n  (ω ω_1 : MinimalModel.TopForm X) (e_ω : ω = ω_1) (isDiv : MinimalModel.IsDivOfForm K ω),\n  { K := K, ω := ω, isDiv := isDiv } = { K := K_1, ω := ω_1, isDiv := ⋯ }"
     },
     "MinimalModel.CanonicalDivisor.mk.inj": {
       "kind": "theorem",
@@ -1871,6 +1881,16 @@
       ],
       "type": "{k : Type u} → {inst : Field k} → {X : MinimalModel.NormalVariety k} → MinimalModel.Pair X → ℕ"
     },
+    "MinimalModel.Pair.mk.congr_simp": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (K K_1 : MinimalModel.CanonicalDivisor X)\n  (e_K : K = K_1) (Δ Δ_1 : MinimalModel.Divisor ℝ X) (e_Δ : Δ = Δ_1) (nonneg : 0 ≤ Δ)\n  (rCartier : MinimalModel.IsRCartier (K.K.toReal + Δ)),\n  { K := K, Δ := Δ, nonneg := nonneg, rCartier := rCartier } = { K := K_1, Δ := Δ_1, nonneg := ⋯, rCartier := ⋯ }"
+    },
     "MinimalModel.Pair.mk.inj": {
       "kind": "theorem",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -2453,7 +2473,7 @@
     "MinimalModel.Toric.Fan": {
       "kind": "inductive",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 226,
+      "line": 258,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2461,21 +2481,76 @@
       ],
       "type": "ℕ → Type"
     },
+    "MinimalModel.Toric.Fan.IsCartier": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 191,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.TDivisor ℤ → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsCartier.isQCartier": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 213,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {F : MinimalModel.Toric.Fan n} {D : F.TDivisor ℤ}, F.IsCartier D → F.IsQCartier D"
+    },
     "MinimalModel.Toric.Fan.IsComplete": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 243,
+      "line": 275,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
         "propext"
       ],
       "type": "{n : ℕ} → MinimalModel.Toric.Fan n → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsQCartier": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 195,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.TDivisor ℤ → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsQCartier.isRCartier": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 260,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {F : MinimalModel.Toric.Fan n} {D : F.TDivisor ℤ},\n  F.IsQCartier D → F.IsRCartier ((MinimalModel.Toric.Fan.TDivisor.toReal F) D)"
+    },
+    "MinimalModel.Toric.Fan.IsRCartier": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 199,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.TDivisor ℝ → Prop"
     },
     "MinimalModel.Toric.Fan.IsSimplicialFan": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 246,
+      "line": 278,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2483,10 +2558,43 @@
       ],
       "type": "{n : ℕ} → MinimalModel.Toric.Fan n → Prop"
     },
+    "MinimalModel.Toric.Fan.IsSupportFunction": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 203,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.Fan n → (MinimalModel.Toric.NR n → ℝ) → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsSupportFunctionOf": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 207,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.TDivisor ℝ → (MinimalModel.Toric.NR n → ℝ) → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsSupportFunctionOf.isRCartier": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 270,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {F : MinimalModel.Toric.Fan n} {D : F.TDivisor ℝ} {φ : MinimalModel.Toric.NR n → ℝ},\n  F.IsSupportFunctionOf D φ → F.IsRCartier D"
+    },
     "MinimalModel.Toric.Fan.Ray": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 38,
+      "line": 103,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2497,7 +2605,7 @@
     "MinimalModel.Toric.Fan.TDivisor": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 51,
+      "line": 142,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2508,7 +2616,7 @@
     "MinimalModel.Toric.Fan.TDivisor.toReal": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 62,
+      "line": 153,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2519,7 +2627,7 @@
     "MinimalModel.Toric.Fan.TDivisor.toReal_apply": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 66,
+      "line": 157,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2530,7 +2638,7 @@
     "MinimalModel.Toric.Fan.affine": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 368,
+      "line": 541,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2541,7 +2649,7 @@
     "MinimalModel.Toric.Fan.bot_mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 269,
+      "line": 301,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2552,7 +2660,7 @@
     "MinimalModel.Toric.Fan.canonical": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 72,
+      "line": 163,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2563,7 +2671,7 @@
     "MinimalModel.Toric.Fan.canonicalReal": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 81,
+      "line": 172,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2574,7 +2682,7 @@
     "MinimalModel.Toric.Fan.canonicalReal_apply": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 84,
+      "line": 175,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2585,7 +2693,7 @@
     "MinimalModel.Toric.Fan.canonical_apply": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 75,
+      "line": 166,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2596,7 +2704,7 @@
     "MinimalModel.Toric.Fan.coeffSum": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 89,
+      "line": 180,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2607,7 +2715,7 @@
     "MinimalModel.Toric.Fan.coeffSum_canonical": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 92,
+      "line": 183,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2618,7 +2726,7 @@
     "MinimalModel.Toric.Fan.cones": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 229,
+      "line": 261,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2636,10 +2744,21 @@
       ],
       "type": "{n : ℕ} → MinimalModel.Toric.Fan n → ℕ"
     },
+    "MinimalModel.Toric.Fan.eq_generator": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 137,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (ρ : F.Ray) {u : Fin n → ℤ},\n  MinimalModel.Toric.IsPrimitive u → MinimalModel.Toric.toNR u ∈ ↑ρ → u = F.generator ρ"
+    },
     "MinimalModel.Toric.Fan.face_mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 233,
+      "line": 265,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2650,7 +2769,7 @@
     "MinimalModel.Toric.Fan.finite": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 230,
+      "line": 262,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2658,10 +2777,21 @@
       ],
       "type": "∀ {n : ℕ} (self : MinimalModel.Toric.Fan n), self.cones.Finite"
     },
+    "MinimalModel.Toric.Fan.generator": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 122,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.Ray → Fin n → ℤ"
+    },
     "MinimalModel.Toric.Fan.inf_mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 259,
+      "line": 291,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2672,7 +2802,7 @@
     "MinimalModel.Toric.Fan.instFiniteRay": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 47,
+      "line": 112,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2683,7 +2813,7 @@
     "MinimalModel.Toric.Fan.instFintypeRay": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 49,
+      "line": 114,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2694,7 +2824,7 @@
     "MinimalModel.Toric.Fan.inter_face": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 234,
+      "line": 266,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2705,7 +2835,7 @@
     "MinimalModel.Toric.Fan.inter_face_right": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 253,
+      "line": 285,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2713,10 +2843,43 @@
       ],
       "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) {σ τ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  σ ∈ F.cones → τ ∈ F.cones → (σ ⊓ τ).IsFaceOf τ"
     },
+    "MinimalModel.Toric.Fan.isPrimitive_generator": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 125,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (ρ : F.Ray), MinimalModel.Toric.IsPrimitive (F.generator ρ)"
+    },
+    "MinimalModel.Toric.Fan.isQCartier_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 217,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {F : MinimalModel.Toric.Fan n} {D : F.TDivisor ℤ},\n  F.IsQCartier D ↔ ∀ σ ∈ F.cones, ∃ m, ∀ (ρ : F.Ray), ↑ρ ≤ σ → ∑ i, m i * ↑(F.generator ρ i) = -↑(D ρ)"
+    },
+    "MinimalModel.Toric.Fan.isRay": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 119,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (ρ : F.Ray), MinimalModel.Toric.IsRay ↑ρ"
+    },
     "MinimalModel.Toric.Fan.isSimplicialFan_affine": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 390,
+      "line": 563,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2727,7 +2890,7 @@
     "MinimalModel.Toric.Fan.isSimplicialFan_ofCone": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 331,
+      "line": 363,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2738,7 +2901,7 @@
     "MinimalModel.Toric.Fan.isSimplicialFan_trivial": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 295,
+      "line": 327,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2746,10 +2909,21 @@
       ],
       "type": "∀ {n : ℕ}, (MinimalModel.Toric.Fan.trivial n).IsSimplicialFan"
     },
+    "MinimalModel.Toric.Fan.latticeCone_generator": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 129,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (ρ : F.Ray), MinimalModel.Toric.latticeCone {F.generator ρ} = ↑ρ"
+    },
     "MinimalModel.Toric.Fan.mem_ofCone_self": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 315,
+      "line": 347,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2760,7 +2934,7 @@
     "MinimalModel.Toric.Fan.mem_of_isFaceOf_of_isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 264,
+      "line": 296,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2768,10 +2942,21 @@
       ],
       "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) {σ τ ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  σ ∈ F.cones → τ.IsFaceOf σ → ρ.IsFaceOf τ → ρ ∈ F.cones"
     },
+    "MinimalModel.Toric.Fan.mem_rays": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 116,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  ρ ∈ F.rays ↔ ρ ∈ F.cones ∧ MinimalModel.Toric.IsRay ρ"
+    },
     "MinimalModel.Toric.Fan.mem_support": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 249,
+      "line": 281,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2832,7 +3017,7 @@
     "MinimalModel.Toric.Fan.ofCone": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 301,
+      "line": 333,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2843,7 +3028,7 @@
     "MinimalModel.Toric.Fan.primeDivisor": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 54,
+      "line": 145,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2854,7 +3039,7 @@
     "MinimalModel.Toric.Fan.primeDivisor_apply": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 57,
+      "line": 148,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2865,7 +3050,7 @@
     "MinimalModel.Toric.Fan.rational": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 231,
+      "line": 263,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2876,7 +3061,7 @@
     "MinimalModel.Toric.Fan.rays": {
       "kind": "def",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 35,
+      "line": 100,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2887,7 +3072,7 @@
     "MinimalModel.Toric.Fan.rays_finite": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 44,
+      "line": 109,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2898,7 +3083,7 @@
     "MinimalModel.Toric.Fan.rays_subset": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 41,
+      "line": 106,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2909,7 +3094,7 @@
     "MinimalModel.Toric.Fan.rays_trivial": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
-      "line": 96,
+      "line": 279,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2920,7 +3105,7 @@
     "MinimalModel.Toric.Fan.stronglyConvex": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 232,
+      "line": 264,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2931,7 +3116,7 @@
     "MinimalModel.Toric.Fan.support": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 240,
+      "line": 272,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2942,7 +3127,7 @@
     "MinimalModel.Toric.Fan.support_affine": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 372,
+      "line": 545,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2953,7 +3138,7 @@
     "MinimalModel.Toric.Fan.support_ofCone": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 320,
+      "line": 352,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2964,7 +3149,7 @@
     "MinimalModel.Toric.Fan.support_trivial": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 290,
+      "line": 322,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2972,10 +3157,21 @@
       ],
       "type": "∀ {n : ℕ}, (MinimalModel.Toric.Fan.trivial n).support = {0}"
     },
+    "MinimalModel.Toric.Fan.toNR_generator_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 133,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (ρ : F.Ray), MinimalModel.Toric.toNR (F.generator ρ) ∈ ↑ρ"
+    },
     "MinimalModel.Toric.Fan.trivial": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 274,
+      "line": 306,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2986,7 +3182,7 @@
     "MinimalModel.Toric.IsFace": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 83,
+      "line": 86,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2997,7 +3193,7 @@
     "MinimalModel.Toric.IsFace.isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 217,
+      "line": 249,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3005,10 +3201,65 @@
       ],
       "type": "∀ {n : ℕ} {τ σ : PointedCone ℝ (MinimalModel.Toric.NR n)}, MinimalModel.Toric.IsFace τ σ → τ.IsFaceOf σ"
     },
+    "MinimalModel.Toric.IsPrimitive": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 403,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (Fin n → ℤ) → Prop"
+    },
+    "MinimalModel.Toric.IsPrimitive.eq_of_eq_nsmul": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 500,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {u g : Fin n → ℤ}, MinimalModel.Toric.IsPrimitive u → ∀ {k : ℕ}, u = k • g → u = g"
+    },
+    "MinimalModel.Toric.IsPrimitive.exists_int_of_smul_eq": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 465,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {u w : Fin n → ℤ},\n  MinimalModel.Toric.IsPrimitive u →\n    ∀ {r : ℝ}, r • MinimalModel.Toric.toNR u = MinimalModel.Toric.toNR w → ∃ k, ↑k = r ∧ w = k • u"
+    },
+    "MinimalModel.Toric.IsPrimitive.ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 406,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ}, MinimalModel.Toric.IsPrimitive v → v ≠ 0"
+    },
+    "MinimalModel.Toric.IsPrimitive.toNR_mem_latticeCone_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 485,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {u w : Fin n → ℤ},\n  MinimalModel.Toric.IsPrimitive u → (MinimalModel.Toric.toNR w ∈ MinimalModel.Toric.latticeCone {u} ↔ ∃ k, w = k • u)"
+    },
     "MinimalModel.Toric.IsRationalPolyhedral": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 75,
+      "line": 78,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3019,7 +3270,7 @@
     "MinimalModel.Toric.IsRationalPolyhedral.of_isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 184,
+      "line": 187,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3038,6 +3289,39 @@
       ],
       "type": "{n : ℕ} → PointedCone ℝ (MinimalModel.Toric.NR n) → Prop"
     },
+    "MinimalModel.Toric.IsRay.eq_rayGenerator": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 72,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ →\n    ∀ {u : Fin n → ℤ},\n      MinimalModel.Toric.IsPrimitive u → MinimalModel.Toric.toNR u ∈ ρ → u = MinimalModel.Toric.rayGenerator ρ"
+    },
+    "MinimalModel.Toric.IsRay.isPrimitive_rayGenerator": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 45,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ → MinimalModel.Toric.IsPrimitive (MinimalModel.Toric.rayGenerator ρ)"
+    },
+    "MinimalModel.Toric.IsRay.latticeCone_rayGenerator": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 50,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ → MinimalModel.Toric.latticeCone {MinimalModel.Toric.rayGenerator ρ} = ρ"
+    },
     "MinimalModel.Toric.IsRay.ne_bot": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Divisor.lean",
@@ -3049,10 +3333,54 @@
       ],
       "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)}, MinimalModel.Toric.IsRay ρ → ρ ≠ ⊥"
     },
+    "MinimalModel.Toric.IsRay.rayGenerator_ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 55,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ → MinimalModel.Toric.rayGenerator ρ ≠ 0"
+    },
+    "MinimalModel.Toric.IsRay.rayGenerator_spec": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 36,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ →\n    MinimalModel.Toric.IsPrimitive (MinimalModel.Toric.rayGenerator ρ) ∧\n      MinimalModel.Toric.latticeCone {MinimalModel.Toric.rayGenerator ρ} = ρ"
+    },
+    "MinimalModel.Toric.IsRay.toNR_mem_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 66,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ →\n    ∀ {w : Fin n → ℤ}, MinimalModel.Toric.toNR w ∈ ρ ↔ ∃ k, w = k • MinimalModel.Toric.rayGenerator ρ"
+    },
+    "MinimalModel.Toric.IsRay.toNR_rayGenerator_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 60,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {ρ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsRay ρ → MinimalModel.Toric.toNR (MinimalModel.Toric.rayGenerator ρ) ∈ ρ"
+    },
     "MinimalModel.Toric.IsSimplicial": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 87,
+      "line": 90,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3063,7 +3391,7 @@
     "MinimalModel.Toric.IsSimplicial.of_isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 191,
+      "line": 194,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3074,7 +3402,7 @@
     "MinimalModel.Toric.IsStronglyConvex": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 79,
+      "line": 82,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3085,7 +3413,7 @@
     "MinimalModel.Toric.IsStronglyConvex.mono": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 109,
+      "line": 112,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3096,7 +3424,7 @@
     "MinimalModel.Toric.NR": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 29,
+      "line": 32,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3107,7 +3435,7 @@
     "MinimalModel.Toric.P1.card_ray": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 145,
+      "line": 147,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3118,7 +3446,7 @@
     "MinimalModel.Toric.P1.coeffSum_canonical": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 150,
+      "line": 152,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3129,7 +3457,7 @@
     "MinimalModel.Toric.P1.ext": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 17,
+      "line": 19,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3140,7 +3468,7 @@
     "MinimalModel.Toric.P1.fan": {
       "kind": "def",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 81,
+      "line": 83,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3151,7 +3479,7 @@
     "MinimalModel.Toric.P1.isComplete": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 116,
+      "line": 118,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3162,7 +3490,7 @@
     "MinimalModel.Toric.P1.isSimplicialFan": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 123,
+      "line": 125,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3173,7 +3501,7 @@
     "MinimalModel.Toric.P1.isStronglyConvex_neg": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 66,
+      "line": 68,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3184,7 +3512,7 @@
     "MinimalModel.Toric.P1.isStronglyConvex_pos": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 59,
+      "line": 61,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3195,7 +3523,7 @@
     "MinimalModel.Toric.P1.mem_cones": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 112,
+      "line": 114,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3206,7 +3534,7 @@
     "MinimalModel.Toric.P1.mem_neg": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 36,
+      "line": 38,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3217,7 +3545,7 @@
     "MinimalModel.Toric.P1.mem_pos": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 27,
+      "line": 29,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3228,7 +3556,7 @@
     "MinimalModel.Toric.P1.neg": {
       "kind": "def",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 24,
+      "line": 26,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3239,7 +3567,7 @@
     "MinimalModel.Toric.P1.neg_inf_pos": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 55,
+      "line": 57,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3250,7 +3578,7 @@
     "MinimalModel.Toric.P1.pos": {
       "kind": "def",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 21,
+      "line": 23,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3261,7 +3589,7 @@
     "MinimalModel.Toric.P1.pos_inf_neg": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 45,
+      "line": 47,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3272,7 +3600,7 @@
     "MinimalModel.Toric.P1.pos_ne_neg": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 73,
+      "line": 75,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3283,7 +3611,7 @@
     "MinimalModel.Toric.P1.rays_fan": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Examples.lean",
-      "line": 131,
+      "line": 133,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3291,10 +3619,1279 @@
       ],
       "type": "MinimalModel.Toric.P1.fan.rays = {MinimalModel.Toric.P1.pos, MinimalModel.Toric.P1.neg}"
     },
+    "MinimalModel.Toric.P2.bot_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 608,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "⊥ ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.c01": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 229,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "PointedCone ℝ (MinimalModel.Toric.NR 2)"
+    },
+    "MinimalModel.Toric.P2.c01_inf_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 511,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c01 ⊓ MinimalModel.Toric.P2.c12 = MinimalModel.Toric.P2.r1"
+    },
+    "MinimalModel.Toric.P2.c01_inf_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 535,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c01 ⊓ MinimalModel.Toric.P2.c20 = MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.c01_inf_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 529,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c01 ⊓ MinimalModel.Toric.P2.r2 = ⊥"
+    },
+    "MinimalModel.Toric.P2.c01_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 620,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c01 ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.c12": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 223,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "PointedCone ℝ (MinimalModel.Toric.NR 2)"
+    },
+    "MinimalModel.Toric.P2.c12_inf_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 537,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c12 ⊓ MinimalModel.Toric.P2.c01 = MinimalModel.Toric.P2.r1"
+    },
+    "MinimalModel.Toric.P2.c12_inf_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 491,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c12 ⊓ MinimalModel.Toric.P2.c20 = MinimalModel.Toric.P2.r2"
+    },
+    "MinimalModel.Toric.P2.c12_inf_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 531,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c12 ⊓ MinimalModel.Toric.P2.r0 = ⊥"
+    },
+    "MinimalModel.Toric.P2.c12_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 616,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c12 ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.c20": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 226,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "PointedCone ℝ (MinimalModel.Toric.NR 2)"
+    },
+    "MinimalModel.Toric.P2.c20_inf_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 501,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c20 ⊓ MinimalModel.Toric.P2.c01 = MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.c20_inf_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 533,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c20 ⊓ MinimalModel.Toric.P2.c12 = MinimalModel.Toric.P2.r2"
+    },
+    "MinimalModel.Toric.P2.c20_inf_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 527,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c20 ⊓ MinimalModel.Toric.P2.r1 = ⊥"
+    },
+    "MinimalModel.Toric.P2.c20_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 618,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.c20 ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.card_ray": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 765,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "Nat.card MinimalModel.Toric.P2.fan.Ray = 3"
+    },
+    "MinimalModel.Toric.P2.cartier_aux": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 810,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {σ σ' : PointedCone ℝ (MinimalModel.Toric.NR 2)},\n  σ ≤ σ' →\n    ∀ (m : Fin 2 → ℤ),\n      (∀ (ρ : MinimalModel.Toric.P2.fan.Ray), ↑ρ ≤ σ' → ∑ i, m i * MinimalModel.Toric.P2.fan.generator ρ i = 1) →\n        ∃ m,\n          ∀ (ρ : MinimalModel.Toric.P2.fan.Ray),\n            ↑ρ ≤ σ → ∑ i, m i * MinimalModel.Toric.P2.fan.generator ρ i = -MinimalModel.Toric.P2.fan.canonical ρ"
+    },
+    "MinimalModel.Toric.P2.cartier_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 832,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (ρ : MinimalModel.Toric.P2.fan.Ray),\n  ↑ρ ≤ MinimalModel.Toric.P2.c01 → ∑ i, ![1, -2] i * MinimalModel.Toric.P2.fan.generator ρ i = 1"
+    },
+    "MinimalModel.Toric.P2.cartier_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 816,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (ρ : MinimalModel.Toric.P2.fan.Ray),\n  ↑ρ ≤ MinimalModel.Toric.P2.c12 → ∑ i, ![1, 1] i * MinimalModel.Toric.P2.fan.generator ρ i = 1"
+    },
+    "MinimalModel.Toric.P2.cartier_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 824,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (ρ : MinimalModel.Toric.P2.fan.Ray),\n  ↑ρ ≤ MinimalModel.Toric.P2.c20 → ∑ i, ![-2, 1] i * MinimalModel.Toric.P2.fan.generator ρ i = 1"
+    },
+    "MinimalModel.Toric.P2.coeffSum_canonical": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 771,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.fan.coeffSum MinimalModel.Toric.P2.fan.canonical = -3"
+    },
+    "MinimalModel.Toric.P2.cones": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 540,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "Set (PointedCone ℝ (MinimalModel.Toric.NR 2))"
+    },
+    "MinimalModel.Toric.P2.e0": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 173,
+      "axioms": [
+        "propext"
+      ],
+      "type": "Fin 2 → ℤ"
+    },
+    "MinimalModel.Toric.P2.e0_ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 201,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e0 ≠ 0"
+    },
+    "MinimalModel.Toric.P2.e0_one": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 191,
+      "axioms": [
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e0 1 = -1"
+    },
+    "MinimalModel.Toric.P2.e0_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 188,
+      "axioms": [
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e0 0 = -1"
+    },
+    "MinimalModel.Toric.P2.e1": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 167,
+      "axioms": [
+        "propext"
+      ],
+      "type": "Fin 2 → ℤ"
+    },
+    "MinimalModel.Toric.P2.e1_ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 195,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e1 ≠ 0"
+    },
+    "MinimalModel.Toric.P2.e1_one": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 179,
+      "axioms": [
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e1 1 = 0"
+    },
+    "MinimalModel.Toric.P2.e1_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 176,
+      "axioms": [
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e1 0 = 1"
+    },
+    "MinimalModel.Toric.P2.e2": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 170,
+      "axioms": [
+        "propext"
+      ],
+      "type": "Fin 2 → ℤ"
+    },
+    "MinimalModel.Toric.P2.e2_ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 198,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e2 ≠ 0"
+    },
+    "MinimalModel.Toric.P2.e2_one": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 185,
+      "axioms": [
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e2 1 = 1"
+    },
+    "MinimalModel.Toric.P2.e2_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 182,
+      "axioms": [
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.e2 0 = 0"
+    },
+    "MinimalModel.Toric.P2.eq_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 427,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x 0 = 0 → x 1 = 0 → x = 0"
+    },
+    "MinimalModel.Toric.P2.ext": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 161,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x y : MinimalModel.Toric.NR 2}, x 0 = y 0 → x 1 = y 1 → x = y"
+    },
+    "MinimalModel.Toric.P2.fan": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 548,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.Fan 2"
+    },
+    "MinimalModel.Toric.P2.form": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 347,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "ℝ → ℝ → MinimalModel.Toric.NR 2 →ₗ[ℝ] ℝ"
+    },
+    "MinimalModel.Toric.P2.form_apply": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 350,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (a b : ℝ) (x : MinimalModel.Toric.NR 2), (MinimalModel.Toric.P2.form a b) x = a * x 0 + b * x 1"
+    },
+    "MinimalModel.Toric.P2.isCartier_canonical": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 840,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.fan.IsCartier MinimalModel.Toric.P2.fan.canonical"
+    },
+    "MinimalModel.Toric.P2.isComplete": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 623,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.fan.IsComplete"
+    },
+    "MinimalModel.Toric.P2.isFaceOf_of_form": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 354,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {τ σ : PointedCone ℝ (MinimalModel.Toric.NR 2)} (a b : ℝ),\n  (∀ x ∈ σ, 0 ≤ a * x 0 + b * x 1) →\n    (∀ (x : MinimalModel.Toric.NR 2), x ∈ τ ↔ x ∈ σ ∧ a * x 0 + b * x 1 = 0) → τ.IsFaceOf σ"
+    },
+    "MinimalModel.Toric.P2.isPrimitive_e0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 210,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsPrimitive MinimalModel.Toric.P2.e0"
+    },
+    "MinimalModel.Toric.P2.isPrimitive_e1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 204,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsPrimitive MinimalModel.Toric.P2.e1"
+    },
+    "MinimalModel.Toric.P2.isPrimitive_e2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 207,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsPrimitive MinimalModel.Toric.P2.e2"
+    },
+    "MinimalModel.Toric.P2.isQCartier_canonical": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 852,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.fan.IsQCartier MinimalModel.Toric.P2.fan.canonical"
+    },
+    "MinimalModel.Toric.P2.isRay_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 719,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsRay MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.isRay_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 715,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsRay MinimalModel.Toric.P2.r1"
+    },
+    "MinimalModel.Toric.P2.isRay_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 717,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsRay MinimalModel.Toric.P2.r2"
+    },
+    "MinimalModel.Toric.P2.isSimplicialFan": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 645,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.fan.IsSimplicialFan"
+    },
+    "MinimalModel.Toric.P2.isSimplicial_pair": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 636,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {a b : Fin 2 → ℤ},\n  a ≠ b →\n    (∀ (c d : ℝ), c • MinimalModel.Toric.toNR a + d • MinimalModel.Toric.toNR b = 0 → c = 0 ∧ d = 0) →\n      MinimalModel.Toric.IsSimplicial (MinimalModel.Toric.latticeCone {a, b})"
+    },
+    "MinimalModel.Toric.P2.isStronglyConvex_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 312,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsStronglyConvex MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.isStronglyConvex_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 294,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsStronglyConvex MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.isStronglyConvex_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 303,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsStronglyConvex MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.isStronglyConvex_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 344,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsStronglyConvex MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.isStronglyConvex_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 340,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsStronglyConvex MinimalModel.Toric.P2.r1"
+    },
+    "MinimalModel.Toric.P2.isStronglyConvex_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 342,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.IsStronglyConvex MinimalModel.Toric.P2.r2"
+    },
+    "MinimalModel.Toric.P2.mem_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 281,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x ∈ MinimalModel.Toric.P2.c01 ↔ x 1 ≤ 0 ∧ x 1 ≤ x 0"
+    },
+    "MinimalModel.Toric.P2.mem_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 259,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x ∈ MinimalModel.Toric.P2.c12 ↔ 0 ≤ x 0 ∧ 0 ≤ x 1"
+    },
+    "MinimalModel.Toric.P2.mem_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 268,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x ∈ MinimalModel.Toric.P2.c20 ↔ x 0 ≤ 0 ∧ x 0 ≤ x 1"
+    },
+    "MinimalModel.Toric.P2.mem_cones": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 543,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {σ : PointedCone ℝ (MinimalModel.Toric.NR 2)},\n  σ ∈ MinimalModel.Toric.P2.cones ↔\n    σ = ⊥ ∨\n      σ = MinimalModel.Toric.P2.r1 ∨\n        σ = MinimalModel.Toric.P2.r2 ∨\n          σ = MinimalModel.Toric.P2.r0 ∨\n            σ = MinimalModel.Toric.P2.c12 ∨ σ = MinimalModel.Toric.P2.c20 ∨ σ = MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.mem_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 250,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x ∈ MinimalModel.Toric.P2.r0 ↔ x 0 ≤ 0 ∧ x 1 = x 0"
+    },
+    "MinimalModel.Toric.P2.mem_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 232,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x ∈ MinimalModel.Toric.P2.r1 ↔ 0 ≤ x 0 ∧ x 1 = 0"
+    },
+    "MinimalModel.Toric.P2.mem_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 241,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {x : MinimalModel.Toric.NR 2}, x ∈ MinimalModel.Toric.P2.r2 ↔ x 0 = 0 ∧ 0 ≤ x 1"
+    },
+    "MinimalModel.Toric.P2.not_isRay_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 707,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "¬MinimalModel.Toric.IsRay MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.not_isRay_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 691,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "¬MinimalModel.Toric.IsRay MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.not_isRay_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 699,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "¬MinimalModel.Toric.IsRay MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.not_isRay_of_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 669,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {σ : PointedCone ℝ (MinimalModel.Toric.NR 2)} {x y : MinimalModel.Toric.NR 2},\n  x ∈ σ → y ∈ σ → x ≠ 0 → (∀ (a b : ℝ), a • x = b • y → a = 0 ∧ b = 0) → ¬MinimalModel.Toric.IsRay σ"
+    },
+    "MinimalModel.Toric.P2.not_r0_le_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 797,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "¬MinimalModel.Toric.P2.r0 ≤ MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.not_r1_le_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 801,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "¬MinimalModel.Toric.P2.r1 ≤ MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.not_r2_le_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 805,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "¬MinimalModel.Toric.P2.r2 ≤ MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.r0": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 220,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "PointedCone ℝ (MinimalModel.Toric.NR 2)"
+    },
+    "MinimalModel.Toric.P2.r0_face_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 405,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0.IsFaceOf MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.r0_face_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 394,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0.IsFaceOf MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.r0_inf_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 481,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0 ⊓ MinimalModel.Toric.P2.c12 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r0_inf_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 523,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0 ⊓ MinimalModel.Toric.P2.r1 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r0_inf_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 525,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0 ⊓ MinimalModel.Toric.P2.r2 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r0_le_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 333,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0 ≤ MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.r0_le_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 330,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0 ≤ MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.r0_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 614,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r0 ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.r1": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 214,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "PointedCone ℝ (MinimalModel.Toric.NR 2)"
+    },
+    "MinimalModel.Toric.P2.r1_face_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 416,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1.IsFaceOf MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.r1_face_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 361,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1.IsFaceOf MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.r1_inf_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 461,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ⊓ MinimalModel.Toric.P2.c20 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r1_inf_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 441,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ⊓ MinimalModel.Toric.P2.r0 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r1_inf_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 431,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ⊓ MinimalModel.Toric.P2.r2 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r1_le_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 336,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ≤ MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.r1_le_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 321,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ≤ MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.r1_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 610,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.r1_ne_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 754,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ≠ MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.r1_ne_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 749,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r1 ≠ MinimalModel.Toric.P2.r2"
+    },
+    "MinimalModel.Toric.P2.r2": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 217,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "PointedCone ℝ (MinimalModel.Toric.NR 2)"
+    },
+    "MinimalModel.Toric.P2.r2_face_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 372,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2.IsFaceOf MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.r2_face_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 383,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2.IsFaceOf MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.r2_inf_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 471,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ⊓ MinimalModel.Toric.P2.c01 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r2_inf_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 451,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ⊓ MinimalModel.Toric.P2.r0 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r2_inf_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 521,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ⊓ MinimalModel.Toric.P2.r1 = ⊥"
+    },
+    "MinimalModel.Toric.P2.r2_le_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 324,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ≤ MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.r2_le_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 327,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ≤ MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.r2_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 612,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ∈ MinimalModel.Toric.P2.fan.cones"
+    },
+    "MinimalModel.Toric.P2.r2_ne_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 759,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.r2 ≠ MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.rayGenerator_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 782,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r0 = MinimalModel.Toric.P2.e0"
+    },
+    "MinimalModel.Toric.P2.rayGenerator_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 776,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r1 = MinimalModel.Toric.P2.e1"
+    },
+    "MinimalModel.Toric.P2.rayGenerator_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 779,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r2 = MinimalModel.Toric.P2.e2"
+    },
+    "MinimalModel.Toric.P2.ray_cases": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 791,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (ρ : MinimalModel.Toric.P2.fan.Ray),\n  ↑ρ = MinimalModel.Toric.P2.r1 ∨ ↑ρ = MinimalModel.Toric.P2.r2 ∨ ↑ρ = MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.rays_fan": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 722,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.P2.fan.rays = {MinimalModel.Toric.P2.r1, MinimalModel.Toric.P2.r2, MinimalModel.Toric.P2.r0}"
+    },
+    "MinimalModel.Toric.P2.toNR_e0_mem_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 686,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e0 ∈ MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.toNR_e0_mem_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 684,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e0 ∈ MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.toNR_e0_mem_r0": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 746,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e0 ∈ MinimalModel.Toric.P2.r0"
+    },
+    "MinimalModel.Toric.P2.toNR_e1_mem_c01": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 688,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e1 ∈ MinimalModel.Toric.P2.c01"
+    },
+    "MinimalModel.Toric.P2.toNR_e1_mem_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 678,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e1 ∈ MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.toNR_e1_mem_r1": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 742,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e1 ∈ MinimalModel.Toric.P2.r1"
+    },
+    "MinimalModel.Toric.P2.toNR_e2_mem_c12": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 680,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e2 ∈ MinimalModel.Toric.P2.c12"
+    },
+    "MinimalModel.Toric.P2.toNR_e2_mem_c20": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 682,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e2 ∈ MinimalModel.Toric.P2.c20"
+    },
+    "MinimalModel.Toric.P2.toNR_e2_mem_r2": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 744,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.toNR MinimalModel.Toric.P2.e2 ∈ MinimalModel.Toric.P2.r2"
+    },
+    "MinimalModel.Toric.P2.wall_relation": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Examples.lean",
+      "line": 785,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r1 + MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r2 +\n    MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r0 =\n  0"
+    },
     "MinimalModel.Toric.bot_isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 208,
+      "line": 240,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3302,10 +4899,76 @@
       ],
       "type": "∀ {n : ℕ} {σ : PointedCone ℝ (MinimalModel.Toric.NR n)}, MinimalModel.Toric.IsStronglyConvex σ → ⊥.IsFaceOf σ"
     },
+    "MinimalModel.Toric.content": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 376,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (Fin n → ℤ) → ℤ"
+    },
+    "MinimalModel.Toric.content_dvd": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 383,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (v : Fin n → ℤ) (i : Fin n), MinimalModel.Toric.content v ∣ v i"
+    },
+    "MinimalModel.Toric.content_eq_zero_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 387,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ}, MinimalModel.Toric.content v = 0 ↔ v = 0"
+    },
+    "MinimalModel.Toric.content_nonneg": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 379,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (v : Fin n → ℤ), 0 ≤ MinimalModel.Toric.content v"
+    },
+    "MinimalModel.Toric.content_pos": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 438,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ}, v ≠ 0 → 0 \u003c MinimalModel.Toric.content v"
+    },
+    "MinimalModel.Toric.content_smul_primitivePart": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 425,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (v : Fin n → ℤ), MinimalModel.Toric.content v • MinimalModel.Toric.primitivePart v = v"
+    },
     "MinimalModel.Toric.eq_bot_or_eq_of_isFaceOf_latticeCone_singleton": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 199,
+      "line": 202,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3316,7 +4979,7 @@
     "MinimalModel.Toric.eq_hull_inter_of_isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 143,
+      "line": 146,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3324,10 +4987,21 @@
       ],
       "type": "∀ {E : Type u_1} [inst : AddCommGroup E] [inst_1 : Module ℝ E] {s : Set E} {F : PointedCone ℝ E},\n  F.IsFaceOf (PointedCone.hull ℝ s) → F = PointedCone.hull ℝ (s ∩ ↑F)"
     },
+    "MinimalModel.Toric.eq_of_isFaceOf_latticeCone_pair": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 222,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {a b : Fin n → ℤ} {τ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  τ.IsFaceOf (MinimalModel.Toric.latticeCone {a, b}) →\n    τ = ⊥ ∨\n      τ = MinimalModel.Toric.latticeCone {a} ∨\n        τ = MinimalModel.Toric.latticeCone {b} ∨ τ = MinimalModel.Toric.latticeCone {a, b}"
+    },
     "MinimalModel.Toric.exists_subset_of_isFaceOf_latticeCone": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 166,
+      "line": 169,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3335,10 +5009,21 @@
       ],
       "type": "∀ {n : ℕ} {S : Finset (Fin n → ℤ)} {τ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  τ.IsFaceOf (MinimalModel.Toric.latticeCone S) → ∃ T ⊆ S, τ = MinimalModel.Toric.latticeCone T"
     },
+    "MinimalModel.Toric.exists_sum_mul_eq_content": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 397,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (v : Fin n → ℤ), ∃ c, ∑ i, v i * c i = MinimalModel.Toric.content v"
+    },
     "MinimalModel.Toric.finite_setOf_isFaceOf_hull": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 157,
+      "line": 160,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3349,7 +5034,7 @@
     "MinimalModel.Toric.isFace_refl": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 105,
+      "line": 108,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3357,10 +5042,32 @@
       ],
       "type": "∀ {n : ℕ} (σ : PointedCone ℝ (MinimalModel.Toric.NR n)), MinimalModel.Toric.IsFace σ σ"
     },
+    "MinimalModel.Toric.isPrimitive_of_isUnit": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 413,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ} {i : Fin n}, IsUnit (v i) → MinimalModel.Toric.IsPrimitive v"
+    },
+    "MinimalModel.Toric.isPrimitive_primitivePart": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 431,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ}, v ≠ 0 → MinimalModel.Toric.IsPrimitive (MinimalModel.Toric.primitivePart v)"
+    },
     "MinimalModel.Toric.isRationalPolyhedral_bot": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 96,
+      "line": 99,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3371,7 +5078,7 @@
     "MinimalModel.Toric.isSimplicial_bot": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 114,
+      "line": 117,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3382,7 +5089,7 @@
     "MinimalModel.Toric.isSimplicial_latticeCone_singleton": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 121,
+      "line": 124,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3393,7 +5100,7 @@
     "MinimalModel.Toric.isSimplicial_orthant": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 376,
+      "line": 549,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3404,7 +5111,7 @@
     "MinimalModel.Toric.isStronglyConvex_bot": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 100,
+      "line": 103,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3415,7 +5122,7 @@
     "MinimalModel.Toric.isStronglyConvex_orthant": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 361,
+      "line": 534,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3426,7 +5133,7 @@
     "MinimalModel.Toric.isStronglyConvex_positive": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 346,
+      "line": 519,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3437,7 +5144,7 @@
     "MinimalModel.Toric.latticeCone": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 56,
+      "line": 59,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3448,7 +5155,7 @@
     "MinimalModel.Toric.latticeCone_empty": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 92,
+      "line": 95,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3459,7 +5166,7 @@
     "MinimalModel.Toric.latticeCone_eq_hull": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 60,
+      "line": 63,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3470,7 +5177,7 @@
     "MinimalModel.Toric.latticeCone_le_positive": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 352,
+      "line": 525,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3478,10 +5185,54 @@
       ],
       "type": "∀ {n : ℕ} {S : Finset (Fin n → ℤ)},\n  (∀ v ∈ S, 0 ≤ v) → MinimalModel.Toric.latticeCone S ≤ PointedCone.positive ℝ (MinimalModel.Toric.NR n)"
     },
+    "MinimalModel.Toric.latticeCone_primitivePart": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 459,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ},\n  v ≠ 0 → MinimalModel.Toric.latticeCone {MinimalModel.Toric.primitivePart v} = MinimalModel.Toric.latticeCone {v}"
+    },
+    "MinimalModel.Toric.latticeCone_singleton_smul": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 447,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {v : Fin n → ℤ} {c : ℤ}, 0 \u003c c → MinimalModel.Toric.latticeCone {c • v} = MinimalModel.Toric.latticeCone {v}"
+    },
+    "MinimalModel.Toric.linearForm": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 84,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (Fin n → ℝ) → MinimalModel.Toric.NR n →ₗ[ℝ] ℝ"
+    },
+    "MinimalModel.Toric.linearForm_apply": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 93,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (c : Fin n → ℝ) (x : MinimalModel.Toric.NR n), (MinimalModel.Toric.linearForm c) x = ∑ i, c i * x i"
+    },
     "MinimalModel.Toric.mem_face_of_sum_smul_mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 133,
+      "line": 136,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3489,10 +5240,21 @@
       ],
       "type": "∀ {E : Type u_1} [inst : AddCommGroup E] [inst_1 : Module ℝ E] {F C : PointedCone ℝ E},\n  F.IsFaceOf C →\n    ∀ {t : Finset E} {c : E → ℝ},\n      (∀ x ∈ t, x ∈ C) → (∀ x ∈ t, 0 ≤ c x) → ∑ x ∈ t, c x • x ∈ F → ∀ {y : E}, y ∈ t → 0 \u003c c y → y ∈ F"
     },
+    "MinimalModel.Toric.mem_latticeCone_pair": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 211,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {a b : Fin n → ℤ} {x : MinimalModel.Toric.NR n},\n  x ∈ MinimalModel.Toric.latticeCone {a, b} ↔\n    ∃ r s, 0 ≤ r ∧ 0 ≤ s ∧ r • MinimalModel.Toric.toNR a + s • MinimalModel.Toric.toNR b = x"
+    },
     "MinimalModel.Toric.mem_latticeCone_singleton": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 69,
+      "line": 72,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3503,7 +5265,7 @@
     "MinimalModel.Toric.orthant": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 343,
+      "line": 516,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3511,10 +5273,43 @@
       ],
       "type": "(n : ℕ) → PointedCone ℝ (MinimalModel.Toric.NR n)"
     },
+    "MinimalModel.Toric.primitivePart": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 422,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (Fin n → ℤ) → Fin n → ℤ"
+    },
+    "MinimalModel.Toric.rayGenerator": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 31,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → PointedCone ℝ (MinimalModel.Toric.NR n) → Fin n → ℤ"
+    },
+    "MinimalModel.Toric.rayGenerator_latticeCone": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Divisor.lean",
+      "line": 78,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {u : Fin n → ℤ},\n  MinimalModel.Toric.IsPrimitive u → MinimalModel.Toric.rayGenerator (MinimalModel.Toric.latticeCone {u}) = u"
+    },
     "MinimalModel.Toric.stdBasis": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 340,
+      "line": 513,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3525,7 +5320,7 @@
     "MinimalModel.Toric.toNR": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 32,
+      "line": 35,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3536,7 +5331,7 @@
     "MinimalModel.Toric.toNR_apply": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 35,
+      "line": 38,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3547,7 +5342,7 @@
     "MinimalModel.Toric.toNR_injective": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 44,
+      "line": 47,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3558,7 +5353,7 @@
     "MinimalModel.Toric.toNR_mem_latticeCone": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 64,
+      "line": 67,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3569,7 +5364,7 @@
     "MinimalModel.Toric.toNR_ne_zero": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 52,
+      "line": 55,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3577,10 +5372,21 @@
       ],
       "type": "∀ {n : ℕ} {v : Fin n → ℤ}, v ≠ 0 → MinimalModel.Toric.toNR v ≠ 0"
     },
+    "MinimalModel.Toric.toNR_smul": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Fan.lean",
+      "line": 442,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (c : ℤ) (v : Fin n → ℤ), MinimalModel.Toric.toNR (c • v) = ↑c • MinimalModel.Toric.toNR v"
+    },
     "MinimalModel.Toric.toNR_zero": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
-      "line": 38,
+      "line": 41,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3595,6 +5401,105 @@
       "axioms": [],
       "type": "Type"
     },
+    "MinimalModel.X_notMem_of_ne": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 300,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {Q : MinimalModel.PrimeDivisor (MinimalModel.affineLine k)},\n  Q ≠ MinimalModel.zeroDivisor k → Polynomial.X ∉ (MinimalModel.toPrime ↑Q).asIdeal"
+    },
+    "MinimalModel.affineLine": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 84,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → MinimalModel.NormalVariety k"
+    },
+    "MinimalModel.affineLineCanonical": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 275,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → MinimalModel.CanonicalDivisor (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.affineLinePair": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 362,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → (c : ℝ) → 0 ≤ c → MinimalModel.Pair (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.affineLinePair_one_not_isKlt": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 373,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], ¬MinimalModel.IsKlt (MinimalModel.affineLinePair k 1 ⋯)"
+    },
+    "MinimalModel.affineLinePair_two_not_isLc": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 369,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], ¬MinimalModel.IsLc (MinimalModel.affineLinePair k 2 ⋯)"
+    },
+    "MinimalModel.affineLinePair_zero_Δ": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 377,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], (MinimalModel.affineLinePair k 0 ⋯).Δ = 0"
+    },
+    "MinimalModel.affineLine_dim": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 90,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], (MinimalModel.affineLine k).dim = 1"
+    },
+    "MinimalModel.algebraMap_mem_stalkSubring": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 147,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (Q : ↥(MinimalModel.affineLine k).toScheme) (r : Polynomial k),\n  (algebraMap (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))) r ∈ MinimalModel.stalkSubring Q"
+    },
     "MinimalModel.canonicalRing": {
       "kind": "def",
       "file": "MinimalModel/Statements/Models.lean",
@@ -3606,6 +5511,17 @@
       ],
       "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} → MinimalModel.CanonicalDivisor X → Subalgebra k (Polynomial (MinimalModel.FF X))"
     },
+    "MinimalModel.coheight_zeroPoint": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 287,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], Order.coheight (MinimalModel.zeroPoint k) = 1"
+    },
     "MinimalModel.coneDecomposition_of_isEmpty": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/PointPairs.lean",
@@ -3616,6 +5532,105 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {A : MinimalModel.PairModel k},\n  IsEmpty (MinimalModel.Curve A.X) → MinimalModel.ConeDecomposition A"
+    },
+    "MinimalModel.coord": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 123,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → MinimalModel.FF (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.coord_mem_stalkSubring": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 252,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (Q : ↥(MinimalModel.affineLine k).toScheme),\n  MinimalModel.coord k ∈ MinimalModel.stalkSubring Q"
+    },
+    "MinimalModel.coord_ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 126,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], MinimalModel.coord k ≠ 0"
+    },
+    "MinimalModel.dX": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 230,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → MinimalModel.TopForm (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.dX_ne_zero": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 247,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k], MinimalModel.dX k ≠ 0"
+    },
+    "MinimalModel.derivL": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 176,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) →\n  [inst : Field k] →\n    Ω[MinimalModel.FF (MinimalModel.affineLine k)⁄k] →ₗ[MinimalModel.FF (MinimalModel.affineLine k)]\n      MinimalModel.FF (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.derivL_D_algebraMap": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 184,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (p : Polynomial k),\n  (MinimalModel.derivL k)\n      ((KaehlerDifferential.D k (MinimalModel.FF (MinimalModel.affineLine k)))\n        ((algebraMap (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))) p)) =\n    (algebraMap (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))) (Polynomial.derivative p)"
+    },
+    "MinimalModel.derivL_D_coord": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 191,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k],\n  (MinimalModel.derivL k)\n      ((KaehlerDifferential.D k (MinimalModel.FF (MinimalModel.affineLine k))) (MinimalModel.coord k)) =\n    1"
+    },
+    "MinimalModel.derivL_D_mem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 194,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {Q : ↥(MinimalModel.affineLine k).toScheme}\n  {y : MinimalModel.FF (MinimalModel.affineLine k)},\n  y ∈ MinimalModel.stalkSubring Q →\n    (MinimalModel.derivL k) ((KaehlerDifferential.D k (MinimalModel.FF (MinimalModel.affineLine k))) y) ∈\n      MinimalModel.stalkSubring Q"
     },
     "MinimalModel.eq_zero_of_mem_coneOfCurves": {
       "kind": "theorem",
@@ -3638,6 +5653,50 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] (A : MinimalModel.PairModel k), ∃ p, p.len ≠ ⊤"
+    },
+    "MinimalModel.exists_of_mem_stalkSubring": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 160,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {Q : ↥(MinimalModel.affineLine k).toScheme}\n  {y : MinimalModel.FF (MinimalModel.affineLine k)},\n  y ∈ MinimalModel.stalkSubring Q →\n    ∃ a,\n      ∃ b ∉ (MinimalModel.toPrime Q).asIdeal,\n        y * (algebraMap (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))) b =\n          (algebraMap (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))) a"
+    },
+    "MinimalModel.formCoeff": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 225,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) →\n  [inst : Field k] →\n    MinimalModel.TopForm (MinimalModel.affineLine k) →ₗ[MinimalModel.FF (MinimalModel.affineLine k)]\n      MinimalModel.FF (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.formCoeff_smul_dX": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 244,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (g : MinimalModel.FF (MinimalModel.affineLine k)),\n  (MinimalModel.formCoeff k) (g • MinimalModel.dX k) = g"
+    },
+    "MinimalModel.formCoeff_ιMulti": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 237,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (a : Fin (MinimalModel.affineLine k).dim → MinimalModel.FF (MinimalModel.affineLine k)),\n  (MinimalModel.formCoeff k)\n      ((exteriorPower.ιMulti (MinimalModel.FF (MinimalModel.affineLine k)) (MinimalModel.affineLine k).dim) fun i =\u003e\n        (KaehlerDifferential.D k (MinimalModel.FF (MinimalModel.affineLine k))) (a i)) =\n    (MinimalModel.derivL k)\n      ((KaehlerDifferential.D k (MinimalModel.FF (MinimalModel.affineLine k))) (a MinimalModel.index0))"
     },
     "MinimalModel.formLattice": {
       "kind": "def",
@@ -3672,6 +5731,61 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℝ X → WithBot ℕ"
     },
+    "MinimalModel.index0": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 220,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → Fin (MinimalModel.affineLine k).dim"
+    },
+    "MinimalModel.instAlgebraPolynomialCarrierStalkCommRingCatPresheafToSchemeAffineLine": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 130,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) →\n  [inst : Field k] →\n    (Q : ↥(MinimalModel.affineLine k).toScheme) →\n      Algebra (Polynomial k) ↑((MinimalModel.affineLine k).toScheme.presheaf.stalk Q)"
+    },
+    "MinimalModel.instAlgebraPolynomialFFAffineLine": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 107,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → Algebra (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))"
+    },
+    "MinimalModel.instAtPrimePolynomialCarrierStalkCommRingCatPresheafToSchemeAffineLineAsIdealToPrime": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 133,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k] (Q : ↥(MinimalModel.affineLine k).toScheme),\n  IsLocalization.AtPrime (↑((MinimalModel.affineLine k).toScheme.presheaf.stalk Q)) (MinimalModel.toPrime Q).asIdeal"
+    },
+    "MinimalModel.instFormallyEtalePolynomialFFAffineLine": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 173,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], Algebra.FormallyEtale (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))"
+    },
     "MinimalModel.instIsEmptyCurvePointVariety": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/Point.lean",
@@ -3693,6 +5807,50 @@
         "propext"
       ],
       "type": "∀ (k : Type u) [inst : Field k], IsEmpty (MinimalModel.PrimeDivisor (MinimalModel.pointVariety k))"
+    },
+    "MinimalModel.instIsFractionRingPolynomialFFAffineLine": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 111,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], IsFractionRing (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))"
+    },
+    "MinimalModel.instIsScalarTowerPolynomialCarrierStalkCommRingCatPresheafToSchemeAffineLineFF": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 137,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k] (Q : ↥(MinimalModel.affineLine k).toScheme),\n  IsScalarTower (Polynomial k) (↑((MinimalModel.affineLine k).toScheme.presheaf.stalk Q))\n    (MinimalModel.FF (MinimalModel.affineLine k))"
+    },
+    "MinimalModel.instIsScalarTowerPolynomialFFAffineLine": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 115,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], IsScalarTower k (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))"
+    },
+    "MinimalModel.instLocallyOfFiniteTypeMapOfHomPolynomialAlgebraMap_minimalModel": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 80,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k],\n  AlgebraicGeometry.LocallyOfFiniteType (AlgebraicGeometry.Spec.map (CommRingCat.ofHom (algebraMap k (Polynomial k))))"
     },
     "MinimalModel.instNontrivialTopFormPointVariety": {
       "kind": "theorem",
@@ -3716,6 +5874,28 @@
       ],
       "type": "∀ (k : Type u) [inst : Field k], Subsingleton ↥(MinimalModel.pointVariety k).toScheme"
     },
+    "MinimalModel.instSubsingletonFinDimAffineLine": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 216,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k], Subsingleton (Fin (MinimalModel.affineLine k).dim)"
+    },
+    "MinimalModel.inv_algebraMap_mem_stalkSubring": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 151,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (Q : ↥(MinimalModel.affineLine k).toScheme) {b : Polynomial k},\n  b ∉ (MinimalModel.toPrime Q).asIdeal →\n    ((algebraMap (Polynomial k) (MinimalModel.FF (MinimalModel.affineLine k))) b)⁻¹ ∈ MinimalModel.stalkSubring Q"
+    },
     "MinimalModel.isAmpleOn_zero_of_isEmpty": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/Point.lean",
@@ -3737,6 +5917,28 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.PrimeDivisor X)]\n  (D : MinimalModel.Divisor ℤ X), MinimalModel.IsCartier D"
+    },
+    "MinimalModel.isCartier_zeroDivisor": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 342,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k], MinimalModel.IsCartier fun₀ | MinimalModel.zeroDivisor k =\u003e 1"
+    },
+    "MinimalModel.isDiscreteValuationRing_stalk": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 32,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (P : MinimalModel.PrimeDivisor X),\n  IsDiscreteValuationRing ↑(X.toScheme.presheaf.stalk ↑P)"
     },
     "MinimalModel.isEmpty_curve_of_subsingleton": {
       "kind": "theorem",
@@ -3771,6 +5973,17 @@
       ],
       "type": "∀ {k : Type u} [inst : Field k] {A : MinimalModel.PairModel k},\n  IsEmpty (MinimalModel.Curve A.X) → MinimalModel.IsMinimal A"
     },
+    "MinimalModel.isNormalScheme_affineLine": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 73,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], MinimalModel.IsNormalScheme (AlgebraicGeometry.Spec ↧(Polynomial k))"
+    },
     "MinimalModel.isNormalScheme_spec": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/Point.lean",
@@ -3793,6 +6006,17 @@
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.PrimeDivisor X)]\n  (D : MinimalModel.Divisor ℝ X), MinimalModel.IsRCartier D"
     },
+    "MinimalModel.isRCartier_smul_zeroDivisor": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 351,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (c : ℝ),\n  MinimalModel.IsRCartier ((MinimalModel.affineLineCanonical k).K.toReal + fun₀ | MinimalModel.zeroDivisor k =\u003e c)"
+    },
     "MinimalModel.lct": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -3803,6 +6027,17 @@
         "propext"
       ],
       "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Pair X → MinimalModel.Divisor ℝ X → ℝ"
+    },
+    "MinimalModel.mem_stalkSubring_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 49,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (P : MinimalModel.PrimeDivisor X)\n  {g : MinimalModel.FF X}, g ≠ 0 → (g ∈ MinimalModel.stalkSubring ↑P ↔ 0 ≤ MinimalModel.ordAt g P)"
     },
     "MinimalModel.mld": {
       "kind": "def",
@@ -3935,6 +6170,28 @@
         "propext"
       ],
       "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.FF X → MinimalModel.PrimeDivisor X → ℤ"
+    },
+    "MinimalModel.ordAt_coord_of_ne": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 310,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {Q : MinimalModel.PrimeDivisor (MinimalModel.affineLine k)},\n  Q ≠ MinimalModel.zeroDivisor k → MinimalModel.ordAt (MinimalModel.coord k) Q = 0"
+    },
+    "MinimalModel.ordAt_coord_zeroDivisor": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 324,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k], MinimalModel.ordAt (MinimalModel.coord k) (MinimalModel.zeroDivisor k) = 1"
     },
     "MinimalModel.pointCanonical": {
       "kind": "def",
@@ -4211,6 +6468,17 @@
       ],
       "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℤ X → Submodule k (MinimalModel.FF X)"
     },
+    "MinimalModel.smul_dX_mem_formLattice_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 255,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] (Q : ↥(MinimalModel.affineLine k).toScheme)\n  (g : MinimalModel.FF (MinimalModel.affineLine k)),\n  g • MinimalModel.dX k ∈ MinimalModel.formLattice (MinimalModel.stalkSubring Q) ↔ g ∈ MinimalModel.stalkSubring Q"
+    },
     "MinimalModel.stalkSubring": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -4221,6 +6489,61 @@
         "propext"
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → ↥X.toScheme → Subring (MinimalModel.FF X)"
+    },
+    "MinimalModel.toPrime": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 104,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → ↥(MinimalModel.affineLine k).toScheme → PrimeSpectrum (Polynomial k)"
+    },
+    "MinimalModel.toPrime_zeroPoint": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 285,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], (MinimalModel.toPrime (MinimalModel.zeroPoint k)).asIdeal = Ideal.span {Polynomial.X}"
+    },
+    "MinimalModel.toΓA": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 100,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → Polynomial k →+* ↑((MinimalModel.affineLine k).toScheme.presheaf.obj (Opposite.op ⊤))"
+    },
+    "MinimalModel.zeroDivisor": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 295,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → MinimalModel.PrimeDivisor (MinimalModel.affineLine k)"
+    },
+    "MinimalModel.zeroPoint": {
+      "kind": "def",
+      "file": "MinimalModel/Fidelity/AffineLine.lean",
+      "line": 281,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [inst : Field k] → ↥(MinimalModel.affineLine k).toScheme"
     }
   }
 }
