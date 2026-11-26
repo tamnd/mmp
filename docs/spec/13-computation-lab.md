@@ -12,7 +12,7 @@ A large part of the MMP is also convex geometry over $\mathbb{Z}^n$: toric varie
 The lab has four uses:
 - **Certified examples.** It gives the fidelity battery positive instances (06.3, F2) for the statements, mostly from toric and weighted examples.
 - **Tests.** It tests the explicit numbers and identities of fresh claims (route R1) and of conjectures on the routes, before anyone spends months on a proof.
-- **Searches.** It searches finite sets for counterexamples and for the extremal cases of a conjecture, for example the toric enc 4-fold germs of Target T (04.12).
+- **Searches.** It searches finite sets for counterexamples and for the extremal cases of a conjecture, for example the affine toric enc 4-folds of Target T (04.12).
 - **Handbook data.** It gives the handbook its worked examples and the notebooks of the exercises marked (M) (11.6).
 
 Its results are data, not proofs. A result enters the map only as a node of kind `example`, `counterexample`, `check` or `conjecture`. A result becomes a theorem only when Lean checks a certificate (13.5).
@@ -82,7 +82,7 @@ A run is reproducible from its record. A run that changes a published number of 
 | Id | Question | Route | Why it matters |
 |---|---|---|---|
 | E1 | Baskets and plurigenera of 3-folds of general type: enumerate the baskets allowed by Reid's plurigenus formula and the Chen-Chen inequalities; reproduce $\mathrm{vol} \ge 1/1680$ with its extremal basket; check the basket search of Bie-Du-Yu for $\mathrm{vol} \ge 1/420$ on smooth 3-folds (2611.12786), with their ancillary code read as data | R1 (O-R1-2) | the cheapest test of a 118-page claim; a certificate that Lean can check (13.5) |
-| E2 | Toric mlds and enc germs: enumerate simplicial (and then all) toric germs of dimension 3 and 4 by index; compute the mld and its minimizers; test Han-Liu Conj. 1.9(2') on the toric enc 4-fold germs (the spec above); test Ambro's LSC on toric families | R3, R4 (Target T) | a classification or a counterexample before the proof of Target T; F2 instances for `ACCMld` and `LSCMld` |
+| E2 | Toric mlds and enc germs: enumerate simplicial (and then all) toric germs of dimension 3 and 4 by index; compute the mld and its minimizers; test Han-Liu Conj. 1.9(2') on the affine toric enc 4-folds, whose global mld is the mld at the fixed point (the spec above); test Ambro's LSC on toric families | R3, R4 (Target T) | a classification or a counterexample before the proof of Target T; F2 instances for `ACCMld` and `LSCMld` |
 | E3 | The arithmetic of Ajit's counterexamples to effective nonvanishing (2610.09270, v2): the intersection numbers, the $h^0$ values by Riemann-Roch or by monomial count, and the singularities of each example | R1 (S57) | the first node of route R1; a certificate for the refutation of the effective statement |
 | E4 | Ajit's questions (O-R6-2): search the well-formed quasi-smooth weighted hypersurfaces and complete intersections of dimension 3 for a terminal $X$ with ample $D$, $D - K_X$ ample and $H^0(X, D) = 0$; record the near misses | R6 | a cheap search for the backup targets of 04.12 |
 | E5 | Fano and general type volumes: $(-K)^3$ over the Graded Ring Database and the toric lists; check $(-K)^3 \ge 1/330$ for terminal weak $\mathbb{Q}$-Fano 3-folds (Chen-Chen, Jiang) on the data; list the cases with the smallest volumes; test the sharp Fano bound of Bie-Du-Yu where it is explicit (O-R6-10) | R6 | the data behind O-R6-10; examples for Volume 12 |

@@ -134,7 +134,7 @@ The weights set the share of the research budget of the agent (10.6) for the fir
 |---|---|---|---|
 | O-R3-1 | the toric MMP in Lean (steps 1 to 7) | 1 (known) | Reid, Fujino-Sato |
 | O-R3-2 | toric ACC and LSC for mlds in Lean (step 8) | 1 (known) | Ambro |
-| O-R3-3 | Han-Liu Conj. 1.9(2') for enc 4-fold germs that are toric | 2 [U] (open) | D §20 #15; Han-Liu 2209.13122 |
+| O-R3-3 | Han-Liu Conj. 1.9(2') for enc 4-fold pairs that are toric | 2 [U] (open) | D §20 #15; Han-Liu 2209.13122 |
 | O-R3-4 | the same for hyperquotient germs | 3 [U] (open) | Nakamura-Shibata 2606.24592 |
 | O-R3-5 | toric dual complexes are spheres or balls (a Lean proof of a known case of Kollár-Xu) | 2 | D §16 |
 | O-R3-6 | Mori dream spaces: the toric case as the first instance of S37 | 1 | Hu-Keel |
@@ -292,7 +292,7 @@ The computation lab (13) runs experiments E1 to E10. Its results become certific
 
 Target T is the one open target that the project names for level G5. It must be open, small enough for one paper, checkable in Lean, and on a route that the project builds anyway.
 
-**Target T: O-R3-3**, Han-Liu Conj. 1.9(2') for enc 4-fold germs that are toric. Reasons:
+**Target T: O-R3-3**, Han-Liu Conj. 1.9(2') for enc 4-fold pairs that are toric. Reasons:
 1. It is open, and report D rates it at the small end of its scale (D §20 #15).
 2. It is convex geometry over $\mathbb{Z}^4$, on the infrastructure of R3.
 3. It is on the reduction graph: the full conjecture in dim 4 gives T(4) for lc flips (03.11). A toric case gives a human proof of a piece of T(4) that does not depend on AI code.

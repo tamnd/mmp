@@ -4,6 +4,10 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Fixed
+
+- S52 and S29 now speak of the global mlds of enc pairs with coefficients in a finite set, as Han-Liu Conjecture 1.9(2') and Theorem 1.1 do. They spoke of germs before. Spec 04, 13 and 14 follow.
+
 ## v0.0.3 - 2026-11-26
 
 ### Changed

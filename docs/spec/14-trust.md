@@ -49,7 +49,7 @@ The trust report covers these theorems. More are added as the map grows. Each ha
 | `MinimalModelBridge.Fourfold.terminationLc4Rational` (S22) | termination of every MMP for projective lc 4-folds with rational boundary | `claimed`, then `proved-ext` after the audit | proof by OpenAI (paper) and Axiom (Lean); audit by the project | S3 |
 | `MinimalModelBridge.Vanishing.kawamataViehweg` (O-R2-3) | Kawamata-Viehweg vanishing, through the bridge; a named hypothesis in `MinimalModel` | `proved-ext` | Axiom (Lean); bridge by the project | S3 |
 | the claim checks of route R1 | each check separately, with Q10 | per claim | "a Lean check of section X of [preprint] by the project" | from S1 |
-| Target T (S52, the toric case) | Han-Liu Conj. 1.9(2') for toric enc 4-fold germs (04.12) | `proved` or `refuted` | the project | S7 |
+| Target T (S52, the toric case) | Han-Liu Conj. 1.9(2') for toric enc 4-fold pairs (04.12) | `proved` or `refuted` | the project | S7 |
 | the nodes of the open statements of 06.2 | the open conjectures | `open` | the authors of a proof, when there is one | S9 |
 
 The credit line names who did what. It never gives the project credit for a proof it did not write. A bridge theorem is credited to the external authors with the words "bridge and audit by the project".
