@@ -12,6 +12,10 @@ Each release has a section. The newest release is first.
 
 - `records/replay.json` and `records/trust.json` are of the trust run of mmp-lean v0.0.4 at commit 600aa92.
 
+### Fixed
+
+- Spec 14.2 and 15 name the toric cone theorem `MinimalModel.Toric.toricConeTheorem`, the proof of the pinned statement `ToricConeTheorem`. The name `MinimalModel.Toric.coneTheorem` does not exist in mmp-lean. `records/trust.json` is written again from the same records with mmp-agent #13, and the trust report now finds the theorem: proved, with Q0 to Q4 yes.
+
 ## v0.0.4 - 2026-11-26
 
 ### Changed

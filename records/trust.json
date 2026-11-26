@@ -79,21 +79,23 @@
   "replay": "records/replay.json",
   "theorems": [
     {
-      "theorem": "MinimalModel.Toric.coneTheorem",
+      "theorem": "MinimalModel.Toric.toricConeTheorem",
+      "statement": "MinimalModel.Toric.ToricConeTheorem",
       "milestone": "S2",
-      "status": "not in the map",
+      "node": "MM6EHAYFKV",
+      "status": "proved",
       "checks": [
         {
           "id": "Q2",
           "question": "Which axioms does the theorem use?",
-          "state": "not run",
-          "note": "The record of the build has no proof MinimalModel.Toric.coneTheorem."
+          "state": "yes",
+          "note": "The proof uses Classical.choice, Quot.sound, propext."
         },
         {
           "id": "Q5",
           "question": "Does the statement mean what the docstring says?",
           "state": "not run",
-          "note": "Spec 06.2 does not fix the statement yet."
+          "note": "records/fidelity.json has no entry for the statement."
         }
       ]
     },
