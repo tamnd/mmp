@@ -73,7 +73,7 @@ Everything is published at https://mmp.tamnd.com. The request was to solve all o
 8. **Hypotheses, not axioms.** A published theorem that is not yet proved is a named `Prop` with its own fidelity check (09.2).
 9. **Fresh claims are never hypotheses.** They have status `claimed` until experts accept the paper. A check is published only after a letter to the authors and 30 days (14.4). An AI manuscript is a claim, however strong its Lean code, until the audit of route R2 passes.
 10. **One shared resolution hypothesis with spec 2161.** Discrepancies need log resolutions. In characteristic $p$ and in dimension at least 4 these are open, and they are the subject of the singularity project. The two projects share one `Prop` for them (04.8, 06.1).
-11. **The handbook starts below the MMP.** It has nine prerequisite volumes (P0 to P8, about 4,050 pages) before the eighteen MMP volumes (about 6,220 pages). Each section of an MMP volume has six parts: Statement, Proof in words, Examples, Exercises, Lean, Notes and history (11).
+11. **The handbook starts below the MMP.** It has nine prerequisite volumes (P0 to P8, about 4,050 pages) before the eighteen MMP volumes (about 5,890 pages). Each section of an MMP volume has six parts: Statement, Proof in words, Examples, Exercises, Lean, Notes and history (11).
 12. **Style.** Text follows ASD-STE100: short sentences, no "we", no em or en dashes.
 
 ## The first four weeks (milestone S0, 2026-12-20)
