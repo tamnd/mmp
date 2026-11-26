@@ -4,6 +4,10 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Fixed
+
+- `records/trust.json` is made again from the current records. Its rows Q0 and Q1 read `records/lean.json` of mmp-lean v0.0.1, and the notes no longer say that the file is missing.
+
 ## v0.0.1 - 2026-11-26
 
 ### Changed

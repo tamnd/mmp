@@ -5,19 +5,19 @@
       "id": "Q0",
       "question": "Is the source the one that the site describes?",
       "state": "not run",
-      "note": "There is no records/lean.json."
+      "note": "records/lean.json is of commit 6e779d0. Run mmp trust with -lean to compare it with a checkout of mmp-lean."
     },
     {
       "id": "Q1",
       "question": "Does it build?",
-      "state": "not run",
-      "note": "There is no record of a build in records/lean.json."
+      "state": "yes",
+      "note": "records/lean.json is the record of the build of commit 6e779d0 with Lean 4.35.0 and Mathlib v4.35.0 on 2026-11-26. mmp trust reads the record and does not build."
     },
     {
       "id": "Q2",
       "question": "Which axioms do the top theorems use?",
       "state": "not run",
-      "note": "There is no records/lean.json."
+      "note": "No node has a complete proof yet."
     },
     {
       "id": "Q3",
@@ -68,11 +68,17 @@
       "note": "A person answers this row from the letter and the answer in each claim record. mmp trust does not read the letters."
     }
   ],
+  "lean": {
+    "repository": "https://github.com/tamnd/mmp-lean",
+    "commit": "6e779d01a502df0f0208752d2d3fae8f90f6deb4",
+    "toolchain": "4.35.0",
+    "mathlib": "v4.35.0",
+    "built": "2026-11-26"
+  },
   "replay": "none",
   "theorems": [
     {
       "theorem": "MinimalModel.Toric.coneTheorem",
-      "statement": "MinimalModel.ToricConeTheorem",
       "milestone": "S2",
       "status": "not in the map",
       "checks": [
@@ -86,13 +92,12 @@
           "id": "Q5",
           "question": "Does the statement mean what the docstring says?",
           "state": "not run",
-          "note": "records/fidelity.json has no entry for the statement."
+          "note": "Spec 06.2 does not fix the statement yet."
         }
       ]
     },
     {
       "theorem": "MinimalModel.shokurovLemma",
-      "statement": "MinimalModel.ShokurovLemma",
       "milestone": "S3",
       "status": "not in the map",
       "checks": [
@@ -106,13 +111,12 @@
           "id": "Q5",
           "question": "Does the statement mean what the docstring says?",
           "state": "not run",
-          "note": "records/fidelity.json has no entry for the statement."
+          "note": "Spec 06.2 does not fix the statement yet."
         }
       ]
     },
     {
       "theorem": "MinimalModel.Toric.flipExists",
-      "statement": "MinimalModel.ToricFlipExists",
       "milestone": "S4",
       "status": "not in the map",
       "checks": [
@@ -126,13 +130,12 @@
           "id": "Q5",
           "question": "Does the statement mean what the docstring says?",
           "state": "not run",
-          "note": "records/fidelity.json has no entry for the statement."
+          "note": "Spec 06.2 does not fix the statement yet."
         }
       ]
     },
     {
       "theorem": "MinimalModel.Toric.terminationOfFlips",
-      "statement": "MinimalModel.ToricTermination",
       "milestone": "S4",
       "status": "not in the map",
       "checks": [
@@ -146,7 +149,7 @@
           "id": "Q5",
           "question": "Does the statement mean what the docstring says?",
           "state": "not run",
-          "note": "records/fidelity.json has no entry for the statement."
+          "note": "Spec 06.2 does not fix the statement yet."
         }
       ]
     },
@@ -176,7 +179,7 @@
       "statement": "MinimalModel.Castelnuovo",
       "milestone": "S5",
       "node": "MMRP5RX4JJ",
-      "status": "unstated",
+      "status": "stated",
       "checks": [
         {
           "id": "Q2",
@@ -194,9 +197,10 @@
     },
     {
       "theorem": "MinimalModel.Surface.minimalModel",
-      "statement": "MinimalModel.SurfaceMinimalModel",
+      "statement": "MinimalModel.SurfaceMMP",
       "milestone": "S5",
-      "status": "not in the map",
+      "node": "MM861R2D6G",
+      "status": "stated",
       "checks": [
         {
           "id": "Q2",
@@ -235,7 +239,6 @@
     },
     {
       "theorem": "MinimalModel.Toric.hanLiuEncACC",
-      "statement": "MinimalModel.HanLiuEncACCToric",
       "milestone": "S7",
       "status": "not in the map",
       "checks": [
@@ -249,7 +252,7 @@
           "id": "Q5",
           "question": "Does the statement mean what the docstring says?",
           "state": "not run",
-          "note": "records/fidelity.json has no entry for the statement."
+          "note": "Spec 06.2 does not fix the statement yet."
         }
       ]
     }
@@ -259,25 +262,45 @@
       "name": "MinimalModel.ACCLct",
       "node": "MMGSDKRGR6",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ACCMld",
       "node": "MMWK2DDDPC",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.Abundance",
       "node": "MMPTP8SV13",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.AbundanceBig",
       "node": "MMRKRVGY9M",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.AbundanceNuZero",
@@ -313,13 +336,23 @@
       "name": "MinimalModel.BasepointFree",
       "node": "MM0VJ1HARY",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.Castelnuovo",
       "node": "MMRP5RX4JJ",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.CharP3foldLcMMP",
@@ -337,13 +370,23 @@
       "name": "MinimalModel.ConeTheoremKlt",
       "node": "MMDZBZY2BV",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ConeTheoremLc",
       "node": "MMV52CGQMS",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ContractionTheorem",
@@ -361,7 +404,12 @@
       "name": "MinimalModel.FiniteGenerationCanonical",
       "node": "MM193HWD2S",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.FinitenessOfModels",
@@ -373,7 +421,12 @@
       "name": "MinimalModel.FujitaFreeness",
       "node": "MMXQBHJKWR",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.GeneralizedAbundance",
@@ -433,7 +486,12 @@
       "name": "MinimalModel.KltFlips",
       "node": "MMP51FQ005",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.KollarTorsionFree",
@@ -445,19 +503,34 @@
       "name": "MinimalModel.LSCMld",
       "node": "MMFKZ7VB29",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.LcFlips",
       "node": "MMDQRR7TZB",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.LcSurfaceMMP",
       "node": "MMXV8DZWP4",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.LengthOfExtremalRays",
@@ -469,31 +542,56 @@
       "name": "MinimalModel.LiuXuReduction",
       "node": "MMM6KF309B",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.MinimalModelConj",
       "node": "MMY4HT1Q8M",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.MldBound",
       "node": "MM0FZHT2BB",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.MoriFibreSpaceOutput",
       "node": "MMNAN1JQAR",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.NonVanishing",
       "node": "MMZ5XGBW5M",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.NotEffectiveNonVanishing4",
@@ -505,7 +603,12 @@
       "name": "MinimalModel.RationalityTheorem",
       "node": "MMSMTZS83C",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.Sarkisov",
@@ -517,13 +620,23 @@
       "name": "MinimalModel.ShokurovReduction",
       "node": "MMFPRYMSNJ",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.SpecialTermination",
       "node": "MMFCAWE0XH",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.StrongSarkisov",
@@ -541,49 +654,89 @@
       "name": "MinimalModel.SurfaceConeTheorem",
       "node": "MM8MGCYF75",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.SurfaceMMP",
       "node": "MM861R2D6G",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.Termination",
       "node": "MMTJ3YNHTG",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.TerminationBig",
       "node": "MM2NY6352R",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.TerminationBigLe5",
       "node": "MMY38TT73M",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.TerminationLc4Rational",
       "node": "MMBTDMD2XP",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.TerminationPseffLc4",
       "node": "MME79K17YJ",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.TerminationScalingBig",
       "node": "MM07D8FAVG",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ThreefoldAbundance",
@@ -595,19 +748,34 @@
       "name": "MinimalModel.ThreefoldFlips",
       "node": "MM3A98X8YR",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ThreefoldLcMMP",
       "node": "MMMAM98WJQ",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ThreefoldTermination",
       "node": "MMH0CM56AA",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ToricMMP",
