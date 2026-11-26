@@ -11,21 +11,21 @@
     "MMAWP4SA44"
   ],
   "tool": "mmp",
-  "tool_version": "dev",
-  "commit": "814e61a41d15dd55b8f4b6a070be7b8d1e02b933",
+  "tool_version": "v0.0.4-5-g49b0cdd",
+  "commit": "49b0cddf02fa735d75fcdf11578a66b1eca7e61b",
   "go": "go1.27.3",
   "container": "none",
   "network": false,
   "seed": 0,
   "host": "darwin/arm64",
-  "started": "2026-11-26T07:49:47Z",
-  "wall_seconds": 0.009,
+  "started": "2026-11-26T16:40:56Z",
+  "wall_seconds": 0.008,
   "result": "agrees: in 1747 germs of dimension 3, a germ is terminal exactly when two weights add to 0 mod r, and each terminal germ has the mld 1 + 1/r",
   "mismatches": 0,
   "gaps": 0,
   "files": {
-    "germs.json": "1090ef5676a198199bea8bb1fedf253bc30b5350c1275b39ab094008b0781885",
-    "indices.json": "34a2ba84856426cfe4b707e35a28f88d856c41739ee9e325fcb2ecef9748539e",
-    "summary.md": "24111f6e0261107190c18848fb66f1275166a10005de348a35a95e06f85a30c5"
+    "germs.json": "3fb7a417fd2e0d64cd65584da03e656d170b7fed47f1bfd5970987895761ff2d",
+    "indices.json": "278ee3b2db3029a432b8d93c6a0a61b27673666cc36a1c1465fb881290834718",
+    "summary.md": "baff13f6b57638da828e96754e83d94810955163606d8314e320a08fee3a96ae"
   }
 }
