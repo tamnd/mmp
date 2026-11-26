@@ -4,38 +4,38 @@
     {
       "id": "Q0",
       "question": "Is the source the one that the site describes?",
-      "state": "not run",
-      "note": "records/lean.json is of commit 6e779d0. Run mmp trust with -lean to compare it with a checkout of mmp-lean."
+      "state": "yes",
+      "note": "records/lean.json and the checkout of mmp-lean are both at commit 600aa92."
     },
     {
       "id": "Q1",
       "question": "Does it build?",
       "state": "yes",
-      "note": "records/lean.json is the record of the build of commit 6e779d0 with Lean 4.35.0 and Mathlib v4.35.0 on 2026-11-26. mmp trust reads the record and does not build."
+      "note": "records/lean.json is the record of the build of commit 600aa92 with Lean 4.35.0 and Mathlib v4.35.0 on 2026-11-26. mmp trust reads the record and does not build."
     },
     {
       "id": "Q2",
       "question": "Which axioms do the top theorems use?",
-      "state": "not run",
-      "note": "No node has a complete proof yet."
+      "state": "yes",
+      "note": "The nodes name 65 declarations, and records/lean.json has 53 of them. Each of them uses only propext, Classical.choice and Quot.sound. The record has a complete proof for 2 nodes."
     },
     {
       "id": "Q3",
       "question": "Do two more kernels accept it?",
-      "state": "not run",
-      "note": "The kernel replay was not run: there is no replay record records/replay.json."
+      "state": "yes",
+      "note": "On 2026-11-26 leanchecker --fresh, lean4lean, nanoda accepted commit 600aa92."
     },
     {
       "id": "Q4",
       "question": "Do the proved theorems have the pinned statements?",
-      "state": "not run",
-      "note": "lake comparator was not run."
+      "state": "yes",
+      "note": "On 2026-11-26 lake comparator matched each proof of commit 600aa92 to its pinned statement. The statement files match manifests/statements.sha256."
     },
     {
       "id": "Q5",
       "question": "Do the statements mean what the docstrings say?",
       "state": "open",
-      "note": "0 of the 60 Lean statements of the map pass the fidelity checks of their class (spec 06.3). 4 have an entry in records/fidelity.json."
+      "note": "0 of the 62 Lean statements of the map pass the fidelity checks of their class (spec 06.3). 4 have an entry in records/fidelity.json."
     },
     {
       "id": "Q6",
@@ -70,12 +70,13 @@
   ],
   "lean": {
     "repository": "https://github.com/tamnd/mmp-lean",
-    "commit": "6e779d01a502df0f0208752d2d3fae8f90f6deb4",
+    "commit": "600aa922144dc0c3b5abf071bcb99f0bd2cdeb58",
     "toolchain": "4.35.0",
     "mathlib": "v4.35.0",
-    "built": "2026-11-26"
+    "built": "2026-11-26",
+    "checkout": "600aa922144dc0c3b5abf071bcb99f0bd2cdeb58"
   },
-  "replay": "none",
+  "replay": "records/replay.json",
   "theorems": [
     {
       "theorem": "MinimalModel.Toric.coneTheorem",
@@ -158,7 +159,7 @@
       "statement": "MinimalModel.ToricMMP",
       "milestone": "S4",
       "node": "MMAWP4SA44",
-      "status": "unstated",
+      "status": "stated",
       "checks": [
         {
           "id": "Q2",
@@ -221,7 +222,7 @@
       "statement": "MinimalModel.HanLiuReduction",
       "milestone": "S5",
       "node": "MM0NXABJ9S",
-      "status": "unstated",
+      "status": "stated",
       "checks": [
         {
           "id": "Q2",
@@ -306,7 +307,12 @@
       "name": "MinimalModel.AbundanceNuZero",
       "node": "MM5QPM66FR",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.AlgIntFoliationMMP",
@@ -324,7 +330,12 @@
       "name": "MinimalModel.BCHM",
       "node": "MM9399B0QP",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.BSemiampleness",
@@ -392,7 +403,12 @@
       "name": "MinimalModel.ContractionTheorem",
       "node": "MMQ2K4RSHT",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.FanoTypeMDS",
@@ -432,7 +448,12 @@
       "name": "MinimalModel.GeneralizedAbundance",
       "node": "MMSH2N59E3",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.GeneralizedLcFlips",
@@ -444,25 +465,45 @@
       "name": "MinimalModel.HanLiuEncACC",
       "node": "MMXCD16PTN",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.HanLiuReduction",
       "node": "MM0NXABJ9S",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.IitakaConj",
       "node": "MMY51YYYJX",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.IndexConj",
       "node": "MM3A7BTV1N",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.KahlerThreefoldMMP",
@@ -474,13 +515,23 @@
       "name": "MinimalModel.KawamataViehweg",
       "node": "MM7MQT1KEA",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.KleimanCriterion",
       "node": "MMV4DPSCE3",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.KltFlips",
@@ -536,7 +587,12 @@
       "name": "MinimalModel.LengthOfExtremalRays",
       "node": "MMHTX4Z2B7",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.LiuXuReduction",
@@ -597,7 +653,12 @@
       "name": "MinimalModel.NotEffectiveNonVanishing4",
       "node": "MMRG60YPYS",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.RationalityTheorem",
@@ -648,7 +709,12 @@
       "name": "MinimalModel.SurfaceAbundance",
       "node": "MMMSGVFVJH",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.SurfaceConeTheorem",
@@ -742,7 +808,12 @@
       "name": "MinimalModel.ThreefoldAbundance",
       "node": "MM5ECX1RGZ",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     },
     {
       "name": "MinimalModel.ThreefoldFlips",
@@ -778,10 +849,70 @@
       ]
     },
     {
+      "name": "MinimalModel.Toric.Fan",
+      "node": "MMH8EFW2JT",
+      "role": "statement",
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "name": "MinimalModel.Toric.Fan.exists_unique_wall_relation",
+      "node": "MMFAWNT87R",
+      "role": "proof",
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "name": "MinimalModel.Toric.Fan.exists_unique_wall_relation",
+      "node": "MMFAWNT87R",
+      "role": "statement",
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "name": "MinimalModel.Toric.ToricConeTheorem",
+      "node": "MM6EHAYFKV",
+      "role": "statement",
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "name": "MinimalModel.Toric.toricConeTheorem",
+      "node": "MM6EHAYFKV",
+      "role": "proof",
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
       "name": "MinimalModel.ToricMMP",
       "node": "MMAWP4SA44",
       "role": "statement",
-      "found": false
+      "found": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
     }
   ]
 }

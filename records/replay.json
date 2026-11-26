@@ -1,0 +1,29 @@
+{
+  "commit": "600aa922144dc0c3b5abf071bcb99f0bd2cdeb58",
+  "date": "2026-11-26",
+  "run": "https://github.com/tamnd/mmp-lean/actions/runs/45833492926",
+  "checkers": [
+    {
+      "name": "leanchecker --fresh",
+      "independent": false,
+      "ok": true,
+      "note": "success"
+    },
+    {
+      "name": "lean4lean",
+      "independent": true,
+      "ok": true,
+      "note": "success"
+    },
+    {
+      "name": "nanoda",
+      "independent": true,
+      "ok": true,
+      "note": "success"
+    }
+  ],
+  "comparator": {
+    "ok": true,
+    "note": "lake comparator --paranoid on 1 theorems: success"
+  }
+}
