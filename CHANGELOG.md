@@ -4,6 +4,16 @@ Each release has a section. The newest release is first.
 
 ## Unreleased
 
+### Added
+
+- `records/fidelity.json` has its first four entries, written with `mmp fidelity set`. Each check marked true is a theorem of mmp-lean at commit 039551d. F1 comes from `records/lean.json`.
+  - S04 `ConeTheoremKlt`: F2 by `pointModel_coneDecomposition`, the point is a projective klt pair and its cone of curves is decomposed. F3 by `affineLinePair_one_not_isKlt`, the pair (𝔸¹, [0]) is not klt.
+  - S05 `ConeTheoremLc`: F2 by `pointPair_isLc` and `pointModel_coneDecomposition`. F3 by `affineLinePair_two_not_isLc`, the pair (𝔸¹, 2[0]) is not lc.
+  - S20 `Termination`: F2 by `pointModel_terminates` and `pointVariety_dim`, the point is an lc pair of dimension 0 with no infinite sequence of flips. F3 by `exists_finite_program`, which shows that "some program is finite" is trivial, and by `affineLinePair_two_not_isLc`.
+  - S22 `TerminationLc4Rational`: F3 by `exists_finite_program` and `affineLinePair_two_not_isLc`. F2 is not passed. The point has dimension 0, so it is not an instance of a statement about 4-folds.
+- The klt, lc, terminal, canonical and dlt instances on the point (`pointPair_isKlt`, `pointPair_isLc`, `pointPair_isTerminal`, `pointPair_isCanonical`, `pointPair_isDlt`) check definitions. The record has entries for statements only, so they are named here and not in the record. F2 of the pair (𝔸¹, 0) is not proved and is not marked.
+- `records/trust.json` is made again. Row Q5 says that 4 statements have an entry in `records/fidelity.json`. None passes, because F4 and F5 are not run.
+
 ### Fixed
 
 - `records/trust.json` is made again from the current records. Its rows Q0 and Q1 read `records/lean.json` of mmp-lean v0.0.1, and the notes no longer say that the file is missing.
