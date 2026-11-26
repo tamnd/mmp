@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/tamnd/mmp-lean",
-  "commit": "591c8a5b4c28e8379d3bb7a3038fc3be4ba499c3",
+  "commit": "600aa922144dc0c3b5abf071bcb99f0bd2cdeb58",
   "toolchain": "4.35.0",
   "mathlib": "v4.35.0",
   "built": "2026-11-26",
@@ -8,7 +8,7 @@
     "MinimalModel.ACCLct": {
       "kind": "def",
       "file": "MinimalModel/Statements/Boundedness.lean",
-      "line": 19,
+      "line": 20,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -19,7 +19,7 @@
     "MinimalModel.ACCMld": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 29,
+      "line": 30,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -30,7 +30,7 @@
     "MinimalModel.Abundance": {
       "kind": "def",
       "file": "MinimalModel/Statements/Abundance.lean",
-      "line": 19,
+      "line": 21,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -41,7 +41,29 @@
     "MinimalModel.AbundanceBig": {
       "kind": "def",
       "file": "MinimalModel/Statements/Abundance.lean",
-      "line": 27,
+      "line": 29,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.AbundanceNuZero": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Abundance.lean",
+      "line": 38,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.BCHM": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Models.lean",
+      "line": 47,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -52,7 +74,7 @@
     "MinimalModel.BasepointFree": {
       "kind": "def",
       "file": "MinimalModel/Statements/Foundations.lean",
-      "line": 35,
+      "line": 50,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -189,7 +211,7 @@
     "MinimalModel.ConeTheoremKlt": {
       "kind": "def",
       "file": "MinimalModel/Statements/Foundations.lean",
-      "line": 19,
+      "line": 34,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -200,7 +222,18 @@
     "MinimalModel.ConeTheoremLc": {
       "kind": "def",
       "file": "MinimalModel/Statements/Foundations.lean",
-      "line": 23,
+      "line": 38,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.ContractionTheorem": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Foundations.lean",
+      "line": 65,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -219,6 +252,17 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → MinimalModel.NormalVariety k → Type u"
     },
+    "MinimalModel.Curve.IsRational": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 51,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Curve X → Prop"
+    },
     "MinimalModel.CurveSpace": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -229,6 +273,17 @@
         "propext"
       ],
       "type": "{k : Type u} → [inst : Field k] → MinimalModel.NormalVariety k → Type u"
+    },
+    "MinimalModel.DiscrepancyCompare": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 68,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Pair X →\n        {Y : MinimalModel.NormalVariety k} →\n          MinimalModel.Pair Y → (MinimalModel.FF Y ≃ₐ[k] MinimalModel.FF X) → (ℝ → ℝ → Prop) → Prop"
     },
     "MinimalModel.Divisor": {
       "kind": "def",
@@ -307,6 +362,28 @@
       ],
       "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℤ X → MinimalModel.Divisor ℝ X"
     },
+    "MinimalModel.EffectiveNonVanishing": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Effective.lean",
+      "line": 24,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → Prop"
+    },
+    "MinimalModel.EncMldACC": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Boundedness.lean",
+      "line": 33,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → Prop"
+    },
     "MinimalModel.EveryProgramEnds": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -317,6 +394,111 @@
         "propext"
       ],
       "type": "{k : Type u} → [inst : Field k] → MinimalModel.PairModel k → Prop"
+    },
+    "MinimalModel.ExtremalFace": {
+      "kind": "inductive",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 31,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.IntersectionData X → Type u"
+    },
+    "MinimalModel.ExtremalFace.IsNegative": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 39,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {I : MinimalModel.IntersectionData X} → MinimalModel.ExtremalFace I → MinimalModel.RCartier X → Prop"
+    },
+    "MinimalModel.ExtremalFace.carrier": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 34,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {I : MinimalModel.IntersectionData X} → MinimalModel.ExtremalFace I → PointedCone ℝ (MinimalModel.CurveSpace X)"
+    },
+    "MinimalModel.ExtremalFace.ctorIdx": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  {inst : Field k} →\n    {X : MinimalModel.NormalVariety k} → {I : MinimalModel.IntersectionData X} → MinimalModel.ExtremalFace I → ℕ"
+    },
+    "MinimalModel.ExtremalFace.isFace": {
+      "kind": "theorem",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 36,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  (self : MinimalModel.ExtremalFace I) (a b : MinimalModel.CurveSpace X),\n  a ∈ I.coneOfCurves → b ∈ I.coneOfCurves → a + b ∈ self.carrier → a ∈ self.carrier ∧ b ∈ self.carrier"
+    },
+    "MinimalModel.ExtremalFace.le": {
+      "kind": "theorem",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 35,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  (self : MinimalModel.ExtremalFace I), self.carrier ≤ I.coneOfCurves"
+    },
+    "MinimalModel.ExtremalFace.mk.inj": {
+      "kind": "theorem",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} {inst : Field k} {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  {carrier : PointedCone ℝ (MinimalModel.CurveSpace X)} {le : carrier ≤ I.coneOfCurves}\n  {isFace :\n    ∀ (a b : MinimalModel.CurveSpace X),\n      a ∈ I.coneOfCurves → b ∈ I.coneOfCurves → a + b ∈ carrier → a ∈ carrier ∧ b ∈ carrier}\n  {carrier_1 : PointedCone ℝ (MinimalModel.CurveSpace X)} {le_1 : carrier_1 ≤ I.coneOfCurves}\n  {isFace_1 :\n    ∀ (a b : MinimalModel.CurveSpace X),\n      a ∈ I.coneOfCurves → b ∈ I.coneOfCurves → a + b ∈ carrier_1 → a ∈ carrier_1 ∧ b ∈ carrier_1},\n  { carrier := carrier, le := le, isFace := isFace } = { carrier := carrier_1, le := le_1, isFace := isFace_1 } →\n    carrier = carrier_1"
+    },
+    "MinimalModel.ExtremalFace.mk.injEq": {
+      "kind": "theorem",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  (carrier : PointedCone ℝ (MinimalModel.CurveSpace X)) (le : carrier ≤ I.coneOfCurves)\n  (isFace :\n    ∀ (a b : MinimalModel.CurveSpace X),\n      a ∈ I.coneOfCurves → b ∈ I.coneOfCurves → a + b ∈ carrier → a ∈ carrier ∧ b ∈ carrier)\n  (carrier_1 : PointedCone ℝ (MinimalModel.CurveSpace X)) (le_1 : carrier_1 ≤ I.coneOfCurves)\n  (isFace_1 :\n    ∀ (a b : MinimalModel.CurveSpace X),\n      a ∈ I.coneOfCurves → b ∈ I.coneOfCurves → a + b ∈ carrier_1 → a ∈ carrier_1 ∧ b ∈ carrier_1),\n  ({ carrier := carrier, le := le, isFace := isFace } = { carrier := carrier_1, le := le_1, isFace := isFace_1 }) =\n    (carrier = carrier_1)"
+    },
+    "MinimalModel.ExtremalFace.mk.sizeOf_spec": {
+      "kind": "theorem",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  [inst_1 : SizeOf k] (carrier : PointedCone ℝ (MinimalModel.CurveSpace X)) (le : carrier ≤ I.coneOfCurves)\n  (isFace :\n    ∀ (a b : MinimalModel.CurveSpace X),\n      a ∈ I.coneOfCurves → b ∈ I.coneOfCurves → a + b ∈ carrier → a ∈ carrier ∧ b ∈ carrier),\n  sizeOf { carrier := carrier, le := le, isFace := isFace } = 1 + sizeOf carrier"
+    },
+    "MinimalModel.ExtremalFace.noConfusionType": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "Sort u_1 →\n  {k : Type u} →\n    [inst : Field k] →\n      {X : MinimalModel.NormalVariety k} →\n        {I : MinimalModel.IntersectionData X} →\n          MinimalModel.ExtremalFace I →\n            {k' : Type u} →\n              [inst' : Field k'] →\n                {X' : MinimalModel.NormalVariety k'} →\n                  {I' : MinimalModel.IntersectionData X'} → MinimalModel.ExtremalFace I' → Sort u_1"
     },
     "MinimalModel.ExtremalRay": {
       "kind": "inductive",
@@ -467,6 +649,39 @@
       ],
       "type": "(k : Type u) → [Field k] → Prop"
     },
+    "MinimalModel.GeneralizedAbundance": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Abundance.lean",
+      "line": 42,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → Prop"
+    },
+    "MinimalModel.HanLiuEncACC": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Boundedness.lean",
+      "line": 40,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.HanLiuReduction": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Termination.lean",
+      "line": 89,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → Prop"
+    },
     "MinimalModel.HasInfiniteFlips": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -500,6 +715,17 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → MinimalModel.PairModel k → Prop"
     },
+    "MinimalModel.HasLcModelOver": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 82,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Pair X → {U : MinimalModel.NormalVariety k} → (X.toScheme ⟶ U.toScheme) → Prop"
+    },
     "MinimalModel.HasLogResolution": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -510,6 +736,61 @@
         "propext"
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Pair X → Prop"
+    },
+    "MinimalModel.HasLogTerminalModelOver": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 75,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Pair X → {U : MinimalModel.NormalVariety k} → (X.toScheme ⟶ U.toScheme) → Prop"
+    },
+    "MinimalModel.HigherCohomologyVanishes": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Cohomology.lean",
+      "line": 53,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℤ X → X.toScheme.Opens → Prop"
+    },
+    "MinimalModel.HigherDirectImagesVanish": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Cohomology.lean",
+      "line": 57,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℤ X → (X.toScheme ⟶ Z) → Prop"
+    },
+    "MinimalModel.IitakaConj": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Abundance.lean",
+      "line": 50,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → ℕ → Prop"
+    },
+    "MinimalModel.IndexConj": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Boundedness.lean",
+      "line": 44,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → Prop"
     },
     "MinimalModel.IntersectionData": {
       "kind": "inductive",
@@ -608,6 +889,17 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (self : MinimalModel.IntersectionData X) (r : ℝ)\n  (D : MinimalModel.Divisor ℝ X),\n  MinimalModel.IsRCartier D → ∀ (C : MinimalModel.Curve X), self.dot (r • D) C = r * self.dot D C"
+    },
+    "MinimalModel.IntersectionData.eq_zero_of_mem_coneOfCurves_of_isEmpty": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 47,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.Curve X)]\n  (I : MinimalModel.IntersectionData X) {z : MinimalModel.CurveSpace X}, z ∈ I.coneOfCurves → z = 0"
     },
     "MinimalModel.IntersectionData.eval": {
       "kind": "def",
@@ -714,6 +1006,39 @@
         "propext"
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℝ X → Prop"
+    },
+    "MinimalModel.IsBigRel": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 72,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℝ X → (X.toScheme ⟶ Z) → Prop"
+    },
+    "MinimalModel.IsBirContractionOver": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 62,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Pair X →\n        {Y : MinimalModel.NormalVariety k} →\n          MinimalModel.Pair Y →\n            {U : AlgebraicGeometry.Scheme} →\n              (X.toScheme ⟶ U) → (Y.toScheme ⟶ U) → (MinimalModel.FF Y ≃ₐ[k] MinimalModel.FF X) → Prop"
+    },
+    "MinimalModel.IsBirMapOver": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 53,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X Y : MinimalModel.NormalVariety k} →\n      {U : AlgebraicGeometry.Scheme} →\n        (X.toScheme ⟶ U) → (Y.toScheme ⟶ U) → (MinimalModel.FF Y ≃ₐ[k] MinimalModel.FF X) → Prop"
     },
     "MinimalModel.IsBirationalHom": {
       "kind": "def",
@@ -891,6 +1216,17 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → {X Z : MinimalModel.NormalVariety k} → (X.toScheme ⟶ Z.toScheme) → Prop"
     },
+    "MinimalModel.IsContractionOfFace": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 43,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    (A : MinimalModel.PairModel k) →\n      MinimalModel.ExtremalFace A.I → (Z : MinimalModel.NormalVariety k) → (A.X.toScheme ⟶ Z.toScheme) → Prop"
+    },
     "MinimalModel.IsDivOfForm": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -945,6 +1281,17 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {P : MinimalModel.Pair X},\n  MinimalModel.IsDlt P → MinimalModel.IsLc P"
+    },
+    "MinimalModel.IsEnc": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Enc.lean",
+      "line": 38,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Pair X → Prop"
     },
     "MinimalModel.IsExceptional": {
       "kind": "def",
@@ -1133,6 +1480,17 @@
       ],
       "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.IntersectionData X →\n        {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℝ X → (X.toScheme ⟶ Z) → Prop"
     },
+    "MinimalModel.IsNefRel": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 68,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℝ X → (X.toScheme ⟶ Z) → Prop"
+    },
     "MinimalModel.IsNormalScheme": {
       "kind": "inductive",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -1154,6 +1512,17 @@
         "propext"
       ],
       "type": "∀ {X : AlgebraicGeometry.Scheme} [self : MinimalModel.IsNormalScheme X] (x : ↥X),\n  IsIntegrallyClosed ↑(X.presheaf.stalk x)"
+    },
+    "MinimalModel.IsNumTrivialRel": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 64,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℝ X → (X.toScheme ⟶ Z) → Prop"
     },
     "MinimalModel.IsPlaceCentre": {
       "kind": "def",
@@ -1276,6 +1645,17 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℝ X → Prop"
     },
+    "MinimalModel.IsPseudoEffectiveOver": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 43,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℝ X → (X.toScheme ⟶ Z) → Prop"
+    },
     "MinimalModel.IsQCartier": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -1287,10 +1667,32 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℚ X → Prop"
     },
+    "MinimalModel.IsQCartierReal": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 47,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℝ X → Prop"
+    },
     "MinimalModel.IsQFactorial": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
       "line": 152,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → MinimalModel.NormalVariety k → Prop"
+    },
+    "MinimalModel.IsQuasiProjective": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 40,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -1331,6 +1733,17 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℝ X → Prop"
     },
+    "MinimalModel.IsRIntersectionNumber": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Curves.lean",
+      "line": 58,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℝ X → MinimalModel.Curve X → ℝ → Prop"
+    },
     "MinimalModel.IsRelAmple": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -1341,6 +1754,17 @@
         "propext"
       ],
       "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      {Z : AlgebraicGeometry.Scheme} → MinimalModel.Divisor ℤ X → (X.toScheme ⟶ Z) → Prop"
+    },
+    "MinimalModel.IsRelFG": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 99,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Divisor ℝ X → {U : AlgebraicGeometry.Scheme} → (X.toScheme ⟶ U) → Prop"
     },
     "MinimalModel.IsScalingStep": {
       "kind": "def",
@@ -1507,6 +1931,28 @@
       ],
       "type": "∀ {k : Type u} {inst : Field k} {X : AlgebraicGeometry.Scheme} {f : X ⟶ AlgebraicGeometry.Spec ↧k}\n  [self : MinimalModel.IsVariety X f], AlgebraicGeometry.IsSeparated f"
     },
+    "MinimalModel.KawamataViehweg": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Foundations.lean",
+      "line": 56,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.KleimanCriterion": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Foundations.lean",
+      "line": 25,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
     "MinimalModel.KltFlips": {
       "kind": "def",
       "file": "MinimalModel/Statements/Models.lean",
@@ -1521,7 +1967,7 @@
     "MinimalModel.LSCMld": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 36,
+      "line": 37,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -1532,7 +1978,7 @@
     "MinimalModel.LcFlips": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 76,
+      "line": 77,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -1551,10 +1997,21 @@
       ],
       "type": "(k : Type u) → [Field k] → Prop"
     },
+    "MinimalModel.LengthOfExtremalRays": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Foundations.lean",
+      "line": 76,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
     "MinimalModel.LiuXuReduction": {
       "kind": "def",
       "file": "MinimalModel/Statements/Abundance.lean",
-      "line": 31,
+      "line": 33,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -1835,7 +2292,7 @@
     "MinimalModel.MldBound": {
       "kind": "def",
       "file": "MinimalModel/Statements/Boundedness.lean",
-      "line": 26,
+      "line": 27,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -1857,7 +2314,7 @@
     "MinimalModel.NonVanishing": {
       "kind": "def",
       "file": "MinimalModel/Statements/Abundance.lean",
-      "line": 23,
+      "line": 25,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2079,6 +2536,50 @@
         "propext"
       ],
       "type": "{k : Type u} → [inst : Field k] → (X : MinimalModel.NormalVariety k) → k →+* ↑(X.toScheme.presheaf.obj (Opposite.op ⊤))"
+    },
+    "MinimalModel.NotEffectiveNonVanishing4": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Effective.lean",
+      "line": 30,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.NumEquiv": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 31,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.IntersectionData X → MinimalModel.Divisor ℝ X → MinimalModel.Divisor ℝ X → Prop"
+    },
+    "MinimalModel.NumEquiv.refl": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/Relative.lean",
+      "line": 26,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (I : MinimalModel.IntersectionData X)\n  {D : MinimalModel.Divisor ℝ X}, MinimalModel.IsRCartier D → MinimalModel.NumEquiv I D D"
+    },
+    "MinimalModel.NumEquiv.symm": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/Relative.lean",
+      "line": 31,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  {D D' : MinimalModel.Divisor ℝ X}, MinimalModel.NumEquiv I D D' → MinimalModel.NumEquiv I D' D"
     },
     "MinimalModel.Pair": {
       "kind": "inductive",
@@ -2536,6 +3037,17 @@
       ],
       "type": "{k : Type u} → [inst : Field k] → (A : MinimalModel.PairModel k) → MinimalModel.Program A"
     },
+    "MinimalModel.QFactorialTerminalTermination": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Termination.lean",
+      "line": 85,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → ℕ → Prop"
+    },
     "MinimalModel.QLinEquiv": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -2572,7 +3084,7 @@
     "MinimalModel.RationalityTheorem": {
       "kind": "def",
       "file": "MinimalModel/Statements/Foundations.lean",
-      "line": 27,
+      "line": 42,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2594,7 +3106,7 @@
     "MinimalModel.ShokurovReduction": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 42,
+      "line": 43,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2605,13 +3117,24 @@
     "MinimalModel.SpecialTermination": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 46,
+      "line": 47,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
         "propext"
       ],
       "type": "(k : Type u) → [Field k] → ℕ → Prop"
+    },
+    "MinimalModel.SurfaceAbundance": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/LowDim.lean",
+      "line": 51,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
     },
     "MinimalModel.SurfaceConeTheorem": {
       "kind": "def",
@@ -2638,7 +3161,7 @@
     "MinimalModel.Termination": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 21,
+      "line": 22,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2649,7 +3172,7 @@
     "MinimalModel.TerminationBig": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 71,
+      "line": 72,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2660,7 +3183,7 @@
     "MinimalModel.TerminationBigLe5": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 66,
+      "line": 67,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2671,7 +3194,7 @@
     "MinimalModel.TerminationLc4Rational": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 25,
+      "line": 26,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2693,7 +3216,7 @@
     "MinimalModel.TerminationPseffLc4": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 54,
+      "line": 55,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2704,7 +3227,18 @@
     "MinimalModel.TerminationScalingBig": {
       "kind": "def",
       "file": "MinimalModel/Statements/Termination.lean",
-      "line": 58,
+      "line": 59,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "(k : Type u) → [Field k] → Prop"
+    },
+    "MinimalModel.ThreefoldAbundance": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/LowDim.lean",
+      "line": 68,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2715,7 +3249,7 @@
     "MinimalModel.ThreefoldFlips": {
       "kind": "def",
       "file": "MinimalModel/Statements/LowDim.lean",
-      "line": 51,
+      "line": 55,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2726,7 +3260,7 @@
     "MinimalModel.ThreefoldLcMMP": {
       "kind": "def",
       "file": "MinimalModel/Statements/LowDim.lean",
-      "line": 64,
+      "line": 73,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2737,7 +3271,7 @@
     "MinimalModel.ThreefoldTermination": {
       "kind": "def",
       "file": "MinimalModel/Statements/LowDim.lean",
-      "line": 60,
+      "line": 64,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2766,6 +3300,39 @@
         "propext"
       ],
       "type": "ℕ → Type"
+    },
+    "MinimalModel.Toric.Fan.HasRelPicardOne": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 62,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.Fan n → Set (PointedCone ℝ (MinimalModel.Toric.NR n)) → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsAmple": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 52,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.TDivisor ℝ → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsAmpleOver": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 47,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → Set (PointedCone ℝ (MinimalModel.Toric.NR n)) → F.TDivisor ℝ → Prop"
     },
     "MinimalModel.Toric.Fan.IsCartier": {
       "kind": "def",
@@ -2814,7 +3381,7 @@
     "MinimalModel.Toric.Fan.IsMaximalCone.coneDim_inf_lt": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 187,
+      "line": 189,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2825,7 +3392,7 @@
     "MinimalModel.Toric.Fan.IsMaximalCone.le_of_le": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 173,
+      "line": 175,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2836,7 +3403,7 @@
     "MinimalModel.Toric.Fan.IsMaximalCone.mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 169,
+      "line": 171,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2854,6 +3421,28 @@
         "propext"
       ],
       "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → F.TDivisor ℝ → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsProjectiveFan": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 55,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.Fan n → Prop"
+    },
+    "MinimalModel.Toric.Fan.IsPullback": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 58,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (F : MinimalModel.Toric.Fan n) → Set (PointedCone ℝ (MinimalModel.Toric.NR n)) → F.TDivisor ℝ → Prop"
     },
     "MinimalModel.Toric.Fan.IsQCartier": {
       "kind": "def",
@@ -2924,7 +3513,7 @@
     "MinimalModel.Toric.Fan.IsSupportFunction.add_le": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 229,
+      "line": 231,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2935,7 +3524,7 @@
     "MinimalModel.Toric.Fan.IsSupportFunction.apply_smul": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 222,
+      "line": 224,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2946,7 +3535,7 @@
     "MinimalModel.Toric.Fan.IsSupportFunction.continuous": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 239,
+      "line": 241,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3001,7 +3590,7 @@
     "MinimalModel.Toric.Fan.IsWallPair.coneDim_eq": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 198,
+      "line": 200,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3012,7 +3601,7 @@
     "MinimalModel.Toric.Fan.IsWallPair.isMaximalCone_left": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 210,
+      "line": 212,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3023,7 +3612,7 @@
     "MinimalModel.Toric.Fan.IsWallPair.isMaximalCone_right": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 215,
+      "line": 217,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3034,7 +3623,7 @@
     "MinimalModel.Toric.Fan.IsWallPair.nonempty_wallData": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 451,
+      "line": 453,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3045,7 +3634,7 @@
     "MinimalModel.Toric.Fan.IsWallPair.span_eq_top": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 205,
+      "line": 207,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3063,6 +3652,17 @@
         "propext"
       ],
       "type": "{n : ℕ} → MinimalModel.Toric.Fan n → Type"
+    },
+    "MinimalModel.Toric.Fan.Refines": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 42,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.Fan n → Set (PointedCone ℝ (MinimalModel.Toric.NR n)) → Prop"
     },
     "MinimalModel.Toric.Fan.TDivisor": {
       "kind": "def",
@@ -3391,7 +3991,7 @@
     "MinimalModel.Toric.Fan.concaveOn_iff_forall_isConvexAcross": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 412,
+      "line": 414,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3402,7 +4002,7 @@
     "MinimalModel.Toric.Fan.concaveOn_iff_forall_isConvexAcross_of_isSimplicialFan": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 425,
+      "line": 427,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3413,7 +4013,7 @@
     "MinimalModel.Toric.Fan.coneTheorem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 540,
+      "line": 542,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3478,7 +4078,7 @@
     "MinimalModel.Toric.Fan.exists_le_isMaximalCone": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 179,
+      "line": 181,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3489,7 +4089,7 @@
     "MinimalModel.Toric.Fan.exists_local": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 267,
+      "line": 269,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3500,7 +4100,7 @@
     "MinimalModel.Toric.Fan.exists_mem_coneDim_eq": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 384,
+      "line": 386,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3511,7 +4111,7 @@
     "MinimalModel.Toric.Fan.exists_mem_of_isComplete": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 183,
+      "line": 185,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3621,7 +4221,7 @@
     "MinimalModel.Toric.Fan.isConvexAcross_of_concaveOn": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 254,
+      "line": 256,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3731,7 +4331,7 @@
     "MinimalModel.Toric.Fan.le_of_span_eq_top": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 299,
+      "line": 301,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3880,7 +4480,7 @@
     "MinimalModel.Toric.Fan.ray_eq_of_mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 446,
+      "line": 448,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -3891,7 +4491,7 @@
     "MinimalModel.Toric.Fan.ray_le_of_mem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 433,
+      "line": 435,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -4195,6 +4795,17 @@
       ],
       "type": "∀ {n : ℕ} {u w : Fin n → ℤ},\n  MinimalModel.Toric.IsPrimitive u → (MinimalModel.Toric.toNR w ∈ MinimalModel.Toric.latticeCone {u} ↔ ∃ k, w = k • u)"
     },
+    "MinimalModel.Toric.IsQuasiFan": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 28,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → Set (PointedCone ℝ (MinimalModel.Toric.NR n)) → Prop"
+    },
     "MinimalModel.Toric.IsRationalPolyhedral": {
       "kind": "def",
       "file": "MinimalModel/Toric/Fan.lean",
@@ -4330,7 +4941,7 @@
     "MinimalModel.Toric.IsSimplicial.isClosed": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 56,
+      "line": 58,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -4348,6 +4959,17 @@
         "propext"
       ],
       "type": "∀ {n : ℕ} {σ τ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsSimplicial σ → τ.IsFaceOf σ → MinimalModel.Toric.IsSimplicial τ"
+    },
+    "MinimalModel.Toric.IsStrictAt": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 34,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (MinimalModel.Toric.NR n → ℝ) → PointedCone ℝ (MinimalModel.Toric.NR n) → Set (MinimalModel.Toric.NR n) → Prop"
     },
     "MinimalModel.Toric.IsStronglyConvex": {
       "kind": "def",
@@ -4370,6 +4992,28 @@
         "propext"
       ],
       "type": "∀ {n : ℕ} {σ τ : PointedCone ℝ (MinimalModel.Toric.NR n)},\n  MinimalModel.Toric.IsStronglyConvex σ → τ ≤ σ → MinimalModel.Toric.IsStronglyConvex τ"
+    },
+    "MinimalModel.Toric.IsToricMoriFibreSpace": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 87,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.ToricModel n → Prop"
+    },
+    "MinimalModel.Toric.IsToricStep": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 76,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.ToricModel n → MinimalModel.Toric.ToricModel n → Prop"
     },
     "MinimalModel.Toric.NR": {
       "kind": "def",
@@ -6265,6 +6909,100 @@
       ],
       "type": "MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r1 + MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r2 +\n    MinimalModel.Toric.rayGenerator MinimalModel.Toric.P2.r0 =\n  0"
     },
+    "MinimalModel.Toric.ToricConeTheorem": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Toric.lean",
+      "line": 19,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "Prop"
+    },
+    "MinimalModel.Toric.ToricModel": {
+      "kind": "inductive",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 69,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "ℕ → Type"
+    },
+    "MinimalModel.Toric.ToricModel.D": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 74,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → (self : MinimalModel.Toric.ToricModel n) → self.F.TDivisor ℝ"
+    },
+    "MinimalModel.Toric.ToricModel.F": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "line": 72,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.ToricModel n → MinimalModel.Toric.Fan n"
+    },
+    "MinimalModel.Toric.ToricModel.ctorIdx": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{n : ℕ} → MinimalModel.Toric.ToricModel n → ℕ"
+    },
+    "MinimalModel.Toric.ToricModel.mk.inj": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Program.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} {F : MinimalModel.Toric.Fan n} {D : F.TDivisor ℝ} {F_1 : MinimalModel.Toric.Fan n} {D_1 : F_1.TDivisor ℝ},\n  { F := F, D := D } = { F := F_1, D := D_1 } → F = F_1 ∧ D ≍ D_1"
+    },
+    "MinimalModel.Toric.ToricModel.mk.injEq": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Program.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (D : F.TDivisor ℝ) (F_1 : MinimalModel.Toric.Fan n) (D_1 : F_1.TDivisor ℝ),\n  ({ F := F, D := D } = { F := F_1, D := D_1 }) = (F = F_1 ∧ D ≍ D_1)"
+    },
+    "MinimalModel.Toric.ToricModel.mk.sizeOf_spec": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/Program.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {n : ℕ} (F : MinimalModel.Toric.Fan n) (D : F.TDivisor ℝ), sizeOf { F := F, D := D } = 1 + sizeOf F + sizeOf D"
+    },
+    "MinimalModel.Toric.ToricModel.noConfusionType": {
+      "kind": "def",
+      "file": "MinimalModel/Toric/Program.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "Sort u → {n : ℕ} → MinimalModel.Toric.ToricModel n → {n' : ℕ} → MinimalModel.Toric.ToricModel n' → Sort u"
+    },
     "MinimalModel.Toric.bot_isFaceOf": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/Fan.lean",
@@ -6279,7 +7017,7 @@
     "MinimalModel.Toric.chord_le_of_local": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 114,
+      "line": 116,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -6301,7 +7039,7 @@
     "MinimalModel.Toric.coneDim_latticeCone_le": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 40,
+      "line": 42,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -6312,7 +7050,7 @@
     "MinimalModel.Toric.coneDim_le": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 30,
+      "line": 32,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -6444,7 +7182,7 @@
     "MinimalModel.Toric.exists_forall_notMem": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 85,
+      "line": 87,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -6719,7 +7457,7 @@
     "MinimalModel.Toric.le_of_isFaceOf_of_span_le": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 47,
+      "line": 49,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -6873,7 +7611,7 @@
     "MinimalModel.Toric.span_eq_top_of_coneDim_eq": {
       "kind": "theorem",
       "file": "MinimalModel/Toric/ConeTheorem.lean",
-      "line": 35,
+      "line": 37,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -7002,6 +7740,28 @@
       ],
       "type": "∀ {n : ℕ}, MinimalModel.Toric.toNR 0 = 0"
     },
+    "MinimalModel.Toric.toricConeTheorem": {
+      "kind": "theorem",
+      "file": "MinimalModel/Toric/ConeTheorem.lean",
+      "line": 563,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "MinimalModel.Toric.ToricConeTheorem"
+    },
+    "MinimalModel.ToricMMP": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/ToricMMP.lean",
+      "line": 17,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "Prop"
+    },
     "MinimalModel.VZ": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -7129,6 +7889,17 @@
         "propext"
       ],
       "type": "∀ (k : Type u) [inst : Field k] {c : ℝ} (hc : 0 ≤ c), MinimalModel.IsTerminal (MinimalModel.affineLinePair k c hc)"
+    },
+    "MinimalModel.affineLinePair_not_isEnc": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 89,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k] {c : ℝ} (hc : 0 ≤ c), ¬MinimalModel.IsEnc (MinimalModel.affineLinePair k c hc)"
     },
     "MinimalModel.affineLinePair_one_isLc": {
       "kind": "theorem",
@@ -7493,6 +8264,50 @@
       ],
       "type": "∀ {k : Type u} [inst : Field k] {Q : ↥(MinimalModel.affineLine k).toScheme}\n  {y : MinimalModel.FF (MinimalModel.affineLine k)},\n  y ∈ MinimalModel.stalkSubring Q →\n    (MinimalModel.derivL k) ((KaehlerDifferential.D k (MinimalModel.FF (MinimalModel.affineLine k))) y) ∈\n      MinimalModel.stalkSubring Q"
     },
+    "MinimalModel.divisorialPresheaf": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Cohomology.lean",
+      "line": 39,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Divisor ℤ X →\n        (V : X.toScheme.Opens) → CategoryTheory.Functor (TopologicalSpace.Opens ↥↑V)ᵒᵖ AddCommGrpCat"
+    },
+    "MinimalModel.divisorialSections": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Cohomology.lean",
+      "line": 30,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℤ X → Set ↥X.toScheme → AddSubgroup (MinimalModel.FF X)"
+    },
+    "MinimalModel.divisorialSections_anti": {
+      "kind": "theorem",
+      "file": "MinimalModel/Statements/Cohomology.lean",
+      "line": 34,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (D : MinimalModel.Divisor ℤ X)\n  {S T : Set ↥X.toScheme}, S ⊆ T → MinimalModel.divisorialSections D T ≤ MinimalModel.divisorialSections D S"
+    },
+    "MinimalModel.divisorialSheaf": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Cohomology.lean",
+      "line": 48,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Divisor ℤ X →\n        (V : X.toScheme.Opens) → CategoryTheory.Sheaf (Opens.grothendieckTopology ↥↑V) AddCommGrpCat"
+    },
     "MinimalModel.eq_zero_of_mem_coneOfCurves": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/PointPairs.lean",
@@ -7569,6 +8384,17 @@
         "propext"
       ],
       "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} → Subring (MinimalModel.FF X) → AddSubgroup (MinimalModel.TopForm X)"
+    },
+    "MinimalModel.globalMld": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/Enc.lean",
+      "line": 32,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Pair X → WithBot ℝ"
     },
     "MinimalModel.h0": {
       "kind": "def",
@@ -7768,6 +8594,28 @@
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.PrimeDivisor X)]\n  (W : X.toScheme.Opens), AlgebraicGeometry.IsAffineOpen W → MinimalModel.IsAmpleOn 0 W"
     },
+    "MinimalModel.isAmple_of_isEmpty": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 41,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.PrimeDivisor X)],\n  MinimalModel.IsProjective X → ∀ (D : MinimalModel.Divisor ℝ X), MinimalModel.IsAmple D"
+    },
+    "MinimalModel.isBigRel_str_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/Relative.lean",
+      "line": 19,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (D : MinimalModel.Divisor ℝ X),\n  MinimalModel.IsBigRel D X.str ↔ MinimalModel.IsBig D"
+    },
     "MinimalModel.isCanonical_of_dim_eq_one": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/Centre.lean",
@@ -7833,6 +8681,17 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [Subsingleton ↥X.toScheme],\n  IsEmpty (MinimalModel.Curve X)"
+    },
+    "MinimalModel.isEmpty_extremalRay": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 59,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.Curve X)]\n  (I : MinimalModel.IntersectionData X), IsEmpty (MinimalModel.ExtremalRay I)"
     },
     "MinimalModel.isEmpty_primeDivisor_of_subsingleton": {
       "kind": "theorem",
@@ -7922,6 +8781,17 @@
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k},\n  X.dim = 1 → ∀ {P : MinimalModel.Pair X}, (∀ (Q : MinimalModel.PrimeDivisor X), P.Δ Q ≤ 1) → MinimalModel.IsPlt P"
     },
+    "MinimalModel.isPseudoEffectiveOver_str_iff": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/Relative.lean",
+      "line": 22,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} (D : MinimalModel.Divisor ℝ X),\n  MinimalModel.IsPseudoEffectiveOver D X.str ↔ MinimalModel.IsPseudoEffective D"
+    },
     "MinimalModel.isRCartier_of_isEmpty": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/Point.lean",
@@ -7954,6 +8824,17 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k},\n  X.dim = 1 → ∀ (P : MinimalModel.Pair X), MinimalModel.IsTerminal P"
+    },
+    "MinimalModel.kodairaDim": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 35,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} → [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.CanonicalDivisor X → WithBot ℕ"
     },
     "MinimalModel.lct": {
       "kind": "def",
@@ -8054,6 +8935,17 @@
       ],
       "type": "∀ {k : Type u} [inst : Field k] {A : MinimalModel.PairModel k},\n  IsEmpty (MinimalModel.Curve A.X) → ¬MinimalModel.HasInfiniteProgram A"
     },
+    "MinimalModel.not_isEnc_of_dim_eq_one": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 63,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k},\n  X.dim = 1 → ∀ (P : MinimalModel.Pair X), ¬MinimalModel.IsEnc P"
+    },
     "MinimalModel.not_isKlt_of_one_le": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/Basic.lean",
@@ -8097,6 +8989,17 @@
         "propext"
       ],
       "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {P : MinimalModel.Pair X}\n  {Q : MinimalModel.PrimeDivisor X}, 1 \u003c P.Δ Q → ¬MinimalModel.IsPlt P"
+    },
+    "MinimalModel.not_numEquiv_of_not_isRCartier": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/Relative.lean",
+      "line": 36,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} {I : MinimalModel.IntersectionData X}\n  {D : MinimalModel.Divisor ℝ X},\n  ¬MinimalModel.IsRCartier D → ∀ (D' : MinimalModel.Divisor ℝ X), ¬MinimalModel.NumEquiv I D D'"
     },
     "MinimalModel.numericalDim": {
       "kind": "def",
@@ -8230,6 +9133,17 @@
       ],
       "type": "(k : Type u) → [inst : Field k] → MinimalModel.Pair (MinimalModel.pointVariety k)"
     },
+    "MinimalModel.pointPair_globalMld": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 84,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], MinimalModel.globalMld (MinimalModel.pointPair k) = 0"
+    },
     "MinimalModel.pointPair_isCanonical": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/PointPairs.lean",
@@ -8307,6 +9221,17 @@
       ],
       "type": "∀ (k : Type u) [inst : Field k], MinimalModel.IsTerminal (MinimalModel.pointPair k)"
     },
+    "MinimalModel.pointPair_not_isEnc": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 79,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k], ¬MinimalModel.IsEnc (MinimalModel.pointPair k)"
+    },
     "MinimalModel.pointVariety": {
       "kind": "def",
       "file": "MinimalModel/Fidelity/Point.lean",
@@ -8362,6 +9287,17 @@
       ],
       "type": "∀ (k : Type u) [inst : Field k], MinimalModel.IsProjective (MinimalModel.pointVariety k)"
     },
+    "MinimalModel.pointVariety_kleiman": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 72,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k] (I : MinimalModel.IntersectionData (MinimalModel.pointVariety k))\n  (D : MinimalModel.Divisor ℝ (MinimalModel.pointVariety k)) (hD : MinimalModel.IsRCartier D),\n  MinimalModel.IsProjective (MinimalModel.pointVariety k) ∧\n    MinimalModel.IsAmple D ∧ ∀ z ∈ I.coneOfCurves, z ≠ 0 → 0 \u003c z ⟨D, hD⟩"
+    },
     "MinimalModel.pointVariety_not_isDivisorial": {
       "kind": "theorem",
       "file": "MinimalModel/Fidelity/PointPairs.lean",
@@ -8372,6 +9308,17 @@
         "propext"
       ],
       "type": "∀ (k : Type u) [inst : Field k] (v : Valuation (MinimalModel.FF (MinimalModel.pointVariety k)) MinimalModel.VZ),\n  ¬MinimalModel.IsDivisorial v"
+    },
+    "MinimalModel.pointVariety_sections_ne_bot": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 93,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ (k : Type u) [inst : Field k] (D : MinimalModel.Divisor ℤ (MinimalModel.pointVariety k)), MinimalModel.sections D ≠ ⊥"
     },
     "MinimalModel.pointVariety_toΓ_apply": {
       "kind": "theorem",
@@ -8395,6 +9342,17 @@
       ],
       "type": "∀ (k : Type u) [inst : Field k], Function.Surjective ⇑(MinimalModel.pointVariety k).toΓ"
     },
+    "MinimalModel.rLinEquiv_of_isEmpty": {
+      "kind": "theorem",
+      "file": "MinimalModel/Fidelity/PointStatements.lean",
+      "line": 36,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "∀ {k : Type u} [inst : Field k] {X : MinimalModel.NormalVariety k} [IsEmpty (MinimalModel.PrimeDivisor X)]\n  (D D' : MinimalModel.Divisor ℝ X), MinimalModel.RLinEquiv D D'"
+    },
     "MinimalModel.ray": {
       "kind": "def",
       "file": "MinimalModel/Statements/Basic.lean",
@@ -8405,6 +9363,17 @@
         "propext"
       ],
       "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.CurveSpace X → Set (MinimalModel.CurveSpace X)"
+    },
+    "MinimalModel.relativeRing": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 94,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} →\n      MinimalModel.Divisor ℝ X → Set ↥X.toScheme → Subring (Polynomial (MinimalModel.FF X))"
     },
     "MinimalModel.scalingThreshold": {
       "kind": "def",
@@ -8427,6 +9396,17 @@
         "propext"
       ],
       "type": "{k : Type u} →\n  [inst : Field k] → {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℤ X → Submodule k (MinimalModel.FF X)"
+    },
+    "MinimalModel.sectionsOn": {
+      "kind": "def",
+      "file": "MinimalModel/Statements/BasicRelative.lean",
+      "line": 90,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type": "{k : Type u} →\n  [inst : Field k] →\n    {X : MinimalModel.NormalVariety k} → MinimalModel.Divisor ℤ X → Set ↥X.toScheme → Set (MinimalModel.FF X)"
     },
     "MinimalModel.smul_dX_mem_formLattice_iff": {
       "kind": "theorem",
