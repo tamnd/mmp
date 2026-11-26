@@ -47,4 +47,4 @@ lean_elsewhere: []
 lean_status: none
 code_licence: null
 handbook: { volume: 9, chapter: null }
-notes: "The theorem numbers are those of spec 03.6. BCHM say that they do not prove the termination of every sequence of flips. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."
+notes: "The theorem numbers are those of spec 03.6. Theorem 1.2 and Theorem E are checked against arXiv:math/0610203. Theorem E, Corollary 1.1.5 and Lemmas 7.1 and 7.2 ask for a general ample Q-divisor A over U, so S34 waits for linear systems. BCHM say that they do not prove the termination of every sequence of flips. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

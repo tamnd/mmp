@@ -207,7 +207,7 @@ Route R5 (04.6) and statements S40 to S47.
 |---|---|---|---|---|---|---|
 | T9-01 | Kawamata, "Pluricanonical systems on minimal algebraic varieties" (1985) | S42 from the basepoint free theorem | none | prove | A | [U] |
 | T9-02 | Nakayama, *Zariski-decomposition and Abundance*, MSJ Memoirs 14 (2004) | $\kappa_\sigma$; S43 | none | state | B | [U] |
-| T9-03 | Gongyo, arXiv:1005.2796 | S43 for lc pairs | none | state | B | [P] |
+| T9-03 | Gongyo, arXiv:1005.2796 (Theorem 1.2, rational boundary) and arXiv:1101.1394 (Theorem 6.1 and Lemma 6.2, real boundary) | S43 for lc pairs | none | state | B | [P] |
 | T9-04 | Demailly, Hacon and Păun, Acta Math. 210 (2013) | non-vanishing and dlt extension give abundance | none | state | B | [S] |
 | T9-05 | Lazić and Peternell, generalised abundance I and II | S45 | none | state | B | [P] |
 | T9-06 | Liu and Xu, arXiv:2505.05250 | S44; abundance for $\nu \le 1$ in dim $\le 5$ | none | state | A | [P] |

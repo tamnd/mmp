@@ -5,4 +5,4 @@ title: "Abundance for lc surface pairs"
 statement: "Let $(X,\\Delta)$ be a projective lc surface pair with $K_X+\\Delta$ nef. Then $K_X+\\Delta$ is semiample."
 lean: { statement: MinimalModel.SurfaceAbundance }
 tier: S
-notes: "Statement S14 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement cites Fujino 2012, Theorem 8.1, for projective lc surfaces with an R-boundary. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S14 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/LowDim.lean. The class in the spec is theorem. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement cites Fujino 2012, Theorem 8.1, for projective lc surfaces with an R-boundary. Theorem 8.1 of arXiv:1001.3902v3 is the relative form over a base S for lc or Q-factorial log surfaces, and the Lean statement is its case S = Spec k with lc. The paper record of the source is not written yet (spec 07)."

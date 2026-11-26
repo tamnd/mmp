@@ -2,8 +2,8 @@ tag: "MMSH2N59E3"
 slug: "generalized-abundance"
 kind: "conjecture"
 title: "Generalized abundance"
-statement: "Generalized abundance (Lazić-Peternell): let $(X,\\Delta)$ be a klt pair with $K_X+\\Delta$ pseudo-effective, and $L$ a nef divisor with $K_X+\\Delta+L$ nef. Then $K_X+\\Delta+L$ is numerically equivalent to a semiample divisor."
+statement: "Generalized abundance (Lazić-Peternell): let $(X,\\Delta)$ be a projective klt pair with $\\Delta$ a $\\mathbb{Q}$-divisor and $K_X+\\Delta$ pseudo-effective, and $L$ a nef Cartier divisor with $K_X+\\Delta+L$ nef. Then $K_X+\\Delta+L$ is numerically equivalent to a semiample $\\mathbb{Q}$-divisor."
 lean: { statement: MinimalModel.GeneralizedAbundance }
 tier: S
 route: [R5]
-notes: "Statement S45 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Abundance.lean, with the vocabulary of MinimalModel/Statements/BasicRelative.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement follows Lazić and Peternell 2020, Conjecture 1.1, for projective klt pairs and an R-Cartier nef L. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S45 of spec 06.2.2. The statement is in mmp-lean, file MinimalModel/Statements/Abundance.lean, with the vocabulary of MinimalModel/Statements/BasicRelative.lean. The class in the spec is open. The vocabulary is ready. The statement is planned for milestone S2. The Lean statement follows the Generalised Abundance Conjecture of Lazić and Peternell, On generalised abundance, I, Publ. RIMS 56 (2020), arXiv:1808.00438, Section 1. The arXiv copy does not number it, and the journal number is not checked. As in the source, the boundary has rational coefficients, L is a nef Cartier divisor and the semiample divisor is a Q-divisor. The paper record of the source is not written yet (spec 07)."
