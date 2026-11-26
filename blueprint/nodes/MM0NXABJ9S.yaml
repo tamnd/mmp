@@ -2,7 +2,7 @@ tag: "MM0NXABJ9S"
 slug: "red-han-liu"
 kind: "theorem"
 title: "The Han-Liu reduction"
-statement: "Fix $n$. Assume ACC for the mlds of enc germs in dimension $n$ and termination of terminal flips in dimension $n$. Then T(n) holds (S20)."
+statement: "Fix $n$. Assume ACC for the global mlds of enc pairs of dimension $n$ with coefficients in a finite set and termination of terminal flips in dimension $n$. Then T(n) holds (S20)."
 sources:
   - { paper: HL25, loc: "Theorem 1.2" }
 uses: [MMTJ3YNHTG, MMXCD16PTN] # Termination, HanLiuEncACC

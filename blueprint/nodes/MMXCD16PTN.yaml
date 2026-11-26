@@ -1,8 +1,8 @@
 tag: "MMXCD16PTN"
 slug: "han-liu-enc-acc"
 kind: "conjecture"
-title: "ACC for the mlds of enc 4-fold germs"
-statement: "Han-Liu Conjecture 1.9(2') in dimension 4: ACC for the mlds of enc 4-fold germs. The toric case is Target T of spec 04.12."
+title: "ACC for the global mlds of enc 4-fold pairs"
+statement: "Han-Liu Conjecture 1.9(2') in dimension 4: ACC for the global mlds of enc pairs of dimension 4 whose coefficients lie in a finite set. The toric case is Target T of spec 04.12."
 sources:
   - { paper: HL25, loc: "Conjecture 1.9(2')" }
 lean: { statement: MinimalModel.HanLiuEncACC }
