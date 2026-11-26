@@ -21,7 +21,7 @@ No open case of the program is proved here, in Lean or on paper. The site shows 
 
 Models write much of the code and the text. Lean and people check it. The site says which checks each result has passed, and which results come from AxiomMath/MMP or from other external code.
 
-At this time the map has 60 statements. Six have the status `claimed` and 54 are `unstated`. No statement is in Lean yet.
+At this time the map has 60 statements. Fourteen are in Lean: 7 are `stated`, 6 are `open`, and S22 is `claimed`. Five other statements are `claimed`, and 41 are `unstated`.
 
 AxiomMath/MMP claims a kernel-checked proof of the MMP for lc pairs in dimension at most 4. No person has read its definitions against the textbooks. The project audits it in eight steps, A1 to A8 (spec 04.3). Until the audit passes, its main theorem (S22) has the status `claimed`. Step A1 is in progress. Steps A2 to A8 are not started. The records are in `audit/axiom-mmp/` and `records/audit.json`.
 
