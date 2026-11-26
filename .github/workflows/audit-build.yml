@@ -1,0 +1,118 @@
+name: audit build
+
+# Steps A1, A2 and A4 of spec 04.3 on AxiomMath/MMP at the pinned commit. A1 is a clean build with the time, the memory, lake-manifest.json and the hash of every .olean. A2 is #print axioms on the seven theorems of audit/axiom-mmp/A2.lean. A4 is the definition index of audit/axiom-mmp/A4.lean.
+#
+# The build is longer than one job of 6 hours on a standard runner. So each run builds for at most 290 minutes, saves the partial build in the cache, and starts the next run with the next segment number. The run that finishes the build writes the records of A1, A2 and A4 as the artifact audit-records. A person starts the first run by hand.
+on:
+  workflow_dispatch:
+    inputs:
+      segment:
+        description: the number of this run in the chain, 1 for the first run
+        default: "1"
+      max_segments:
+        description: the chain stops after this run number
+        default: "8"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: audit-build
+  cancel-in-progress: false
+
+env:
+  AXIOM_COMMIT: 1f9ade367087ec711a2ce1382bad279a5a0284c3
+
+jobs:
+  build:
+    name: build AxiomMath/MMP
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    permissions:
+      contents: read
+      actions: write # to save and delete the cache of the build and to start the next run
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: AxiomMath/MMP
+          ref: ${{ env.AXIOM_COMMIT }}
+          path: src
+          persist-credentials: false
+      - name: free disk space and add swap
+        run: scripts/audit-build.sh room
+      - name: install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+          sh elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: get the Mathlib cache
+        working-directory: src
+        run: lake exe cache get
+      - name: restore the partial build
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            src/.lake/build
+            src/.lake/packages/Stacks/.lake/build
+          key: axiom-mmp-${{ env.AXIOM_COMMIT }}-${{ github.run_id }}
+          restore-keys: axiom-mmp-${{ env.AXIOM_COMMIT }}-
+      - name: build
+        id: build
+        env:
+          SEGMENT: ${{ inputs.segment }}
+        run: scripts/audit-build.sh build 290
+      - name: save the partial build
+        if: always() && steps.build.outcome == 'success'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            src/.lake/build
+            src/.lake/packages/Stacks/.lake/build
+          key: axiom-mmp-${{ env.AXIOM_COMMIT }}-${{ github.run_id }}
+      - name: delete the older caches of the build
+        if: always() && steps.build.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KEEP: axiom-mmp-${{ env.AXIOM_COMMIT }}-${{ github.run_id }}
+        run: |
+          gh cache list --repo "$GITHUB_REPOSITORY" --key axiom-mmp- --limit 100 --json id,key \
+            --jq ".[] | select(.key != \"$KEEP\") | .id" | while read -r id; do
+            gh cache delete "$id" --repo "$GITHUB_REPOSITORY"
+          done
+      - name: write the records of A1, A2 and A4
+        if: steps.build.outputs.done == 'true'
+        run: scripts/audit-build.sh record
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: audit-segment-${{ inputs.segment }}
+          path: |
+            out/segment.txt
+            out/time.txt
+            out/build.log
+          retention-days: 30
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: steps.build.outputs.done == 'true'
+        with:
+          name: audit-records
+          path: out/
+          retention-days: 90
+      - name: start the next run
+        if: steps.build.outputs.done == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SEGMENT: ${{ inputs.segment }}
+          MAX: ${{ inputs.max_segments }}
+        run: |
+          if [ "$SEGMENT" -ge "$MAX" ]; then
+            echo "the chain stops at run $SEGMENT of at most $MAX"
+            exit 1
+          fi
+          gh workflow run audit-build.yml --repo "$GITHUB_REPOSITORY" --ref main \
+            -f segment="$((SEGMENT + 1))" -f max_segments="$MAX"
+      - name: fail on a build error
+        if: steps.build.outputs.failed == 'true'
+        run: exit 1
