@@ -1,0 +1,25 @@
+id: T7-09
+key: HK00
+title: "Mori dream spaces and GIT"
+authors: [Yi Hu, Seán Keel]
+where: "Michigan Math. J. 48 (2000), 331-348"
+year: 2000
+doi: "10.1307/mmj/1030132722"
+arxiv: "math/0004017"
+also: [T5-09]
+read: { version: null, by: null, date: null, tag: P }
+tier: T7
+why: "the definition of a Mori dream space and its Cox ring; the definition that S37 uses"
+expert_status: accepted
+uses: []
+results:
+  - id: "Definition 1.10"
+    statement: IsMoriDreamSpace
+    node: MMZ1VFD6K4
+    kind: definition
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 9, chapter: null }
+notes: "Definition 1.10 is checked against arXiv:math/0004017v1: a normal projective variety X is a Mori dream space if X is Q-factorial with Pic(X)_Q = N^1(X), Nef(X) is the affine hull of finitely many semiample line bundles, and there are finitely many SQMs f_i : X --> X_i with the same property such that Mov(X) is the union of the f_{i*}(Nef(X_i)). mmp-lean reads f_{i*} on divisor classes as the pullback along f_i. The numbering is not checked against the journal. IsMoriDreamSpace is the definition in MinimalModel/Statements/Cones.lean of mmp-lean, and the node is S37, which uses it. Row T5-09 of spec 07 also cites the paper, for the toric case of S37. The title, the journal, the pages and the DOI are checked against Crossref. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."

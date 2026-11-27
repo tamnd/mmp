@@ -3,7 +3,9 @@ slug: "cone-conj-statement"
 kind: "conjecture"
 title: "The cone conjecture"
 statement: "The cone conjecture (Kawamata-Morrison): for a klt Calabi-Yau pair, $\\mathrm{Aut}(X)$ acts on the effective nef cone with a rational polyhedral fundamental domain, and the same holds for the movable cone and the birational automorphisms."
+sources:
+  - { paper: Tot10, loc: "Conjecture 1.1" }
 lean: { statement: MinimalModel.ConeConj }
 tier: S
 route: [R6]
-notes: "Statement S55 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is partial (automorphism groups). The statement is planned for milestone S3. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S55 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is open. The vocabulary is partial (automorphism groups). The statement is planned for milestone S3. The paper record of the source is Tot10 (spec 07, row T10-11)."

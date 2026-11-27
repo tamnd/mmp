@@ -3,7 +3,9 @@ slug: "bab-statement"
 kind: "theorem"
 title: "BAB"
 statement: "BAB (Birkar): fix $n$ and $\\epsilon>0$. The $\\epsilon$-lc Fano varieties of dimension $n$ form a bounded family."
+sources:
+  - { paper: Bir21, loc: "Theorem 1.1" }
 lean: { statement: MinimalModel.BAB }
 tier: S
 route: [R6]
-notes: "Statement S53 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is theorem. The vocabulary is partial (bounded families). The statement is planned for milestone S3. The paper record of the source is not written yet (spec 07)."
+notes: "Statement S53 of spec 06.2.2, in the file MinimalModel/Statements/Boundedness.lean. The class in the spec is theorem. The vocabulary is partial (bounded families). The statement is planned for milestone S3. The paper record of the source is Bir21 (spec 07, row T10-04)."

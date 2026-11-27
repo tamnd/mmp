@@ -1,0 +1,25 @@
+id: T10-11
+key: Tot10
+title: "The cone conjecture for Calabi-Yau pairs in dimension two"
+authors: [Burt Totaro]
+where: "Duke Math. J. 154 (2010), 241-263"
+year: 2010
+doi: "10.1215/00127094-2010-039"
+arxiv: "0901.3361"
+also: []
+read: { version: null, by: null, date: null, tag: U }
+tier: T10
+why: "the statement of the Morrison-Kawamata cone conjecture for klt Calabi-Yau pairs, and its proof in dimension two; the source of S55"
+expert_status: accepted
+uses: []
+results:
+  - id: "Conjecture 1.1"
+    statement: ConeConj
+    node: MM1B2V5Q7P
+    kind: conjecture
+    status: unstated
+lean_elsewhere: []
+lean_status: none
+code_licence: null
+handbook: { volume: 12, chapter: null }
+notes: "Conjecture 1.1 is checked against arXiv:0901.3361v2. It is stated for a klt Calabi-Yau pair (X/S, Δ) over a base S, with part (1) for the action of Aut(X/S, Δ) on the effective nef cone and part (2) for the action of PsAut(X/S, Δ) on the effective movable cone. Totaro says that for X terminal and Δ = 0 it is Kawamata's conjecture, which generalizes Morrison's. S55 in mmp-lean takes S to be a point. The numbering is not checked against the journal. Row T10-11 of spec 07 names Kawamata, Morrison and Totaro, the conjecture and its known cases. This record covers the row. The journal data and the DOI come from the arXiv record. Nobody has read the source for the project yet. The read tag is the tag of the row in spec 07."
