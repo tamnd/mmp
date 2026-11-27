@@ -31,6 +31,8 @@ build)
   command -v /usr/bin/time >/dev/null || sudo apt-get install -y time >/dev/null
   cd src
   start=$(date +%s)
+  # A lean process that runs out of memory should be killed before the runner agent is, so that the partial build is still saved.
+  echo 1000 > /proc/self/oom_score_adj || true
   set +e
   timeout -k 2m "${minutes}m" /usr/bin/time -v -o "../$OUT/time.txt" lake build > "../$OUT/build.log" 2>&1
   status=$?
@@ -51,6 +53,10 @@ build)
   if [ "$status" -eq 0 ]; then
     echo "done=true" >> "$GITHUB_OUTPUT"
   elif [ "$status" -eq 124 ] || [ "$status" -eq 137 ]; then
+    echo "done=false" >> "$GITHUB_OUTPUT"
+  elif grep -qE "code 137|signal 9" "$OUT/build.log"; then
+    echo "a lean process was killed, most likely for memory; the next segment goes on from the saved build"
+    echo "oom=true" >> "$OUT/segment.txt"
     echo "done=false" >> "$GITHUB_OUTPUT"
   else
     grep -n "error" "$OUT/build.log" | head -n 40 || true
