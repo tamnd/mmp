@@ -1,0 +1,12 @@
+name: e2-simplicial-mld-4
+experiment: E2
+question: For each simplicial toric 4-fold germ C^4/G, with G = N/Z^4 abelian of order r <= 6 and the rays primitive, what are the mld at the fixed point, the mld of the germ, the terminal, canonical and Gorenstein germs and the enc germs, do the isolated cyclic germs agree with the family cyclic of dimension 4, and are the germs with a zero coordinate the 3-fold germs of e2-simplicial-mld-3 times a line?
+tool: mmp
+node: MMXCD16PTN # HanLiuEncACC, Target T
+nodes: [MMWK2DDDPC, MMAWP4SA44] # ACCMld, ToricMMP
+inputs:
+  dimension: 4
+  max_index: 6
+  family: simplicial
+outputs: [germs.json, indices.json, summary.md]
+notes: E2 in dimension 4 to index 6 for milestone S3, over all simplicial toric germs, cyclic or not, isolated or not, up to the permutations of the coordinates. As in dimension 3, r is the order of G and not the Gorenstein index; germs.json gives the Gorenstein index of each germ. The run is the measurement of Q-22. It took well under a second, and the work grows like r^4. Measured on a loaded 10-core arm64 laptop, index 12 took 0.03 s, index 100 7.2 s, index 150 47 s and index 200 136 s. So index 12 is far inside the 5,000 core hours of Q-22, and the plan for index 12 is in spec 13.6. It has no Lean certificate yet (13.4).

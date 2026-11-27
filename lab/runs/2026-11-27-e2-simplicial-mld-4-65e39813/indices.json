@@ -1,0 +1,62 @@
+[
+  {
+    "r": 2,
+    "germs": 3,
+    "cyclic": 3,
+    "isolated": 1,
+    "terminal": 2,
+    "canonical": 3,
+    "gorenstein": 2,
+    "enc": 1,
+    "enc_hl": 0,
+    "line": 2
+  },
+  {
+    "r": 3,
+    "germs": 7,
+    "cyclic": 7,
+    "isolated": 3,
+    "terminal": 4,
+    "canonical": 6,
+    "gorenstein": 3,
+    "enc": 2,
+    "enc_hl": 1,
+    "line": 4
+  },
+  {
+    "r": 4,
+    "germs": 16,
+    "cyclic": 13,
+    "isolated": 3,
+    "terminal": 5,
+    "canonical": 14,
+    "gorenstein": 7,
+    "enc": 7,
+    "enc_hl": 2,
+    "line": 7
+  },
+  {
+    "r": 5,
+    "germs": 18,
+    "cyclic": 18,
+    "isolated": 10,
+    "terminal": 10,
+    "canonical": 13,
+    "gorenstein": 5,
+    "enc": 5,
+    "enc_hl": 4,
+    "line": 8
+  },
+  {
+    "r": 6,
+    "germs": 37,
+    "cyclic": 37,
+    "isolated": 3,
+    "terminal": 9,
+    "canonical": 27,
+    "gorenstein": 10,
+    "enc": 14,
+    "enc_hl": 6,
+    "line": 11
+  }
+]
