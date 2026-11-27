@@ -2,7 +2,7 @@ name: audit build
 
 # Steps A1, A2 and A4 of spec 04.3 on AxiomMath/MMP at the pinned commit. A1 is a clean build with the time, the memory, lake-manifest.json and the hash of every .olean. A2 is #print axioms on the seven theorems of audit/axiom-mmp/A2.lean. A4 is the definition index of audit/axiom-mmp/A4.lean.
 #
-# The build is longer than one job of 6 hours on a standard runner. So each run builds for at most 290 minutes, saves the partial build in the cache, and starts the next run with the next segment number. The run that finishes the build writes the records of A1, A2 and A4 as the artifact audit-records. A person starts the first run by hand.
+# The build is longer than one job of 6 hours on a standard runner. So each run builds for at most 120 minutes, saves the partial build in the cache, and starts the next run with the next segment number. The run that finishes the build writes the records of A1, A2 and A4 as the artifact audit-records. A person starts the first run by hand.
 on:
   workflow_dispatch:
     inputs:
@@ -11,7 +11,7 @@ on:
         default: "1"
       max_segments:
         description: the chain stops after this run number
-        default: "8"
+        default: "20"
 
 permissions:
   contents: read
@@ -63,7 +63,7 @@ jobs:
         id: build
         env:
           SEGMENT: ${{ inputs.segment }}
-        run: scripts/audit-build.sh build 290
+        run: scripts/audit-build.sh build 120
       - name: save the partial build
         if: always() && steps.build.outcome == 'success'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
