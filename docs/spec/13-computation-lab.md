@@ -122,13 +122,23 @@ So a counterexample from the lab becomes a Lean theorem in `MinimalModel.Example
 | Experiment | Estimate | Machine |
 |---|---|---|
 | E1 | under 100 core hours [U] | the lab machine |
-| E2 in dimension 3, and in dimension 4 to index 12 | 500 to 5,000 core hours [U]; the count of cones grows fast with the index | the lab machine; larger index on rented time, after a measurement |
+| E2 in dimension 3, and in dimension 4 to index 12 | measured for the simplicial germs (13.6.1): dimension 3 to index 1200 in 505 s on a laptop, and dimension 4 to index 12 in 0.03 s; the germs that are not simplicial are not measured [U] | the lab machine, or any laptop for the simplicial germs |
 | E3, E4, E5, E7, E10 | under 50 core hours each [U] | the lab machine |
 | E6 | 100 to 1,000 core hours per deformation class [U] | the lab machine |
 | E8, E9 | about 200 core hours for 10,000 runs [U] | the lab machine |
 | Certificates in Lean | the CI of `tamnd/mmp-lean`; a certificate that takes more than 10 minutes to check is split | CI |
 
 The lab machine has 32 cores (`lab_cores` in `agent.yaml`, 10.6), rented by the month. The bridge runner of 09.4 is a different machine. Each spec gives a core hour limit, and `mmp lab run` stops at the limit. The first measurement of E2 at index 6 sets the plan for index 12 (Q-22).
+
+### 13.6.1 E2 in dimension 4: the measurement and the plan for index 12
+
+The run `lab/runs/2026-11-27-e2-simplicial-mld-4-65e39813` is E2 in dimension 4 to index 6, for S3. It lists the 81 simplicial toric 4-fold germs $\mathbb{C}^4/G$ with $|G| \le 6$ in 0.005 s, with no mismatch, with mmp-agent at commit 924069e (#17). As in dimension 3, the index $r$ is the order of $G$. The work of one index grows like $r^3$, so the work of a run grows like $r^4$. On a loaded 10-core arm64 laptop, index 12 took 0.03 s (764 germs), index 100 took 7.2 s, index 150 took 47 s and index 200 took 136 s (27,435,888 germs). These later runs are measurements, not records.
+
+The plan for index 12:
+- Index 12 fits in the 5,000 core hours of Q-22 many times, so the answer of Q-22 is: run it. It needs no lab machine and no rented time. The spec is `e2-simplicial-mld-4` with `max_index: 12` and `list_index: 12`, under a new name, so that the index-6 run stays as the measurement.
+- The same run can go to index 200 in about 0.4 core hours, with `list_index: 12` so that `germs.json` stays small. The 5,000 core hours reach about index 2,000 if the growth stays $r^4$ [U].
+- The index of the example spec of 13.3 is the Q-Gorenstein index, but the runs use the order of $G$. The two are different: 1/r(1, -1, 1, -1) has the Gorenstein index 1 for each $r$. So the germs of a bounded Gorenstein index are not a finite set, and a run by the Gorenstein index needs a bound on $|G|$ for the class of germs, for example the enc germs of Target T. The runs keep the order of $G$, as in dimension 3, and `germs.json` gives the Gorenstein index of each germ. The choice between the two stays open in Q-22.
+- What stays unmeasured is the germs that are not simplicial, the "then all" of E2 (13.4). They need a new family in mmp-agent and a new measurement before the core hours are known.
 
 ## 13.7 What the lab does not do
 

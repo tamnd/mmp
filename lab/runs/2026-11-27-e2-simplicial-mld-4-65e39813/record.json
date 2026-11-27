@@ -1,0 +1,31 @@
+{
+  "id": "2026-11-27-e2-simplicial-mld-4-65e39813",
+  "name": "e2-simplicial-mld-4",
+  "experiment": "E2",
+  "question": "For each simplicial toric 4-fold germ C^4/G, with G = N/Z^4 abelian of order r \u003c= 6 and the rays primitive, what are the mld at the fixed point, the mld of the germ, the terminal, canonical and Gorenstein germs and the enc germs, do the isolated cyclic germs agree with the family cyclic of dimension 4, and are the germs with a zero coordinate the 3-fold germs of e2-simplicial-mld-3 times a line?",
+  "spec": "lab/specs/e2-simplicial-mld-4.yaml",
+  "spec_sha256": "65e398137bbfd6e8ec67ce1650d8e01a094bd8a97085f1977ba57f7236ad13e3",
+  "node": "MMXCD16PTN",
+  "nodes": [
+    "MMWK2DDDPC",
+    "MMAWP4SA44"
+  ],
+  "tool": "mmp",
+  "tool_version": "v0.0.4-6-g924069e",
+  "commit": "924069e54989e41cf3059cdb9e862c6c9de11887",
+  "go": "go1.27.3",
+  "container": "none",
+  "network": false,
+  "seed": 0,
+  "host": "darwin/arm64",
+  "started": "2026-11-27T17:21:58Z",
+  "wall_seconds": 0.005,
+  "result": "agrees: in 81 simplicial toric 4-fold germs with r \u003c= 6, the isolated cyclic germs with r \u003c= 6 are those of the family cyclic, the germs with a zero coordinate are the 3-fold germs of the family simplicial times a line, and each index has a terminal germ",
+  "mismatches": 0,
+  "gaps": 0,
+  "files": {
+    "germs.json": "772f7c70d38d92fe0eaf8ff93de02b0599437306c3e1f3d4973eee02d907f56d",
+    "indices.json": "123a36520af7a8b6a5cf837b6f0f0c27b6b37397c74c59d665b3a2a0cba5bbeb",
+    "summary.md": "9146959c756da46b5f1690834a53fd6b40964ca413803a3383c4ea4de092afa0"
+  }
+}
