@@ -34,12 +34,13 @@ build)
   # A lean process that runs out of memory should be killed before the runner agent is, so that the partial build is still saved.
   # Run 45961027917 lost the runner after 53 minutes even with oom_score_adj, because the machine thrashed in swap before the kernel killed anything.
   # So the build runs in a systemd scope with a hard memory limit: the kernel kills a lean process inside the scope, and the runner agent outside it keeps its memory.
+  # The default OOMPolicy=stop of a scope stops the whole scope after the first kill. Segments 2 and 3 ended that way after 341 and 424 seconds, with status 124 and no time.txt, so the scope keeps running after a kill.
   echo 1000 > /proc/self/oom_score_adj || true
   mem_kb=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
   limit_mb=$(( mem_kb / 1024 - 2048 ))
   scope=()
   if command -v systemd-run >/dev/null && sudo -n true 2>/dev/null; then
-    scope=(sudo systemd-run --quiet --scope -p "MemoryMax=${limit_mb}M" -p MemorySwapMax=4G
+    scope=(sudo systemd-run --quiet --scope -p "MemoryMax=${limit_mb}M" -p MemorySwapMax=4G -p OOMPolicy=continue
       --uid="$(id -u)" --gid="$(id -g)" env PATH="$PATH" HOME="$HOME")
     echo "the build runs in a scope with MemoryMax=${limit_mb}M and MemorySwapMax=4G"
   fi
@@ -49,6 +50,7 @@ build)
   set -e
   end=$(date +%s)
   cd ..
+  sudo -n dmesg 2>/dev/null | grep -iE "out of memory|oom-kill|killed process" | tail -n 20 > "$OUT/oom.txt" || true
   built=$(grep -c "^✔ \[" "$OUT/build.log" || true)
   rss=$(grep "Maximum resident set size" "$OUT/time.txt" 2>/dev/null | awk '{print $NF}' || true)
   {
@@ -57,6 +59,7 @@ build)
     echo "seconds=$((end - start))"
     echo "max_rss_kb=${rss:-unknown}"
     echo "lines_built=$built"
+    echo "oom_kills=$(grep -ciE "killed process" "$OUT/oom.txt" || true)"
   } > "$OUT/segment.txt"
   cat "$OUT/segment.txt"
   tail -n 30 "$OUT/build.log"
