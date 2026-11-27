@@ -1,4 +1,16 @@
 {
+  "MinimalModel.Castelnuovo": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false
+    },
+    "pass": false
+  },
   "MinimalModel.ConeTheoremKlt": {
     "class": "theorem",
     "checks": {
@@ -18,6 +30,90 @@
       "F3": true,
       "F4": false,
       "F5": false
+    },
+    "pass": false
+  },
+  "MinimalModel.HanLiuEncACC": {
+    "class": "open",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false,
+      "F7": false
+    },
+    "pass": false
+  },
+  "MinimalModel.KleimanCriterion": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": true,
+      "F3": false,
+      "F4": false,
+      "F5": false
+    },
+    "pass": false
+  },
+  "MinimalModel.LengthOfExtremalRays": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false
+    },
+    "pass": false
+  },
+  "MinimalModel.MinimalModelConj": {
+    "class": "open",
+    "checks": {
+      "F1": true,
+      "F2": true,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false,
+      "F7": false
+    },
+    "pass": false
+  },
+  "MinimalModel.NotEffectiveNonVanishing4": {
+    "class": "claimed",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false,
+      "F7": false
+    },
+    "pass": false
+  },
+  "MinimalModel.SurfaceConeTheorem": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false
+    },
+    "pass": false
+  },
+  "MinimalModel.SurfaceMMP": {
+    "class": "theorem",
+    "checks": {
+      "F1": true,
+      "F2": false,
+      "F3": true,
+      "F4": false,
+      "F5": false,
+      "F6": false
     },
     "pass": false
   },
