@@ -32,9 +32,19 @@ build)
   cd src
   start=$(date +%s)
   # A lean process that runs out of memory should be killed before the runner agent is, so that the partial build is still saved.
+  # Run 45961027917 lost the runner after 53 minutes even with oom_score_adj, because the machine thrashed in swap before the kernel killed anything.
+  # So the build runs in a systemd scope with a hard memory limit: the kernel kills a lean process inside the scope, and the runner agent outside it keeps its memory.
   echo 1000 > /proc/self/oom_score_adj || true
+  mem_kb=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+  limit_mb=$(( mem_kb / 1024 - 2048 ))
+  scope=()
+  if command -v systemd-run >/dev/null && sudo -n true 2>/dev/null; then
+    scope=(sudo systemd-run --quiet --scope -p "MemoryMax=${limit_mb}M" -p MemorySwapMax=4G
+      --uid="$(id -u)" --gid="$(id -g)" env PATH="$PATH" HOME="$HOME")
+    echo "the build runs in a scope with MemoryMax=${limit_mb}M and MemorySwapMax=4G"
+  fi
   set +e
-  timeout -k 2m "${minutes}m" /usr/bin/time -v -o "../$OUT/time.txt" lake build > "../$OUT/build.log" 2>&1
+  "${scope[@]}" timeout -k 2m "${minutes}m" /usr/bin/time -v -o "../$OUT/time.txt" lake build > "../$OUT/build.log" 2>&1
   status=$?
   set -e
   end=$(date +%s)
