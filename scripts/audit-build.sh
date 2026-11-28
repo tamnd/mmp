@@ -45,7 +45,22 @@ build)
     echo "the build runs in a scope with MemoryMax=${limit_mb}M and MemorySwapMax=4G"
   fi
   set +e
-  "${scope[@]}" timeout -k 2m "${minutes}m" /usr/bin/time -v -o "../$OUT/time.txt" lake build > "../$OUT/build.log" 2>&1
+  # Some modules need more memory than the runner has when lake builds them next to others: segments 6 and 9 lost the same ones to the OOM killer, and so their dependents never built.
+  # Each module of audit/axiom-mmp/heavy.txt is built first, alone in the scope, so that it has all the memory. A module already built costs only the check of its trace.
+  : > "../$OUT/build.log"
+  if [ -f ../audit/axiom-mmp/heavy.txt ]; then
+    grep -v '^#' ../audit/axiom-mmp/heavy.txt | while read -r m; do
+      [ -n "$m" ] || continue
+      left=$(( minutes * 60 - ($(date +%s) - start) - 600 ))
+      [ "$left" -gt 0 ] || break
+      echo "heavy module $m, alone, at most ${left}s" >> "../$OUT/build.log"
+      "${scope[@]}" timeout -k 1m "${left}s" lake build "$m" >> "../$OUT/build.log" 2>&1
+      echo "heavy module $m: status $?" >> "../$OUT/build.log"
+    done
+  fi
+  left=$(( minutes * 60 - ($(date +%s) - start) ))
+  [ "$left" -gt 60 ] || left=60
+  "${scope[@]}" timeout -k 2m "${left}s" /usr/bin/time -v -o "../$OUT/time.txt" lake build >> "../$OUT/build.log" 2>&1
   status=$?
   set -e
   end=$(date +%s)
