@@ -1,0 +1,6 @@
+# Modules of AxiomMath/MMP that the OOM killer stopped in a parallel build (segments 6 and 9 of the audit build).
+# scripts/audit-build.sh builds each one alone before the full build.
+StacksFrontier.AlgebraicGeometry.NestedCocycleTail.Basic
+StacksFrontier.AlgebraicGeometry.ProjInclusionDegreeSection.Basic
+StacksFrontier.AlgebraicGeometry.ChartTransNonNested.DegreeSection
+StacksFrontier.RingTheory.MilnorPatching.Relative
