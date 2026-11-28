@@ -47,6 +47,7 @@ The dates are targets. A patch release marks a set of merged pull requests insid
 | Path | Content |
 |---|---|
 | `docs/spec/` | the spec: the research of 2026, the goal, the program, the routes, the statements, the corpus, the architecture, the audit and the milestones |
+| `docs/reviews/` | the reviews of parts of the spec, such as the review of Target T (04.12) for S3 |
 | `blueprint/nodes/` | the map: one YAML file for each statement, with its sources, its uses and its Lean names |
 | `blueprint/routes.yaml` | the research routes R1 to R9 of spec 04, with their weights |
 | `blueprint/milestones.yaml` | the milestones S0 to S9, with their dates and releases |
